@@ -7,6 +7,8 @@
 namespace project{
     class Clan{
         public:
+            std::string returnChoiceclans;
+            std::list<std::string> returnChoicepowers;
 
         private:
             enum existingClans;
@@ -15,9 +17,17 @@ namespace project{
 
     class Nature{
         public:
+            std::string returnChoice; 
 
         private:
+            enum choiceNature;
+    }
 
+    class Demeanor{
+        public:
+            std::string returnChoice;
+        private:
+            enum choiceDemeanor;
     }
 
     class Attributs{
@@ -41,7 +51,7 @@ namespace project{
         private:
     }
 
-    class Controleur{
+    class Controlor{
         public:
 
         private:
