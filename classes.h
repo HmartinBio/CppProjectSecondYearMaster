@@ -6,11 +6,10 @@ namespace project{
         public:
 
         private:
-
-
+            enum existingClans;
     }
 
-}
+
     class Nature{
         public:
 
@@ -48,4 +47,10 @@ namespace project{
         private:
     }
 
+    class Personnage{
+        public:
+
+        private:
+    }
+}
 #endif
