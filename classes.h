@@ -1,5 +1,5 @@
-#ifndef CLASSES_HEADER
-#define CLASSES_HEADER
+#ifndef CLASS_PROJECT_VAMPIRE_HEADER
+#define CLASS_PROJECT_VAMPIRE_HEADER
 
 #include <list>
 #include <string>
@@ -17,7 +17,7 @@ namespace project{
 
     class Nature{
         public:
-            std::string returnChoice; 
+            std::string returnChoicenature; 
 
         private:
             enum choiceNature;
@@ -25,7 +25,7 @@ namespace project{
 
     class Demeanor{
         public:
-            std::string returnChoice;
+            std::string returnChoicedemeanor;
         private:
             enum choiceDemeanor;
     }
@@ -63,7 +63,7 @@ namespace project{
         private:
     }
 
-    class Personnage{
+    class Character{
         public:
 
         private:
