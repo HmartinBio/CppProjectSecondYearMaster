@@ -5,10 +5,19 @@
 #include <string>
 
 namespace project{
+    class Concept{
+        public:
+            const std::string returnChoiceconcept;
+
+        private:
+            enum choiceConcept;
+
+    }
+    
     class Clan{
         public:
-            std::string returnChoiceclans;
-            std::list<std::string> returnChoicepowers;
+            const std::string returnChoiceclans;
+            const std::list<std::string> returnChoicepowers;
 
         private:
             enum existingClans;
@@ -17,7 +26,7 @@ namespace project{
 
     class Nature{
         public:
-            std::string returnChoicenature; 
+            const std::string returnChoicenature; 
 
         private:
             enum choiceNature;
@@ -25,7 +34,7 @@ namespace project{
 
     class Demeanor{
         public:
-            std::string returnChoicedemeanor;
+            const std::string returnChoicedemeanor;
         private:
             enum choiceDemeanor;
     }
