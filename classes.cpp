@@ -93,5 +93,5 @@ project::Merits_flows::~Mertis_flows(){}
 // Declaration of the constructor and destructor of the 
 // class Vampire
 
-project::Vampire::Character(){}
-project::Vampire::~Character(){}
+project::Vampire::Vampire(){}
+project::Vampire::~Vampire(){}
