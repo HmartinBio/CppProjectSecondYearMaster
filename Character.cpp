@@ -30,3 +30,11 @@ void vampireGameproject::Character::setGeneration(std::string generation){
 void vampireGameproject::Character::setAge(int age){
     Character::age = age;
 }
+
+std::string vampireGameproject::Character::getNature(void){}
+char vampireGameproject::Character::getPlayername(void){}
+std::string vampireGameproject::Character::getChronicle(void){}
+int vampireGameproject::Character::getAge(void){}
+std::string vampireGameproject::Character::getDemeanor(void){}
+std::string vampireGameproject::Character::getClan(void){}
+std::string vampireGameproject::Character::getGeneration(void){}
