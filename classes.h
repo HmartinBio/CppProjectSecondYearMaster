@@ -3,17 +3,10 @@
 
 #include <list>
 #include <string>
+#include <map>
 
 namespace project{
-    class Concept{
-        public:
-            const std::string returnChoiceconcept;
 
-        private:
-            enum choiceConcept;
-
-    };
-    
     class Clan{
         public:
             const std::string returnChoiceclans;
@@ -22,19 +15,42 @@ namespace project{
         private:
             enum existingClans;
             enum powers;
+           
+
     };
 
     class Character{
         private:
             string nature;
+            string playerName;
+            string chronicle;
             int age;
+            string demeanor;
+            string clan;
+            string generation;
         
         public:
             void setterNature;
             string getNature;
+            string getPlayername;
+            string getChronicle;
             int getAge;
-
+            string getDemeanor;
+            string getClan;
+            string getGeneration;
         
+    };
+
+
+     class Attributes{
+        public:
+            map<char,int> getAttributes;
+            void setAttributes;
+
+        private:
+            map<char,int> physicalAttributes;
+            map<char,int> socialAttributes;
+            map<char,int> mentalAttributes;
     };
 
 
@@ -53,13 +69,7 @@ namespace project{
     //        enum choiceDemeanor;
    // }
 
-   // class Attributs{
-   //     public:
-
-   //     private:
-   //         enum categories;
-   //         std::list<pair<std::string,int>> attributes;
-   // }
+   
 
     //class Abilities{
     //    public:
