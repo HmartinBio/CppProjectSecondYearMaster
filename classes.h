@@ -72,7 +72,7 @@ namespace project{
         private:
     }
 
-    class Character{
+    class Vampire{
         public:
 
         private:
