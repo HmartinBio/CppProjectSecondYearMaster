@@ -18,18 +18,18 @@ namespace vampireGameproject{
             std::string generation;
         
         public:
-            void setNature;
-            void setChronicle;
-            void setDemeanor; 
-            void setClan;
-            void setGeneration;
-            std::string getNature;
-            char getPlayername;
-            std::string getChronicle;
-            int getAge;
-            std::string getDemeanor;
-            std::string getClan;
-            std::string getGeneration;
+            void setNature(std::string nature);
+            void setChronicle(std::string chronicle);
+            void setDemeanor(std::string demeanor); 
+            void setClan(std::string clan);
+            void setGeneration(std::string generation);
+            std::string getNature(void);
+            char getPlayername(void);
+            std::string getChronicle(void);
+            int getAge(void);
+            std::string getDemeanor(void);
+            std::string getClan(void);
+            std::string getGeneration(void);
             Attributes characterAttributes;
             Abilities characterAbilities;
             Advantages characterAdvantages;
@@ -41,8 +41,8 @@ namespace vampireGameproject{
 
      class Attributes{
         public:
-            std::map<char,int> getAttributes;
-            void setAttributes;
+            std::map<char,int> getAttributes(void);
+            void setAttributes(char tableName,char attributeName, int value);
 
         private:
             std::map<char,int> physicalAttributes;
@@ -52,8 +52,8 @@ namespace vampireGameproject{
 
     class Abilities{
         public:
-            std::map<char,int> getAbilities;
-            void setAbilities;
+            std::map<char,int> getAbilities(void);
+            void setAbilities(char tableName,char abilitieName, int value);
 
         private:
             std::map<char,int> talents;
@@ -63,8 +63,8 @@ namespace vampireGameproject{
 
     class Advantages{
         public:
-            std::map<char,int> getAdvantages;
-            void setAdvantages;
+            std::map<char,int> getAdvantages(void);
+            void setAdvantages(char tableName,char advantageName, int value);
 
         private:
             std::map<char,int> disciplines;
@@ -74,8 +74,8 @@ namespace vampireGameproject{
 
     class Meritsflows{
         public: 
-            std::map<char,int> getMerits;
-            std::map<char,int> getFlaws;
+            std::map<char,int> getMerits(void);
+            std::map<char,int> getFlaws(void);
 
         private:
             std::map<char,int> Merits;
@@ -85,10 +85,10 @@ namespace vampireGameproject{
 
     class Health{
         public: 
-            int getPointlife;
-            std::list<char> getWeakness;
-            void setPointlife;
-            void setWeakness;
+            int getPointlife(void);
+            std::list<char> getWeakness(void);
+            void setPointlife(int pointLife);
+            void setWeakness(char weakness);
 
         private:
             int pointLife;
@@ -98,9 +98,12 @@ namespace vampireGameproject{
 
     class CharacterTraits{
         public:
-            std::string getHumanity;
-            std::string getWillpower; 
-            std::string getBloodpool;
+            std::string getHumanity(void);
+            std::string getWillpower(void); 
+            std::string getBloodpool(void);
+            void setHumanity(); 
+            void setWillpower();
+            void setBloodpool();
 
 
         private:
