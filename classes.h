@@ -9,93 +9,104 @@ namespace vampireGameproject{
 
     class Character{
         private:
-            string nature;
-            string playerName;
-            string chronicle;
+            std::string nature;
+            char playerName;
+            std::string chronicle;
             int age;
-            string demeanor;
-            string clan;
-            string generation;
+            std::string demeanor;
+            std::string clan;
+            std::string generation;
         
         public:
-            void setterNature;
-            string getNature;
-            string getPlayername;
-            string getChronicle;
+            void setNature;
+            void setChronicle;
+            void setDemeanor; 
+            void setClan;
+            void setGeneration;
+            std::string getNature;
+            char getPlayername;
+            std::string getChronicle;
             int getAge;
-            string getDemeanor;
-            string getClan;
-            string getGeneration;
-        
+            std::string getDemeanor;
+            std::string getClan;
+            std::string getGeneration;
+            Attributes characterAttributes;
+            Abilities characterAbilities;
+            Advantages characterAdvantages;
+            Meritsflows characterMeritsflows;
+            Health characterHealth;
+            CharacterTraits characterTraits;
     };
 
 
      class Attributes{
         public:
-            map<char,int> getAttributes;
+            std::map<char,int> getAttributes;
             void setAttributes;
 
         private:
-            map<char,int> physicalAttributes;
-            map<char,int> socialAttributes;
-            map<char,int> mentalAttributes;
+            std::map<char,int> physicalAttributes;
+            std::map<char,int> socialAttributes;
+            std::map<char,int> mentalAttributes;
     };
 
     class Abilities{
         public:
-            map<char,int> getAbilities;
+            std::map<char,int> getAbilities;
             void setAbilities;
 
         private:
-            map<char,int> Talents;
-            map<char,int> Skills;
-            map<char,int> Knowledges;
+            std::map<char,int> talents;
+            std::map<char,int> skills;
+            std::map<char,int> knowledges;
     };
 
     class Advantages{
         public:
-            map<char,int> getAdvantages;
+            std::map<char,int> getAdvantages;
             void setAdvantages;
 
-
         private:
-            map<char,int> Disciplines;
-            map<char,int> Backgrounds;
-            map<char,int> Virtues;
+            std::map<char,int> disciplines;
+            std::map<char,int> backgrounds;
+            std::map<char,int> virtues;
     };
 
     class Meritsflows{
         public: 
+            std::map<char,int> getMerits;
+            std::map<char,int> getFlaws;
 
         private:
-            map<char,int> Merits;
-            map<char,int> Flaws;
+            std::map<char,int> Merits;
+            std::map<char,int> Flaws;
     };
 
 
     class Health{
         public: 
             int getPointlife;
-            list<char> getWeakness;
+            std::list<char> getWeakness;
+            void setPointlife;
+            void setWeakness;
 
         private:
             int pointLife;
-            list<char> weakness;
+            std::list<char> weakness;
 
     };
 
     class CharacterTraits{
         public:
-            string getHumanity;
-            string getWillpower; 
-            string getBloodpool;
+            std::string getHumanity;
+            std::string getWillpower; 
+            std::string getBloodpool;
 
 
         private:
             int humanity;
             int willPower;
             int bloodPool;
-
     };
 
 
