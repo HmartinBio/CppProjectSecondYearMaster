@@ -23,6 +23,7 @@ namespace vampireGameproject{
             void setDemeanor(std::string demeanor); 
             void setClan(std::string clan);
             void setGeneration(std::string generation);
+            void setAge(int age);
             std::string getNature(void);
             char getPlayername(void);
             std::string getChronicle(void);
