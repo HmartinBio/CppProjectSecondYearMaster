@@ -15,7 +15,7 @@ vampireGameproject::Attributes::Attributes(){
 std::map<char,int> vampireGameproject::Attributes::getAttributes(void){}
 
 void vampireGameproject::Attributes::setAttributes(char tableName,char attributeName, int value){
-    swith(tableName){
+    switch(tableName){
         case 'physical': physicalAttributes[attributeName] += value;
             break;
         case 'social': socialAttributes[attributeName] += value;
