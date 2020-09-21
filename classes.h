@@ -12,7 +12,7 @@ namespace project{
         private:
             enum choiceConcept;
 
-    }
+    };
     
     class Clan{
         public:
@@ -22,60 +22,70 @@ namespace project{
         private:
             enum existingClans;
             enum powers;
-    }
+    };
 
-    class Nature{
-        public:
-            const std::string returnChoicenature; 
-
+    class Character{
         private:
-            enum choiceNature;
-    }
-
-    class Demeanor{
+            string nature;
+            int age;
+        
         public:
-            const std::string returnChoicedemeanor;
-        private:
-            enum choiceDemeanor;
-    }
+            void setterNature;
+            string getNature;
+            int getAge;
 
-    class Attributs{
-        public:
+        
+    };
 
-        private:
-            enum categories;
-            std::list<pair<std::string,int>> attributes;
-    }
 
-    class Abilities{
-        public:
+   // class Nature{
+   //     public:
+   //         const std::string returnChoicenature; 
 
-        private:
-            enum abilityCategories;
-    }
+   //     private:
+   //         enum choiceNature;
+   // }
 
-    class Avantages{
-        public:
+    //class Demeanor{
+    //    public:
+    //        const std::string returnChoicedemeanor;
+    //    private:
+    //        enum choiceDemeanor;
+   // }
 
-        private:
-    }
+   // class Attributs{
+   //     public:
 
-    class Controlor{
-        public:
+   //     private:
+   //         enum categories;
+   //         std::list<pair<std::string,int>> attributes;
+   // }
 
-        private:
-    }
+    //class Abilities{
+    //    public:
 
-    class Merits_flows{
-        public:
+     //   private:
+     //       enum abilityCategories;
+    //}
 
-        private:
-    }
+    //class Avantages{
+    //    public:
 
-    class Vampire{
-        public:
+    //    private:
+    //}
 
-        private:
-    }
+    //class Controlor{
+    //    public:
+
+    //    private:
+    //}
+
+    //class Merits_flows{
+    //    public:
+
+    //    private:
+    //}
+
+    
 }
 #endif
