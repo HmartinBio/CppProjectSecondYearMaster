@@ -5,19 +5,7 @@
 #include <string>
 #include <map>
 
-namespace project{
-
-    class Clan{
-        public:
-            const std::string returnChoiceclans;
-            const std::list<std::string> returnChoicepowers;
-
-        private:
-            enum existingClans;
-            enum powers;
-           
-
-    };
+namespace vampireGameproject{
 
     class Character{
         private:
@@ -51,6 +39,63 @@ namespace project{
             map<char,int> physicalAttributes;
             map<char,int> socialAttributes;
             map<char,int> mentalAttributes;
+    };
+
+    class Abilities{
+        public:
+            map<char,int> getAbilities;
+            void setAbilities;
+
+        private:
+            map<char,int> Talents;
+            map<char,int> Skills;
+            map<char,int> Knowledges;
+    };
+
+    class Advantages{
+        public:
+            map<char,int> getAdvantages;
+            void setAdvantages;
+
+
+        private:
+            map<char,int> Disciplines;
+            map<char,int> Backgrounds;
+            map<char,int> Virtues;
+    };
+
+    class Meritsflows{
+        public: 
+
+        private:
+            map<char,int> Merits;
+            map<char,int> Flaws;
+    };
+
+
+    class Health{
+        public: 
+            int getPointlife;
+            list<char> getWeakness;
+
+        private:
+            int pointLife;
+            list<char> weakness;
+
+    };
+
+    class CharacterTraits{
+        public:
+            string getHumanity;
+            string getWillpower; 
+            string getBloodpool;
+
+
+        private:
+            int humanity;
+            int willPower;
+            int bloodPool;
+
     };
 
 
