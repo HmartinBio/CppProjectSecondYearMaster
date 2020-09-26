@@ -33,10 +33,11 @@ namespace vampireGameproject{
             Clan characterClan;
     };
 
+///////////////////////////////////////////////////////////////////////////////////////////
 
      class Attributes{
         public:
-            std::map<char,int> getAttributes(void);
+            std::map<char,int> getAttributes(char attributeTable);
             void setAttributes(char tableName,char attributeName, int value);
 
         private:
@@ -67,12 +68,17 @@ namespace vampireGameproject{
             std::map<char,int> virtues;
     };
 
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
     class Meritsflows{
         public: 
             std::map<char,int> getMerits(void);
             std::map<char,int> getFlaws(void);
-            std::map<char,int> setMerits;
-            std::map<char,int> setFlaws;
+            std::map<char,int> setMerits();
+            std::map<char,int> setFlaws();
 
         private:
             std::map<char,int> Merits;
@@ -110,11 +116,13 @@ namespace vampireGameproject{
     };
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+
     class setCharacterFields{
         public:
             void setCategorie(std::string categorie, std::string& variable);
             std::string getCategorie(void);
-            void setDescription(std::string description, std::string classType);
+            void setDescription(std::string description);
             std::string getDescription(void);
     };
 
@@ -172,63 +180,25 @@ namespace vampireGameproject{
     };
          
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
     class Gui{};
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
+// The second function parse_text aims to get the description of a skill, 
+// a virtue, etc... proper to the character
+// The function is not contained in each class but in the controller
 
     class Controllor{
         public:
             std::string parse_text(char categorie);
+            std::string parse_text(char categorie, char table, char nameOfcomptence);
 
         private:
             std::list<char> ListofInformationstoParse;
     };
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    
-
-
-   // class Nature{
-   //     public:
-   //         const std::string returnChoicenature; 
-
-   //     private:
-   //         enum choiceNature;
-   // }
-
-    //class Demeanor{
-    //    public:
-    //        const std::string returnChoicedemeanor;
-    //    private:
-    //        enum choiceDemeanor;
-   // }
-
-   
-
-    //class Abilities{
-    //    public:
-
-     //   private:
-     //       enum abilityCategories;
-    //}
-
-    //class Avantages{
-    //    public:
-
-    //    private:
-    //}
-
-    //class Controlor{
-    //    public:
-
-    //    private:
-    //}
-
-    //class Merits_flows{
-    //    public:
-
-    //    private:
-    //}
-
-    
 }
 #endif
