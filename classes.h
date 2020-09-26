@@ -113,6 +113,35 @@ namespace vampireGameproject{
             int bloodPool;
     };
 
+    class Clan{
+        public:
+
+        private:
+            std::string clan;
+            std::string description;
+    };
+
+    class Daemenor{
+        public: 
+
+        private:
+            std::string demeanor;
+            std::string description;
+    };
+
+    class Generation{
+        public:
+
+        private:
+            std::string generation;
+    };
+
+
+    class Parsing{
+        public: 
+            std::map<char,std::string> parse_text(char categorie);
+    };
+
 
    // class Nature{
    //     public:
