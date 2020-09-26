@@ -71,18 +71,22 @@ namespace vampireGameproject{
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-
-
     class Meritsflows{
         public: 
-            std::map<char,int> getMerits(void);
-            std::map<char,int> getFlaws(void);
-            std::map<char,int> setMerits();
-            std::map<char,int> setFlaws();
+            std::map<char,int> getMerits(char type);
+            std::map<char,int> getFlaws(char type);
+            std::map<char,int> setMerits(char table);
+            std::map<char,int> setFlaws(char table);
 
         private:
-            std::map<char,int> Merits;
-            std::map<char,int> Flaws;
+            std::map<char,int> socialMerits;
+            std::map<char,int> socialFlaws;
+            std::map<char,int> physicalMerits;
+            std::map<char,int> physicalFlaws;
+            std::map<char,int> mentalMerits;
+            std::map<char,int> mentalFlaws;
+            std::map<char,int> supernaturalMerits;
+            std::map<char,int> supernaturalFlaws;
     };
 
 
