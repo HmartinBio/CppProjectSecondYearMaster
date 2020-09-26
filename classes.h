@@ -1,3 +1,7 @@
+//File: classes.h
+//AuthorName: Hugo 
+//AuthorSurname: MARTIN
+
 #ifndef CLASS_PROJECT_VAMPIRE_HEADER
 #define CLASS_PROJECT_VAMPIRE_HEADER
 
