@@ -9,26 +9,19 @@ namespace vampireGameproject{
 
     class Character{
         private:
-            std::string nature;
             char playerName;
-            std::string chronicle;
             int age;
-            std::string demeanor;
-            std::string clan;
-            std::string generation;
         
         public:
-            void setNature(std::string nature);
-            void setChronicle(std::string chronicle);
             void setAge(int age);
-            std::string getNature(void);
             char getPlayername(void);
-            std::string getChronicle(void);
             int getAge(void);
+            Chronicle characterChronicle;
             Attributes characterAttributes;
             Abilities characterAbilities;
             Advantages characterAdvantages;
             Meritsflows characterMeritsflows;
+            Nature characterNature;
             Health characterHealth;
             CharacterTraits characterTraits;
             Generation characterGeneration;
@@ -112,7 +105,17 @@ namespace vampireGameproject{
             int bloodPool;
     };
 
-    class Clan{
+
+    class setCharacterFields{
+        public:
+            void setCategorie(std::string categorie, std::string& variable);
+            std::string getCategorie(void);
+            void setDescription(std::string description, std::string classType);
+            std::string getDescription(void);
+    };
+
+
+    class Clan : public setCharacterFields{
         public:
             std::string getClan(void);
             std::string setClan(void);
@@ -121,7 +124,7 @@ namespace vampireGameproject{
             std::string description;
     };
 
-    class Daemenor{
+    class Daemenor : public setCharacterFields{
         public:
             std::string getDaemenor(void);
             std::string setDaemenor(void); 
@@ -131,7 +134,7 @@ namespace vampireGameproject{
             std::string description;
     };
 
-    class Generation{
+    class Generation : public setCharacterFields{
         public:
             std::string getGeneration(void);
             std::string setGeneration(void); 
@@ -143,14 +146,41 @@ namespace vampireGameproject{
 
 
 
-    class Controllor{
+    class Nature : public setCharacterFields{
         public:
-            std::map<char,std::string> parse_text(char categorie);
+            std::string getNature(void);
+            void setNature(std::string nature);
 
         private:
-            std::list<char> ListofInformationstoParse
+            std::string nature;
+            std::string description;
     };
 
+
+    class Chronicle : public setCharacterFields{
+        public:
+            std::string getChronicle(void);
+            void setChronicle(std::string chronicle);
+
+        private:
+            std::string chronicle;
+            std::string description;
+    };
+         
+
+    class Gui{};
+
+
+
+    class Controllor{
+        public:
+            std::string parse_text(char categorie);
+
+        private:
+            std::list<char> ListofInformationstoParse;
+    };
+
+    
 
 
    // class Nature{
