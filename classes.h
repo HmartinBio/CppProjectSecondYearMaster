@@ -20,23 +20,20 @@ namespace vampireGameproject{
         public:
             void setNature(std::string nature);
             void setChronicle(std::string chronicle);
-            void setDemeanor(std::string demeanor); 
-            void setClan(std::string clan);
-            void setGeneration(std::string generation);
             void setAge(int age);
             std::string getNature(void);
             char getPlayername(void);
             std::string getChronicle(void);
             int getAge(void);
-            std::string getDemeanor(void);
-            std::string getClan(void);
-            std::string getGeneration(void);
             Attributes characterAttributes;
             Abilities characterAbilities;
             Advantages characterAdvantages;
             Meritsflows characterMeritsflows;
             Health characterHealth;
             CharacterTraits characterTraits;
+            Generation characterGeneration;
+            Daemenor characterDaemenor;
+            Clan characterClan;
     };
 
 
@@ -77,6 +74,8 @@ namespace vampireGameproject{
         public: 
             std::map<char,int> getMerits(void);
             std::map<char,int> getFlaws(void);
+            std::map<char,int> setMerits;
+            std::map<char,int> setFlaws;
 
         private:
             std::map<char,int> Merits;
@@ -115,14 +114,17 @@ namespace vampireGameproject{
 
     class Clan{
         public:
-
+            std::string getClan(void);
+            std::string setClan(void);
         private:
             std::string clan;
             std::string description;
     };
 
     class Daemenor{
-        public: 
+        public:
+            std::string getDaemenor(void);
+            std::string setDaemenor(void); 
 
         private:
             std::string demeanor;
@@ -131,16 +133,24 @@ namespace vampireGameproject{
 
     class Generation{
         public:
+            std::string getGeneration(void);
+            std::string setGeneration(void); 
 
         private:
             std::string generation;
+            std::string description;
     };
 
 
-    class Parsing{
-        public: 
+
+    class Controllor{
+        public:
             std::map<char,std::string> parse_text(char categorie);
+
+        private:
+            std::list<char> ListofInformationstoParse
     };
+
 
 
    // class Nature{
