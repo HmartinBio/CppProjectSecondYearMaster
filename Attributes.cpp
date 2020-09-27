@@ -10,9 +10,18 @@ vampireGameproject::Attributes::Attributes(){
     mentalAttributes.insert(std::pair<char,int>("Perception",0));
     mentalAttributes.insert(std::pair<char,int>("Intelligence",0));
     mentalAttributes.insert(std::pair<char,int>("Wits",0)); 
-};
+}
 
-std::map<char,int> vampireGameproject::Attributes::getAttributes(void){}
+std::map<char,int> vampireGameproject::Attributes::getAttributes(char attributeTable){
+    switch(attributeTable){
+        case 'physical': return physicalAttributes;  
+            break;
+        case 'social': return socialAttributes;
+           break;
+        case 'mental': return mentalAttributes;
+            break;
+    }
+}
 
 void vampireGameproject::Attributes::setAttributes(char tableName,char attributeName, int value){
     switch(tableName){
@@ -24,3 +33,4 @@ void vampireGameproject::Attributes::setAttributes(char tableName,char attribute
             break; 
     }
 }
+
