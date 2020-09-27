@@ -38,7 +38,7 @@ namespace vampireGameproject{
         public:
             Attributes();
             std::map<std::string,int> getAttributes(char attributeTable);
-            void setAttributes(char tableName, char attributeName, int value);
+            void setAttributes(char tableName, std::string attributeName, int value);
 
         private:
             std::map<std::string,int> physicalAttributes;
@@ -101,11 +101,13 @@ namespace vampireGameproject{
             std::list<char> getWeakness(void);
             void setPointlife(int pointLife);
             void setWeakness(char weakness);
+            void setPointlifeDescription(std::string description);
+            std::string getPointlifeDescription(void);
 
         private:
             int pointLife;
             std::list<char> weakness;
-
+            std::string pointLifedescription;
     };
 
     class CharacterTraits{
