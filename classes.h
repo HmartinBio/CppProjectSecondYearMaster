@@ -51,7 +51,7 @@ namespace vampireGameproject{
     class Abilities{
         public:
             Abilities();
-            std::map<char,int> getAbilities(void);
+            std::map<char,int> getAbilities(char tableName);
             void setAbilities(char tableName,char abilitieName, int value);
 
         private:
