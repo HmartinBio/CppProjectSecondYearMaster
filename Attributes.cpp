@@ -1,18 +1,18 @@
 #include "classes.h"
 
 vampireGameproject::Attributes::Attributes(){
-    physicalAttributes.insert(std::pair<char,int>("Strength", 0));
-    physicalAttributes.insert(std::pair<char,int>("Dexterity", 0));
-    physicalAttributes.insert(std::pair<char,int>("Stamina", 0));
-    socialAttributes.insert(std::pair<char,int>("Charisma",0));
-    socialAttributes.insert(std::pair<char,int>("Manipulation",0));
-    socialAttributes.insert(std::pair<char,int>("Appearance",0));
-    mentalAttributes.insert(std::pair<char,int>("Perception",0));
-    mentalAttributes.insert(std::pair<char,int>("Intelligence",0));
-    mentalAttributes.insert(std::pair<char,int>("Wits",0)); 
+    physicalAttributes.insert(std::pair<std::string,int>("Strength", 0));
+    physicalAttributes.insert(std::pair<std::string,int>("Dexterity", 0));
+    physicalAttributes.insert(std::pair<std::string,int>("Stamina", 0));
+    socialAttributes.insert(std::pair<std::string,int>("Charisma",0));
+    socialAttributes.insert(std::pair<std::string,int>("Manipulation",0));
+    socialAttributes.insert(std::pair<std::string,int>("Appearance",0));
+    mentalAttributes.insert(std::pair<std::string,int>("Perception",0));
+    mentalAttributes.insert(std::pair<std::string,int>("Intelligence",0));
+    mentalAttributes.insert(std::pair<std::string,int>("Wits",0)); 
 }
 
-std::map<char,int> vampireGameproject::Attributes::getAttributes(char attributeTable){
+std::map<std::string,int> vampireGameproject::Attributes::getAttributes(char attributeTable){
     switch(attributeTable){
         case 'physical': return physicalAttributes;  
             break;
@@ -25,7 +25,7 @@ std::map<char,int> vampireGameproject::Attributes::getAttributes(char attributeT
     }
 }
 
-void vampireGameproject::Attributes::setAttributes(char tableName,char attributeName, int value){
+void vampireGameproject::Attributes::setAttributes(char tableName,std::string attributeName, int value){
     switch(tableName){
         case 'physical': physicalAttributes[attributeName] += value;
             break;
