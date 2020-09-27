@@ -20,6 +20,8 @@ std::map<char,int> vampireGameproject::Attributes::getAttributes(char attributeT
            break;
         case 'mental': return mentalAttributes;
             break;
+        default:
+            break;
     }
 }
 
@@ -30,6 +32,8 @@ void vampireGameproject::Attributes::setAttributes(char tableName,char attribute
         case 'social': socialAttributes[attributeName] += value;
             break;
         case 'mental': mentalAttributes[attributeName] += value;
+            break;
+        default:
             break; 
     }
 }
