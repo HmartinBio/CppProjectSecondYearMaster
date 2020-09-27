@@ -16,10 +16,7 @@ namespace vampireGameproject{
         private:
             char playerName;
             
-           
-        
         public:
-            
             char getPlayername(void);
             Character();
             Chronicle characterChronicle;
@@ -64,12 +61,12 @@ namespace vampireGameproject{
     class Advantages{
         public:
             Advantages();
-            std::map<std::string,int> getAdvantages(char tableName);
+            std::map<std::string, int> getAdvantages(char tableName);
             void setAdvantages(char tableName,char advantageName, int value);
 
         private:
-            std::map<std::string,int> backgrounds;
-            std::map<std::string,int> virtues;
+            std::map<std::string, int> backgrounds;
+            std::map<std::string, int> virtues;
     };
 
 
@@ -80,8 +77,8 @@ namespace vampireGameproject{
             Meritsflows();
             std::map<std::string,int> getMerits(char type);
             std::map<std::string,int> getFlaws(char type);
-            void setMerits(char table);
-            void setFlaws(char table);
+            void setMerits(char table, char meritsName, int number);
+            void setFlaws(char table, char flawsName, int number);
 
         private:
             std::map<std::string, std::map<std::string, int>> Merits;
@@ -205,6 +202,12 @@ namespace vampireGameproject{
         private:
             std::string chronicle;
             std::string description;
+    };
+
+    class RulesofGame{
+        public:
+
+        private:
     };
          
 
