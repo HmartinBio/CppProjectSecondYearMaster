@@ -8,18 +8,19 @@
 #include <list>
 #include <string>
 #include <map>
+#include <bits/stdc++.h>
 
 namespace vampireGameproject{
 
     class Character{
         private:
             char playerName;
-            int age;
+            
+           
         
         public:
-            void setAge(int age);
+            
             char getPlayername(void);
-            int getAge(void);
             Character();
             Chronicle characterChronicle;
             Attributes characterAttributes;
@@ -39,37 +40,36 @@ namespace vampireGameproject{
      class Attributes{
         public:
             Attributes();
-            std::map<char,int> getAttributes(char attributeTable);
-            void setAttributes(char tableName,char attributeName, int value);
+            std::map<std::string,int> getAttributes(char attributeTable);
+            void setAttributes(char tableName, char attributeName, int value);
 
         private:
-            std::map<char,int> physicalAttributes;
-            std::map<char,int> socialAttributes;
-            std::map<char,int> mentalAttributes;
+            std::map<std::string,int> physicalAttributes;
+            std::map<std::string,int> socialAttributes;
+            std::map<std::string,int> mentalAttributes;
     };
 
     class Abilities{
         public:
             Abilities();
-            std::map<char,int> getAbilities(char tableName);
+            std::map<std::string,int> getAbilities(char tableName);
             void setAbilities(char tableName,char abilitieName, int value);
 
         private:
-            std::map<char,int> talents;
-            std::map<char,int> skills;
-            std::map<char,int> knowledges;
+            std::map<std::string,int> talents;
+            std::map<std::string,int> skills;
+            std::map<std::string,int> knowledges;
     };
 
     class Advantages{
         public:
             Advantages();
-            std::map<char,int> getAdvantages(void);
+            std::map<std::string,int> getAdvantages(char tableName);
             void setAdvantages(char tableName,char advantageName, int value);
 
         private:
-            std::map<char,std::map<char, int>> disciplines;
-            std::map<char,int> backgrounds;
-            std::map<char,int> virtues;
+            std::map<std::string,int> backgrounds;
+            std::map<std::string,int> virtues;
     };
 
 
@@ -78,14 +78,14 @@ namespace vampireGameproject{
     class Meritsflows{
         public: 
             Meritsflows();
-            std::map<char,int> getMerits(char type);
-            std::map<char,int> getFlaws(char type);
+            std::map<std::string,int> getMerits(char type);
+            std::map<std::string,int> getFlaws(char type);
             void setMerits(char table);
             void setFlaws(char table);
 
         private:
-            std::map<char, std::map<char, int>> Merits;
-            std::map<char, std::map<char, int>> Flaws; 
+            std::map<std::string, std::map<std::string, int>> Merits;
+            std::map<std::string, std::map<std::string, int>> Flaws; 
             //std::map<char,int> socialMerits;
             //std::map<char,int> socialFlaws;
             //std::map<char,int> physicalMerits;
@@ -146,9 +146,14 @@ namespace vampireGameproject{
             Clan();
             std::string getClan(void);
             std::string setClan(void);
+            void setVampirename(char name);
+            char getVampirename(void);
+
         private:
             std::string clan;
             std::string description;
+            std::map<char,std::map<char, int>> disciplines;
+            char vampireName;
     };
 
     class Daemenor : public setCharacterFields{
@@ -167,10 +172,14 @@ namespace vampireGameproject{
             Generation();
             std::string getGeneration(void);
             std::string setGeneration(void); 
+            int getAge(void);
+            void setAge(int age);
 
         private:
             std::string generation;
             std::string description;
+            int age;
+
     };
 
 
