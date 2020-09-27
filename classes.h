@@ -116,9 +116,9 @@ namespace vampireGameproject{
             std::string getHumanity(void);
             std::string getWillpower(void); 
             std::string getBloodpool(void);
-            void setHumanity(); 
-            void setWillpower();
-            void setBloodpool();
+            void setHumanity(int number); 
+            void setWillpower(int number);
+            void setBloodpool(int number); // Il faut tenir compte de la generation
 
 
         private:
@@ -129,7 +129,7 @@ namespace vampireGameproject{
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-
+/* 
     class setCharacterFields{
         public:
             setCharacterFields();
@@ -138,15 +138,55 @@ namespace vampireGameproject{
             void setDescription(std::string description);
             std::string getDescription(void);
     };
+ */
+
+    
+    class Daemenor {
+        public:
+            Daemenor();
+            std::string getDaemenor(void);
+            void setDaemenor(std::string daemenor);
+            void setDescription(std::string description); 
+
+        private:
+            std::string daemenor;
+            std::string description;
+    };
+
+    
+    class Nature {
+        public:
+            Nature();
+            std::string getNature(void);
+            void setNature(std::string nature);
+            void setDescription(std::string description); 
+
+        private:
+            std::string nature;
+            std::string description;
+    };
 
 
-    class Clan : public setCharacterFields{
+    class Chronicle {
+        public:
+            Chronicle();
+            std::string getChronicle(void);
+            void setChronicle(std::string chronicle);
+            void setDescription(std::string description); 
+
+        private:
+            std::string chronicle;
+            std::string description;
+    };
+
+    class Clan {
         public:
             Clan();
             std::string getClan(void);
             std::string setClan(void);
             void setVampirename(char name);
             char getVampirename(void);
+            void setDescription(std::string description); 
 
         private:
             std::string clan;
@@ -155,24 +195,14 @@ namespace vampireGameproject{
             char vampireName;
     };
 
-    class Daemenor : public setCharacterFields{
-        public:
-            Daemenor();
-            std::string getDaemenor(void);
-            std::string setDaemenor(void); 
-
-        private:
-            std::string demeanor;
-            std::string description;
-    };
-
-    class Generation : public setCharacterFields{
+    class Generation {
         public:
             Generation();
             std::string getGeneration(void);
             std::string setGeneration(void); 
             int getAge(void);
             void setAge(int age);
+            void setDescription(std::string description); 
 
         private:
             std::string generation;
@@ -181,30 +211,6 @@ namespace vampireGameproject{
 
     };
 
-
-
-    class Nature : public setCharacterFields{
-        public:
-            Nature();
-            std::string getNature(void);
-            void setNature(std::string nature);
-
-        private:
-            std::string nature;
-            std::string description;
-    };
-
-
-    class Chronicle : public setCharacterFields{
-        public:
-            Chronicle();
-            std::string getChronicle(void);
-            void setChronicle(std::string chronicle);
-
-        private:
-            std::string chronicle;
-            std::string description;
-    };
 
     class RulesofGame{
         public:
