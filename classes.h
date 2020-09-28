@@ -14,11 +14,12 @@ namespace vampireGameproject{
 
     class Character{
         private:
-            char playerName;
+            std::string playerName;
             
         public:
-            char getPlayername(void);
-            Character(const Parsetext &textParser);
+            std::string getPlayername(void);
+            void setPlayername(std::string name);
+            Character(Parsetext& textParser);
             ~Character();
             Chronicle characterChronicle;
             Attributes characterAttributes;
@@ -159,6 +160,7 @@ namespace vampireGameproject{
         private:
             std::string daemenor;
             std::string description;
+            Parsetext& textParser;
     };
 
     
@@ -173,7 +175,7 @@ namespace vampireGameproject{
         private:
             std::string nature;
             std::string description;
-            const Parsetext &textParser;
+            Parsetext& textParser;
 
     };
 
@@ -189,6 +191,7 @@ namespace vampireGameproject{
         private:
             std::string chronicle;
             std::string description;
+            Parsetext& textParse;
     };
 
     class Clan {
@@ -196,16 +199,17 @@ namespace vampireGameproject{
             Clan();
             ~Clan();
             std::string getClan(void);
-            std::string setClan(void);
+            void setClan(std::string clan);
             void setVampirename(char name);
-            char getVampirename(void);
+            std::string getVampirename(void);
             void setDescription(void); 
 
         private:
             std::string clan;
             std::string description;
             std::map<char,std::map<char, int>> disciplines;
-            char vampireName;
+            std::string vampireName;
+            Parsetext& textParse;
     };
 
     class Generation {
@@ -213,7 +217,7 @@ namespace vampireGameproject{
             Generation();
             ~Generation();
             std::string getGeneration(void);
-            std::string setGeneration(void); 
+            void setGeneration(std::string generation); 
             int getAge(void);
             void setAge(int age);
             void setDescription(void); 
@@ -222,7 +226,7 @@ namespace vampireGameproject{
             std::string generation;
             std::string description;
             int age;
-
+            Parsetext& textParse;
     };
 
 
@@ -257,14 +261,14 @@ namespace vampireGameproject{
 
         private:
             std::list<char> ListofInformationstoParse;
-            const Parsetext textParser;
+            Parsetext textParser;
     };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     class Parsetext{
         public:
-            const std::string parse_text(char categorie);
-            const std::string parse_text(char categorie, char table, char nameOfcomptence);
+            std::string parse_text(char categorie);
+            std::string parse_text(char categorie, char table, char nameOfcomptence);
     };
 
 }
