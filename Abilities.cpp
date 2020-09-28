@@ -36,7 +36,7 @@ vampireGameproject::Abilities::Abilities(){
     knowledges.insert(std::pair<std::string,int>("Expert Knowledge", 0));
 }
 
-std::map<char,int> vampireGameproject::Abilities::getAbilities(char tableName){
+std::map<std::string, int> vampireGameproject::Abilities::getAbilities(char tableName){
     switch (tableName){
         case 'talents': return talents;
             break;
@@ -49,7 +49,7 @@ std::map<char,int> vampireGameproject::Abilities::getAbilities(char tableName){
     }
 }
 
-void vampireGameproject::Abilities::setAbilities(char tableName,char abilitieName, int value){
+void vampireGameproject::Abilities::setAbilities(char tableName,std::string abilitieName, int value){
     switch(tableName){
         case 'talents': talents[abilitieName] += value;
             break;
