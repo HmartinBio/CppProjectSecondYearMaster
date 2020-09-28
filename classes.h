@@ -54,7 +54,7 @@ namespace vampireGameproject{
             Abilities();
             ~Abilities();
             std::map<std::string,int> getAbilities(char tableName);
-            void setAbilities(char tableName,char abilitieName, int value);
+            void setAbilities(char tableName,std::string abilitieName, int value);
 
         private:
             std::map<std::string,int> talents;
@@ -67,7 +67,7 @@ namespace vampireGameproject{
             Advantages();
             ~Advantages();
             std::map<std::string, int> getAdvantages(char tableName);
-            void setAdvantages(char tableName,char advantageName, int value);
+            void setAdvantages(char tableName, std::string abilitieName, int value);
 
         private:
             std::map<std::string, int> backgrounds;
@@ -81,14 +81,14 @@ namespace vampireGameproject{
         public: 
             Meritsflows();
             ~Meritsflows();
-            std::map<std::string,int> getMerits(char type);
-            std::map<std::string,int> getFlaws(char type);
-            void setMerits(char table, char meritsName, int number);
-            void setFlaws(char table, char flawsName, int number);
+            std::map<std::string,int> getMerits(std::string type);
+            std::map<std::string,int> getFlaws(std::string type);
+            void setMerits(std::string table, std::string meritsName, int number);
+            void setFlaws(std::string table, std::string flawsName, int number);
 
         private:
-            std::map<std::string, std::map<std::string, int>> Merits;
-            std::map<std::string, std::map<std::string, int>> Flaws; 
+            std::map<std::string, std::map<std::string, int>> merits;
+            std::map<std::string, std::map<std::string, int>> flaws; 
             //std::map<char,int> socialMerits;
             //std::map<char,int> socialFlaws;
             //std::map<char,int> physicalMerits;
@@ -105,16 +105,17 @@ namespace vampireGameproject{
             Health();
             ~Health();
             int getPointlife(void);
-            std::list<char> getWeakness(void);
+            std::string getWeakness(void);
             void setPointlife(int pointLife);
             void setWeakness(char weakness);
-            void setPointlifeDescription(std::string description);
+            void setPointlifeDescription(void);
             std::string getPointlifeDescription(void);
 
         private:
             int pointLife;
-            std::list<char> weakness;
+            std::string weakness;
             std::string pointLifedescription;
+            Parsetext& textParser;
     };
 
     class CharacterTraits{
