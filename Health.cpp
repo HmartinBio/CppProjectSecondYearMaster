@@ -1,6 +1,6 @@
 #include "classes.h"
 
-vampireGameproject::Health::Health(){}
+vampireGameproject::Health::Health(Parsetext& textParser): textParser(textParser){}
 vampireGameproject::Health::~Health(){}
 
 int vampireGameproject::Health::getPointlife(void){
@@ -20,7 +20,7 @@ std::string vampireGameproject::Health::getWeakness(void){
 }
 
 void vampireGameproject::Health::setPointlifeDescription(void){
-    textParser.parse_text();
+    pointLifedescription = textParser.parse_text();
 }
 
 
