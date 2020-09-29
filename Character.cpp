@@ -17,29 +17,23 @@ vampireGameproject::Character::Character(Parsetext& textParser)
 
 
 
-/** Constructor of the class Character.
+/** Destructor of the class Character.
 *
-* Modification of the Constructor of Character
-* for this one gives the Parsetext reference to 
-* the other class members contained in Character 
+* Modification of the Destructor of Character  
 *
-* @param textParser reference of Parsetext
 */
-
 
 
 vampireGameproject::Character::~Character(){}
 
 
 
-
-/** Constructor of the class Character.
+/** Implementation of the getPlayername method.
 *
-* Modification of the Constructor of Character
-* for this one gives the Parsetext reference to 
-* the other class members contained in Character 
+* Implementation of the getPlayername method
+* Method returning the player name 
+*  
 *
-* @param textParser reference of Parsetext
 */
 
 
@@ -50,13 +44,12 @@ std::string vampireGameproject::Character::getPlayername(void){
 
 
 
-/** Constructor of the class Character.
+/** Implementation of the setPlayername method.
 *
-* Modification of the Constructor of Character
-* for this one gives the Parsetext reference to 
-* the other class members contained in Character 
+* Implementation of the setPlayername method
+* Method modifing the attribute playerName 
 *
-* @param textParser reference of Parsetext
+* @param name string to assign to playerName
 */
 
 
