@@ -71,8 +71,8 @@ namespace vampireGameproject{
         public:
             Attributes();
             ~Attributes();
-            std::map<std::string,int> getAttributes(char attributeTable);
-            void setAttributes(char tableName, std::string attributeName, int value);
+            std::map<std::string,int> getAttributes(std::string attributeTable);
+            void setAttributes(std::string tableName, std::string attributeName, int value);
 
         private:
             std::map<std::string,int> physicalAttributes;
@@ -98,8 +98,8 @@ namespace vampireGameproject{
         public:
             Abilities();
             ~Abilities();
-            std::map<std::string,int> getAbilities(char tableName);
-            void setAbilities(char tableName,std::string abilitieName, int value);
+            std::map<std::string,int> getAbilities(std::string tableName);
+            void setAbilities(std::string tableName,std::string abilitieName, int value);
 
         private:
             std::map<std::string,int> talents;
