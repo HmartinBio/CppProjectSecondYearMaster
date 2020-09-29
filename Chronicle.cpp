@@ -1,6 +1,6 @@
 #include "classes.h"
 
-vampireGameproject::Chronicle::Chronicle(){}
+vampireGameproject::Chronicle::Chronicle(Parsetext& textParser): textParser(textParser){}
 vampireGameproject::Chronicle::~Chronicle(){}
 
 std::string vampireGameproject::Chronicle::getChronicle(void){
@@ -12,6 +12,6 @@ void vampireGameproject::Chronicle::setChronicle(std::string chronicle){
 }
 
 void vampireGameproject::Chronicle::setDescription(void){
-    textParse.parse_text();
+    description = textParser.parse_text();
 }
 
