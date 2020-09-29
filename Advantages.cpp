@@ -1,9 +1,23 @@
 #include "classes.h"
 
+
+
+/** Constructor of the class Advantages.
+*
+* Modification of the constructor of Advantages
+*
+*
+*
+*/
+
+
 vampireGameproject::Advantages::Advantages(){
+    /*
     virtues.insert(std::pair<std::string, int>("Conscience", 0));
     virtues.insert(std::pair<std::string, int>("Self-control", 0));
     virtues.insert(std::pair<std::string, int>("Courage", 0));
+
+    */
 
     /* backgrounds.insert(std::pair<char, int>("Allies", 0));
     backgrounds.insert(std::pair<char, int>("Alternate identity", 0));
@@ -22,27 +36,60 @@ vampireGameproject::Advantages::Advantages(){
      */
 }
 
+
+/** Destructor of the class Advantages.
+*
+* Modification of the destructor of Advantages
+*
+*
+*
+*/
+
+
+
 vampireGameproject::Advantages::~Advantages(){}
 
-std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(char tableName){
-    switch(tableName){
-        case 'backgrounds': return backgrounds;
-            break;
-        case 'virtues': return virtues;
-            break;
-        default:
-            break;
+
+/** Implementation of the getAdvantages method.
+*
+* Implementation of the getAdvantages method
+* 
+* @param tableName
+*
+*/
+
+
+
+
+std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::string tableName){
+    if(tableName == "backgrounds"){
+        return backgrounds;
+    }
+
+    else if(tableName == "virtues"){
+        return virtues;
     }
 }
 
- void vampireGameproject::Advantages::setAdvantages(char tableName, std::string abilitieName, int value){
-     switch(tableName){
-         case 'backgrounds': backgrounds[abilitieName] += value;
-            break;
-        case 'virtues': virtues[abilitieName] += value;
-            break;
-        default:
-            break;
+
+
+/** Implementation of the setAdvantages method.
+*
+* Implementation of the setAdvantages method
+* 
+* @param tableName
+*
+*/
+
+
+ void vampireGameproject::Advantages::setAdvantages(std::string tableName, std::string abilitieName, int value){
+     if(tableName == "backgrounds"){
+         backgrounds.insert(std::pair<std::string, int>(abilitieName, value));
+     }
+
+     else if(tableName == "virtues"){
+         virtues.insert(std::pair<std::string, int>(abilitieName, value));
+
      }
  }
 
