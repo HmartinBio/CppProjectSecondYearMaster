@@ -1,5 +1,9 @@
 #include "classes.h"
 
+
+
+
+
 vampireGameproject::Meritsflows::Meritsflows(){
     merits.insert(std::make_pair("Physical", std::map<std::string, int>()));
     flaws.insert(std::make_pair("Physical", std::map<std::string, int>()));
