@@ -1,10 +1,10 @@
 #include "classes.h"
 
-vampireGameproject::Generation::Generation(){}
+vampireGameproject::Generation::Generation(Parsetext& textParser): textParser(textParser){}
 vampireGameproject::Generation::~Generation(){}
 
 std::string vampireGameproject::Generation::getGeneration(void){
-    return Generation::generation = generation;
+    return generation;
 }
 
 void vampireGameproject::Generation::setGeneration(std::string generation){
@@ -20,6 +20,6 @@ void vampireGameproject::Generation::setAge(int age){
 }
 
 void vampireGameproject::Generation::setDescription(void){
-    textParse.parse_text();
+    description = textParser.parse_text();
 }
 
