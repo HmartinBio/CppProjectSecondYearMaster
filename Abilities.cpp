@@ -1,6 +1,19 @@
 #include "classes.h"
 
+
+
+/** Constructor of the class Abilities.
+*
+* Modification of the constructor of Abilities
+*
+*
+*
+*/
+
+
+
 vampireGameproject::Abilities::Abilities(){
+    /*
     talents.insert(std::pair<std::string,int>("Alertness", 0));
     talents.insert(std::pair<std::string,int>("Athletics", 0));
     talents.insert(std::pair<std::string,int>("Awareness", 0));
@@ -34,30 +47,55 @@ vampireGameproject::Abilities::Abilities(){
     knowledges.insert(std::pair<std::string,int>("Science", 0));
     knowledges.insert(std::pair<std::string,int>("Technology", 0));
     knowledges.insert(std::pair<std::string,int>("Expert Knowledge", 0));
+    */
 }
 
-std::map<std::string, int> vampireGameproject::Abilities::getAbilities(char tableName){
-    switch (tableName){
-        case 'talents': return talents;
-            break;
-        case 'skills': return skills;
-            break;
-        case 'knowledges': return knowledges;
-            break; 
-        default:
-            break;
+
+/** Implementation of the getAbilities method.
+*
+* Implementation of the getAbilities method
+* 
+* @param attributeTable name of the table to return 
+*
+*/
+
+
+std::map<std::string, int> vampireGameproject::Abilities::getAbilities(std::string tableName){
+    if(tableName == "talents"){
+        return talents;
+    }
+
+    else if(tableName == "skills"){
+        return talents;
+    }
+    
+    else if(tableName == "knowledges"){
+        return knowledges;
     }
 }
 
-void vampireGameproject::Abilities::setAbilities(char tableName,std::string abilitieName, int value){
-    switch(tableName){
-        case 'talents': talents[abilitieName] += value;
-            break;
-        case 'skills': skills[abilitieName] += value;
-            break;
-        case 'knowledges': knowledges[abilitieName] += value;
-            break;
-        default:
-            break;
+
+/** Implementation of the setAbilities method.
+*
+* Implementation of the setAbilities method
+* 
+* @param tableName name of the table to add an attribute 
+* @param abilitieName name of the abilitie to add
+* @param value value of the abilitie to add
+*/
+
+
+void vampireGameproject::Abilities::setAbilities(std::string tableName, std::string abilitieName, int value){
+    if(tableName == "talents"){
+        talents.insert(std::pair<std::string,int>(abilitieName, value));
     }
+
+    else if(tableName == "skills"){
+        skills.insert(std::pair<std::string,int>(abilitieName, value));
+    }
+
+    else if(tableName == "knowledges"){
+        knowledges.insert(std::pair<std::string,int>(abilitieName, value));
+    }
+
 }
