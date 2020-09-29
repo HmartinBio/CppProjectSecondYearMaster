@@ -1,6 +1,7 @@
 #include "classes.h"
 
-vampireGameproject::Nature::Nature( Parsetext& textParserreference) : textParser(textParserreference){}
+vampireGameproject::Nature::Nature(Parsetext& textParser): textParser(textParser){}
+
 vampireGameproject::Nature::~Nature(){}
 
 std::string vampireGameproject::Nature::getNature(void){
@@ -12,6 +13,6 @@ void vampireGameproject::Nature::setNature(std::string nature){
 }
 
 void vampireGameproject::Nature::setDescription(){
-    textParser.parse_text();
+    description = textParser.parse_text();
 }
 
