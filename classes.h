@@ -1,6 +1,16 @@
-//File: classes.h
-//AuthorName: Hugo 
-//AuthorSurname: MARTIN
+/**
+ * @file classes.h
+ *
+ * @brief Header file containing the class prototypes of the Game project
+ *
+ * @ingroup PackageName
+ * (Note: this needs exactly one @defgroup somewhere)
+ *
+ * @author Hugo MARTIN
+ * Contact: hugo.martin.1@etu.univ-amu.fr
+ *
+ */
+
 
 #ifndef CLASS_PROJECT_VAMPIRE_HEADER
 #define CLASS_PROJECT_VAMPIRE_HEADER
@@ -8,9 +18,20 @@
 #include <list>
 #include <string>
 #include <map>
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> // imported to make multidimensional map
+
 
 namespace vampireGameproject{
+
+/**
+* Implementation of the Class Character
+*
+* Character class is designed such as all the informations concerning a
+* playable character are written in this class. Once this class is created
+* all the informations contained in a Character object are extracted to 
+* modify the character picture. Character object are created once the 
+* Graphical user interface received all the informations to create a character
+*/
 
     class Character{
         private:
@@ -34,7 +55,17 @@ namespace vampireGameproject{
             Clan characterClan;
     };
 
-///////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Implementation of the Class Attributes
+ *
+ * Attributes class is designed such as all the attributes of a character 
+ * are contained in this class
+ *  
+ * 
+ *
+ */
+
 
      class Attributes{
         public:
@@ -49,6 +80,20 @@ namespace vampireGameproject{
             std::map<std::string,int> mentalAttributes;
     };
 
+
+
+/**
+ * Implementation of the Class Abilities
+ *
+ * Attributes class is designed such as all the attributes of a character 
+ * are contained in this class.
+ *  
+ * 
+ *
+ */
+
+
+
     class Abilities{
         public:
             Abilities();
@@ -61,6 +106,18 @@ namespace vampireGameproject{
             std::map<std::string,int> skills;
             std::map<std::string,int> knowledges;
     };
+
+
+/**
+ * Implementation of the Class Advantages
+ *
+ * Advantages class is designed such as all the abilities of a character 
+ * are contained in this class
+ *  
+ * 
+ *
+ */
+
 
     class Advantages{
         public:
@@ -75,7 +132,17 @@ namespace vampireGameproject{
     };
 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Implementation of the Class Meritsflows
+ *
+ * Meritsflows class is designed such as all the Merits and Flows of a character 
+ * are contained in this class
+ *  
+ * 
+ *
+ */
+
 
     class Meritsflows{
         public: 
@@ -88,16 +155,20 @@ namespace vampireGameproject{
 
         private:
             std::map<std::string, std::map<std::string, int>> merits;
-            std::map<std::string, std::map<std::string, int>> flaws; 
-            //std::map<char,int> socialMerits;
-            //std::map<char,int> socialFlaws;
-            //std::map<char,int> physicalMerits;
-            //std::map<char,int> physicalFlaws;
-            //std::map<char,int> mentalMerits;
-            //std::map<char,int> mentalFlaws;
-            //std::map<char,int> supernaturalMerits;
-            //std::map<char,int> supernaturalFlaws;
+            std::map<std::string, std::map<std::string, int>> flaws;
     };
+
+
+
+/**
+ * Implementation of the Class Health
+ *
+ * Health class is designed such as weakness and point of life 
+ * of the character are contained in this class
+ *  
+ * 
+ *
+ */
 
 
     class Health{
@@ -118,6 +189,18 @@ namespace vampireGameproject{
             Parsetext& textParser;
     };
 
+
+/**
+ * Implementation of the Class CharacterTraits
+ *
+ * CharacterTraits class is designed such as Humanity/Path, Bloodpool
+ * and Willpower fields of a character are contained in this class
+ *  
+ * 
+ *
+ */
+
+
     class CharacterTraits{
         public:
             CharacterTraits();
@@ -137,7 +220,6 @@ namespace vampireGameproject{
     };
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////
 /* 
     class setCharacterFields{
         public:
@@ -149,7 +231,19 @@ namespace vampireGameproject{
     };
  */
 
-    
+
+/**
+ * Implementation of the Class Daemenor
+ *
+ * Daemenor class is designed such as the Daemenor information of a character 
+ * is contained in this class
+ *  
+ * 
+ *
+ */
+
+
+
     class Daemenor {
         public:
             Daemenor(Parsetext& textParser);
@@ -164,7 +258,18 @@ namespace vampireGameproject{
             Parsetext& textParser;
     };
 
-    
+
+/**
+ * Implementation of the Class Nature
+ *
+ * Nature class is designed such as all the Nature information of a character 
+ * is contained in this class
+ *  
+ * 
+ *
+ */
+
+ 
     class Nature {
         public:
             Nature(Parsetext& textParser);
@@ -181,6 +286,18 @@ namespace vampireGameproject{
     };
 
 
+/**
+ * Implementation of the Class Chronicle
+ *
+ * Chronicle class is designed such as the information 
+ * dealing with the set of stories followed by a character 
+ * is contained in this class
+ * 
+ *
+ */
+
+
+
     class Chronicle {
         public:
             Chronicle(Parsetext& textParser);
@@ -194,6 +311,19 @@ namespace vampireGameproject{
             std::string description;
             Parsetext& textParser;
     };
+
+
+/**
+ * Implementation of the Class Clan
+ *
+ * Clan class is designed such as all informations 
+ * concerning or linked to the clan of a character 
+ * are contained in this class 
+ * 
+ *
+ */
+
+
 
     class Clan {
         public:
@@ -213,6 +343,19 @@ namespace vampireGameproject{
             Parsetext& textParser;
     };
 
+
+/**
+ * Implementation of the Class Generation
+ *
+ * Generation class is designed such as all the informations 
+ * related to the generation of a character are contained in this class
+ *  
+ * 
+ *
+ */
+
+
+
     class Generation {
         public:
             Generation(Parsetext& textParser);
@@ -231,6 +374,18 @@ namespace vampireGameproject{
     };
 
 
+/**
+ * Implementation of the Class RulesofGame
+ *
+ * RulesofGame class is designed such as all the tests 
+ * to verify inputted informations on the graphical user
+ * interface are contained in this class
+ * 
+ *
+ */
+
+
+
     class RulesofGame{
         public:
             RulesofGame();
@@ -241,7 +396,20 @@ namespace vampireGameproject{
     };
          
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * Implementation of the Class Gui
+ *
+ * Gui class is designed such as all the elements composing  
+ * the graphical user interface are contained in this class
+ *  
+ * 
+ *
+ */
+
+
+
 
     class Gui{
         public:
@@ -251,11 +419,22 @@ namespace vampireGameproject{
             RulesofGame& testGui;
     };
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
 
 // The second function parse_text aims to get the description of a skill, 
 // a virtue, etc... proper to the character
 // The function is not contained in each class but in the controller
+
+
+/**
+ * Implementation of the Class Controllor
+ *
+ * Controllor class is designed to control the coordination between the  
+ * graphical user interface and the other functionalities of the program
+ *  
+ * 
+ *
+ */
+
 
     class Controllor{
         public:
@@ -266,13 +445,48 @@ namespace vampireGameproject{
             std::list<std::string> ListofInformationstoParse;
             Parsetext textParser;
     };
-////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * Implementation of the Class Parsetext
+ *
+ * Parsetext class is designed to retrieve some informations in a text file 
+ * The others class have a reference of the Parsetext class to avoid to 
+ * copy a same function in several classes
+ * 
+ *
+ */
+
+
 
     class Parsetext{
         public:
+            Parsetext();
+            ~Parsetext();
             std::string parse_text(char categorie);
             std::string parse_text(char categorie, char table, char nameOfcomptence);
     };
 
+
+/**
+ * Implementation of the Class Picturemodifying
+ *
+ * Picturemodifying class is designed to modify the picture to include  
+ * all the information about a character. Once the graphical user interface
+ * received all the informations about a character, Picturemodifying modifies 
+ * the picture to generate a picture with all the informations about a character
+ *
+ */
+
+
+    class Picturemodifying{
+        public:
+            Picturemodifying();
+            ~Picturemodifying();
+
+        private:
+    };
+
 }
+
 #endif
