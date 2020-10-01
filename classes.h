@@ -388,11 +388,11 @@ namespace vampireGameproject{
 
     class RulesofGame{
         public:
-            RulesofGame();
+            RulesofGame(Gui& classReference);
             ~RulesofGame();
 
         private:
-            Gui& graphicalInterface;
+            Gui& referenceOutterclass;
     };
          
 
@@ -416,7 +416,7 @@ namespace vampireGameproject{
             Gui();
             ~Gui();
         private:
-            RulesofGame& testGui;
+            RulesofGame testGui;
     };
 
 
@@ -442,8 +442,9 @@ namespace vampireGameproject{
             ~Controllor();
 
         private:
-            std::list<std::string> ListofInformationstoParse;
+            //std::list<std::string> ListofInformationstoParse;
             Parsetext textParser;
+            Gui graphicalUserinterface;
     };
 
 
