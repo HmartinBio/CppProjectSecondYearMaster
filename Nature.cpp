@@ -35,7 +35,7 @@ vampireGameproject::Nature::~Nature(){}
 /** Implementation of the getNature method.
 *
 * Implementation of the getNature method
-* 
+* Method returning the nature value
 *
 * 
 */
@@ -50,6 +50,7 @@ std::string vampireGameproject::Nature::getNature(void){
 /** Implementation of the setNature method.
 *
 * Implementation of the setNature method
+* Method setting the nature value
 * 
 * @param nature nature categorie to set
 * 
@@ -61,7 +62,13 @@ void vampireGameproject::Nature::setNature(std::string nature){
 }
 
 
-
+/** Implementation of the setDescription method.
+*
+* Implementation of the setDescription method
+* Method setting the description value
+* 
+* 
+*/
 
 
 void vampireGameproject::Nature::setDescription(){
