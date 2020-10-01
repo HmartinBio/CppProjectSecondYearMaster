@@ -54,6 +54,7 @@ vampireGameproject::Abilities::Abilities(){
 /** Implementation of the getAbilities method.
 *
 * Implementation of the getAbilities method
+* Method returning the abilities
 * 
 * @param attributeTable name of the table to return 
 *
@@ -78,6 +79,7 @@ std::map<std::string, int> vampireGameproject::Abilities::getAbilities(std::stri
 /** Implementation of the setAbilities method.
 *
 * Implementation of the setAbilities method
+* Method setting the abilities
 * 
 * @param tableName name of the table to add an attribute 
 * @param abilitieName name of the abilitie to add
