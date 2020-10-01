@@ -29,8 +29,9 @@ vampireGameproject::Attributes::Attributes(){
 /** Implementation of the getAttributes method.
 *
 * Implementation of the getAttributes method
-*  
-* @param attributeTable name of the table to return 
+* Method returning the attributes
+*
+* @param attributeTable name of the table to return
 *
 */
 
