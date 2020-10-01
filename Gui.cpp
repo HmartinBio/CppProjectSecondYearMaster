@@ -4,8 +4,8 @@
 /** Constructor of the class Gui.
 *
 * Modification of the constructor of Gui
-* 
-*
+* Initialisation of the testGui constructor 
+* before the Gui constructor be initialised
 *
 */
 
