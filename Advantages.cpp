@@ -53,6 +53,7 @@ vampireGameproject::Advantages::~Advantages(){}
 /** Implementation of the getAdvantages method.
 *
 * Implementation of the getAdvantages method
+* Method returning the Advantages
 * 
 * @param tableName
 *
@@ -76,9 +77,11 @@ std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::st
 /** Implementation of the setAdvantages method.
 *
 * Implementation of the setAdvantages method
+* Method setting the advantages
 * 
-* @param tableName
-*
+* @param tableName name of the table where setting the abilitie
+* @param abilitieName name of the abilitie to set
+* @param value value of the abilitie to set
 */
 
 
