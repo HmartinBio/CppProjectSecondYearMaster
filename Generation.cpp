@@ -33,7 +33,7 @@ vampireGameproject::Generation::~Generation(){}
 /** Implementation of the getGeneration method.
 *
 * Implementation of the getGeneration method
-* 
+* Method getting the generation 
 *
 * 
 */
@@ -50,6 +50,7 @@ std::string vampireGameproject::Generation::getGeneration(void){
 /** Implementation of the setGeneration method.
 *
 * Implementation of the setGeneration method
+* Method setting the generation
 * 
 * @param generation generation categorie to set
 * 
@@ -65,7 +66,7 @@ void vampireGameproject::Generation::setGeneration(std::string generation){
 /** Implementation of the getAge method.
 *
 * Implementation of the getAge method
-* 
+* Method getting the age value
 *
 * 
 */
@@ -81,6 +82,7 @@ int vampireGameproject::Generation::getAge(void){
 /** Implementation of the setAge method.
 *
 * Implementation of the setAge method
+* Method setting the age value
 * 
 * @param age age value to set
 * 
@@ -95,7 +97,7 @@ void vampireGameproject::Generation::setAge(int age){
 /** Implementation of the setDescription method.
 *
 * Implementation of the setDescription method
-* 
+* Method setting the description
 *
 * 
 */
