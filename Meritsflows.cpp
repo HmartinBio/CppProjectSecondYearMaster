@@ -40,6 +40,7 @@ vampireGameproject::Meritsflows::~Meritsflows(){}
 /** Implementation of the getMerits method.
 *
 * Implementation of the getMerits method
+* Method returning the Merits
 * 
 * @param type name of the table to return 
 *
@@ -55,7 +56,8 @@ std::map<std::string,int> vampireGameproject::Meritsflows::getMerits(std::string
 /** Implementation of the getFlaws method.
 *
 * Implementation of the getFlaws method
-* 
+* Method returning the Flaws 
+*
 * @param type name of the table to return 
 *
 */
@@ -70,6 +72,7 @@ std::map<std::string,int> vampireGameproject::Meritsflows::getFlaws(std::string 
 /** Implementation of the setMerits method.
 *
 * Implementation of the setMerits method
+* Method setting Merits values
 * 
 * @param table name of the table to add a merit 
 * @param meritsName name of the merit to add
@@ -86,6 +89,7 @@ void vampireGameproject::Meritsflows::setMerits(std::string table, std::string m
 /** Implementation of the setFlaws method.
 *
 * Implementation of the setFlaws method
+* Method setting Flaws values
 * 
 * @param table name of the table to add a flaw 
 * @param flawsName name of the flaw to add
