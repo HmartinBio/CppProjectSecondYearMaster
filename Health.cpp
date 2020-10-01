@@ -30,7 +30,7 @@ vampireGameproject::Health::~Health(){}
 /** Implementation of the getPointlife method.
 *
 * Implementation of the getPointlife method
-* 
+* Method returning pointLife value
 *
 *
 */
@@ -45,6 +45,7 @@ int vampireGameproject::Health::getPointlife(void){
 /** Implementation of the setPointlife method.
 *
 * Implementation of the setPointlife method
+* Method setting the pointLife value
 * 
 * @param pointLife value of points of life to set
 * 
@@ -60,7 +61,7 @@ void vampireGameproject::Health::setPointlife(int pointLife){
 /** Implementation of the getPointlifeDescription method.
 *
 * Implementation of the getPointlifeDescription method
-* 
+* Method returning the description associated to the point life value
 *
 *
 */
@@ -75,7 +76,7 @@ std::string vampireGameproject::Health::getPointlifeDescription(void){
 /** Implementation of the getWeakness method.
 *
 * Implementation of the getWeakness method
-* 
+* Method returning Weakness 
 *
 *
 */
@@ -90,7 +91,7 @@ std::string vampireGameproject::Health::getWeakness(void){
 /** Implementation of the setPointlifeDescription method.
 *
 * Implementation of the setPointlifeDescription method
-* 
+* Method setting the point life description 
 *
 *
 */
