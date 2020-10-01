@@ -123,8 +123,8 @@ namespace vampireGameproject{
         public:
             Advantages();
             ~Advantages();
-            std::map<std::string, int> getAdvantages(char tableName);
-            void setAdvantages(char tableName, std::string abilitieName, int value);
+            std::map<std::string, int> getAdvantages(std::string tableName);
+            void setAdvantages(std::string tableName, std::string abilitieName, int value);
 
         private:
             std::map<std::string, int> backgrounds;
