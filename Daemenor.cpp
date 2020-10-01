@@ -33,6 +33,7 @@ vampireGameproject::Daemenor::~Daemenor(){}
 /** Implementation of the setDaemenor method.
 *
 * Implementation of the setDaemenor method
+* Method setting the Daemenor value
 * 
 * @param daemenor deamenor categorie to set
 * 
@@ -49,7 +50,7 @@ void vampireGameproject::Daemenor::setDaemenor(std::string daemenor){
 /** Implementation of the getDaemenor method.
 *
 * Implementation of the getDaemenor method
-*
+* Method returning the Daemenor value
 *
 *
 */
@@ -65,7 +66,7 @@ std::string vampireGameproject::Daemenor::getDaemenor(void){
 /** Implementation of the setDescription method.
 *
 * Implementation of the setDescription method
-*
+* Method setting the description to Daemenor
 *
 *
 */
