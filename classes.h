@@ -410,7 +410,6 @@ namespace vampireGameproject{
 
 
 
-
     class Gui{
         public:
             Gui();
