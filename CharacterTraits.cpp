@@ -15,9 +15,9 @@ vampireGameproject::CharacterTraits::CharacterTraits(){}
 
 
 
-/** Constructor of the class CharacterTraits.
+/** Destructor of the class CharacterTraits.
 *
-* Modification of the constructor of CharacterTraits
+* Modification of the destructor of CharacterTraits
 *
 *
 *
@@ -31,7 +31,8 @@ vampireGameproject::CharacterTraits::~CharacterTraits(){}
 /** Implementation of the setHumanity method.
 *
 * Implementation of the setHumanity method
-* 
+* Method setting the humanity value 
+*
 * @param number humanity value to set
 * 
 */
@@ -47,6 +48,7 @@ void vampireGameproject::CharacterTraits::setHumanity(int number){
 /** Implementation of the setWillpower method.
 *
 * Implementation of the setWillepower method
+* Method setting the willPower value
 * 
 * @param number value of points of life to set
 * 
@@ -63,6 +65,7 @@ void vampireGameproject::CharacterTraits::setWillpower(int number){
 /** Implementation of the setBloodpool method.
 *
 * Implementation of the setBloodpool method
+* Method setting the bloodPool value
 * 
 * @param number value of points of bloodPool to set
 * 
@@ -78,7 +81,7 @@ void vampireGameproject::CharacterTraits::setBloodpool(int number){
 /** Implementation of the getHumanity method.
 *
 * Implementation of the getHumanity method
-* 
+* Method returning the humanity value
 *
 * 
 */
@@ -119,7 +122,7 @@ std::string vampireGameproject::CharacterTraits::getHumanity(void){
 /** Implementation of the getWillpower method.
 *
 * Implementation of the getWillpower method
-* 
+* Method returning the willPower value
 *
 * 
 */
@@ -158,7 +161,7 @@ std::string vampireGameproject::CharacterTraits::getWillpower(void){
 /** Implementation of the getBloodpool method.
 *
 * Implementation of the getBloodpool method
-* 
+* Method returning the bloodPool value 
 *
 * 
 */
