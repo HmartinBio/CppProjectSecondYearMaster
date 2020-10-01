@@ -34,7 +34,7 @@ vampireGameproject::Chronicle::~Chronicle(){}
 /** Implementation of the getChronicle method.
 *
 * Implementation of the getChronicle method
-* 
+* Method returning the chronicle value
 *
 * 
 */
@@ -50,7 +50,8 @@ std::string vampireGameproject::Chronicle::getChronicle(void){
 /** Implementation of the setChronicle method.
 *
 * Implementation of the setChronicle method
-* 
+* Method setting the chronicle value 
+*
 * @param chronicle nature categorie to set
 * 
 */
@@ -66,7 +67,7 @@ void vampireGameproject::Chronicle::setChronicle(std::string chronicle){
 /** Implementation of the setDescription method.
 *
 * Implementation of the setDescription method
-* 
+* Method setting the description of Chronicle
 *
 * 
 */
