@@ -31,6 +31,14 @@ vampireGameproject::Clan::~Clan(){}
 
 
 
+/** Implementation of the getClan method.
+*
+* Implementation of the getClan method
+* Method returning the clan 
+*
+* 
+*/
+
 
 
 std::string vampireGameproject::Clan::getClan(void){
@@ -42,6 +50,7 @@ std::string vampireGameproject::Clan::getClan(void){
 /** Implementation of the setClan method.
 *
 * Implementation of the setClan method
+* Method setting the clan 
 * 
 * @param clan clan categorie to set
 * 
@@ -59,7 +68,7 @@ void vampireGameproject::Clan::setClan(std::string clan){
 /** Implementation of the setVampirename method.
 *
 * Implementation of the setVampirename method
-* 
+* Method setting the name of the Vampire
 *
 * 
 */
@@ -77,7 +86,7 @@ void vampireGameproject::Clan::setVampirename(void){
 /** Implementation of the setDescription method.
 *
 * Implementation of the setDescription method
-* 
+* Method setting the Description of the clan
 *
 * 
 */
@@ -93,7 +102,7 @@ void vampireGameproject::Clan::setDescription(void){
 /** Implementation of the getVampirename method.
 *
 * Implementation of the getVampirename method
-* 
+* Method getting the Vampire name
 *
 * 
 */
