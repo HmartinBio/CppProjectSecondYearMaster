@@ -1,21 +1,91 @@
 #include "classes.h"
 
+
+
+/** Constructor of the class CharacterTraits.
+*
+* Modification of the constructor of CharacterTraits
+*
+*
+*
+*/
+
+
 vampireGameproject::CharacterTraits::CharacterTraits(){}
+
+
+
+/** Constructor of the class CharacterTraits.
+*
+* Modification of the constructor of CharacterTraits
+*
+*
+*
+*/
+
+
 vampireGameproject::CharacterTraits::~CharacterTraits(){}
+
+
+
+/** Implementation of the setHumanity method.
+*
+* Implementation of the setHumanity method
+* 
+* @param number humanity value to set
+* 
+*/
+
+
 
 void vampireGameproject::CharacterTraits::setHumanity(int number){
     humanity = number;
 }
 
+
+
+/** Implementation of the setWillpower method.
+*
+* Implementation of the setWillepower method
+* 
+* @param number value of points of life to set
+* 
+*/
+
+
+
 void vampireGameproject::CharacterTraits::setWillpower(int number){
     willPower = number;
 }
+
+
+
+/** Implementation of the setBloodpool method.
+*
+* Implementation of the setBloodpool method
+* 
+* @param number value of points of bloodPool to set
+* 
+*/
+
+
 
 void vampireGameproject::CharacterTraits::setBloodpool(int number){
     bloodPool = number;
 }
 
+
+/** Implementation of the getHumanity method.
+*
+* Implementation of the getHumanity method
+* 
+*
+* 
+*/
+
+
 std::string vampireGameproject::CharacterTraits::getHumanity(void){
+    /*
     switch(humanity){
         case 0 : return "Monstruous";
             break;
@@ -42,9 +112,21 @@ std::string vampireGameproject::CharacterTraits::getHumanity(void){
         default:
             break;
     }
+    */
 }
 
+
+/** Implementation of the getWillpower method.
+*
+* Implementation of the getWillpower method
+* 
+*
+* 
+*/
+
+
 std::string vampireGameproject::CharacterTraits::getWillpower(void){
+    /*
     switch(willPower){
     case 1: return "Spineless"; 
         break;
@@ -69,7 +151,18 @@ std::string vampireGameproject::CharacterTraits::getWillpower(void){
     default:
         break;
     }
+    */
 } 
+
+
+/** Implementation of the getBloodpool method.
+*
+* Implementation of the getBloodpool method
+* 
+*
+* 
+*/
+
 
 int vampireGameproject::CharacterTraits::getBloodpool(void){
     return bloodPool;
