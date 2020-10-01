@@ -464,8 +464,8 @@ namespace vampireGameproject{
         public:
             Parsetext();
             ~Parsetext();
-            std::string parse_text(char categorie);
-            std::string parse_text(char categorie, char table, char nameOfcomptence);
+            std::string parse_text(std::string categorie);
+            std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence);
     };
 
 
