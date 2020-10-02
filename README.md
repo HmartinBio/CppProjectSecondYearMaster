@@ -1,8 +1,7 @@
----
-title: Vampire Game Project
-author: Hugo MARTIN
-date: 26/09/2020
----
+% Vampire Game Project
+% Hugo MARTIN
+% 26/09/2020
+
 
 ## Contents
 
