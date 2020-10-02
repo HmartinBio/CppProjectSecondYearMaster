@@ -15,11 +15,11 @@
 #ifndef CLASS_PROJECT_VAMPIRE_HEADER
 #define CLASS_PROJECT_VAMPIRE_HEADER
 
-#include <list>
 #include <string>
 #include <map>
 #include <bits/stdc++.h> // imported to make multidimensional map
 #include <vector>
+#include "pystring.h"
 
 namespace vampireGameproject{
 
@@ -46,7 +46,7 @@ namespace vampireGameproject{
             Attributes characterAttributes;
             Abilities characterAbilities;
             Advantages characterAdvantages;
-            Meritsflaws characterMeritsflows;
+            Meritsflaws characterMeritsflaws;
             Nature characterNature;
             Health characterHealth;
             CharacterTraits characterTraits;
@@ -449,7 +449,6 @@ namespace vampireGameproject{
             ~Controllor();
 
         private:
-            //std::list<std::string> ListofInformationstoParse;
             Parsetext textParser;
             Gui graphicalUserinterface;
     };
