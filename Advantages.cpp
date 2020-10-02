@@ -8,10 +8,11 @@
 * Initialisation of a Parsetext reference 
 * before the Advantages constructor be initialised
 *
+* @param textParse reference of Parsetext
 */
 
 
-vampireGameproject::Advantages::Advantages(Parsetext& textParser): textParser(textParser){}
+vampireGameproject::Advantages::Advantages(Parsetext& textParse): textParser(textParse){}
 
 
 /** Destructor of the class Advantages.
