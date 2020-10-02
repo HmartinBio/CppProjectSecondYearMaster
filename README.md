@@ -6,7 +6,6 @@ date: 26/09/2020
 
 ## Contents
 
----
 
 [Overview](#overview)\
 [Requirements](#requirements)\
@@ -19,7 +18,6 @@ date: 26/09/2020
 
 ## Overview
 
----
 
 The aim of this project is to build an interface where the user could
 enter informations\
@@ -32,7 +30,6 @@ are written on a character sheet.
 
 ## Requirements
 
----
 
 The application has been conceived for **Linux** systems.\
 On your **Linux** computer, you need to have **g++** installed.\
@@ -44,7 +41,6 @@ On your **Linux** computer, you need to have **g++** installed.\
 
 ## Launching the app
 
----
 
 To launch the application, you need to move on the folder containing the app with the **command-line**.\
 Once you are in the folder, you need to execute the **make** command such as:\
@@ -65,7 +61,6 @@ Once the compilation is finished, you can execute the application with the comma
 
 ## Code Presentation
 
----
 
 We designed the code execution around the Controllor class. The Controllor class contains the Graphical User Interface and the others class responsible of others functionnalities of the program (textParsing, test, modification of the character sheet). At the beginning of the programm, it's the Controllor class which is launched.
 
@@ -185,7 +180,6 @@ Picturemodifying modifies the picture to generate a picture with all the informa
 
 ## Improvements
 
----
 
 
 
