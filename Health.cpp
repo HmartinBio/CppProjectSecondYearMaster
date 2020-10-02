@@ -8,10 +8,11 @@
 * Initialisation of the Parsetext reference before
 * the constructor of Health class be initialised
 *
+* @param textParse reference of Parsetext
 */
 
 
-vampireGameproject::Health::Health(Parsetext& textParser): textParser(textParser){}
+vampireGameproject::Health::Health(Parsetext& textParse): textParser(textParse){}
 
 
 /** Destructor of the class Health.
