@@ -3,16 +3,17 @@
 
 
 
-/** Constructor of the class Meritsflows.
+/** Constructor of the class Meritsflaws.
 *
-* Modification of the constructor of Meritsflows
-* Initialisation of map containing Merits and Flows
-*
+* Modification of the constructor of Meritsflaws
+* Initialisation of a Parsetext reference 
+* before the Meritsflaws constructor be initialised
+* Initialisation of map containing Merits and Flaws
 *
 */
 
 
-vampireGameproject::Meritsflows::Meritsflows(){
+vampireGameproject::Meritsflaws::Meritsflaws(Parsetext& textParser): textParser(textParser){
     merits.insert(std::make_pair("Physical", std::map<std::string, int>()));
     flaws.insert(std::make_pair("Physical", std::map<std::string, int>()));
     merits.insert(std::make_pair("Social", std::map<std::string, int>()));
@@ -23,9 +24,9 @@ vampireGameproject::Meritsflows::Meritsflows(){
 
 
 
-/** Destructor of the class Meritsflows.
+/** Destructor of the class Meritsflaws.
 *
-* Modification of the Destructor of Meritsflows
+* Modification of the Destructor of Meritsflaws
 *
 *
 *
@@ -33,7 +34,7 @@ vampireGameproject::Meritsflows::Meritsflows(){
 
 
 
-vampireGameproject::Meritsflows::~Meritsflows(){}
+vampireGameproject::Meritsflaws::~Meritsflaws(){}
 
 
 
@@ -47,7 +48,7 @@ vampireGameproject::Meritsflows::~Meritsflows(){}
 */
 
 
-std::map<std::string,int> vampireGameproject::Meritsflows::getMerits(std::string type){
+std::map<std::string,int> vampireGameproject::Meritsflaws::getMerits(std::string type){
     return merits[type];
 }
 
@@ -63,7 +64,7 @@ std::map<std::string,int> vampireGameproject::Meritsflows::getMerits(std::string
 */
 
 
-std::map<std::string,int> vampireGameproject::Meritsflows::getFlaws(std::string type){
+std::map<std::string,int> vampireGameproject::Meritsflaws::getFlaws(std::string type){
     return flaws[type];
 }
 
@@ -80,7 +81,7 @@ std::map<std::string,int> vampireGameproject::Meritsflows::getFlaws(std::string 
 */
 
 
-void vampireGameproject::Meritsflows::setMerits(std::string table, std::string meritsName, int number){
+void vampireGameproject::Meritsflaws::setMerits(std::string table, std::string meritsName, int number){
     merits[table].insert(std::make_pair(meritsName, number));
 }
 
@@ -97,7 +98,36 @@ void vampireGameproject::Meritsflows::setMerits(std::string table, std::string m
 */
 
 
-void vampireGameproject::Meritsflows::setFlaws(std::string table, std::string flawsName, int number){
+void vampireGameproject::Meritsflaws::setFlaws(std::string table, std::string flawsName, int number){
     flaws[table].insert(std::make_pair(flawsName, number));
 }
 
+
+/** Implementation of the getDescriptionmerits method.
+*
+* Implementation of the getDescriptionmerits method
+* getDescriptionmerits method allows to return the description of 
+* a merit 
+* 
+* @param table name of the table to look for a merit 
+* @param attributeName name of the merit to return the description
+*/
+
+
+std::string vampireGameproject::Meritsflaws::getDescriptionmerits(std::string table, std::string attributeName){}
+
+
+
+
+/** Implementation of the getDescriptionflaws method.
+*
+* Implementation of the getDescriptionflows method
+* getDescriptionadvantages method allows to return the description of 
+* an advantage 
+* 
+* @param table name of the table to look for an advantage 
+* @param attributeName name of the advantage to return the description
+*/
+
+
+std::string vampireGameproject::Meritsflaws::getDescriptionflaws(std::string table, std::string attributeName){}
