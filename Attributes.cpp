@@ -7,10 +7,11 @@
 * Initialisation of a Parsetext reference 
 * before the Attributes constructor be initialised
 *
+* @param textParse reference of Parsetext
 */
 
 
-vampireGameproject::Attributes::Attributes(Parsetext& textParser): textParser(textParser){}
+vampireGameproject::Attributes::Attributes(Parsetext& textParse): textParser(textParse){}
 
 
 
