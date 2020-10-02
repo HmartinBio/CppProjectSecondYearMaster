@@ -106,3 +106,15 @@ void vampireGameproject::Generation::setDescription(void){
     description = textParser.parse_text();
 }
 
+
+/** Implementation of the getDescription method.
+*
+* Implementation of the getDescription method
+* Method getting the description
+*
+* 
+*/
+
+std::string vampireGameproject::Generation::getDescription(void){
+    return description;
+}
