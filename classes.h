@@ -36,12 +36,6 @@ namespace vampireGameproject{
     class Character{
         private:
             std::string playerName;
-            
-        public:
-            std::string getPlayername(void);
-            void setPlayername(std::string name);
-            Character(Parsetext& textParser);
-            ~Character();
             Chronicle characterChronicle;
             Attributes characterAttributes;
             Abilities characterAbilities;
@@ -53,6 +47,13 @@ namespace vampireGameproject{
             Generation characterGeneration;
             Daemenor characterDaemenor;
             Clan characterClan;
+            
+        public:
+            std::string getPlayername(void);
+            void setPlayername(std::string name);
+            Character(Parsetext& textParser);
+            ~Character();
+            
     };
 
 
@@ -87,7 +88,7 @@ namespace vampireGameproject{
 /**
  * Implementation of the Class Abilities
  *
- * Attributes class is designed such as all the attributes of a character 
+ * Abilities class is designed such as all the abilities of a character 
  * are contained in this class.
  *  
  * 
@@ -140,9 +141,9 @@ namespace vampireGameproject{
 
 
 /**
- * Implementation of the Class Meritsflows
+ * Implementation of the Class Meritsflaws
  *
- * Meritsflows class is designed such as all the Merits and Flows of a character 
+ * Meritsflaws class is designed such as all the Merits and Flaws of a character 
  * are contained in this class
  *  
  * 
@@ -236,8 +237,8 @@ namespace vampireGameproject{
 /**
  * Implementation of the Class Daemenor
  *
- * Daemenor class is designed such as the Daemenor information of a character 
- * is contained in this class
+ * Daemenor class is designed such as the Daemenor informations of a character 
+ * are contained in this class
  *  
  * 
  *
@@ -264,8 +265,8 @@ namespace vampireGameproject{
 /**
  * Implementation of the Class Nature
  *
- * Nature class is designed such as all the Nature information of a character 
- * is contained in this class
+ * Nature class is designed such as all the Nature informations of a character 
+ * are contained in this class
  *  
  * 
  *
@@ -294,7 +295,7 @@ namespace vampireGameproject{
  *
  * Chronicle class is designed such as the information 
  * dealing with the set of stories followed by a character 
- * is contained in this class
+ * are contained in this class
  * 
  *
  */
