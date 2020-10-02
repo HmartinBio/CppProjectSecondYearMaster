@@ -9,11 +9,12 @@
 * Initialisation of a Parsetext reference 
 * before the Meritsflaws constructor be initialised
 * Initialisation of map containing Merits and Flaws
-*
+* 
+* @param textParse reference of Parsetext
 */
 
 
-vampireGameproject::Meritsflaws::Meritsflaws(Parsetext& textParser): textParser(textParser){
+vampireGameproject::Meritsflaws::Meritsflaws(Parsetext& textParse): textParser(textParse){
     merits.insert(std::make_pair("Physical", std::map<std::string, int>()));
     flaws.insert(std::make_pair("Physical", std::map<std::string, int>()));
     merits.insert(std::make_pair("Social", std::map<std::string, int>()));
