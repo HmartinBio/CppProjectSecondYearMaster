@@ -13,7 +13,7 @@ date: 26/09/2020
 [Code Presentation](#code-presentation)\
 [Improvements](#improvements)
 
----
+
 
 <br>
 
@@ -26,7 +26,7 @@ concerning a character. Once the character is created, the information concernin
 are written on a character sheet.
 
 
----
+
 
 <br>
 
@@ -38,7 +38,7 @@ On your **Linux** computer, you need to have **g++** installed.\
 **gtkmm-3.0** is required to compile the application.
 
 
----
+
 
 <br>
 
@@ -58,7 +58,7 @@ Once the compilation is finished, you can execute the application with the comma
 ./vampireGameproject
 ```
 
----
+
 
 <br>
 
@@ -66,7 +66,7 @@ Once the compilation is finished, you can execute the application with the comma
 ## Code Presentation
 
 
-We designed the code execution around the Controllor class. The Controllor class contains the Graphical User Interface and the others class responsible of others functionnalities of the program (textParsing, test, modification of the character sheet). At the beginning of the programm, it's the Controllor class which is launched.
+We designed the code execution around the **Controllor** class. The **Controllor** class contains the Graphical User Interface and the others class responsible of others functionnalities of the program (textParsing, test, modification of the character sheet). At the beginning of the programm, it's the **Controllor** class which is launched.
 
 ```cpp
 class Controllor{
@@ -81,7 +81,7 @@ class Controllor{
 ```
 
 
-The Parsetext class contains all the functions to parse the text from the game to retrieve all the character features.
+The **Parsetext** class contains all the functions to parse the text from the game to retrieve all the character features.
 
 
 
@@ -96,11 +96,11 @@ The Parsetext class contains all the functions to parse the text from the game t
     };
 ```
 
-The Character class contains all the elements of a character (Attributes, Abilities, Advantages, etc...).
+The **Character** class contains all the elements of a character (**Attributes**, **Abilities**, **Advantages**, etc...).
 
-When a new Character is created, the reference of the Parsetext object contained in the Controllor is given at all the objects contained in the Character class. 
+When a new **Character** is created, the reference of the **Parsetext** object contained in the **Controllor** is given at all the objects contained in the **Character** class. 
 
-The constructor of the Character class is not executed yet. It allows to the objects contained in the class to parse text and return definition of some features of the character.
+The constructor of the **Character** class is not executed yet. It allows to the objects contained in the class to parse text and return definition of some features of the character.
 
 
 ```cpp
@@ -129,13 +129,13 @@ class Character{
 
 ```
 
-RulesofGame class is designed such as all the tests 
+**RulesofGame** class is designed such as all the tests 
 to verify inputted informations on the graphical user
 interface are contained in this class. 
 
 It allows to the interface to restrain some user choices for these one be in adequacy with the rules of the game. 
 
-For example, each Clan has its own disciplines, so, when the user chooses the clan, this one can only chooses a discipline among the disciplines attributed to the Clan. 
+For example, each **Clan** has its own disciplines, so, when the user chooses the clan, this one can only chooses a discipline among the disciplines attributed to the Clan. 
 
 ```cpp
 
@@ -148,7 +148,7 @@ For example, each Clan has its own disciplines, so, when the user chooses the cl
             Gui& referenceOutterclass;
     };
 ```
-Gui class is designed such as all the elements composing  the graphical user interface are contained in this class. 
+**Gui** class is designed such as all the elements composing the graphical user interface are contained in this class. 
 
 ```cpp
 
@@ -162,11 +162,11 @@ Gui class is designed such as all the elements composing  the graphical user int
 ```
 
 
-Picturemodifying class is designed to modify the picture to include 
+**Picturemodifying** class is designed to modify the picture to include 
 all the information about a character. 
 
 Once the graphical user interface received all the informations about a character,\
-Picturemodifying modifies the picture to generate a picture with all the informations about a character
+**Picturemodifying** modifies the picture to generate a picture with all the informations about a character
 
 
 ```cpp
@@ -179,7 +179,7 @@ Picturemodifying modifies the picture to generate a picture with all the informa
     };
 ```
 
----
+
 
 <br>
 
@@ -188,4 +188,3 @@ Picturemodifying modifies the picture to generate a picture with all the informa
 
 
 
----
