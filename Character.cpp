@@ -6,14 +6,17 @@
 * for this one gives the Parsetext reference to 
 * the other class members contained in Character 
 *
-* @param textParser reference of Parsetext
+* @param textParse reference of Parsetext
 */
 
 
 vampireGameproject::Character::Character(Parsetext& textParser)
     : characterDaemenor(textParser), characterClan(textParser), 
     characterHealth(textParser), characterNature(textParser), 
-    characterChronicle(textParser), characterGeneration(textParser){}
+    characterChronicle(textParser), characterGeneration(textParser),
+    characterAttributes(textParser), characterAbilities(textParser),
+    characterAdvantages(textParser), characterMeritsflaws(textParser),
+    characterTraits(textParser){}
 
 
 
