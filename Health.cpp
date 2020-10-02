@@ -52,6 +52,7 @@ int vampireGameproject::Health::getPointlife(void){
 */
 
 
+
 void vampireGameproject::Health::setPointlife(int pointLife){
     Health::pointLife = pointLife;
 }
@@ -82,9 +83,27 @@ std::string vampireGameproject::Health::getPointlifeDescription(void){
 */
 
 
-std::string vampireGameproject::Health::getWeakness(void){
+std::vector<std::string> vampireGameproject::Health::getWeakness(void){
     return weakness;
 }
+
+
+
+/** Implementation of the setWeakness method.
+*
+* Implementation of the setWeakness method
+* Method setting Weakness 
+*
+* @param weakness weakness to set
+*
+*/
+
+
+
+void vampireGameproject::Health::setWeakness(std::string weakness){
+    vampireGameproject::Health::weakness.push_back(weakness);
+}
+
 
 
 
