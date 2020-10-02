@@ -1,7 +1,7 @@
 ---
-% Vampire Game Project
-% Hugo MARTIN
-% 26/09/2020
+title: Vampire Game Project
+author: Hugo MARTIN
+date: 26/09/2020
 ---
 
 ## Contents
@@ -14,6 +14,7 @@
 [Improvements](#improvements)
 
 ---
+
 <br>
 
 ## Overview
@@ -26,6 +27,7 @@ are written on a character sheet.
 
 
 ---
+
 <br>
 
 ## Requirements
@@ -37,6 +39,7 @@ On your **Linux** computer, you need to have **g++** installed.\
 
 
 ---
+
 <br>
 
 ## Launching the app
@@ -56,6 +59,7 @@ Once the compilation is finished, you can execute the application with the comma
 ```
 
 ---
+
 <br>
 
 
@@ -176,6 +180,7 @@ Picturemodifying modifies the picture to generate a picture with all the informa
 ```
 
 ---
+
 <br>
 
 ## Improvements
