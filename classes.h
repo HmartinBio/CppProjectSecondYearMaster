@@ -19,7 +19,7 @@
 #include <string>
 #include <map>
 #include <bits/stdc++.h> // imported to make multidimensional map
-
+#include <vector>
 
 namespace vampireGameproject{
 
@@ -46,7 +46,7 @@ namespace vampireGameproject{
             Attributes characterAttributes;
             Abilities characterAbilities;
             Advantages characterAdvantages;
-            Meritsflows characterMeritsflows;
+            Meritsflaws characterMeritsflows;
             Nature characterNature;
             Health characterHealth;
             CharacterTraits characterTraits;
@@ -69,15 +69,17 @@ namespace vampireGameproject{
 
      class Attributes{
         public:
-            Attributes();
+            Attributes(Parsetext& textParser);
             ~Attributes();
             std::map<std::string,int> getAttributes(std::string attributeTable);
             void setAttributes(std::string tableName, std::string attributeName, int value);
+            std::string getDescriptionattributes(std::string table, std::string attributeName);
 
         private:
             std::map<std::string,int> physicalAttributes;
             std::map<std::string,int> socialAttributes;
             std::map<std::string,int> mentalAttributes;
+            Parsetext& textParser;
     };
 
 
@@ -96,15 +98,17 @@ namespace vampireGameproject{
 
     class Abilities{
         public:
-            Abilities();
+            Abilities(Parsetext& textParser);
             ~Abilities();
             std::map<std::string,int> getAbilities(std::string tableName);
             void setAbilities(std::string tableName,std::string abilitieName, int value);
+            std::string getDescriptionabilities(std::string table, std::string attributeName);
 
         private:
             std::map<std::string,int> talents;
             std::map<std::string,int> skills;
             std::map<std::string,int> knowledges;
+            Parsetext& textParser;
     };
 
 
@@ -121,14 +125,16 @@ namespace vampireGameproject{
 
     class Advantages{
         public:
-            Advantages();
+            Advantages(Parsetext& textParser);
             ~Advantages();
             std::map<std::string, int> getAdvantages(std::string tableName);
             void setAdvantages(std::string tableName, std::string abilitieName, int value);
+            std::string getDescriptionadvantages(std::string table, std::string attributeName);
 
         private:
             std::map<std::string, int> backgrounds;
             std::map<std::string, int> virtues;
+            Parsetext& textParser;
     };
 
 
@@ -144,18 +150,21 @@ namespace vampireGameproject{
  */
 
 
-    class Meritsflows{
+    class Meritsflaws{
         public: 
-            Meritsflows();
-            ~Meritsflows();
+            Meritsflaws(Parsetext& textParser);
+            ~Meritsflaws();
             std::map<std::string,int> getMerits(std::string type);
             std::map<std::string,int> getFlaws(std::string type);
             void setMerits(std::string table, std::string meritsName, int number);
             void setFlaws(std::string table, std::string flawsName, int number);
+            std::string getDescriptionmerits(std::string table, std::string attributeName);
+            std::string getDescriptionflaws(std::string table, std::string attributeName);
 
         private:
             std::map<std::string, std::map<std::string, int>> merits;
             std::map<std::string, std::map<std::string, int>> flaws;
+            Parsetext& textParser;
     };
 
 
@@ -176,15 +185,15 @@ namespace vampireGameproject{
             Health(Parsetext& textParser);
             ~Health();
             int getPointlife(void);
-            std::string getWeakness(void);
+            std::vector<std::string> getWeakness(void);
             void setPointlife(int pointLife);
-            void setWeakness(char weakness);
+            void setWeakness(std::string weakness);
             void setPointlifeDescription(void);
             std::string getPointlifeDescription(void);
 
         private:
             int pointLife;
-            std::string weakness;
+            std::vector<std::string> weakness;
             std::string pointLifedescription;
             Parsetext& textParser;
     };
@@ -203,7 +212,7 @@ namespace vampireGameproject{
 
     class CharacterTraits{
         public:
-            CharacterTraits();
+            CharacterTraits(Parsetext& textParser);
             ~CharacterTraits();
             std::string getHumanity(void);
             std::string getWillpower(void); 
@@ -217,19 +226,11 @@ namespace vampireGameproject{
             int humanity;
             int willPower;
             int bloodPool;
+            Parsetext& textParser;
     };
 
 
-/* 
-    class setCharacterFields{
-        public:
-            setCharacterFields();
-            void setCategorie(std::string categorie, std::string& variable);
-            std::string getCategorie(void);
-            void setDescription(std::string description);
-            std::string getDescription(void);
-    };
- */
+
 
 
 /**
@@ -250,7 +251,8 @@ namespace vampireGameproject{
             ~Daemenor();
             std::string getDaemenor(void);
             void setDaemenor(std::string daemenor);
-            void setDescription(void); 
+            void setDescription(void);
+            std::string getDescription(void);
 
         private:
             std::string daemenor;
@@ -276,7 +278,8 @@ namespace vampireGameproject{
             ~Nature();
             std::string getNature(void);
             void setNature(std::string nature);
-            void setDescription(void); 
+            void setDescription(void);
+            std::string getDescription(void); 
 
         private:
             std::string nature;
@@ -304,7 +307,8 @@ namespace vampireGameproject{
             ~Chronicle();
             std::string getChronicle(void);
             void setChronicle(std::string chronicle);
-            void setDescription(void); 
+            void setDescription(void);
+            std::string getDescription(void); 
 
         private:
             std::string chronicle;
@@ -334,11 +338,14 @@ namespace vampireGameproject{
             void setVampirename(void);
             std::string getVampirename(void);
             void setDescription(void); 
+            std::string getDescription(void);
+            void setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines);
+            std::map<std::string,std::map<std::string, int>> getDisciplines(void);
 
         private:
             std::string clan;
             std::string description;
-            std::map<char,std::map<char, int>> disciplines;
+            std::map<std::string,std::map<std::string, int>> disciplines;
             std::string vampireName;
             Parsetext& textParser;
     };
@@ -364,7 +371,8 @@ namespace vampireGameproject{
             void setGeneration(std::string generation); 
             int getAge(void);
             void setAge(int age);
-            void setDescription(void); 
+            void setDescription(void);
+            std::string getDescription(void);
 
         private:
             std::string generation;
