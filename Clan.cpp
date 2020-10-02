@@ -99,6 +99,20 @@ void vampireGameproject::Clan::setDescription(void){
 
 
 
+/** Implementation of the getDescription method.
+*
+* Implementation of the getDescription method
+* Method getting the Description of the clan
+*
+* 
+*/
+
+std::string vampireGameproject::Clan::getDescription(void){
+    return description;
+}
+
+
+
 /** Implementation of the getVampirename method.
 *
 * Implementation of the getVampirename method
@@ -112,3 +126,29 @@ std::string vampireGameproject::Clan::getVampirename(void){
     return vampireName;
 }
 
+
+/** Implementation of the setDisciplines method.
+*
+* Implementation of the setDisciplines method
+* Method setting the disciplines 
+* 
+* @param disciplines disciplines to set
+* 
+*/
+
+void vampireGameproject::Clan::setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines){
+    vampireGameproject::Clan::disciplines = disciplines;
+}
+
+/** Implementation of the getDisciplines method.
+*
+* Implementation of the getDisciplines method
+* Method getting the disciplines 
+* 
+*
+* 
+*/
+
+std::map<std::string,std::map<std::string, int>> vampireGameproject::Clan::getDisciplines(void){
+    return disciplines;
+}
