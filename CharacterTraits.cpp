@@ -5,13 +5,13 @@
 /** Constructor of the class CharacterTraits.
 *
 * Modification of the constructor of CharacterTraits
-*
-*
+* Initialisation of the Parsetext reference before
+* the constructor of CharacterTraits class be initialised
 *
 */
 
 
-vampireGameproject::CharacterTraits::CharacterTraits(){}
+vampireGameproject::CharacterTraits::CharacterTraits(Parsetext& textParser): textParser(textParser){}
 
 
 
@@ -88,6 +88,8 @@ void vampireGameproject::CharacterTraits::setBloodpool(int number){
 
 
 std::string vampireGameproject::CharacterTraits::getHumanity(void){
+    return textParser.parse_text();
+
     /*
     switch(humanity){
         case 0 : return "Monstruous";
@@ -129,6 +131,8 @@ std::string vampireGameproject::CharacterTraits::getHumanity(void){
 
 
 std::string vampireGameproject::CharacterTraits::getWillpower(void){
+    return textParser.parse_text();
+
     /*
     switch(willPower){
     case 1: return "Spineless"; 
