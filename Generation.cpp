@@ -8,12 +8,12 @@
 * Initialisation of a Parsetext reference 
 * before the Nature constructor be initialised
 *
-* @param textParser reference of Parsetext object
+* @param textParse reference of Parsetext object
 *
 */
 
 
-vampireGameproject::Generation::Generation(Parsetext& textParser): textParser(textParser){}
+vampireGameproject::Generation::Generation(Parsetext& textParse): textParser(textParse){}
 
 
 
