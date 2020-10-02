@@ -75,3 +75,15 @@ void vampireGameproject::Nature::setDescription(){
     description = textParser.parse_text();
 }
 
+
+/** Implementation of the getDescription method.
+*
+* Implementation of the getDescription method
+* Method getting the description value
+* 
+* 
+*/
+
+std::string vampireGameproject::Nature::getDescription(){
+    return description;
+}
