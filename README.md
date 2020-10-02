@@ -1,7 +1,8 @@
+---
 % Vampire Game Project
 % Hugo MARTIN
 % 26/09/2020
-
+---
 
 ## Contents
 
