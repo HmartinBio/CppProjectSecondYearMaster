@@ -78,3 +78,17 @@ void vampireGameproject::Chronicle::setDescription(void){
     description = textParser.parse_text();
 }
 
+
+
+/** Implementation of the getDescription method.
+*
+* Implementation of the getDescription method
+* Method getting the description of Chronicle
+*
+* 
+*/
+
+
+std::string vampireGameproject::Chronicle::getDescription(void){
+    return description;
+}
