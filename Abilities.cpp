@@ -7,12 +7,13 @@
 * Modification of the constructor of Abilities
 * Initialisation of a Parsetext reference 
 * before the Abilities constructor be initialised
-*
+* 
+* @param textParse reference of Parsetext
 */
 
 
 
-vampireGameproject::Abilities::Abilities(Parsetext& textParser): textParser(textParser){}
+vampireGameproject::Abilities::Abilities(Parsetext& textParse): textParser(textParse){}
 
 
 /** Implementation of the getAbilities method.
