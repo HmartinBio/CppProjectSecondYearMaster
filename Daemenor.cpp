@@ -8,12 +8,12 @@
 * Initialisation of a Parsetext reference 
 * before the Daemenor constructor be initialised
 *
-* @param textParser reference of Parsetext object
+* @param textParse reference of Parsetext object
 *
 */
 
 
-vampireGameproject::Daemenor::Daemenor(Parsetext& textParser): textParser(textParser){}
+vampireGameproject::Daemenor::Daemenor(Parsetext& textParse): textParser(textParse){}
 
 
 
