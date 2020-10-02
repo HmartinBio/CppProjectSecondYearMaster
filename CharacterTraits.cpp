@@ -8,10 +8,11 @@
 * Initialisation of the Parsetext reference before
 * the constructor of CharacterTraits class be initialised
 *
+* @param textParse reference of Parsetext
 */
 
 
-vampireGameproject::CharacterTraits::CharacterTraits(Parsetext& textParser): textParser(textParser){}
+vampireGameproject::CharacterTraits::CharacterTraits(Parsetext& textParse): textParser(textParse){}
 
 
 
