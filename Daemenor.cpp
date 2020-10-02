@@ -77,3 +77,15 @@ void vampireGameproject::Daemenor::setDescription(void){
     description = textParser.parse_text();
 }
 
+
+/** Implementation of the getDescription method.
+*
+* Implementation of the getDescription method
+* Method getting the description value
+* 
+* 
+*/
+
+std::string vampireGameproject::Daemenor::getDescription(){
+    return description;
+}
