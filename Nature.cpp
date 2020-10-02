@@ -71,7 +71,7 @@ void vampireGameproject::Nature::setNature(std::string nature){
 */
 
 
-void vampireGameproject::Nature::setDescription(){
+void vampireGameproject::Nature::setDescription(void){
     description = textParser.parse_text();
 }
 
@@ -84,6 +84,6 @@ void vampireGameproject::Nature::setDescription(){
 * 
 */
 
-std::string vampireGameproject::Nature::getDescription(){
+std::string vampireGameproject::Nature::getDescription(void){
     return description;
 }
