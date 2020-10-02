@@ -5,36 +5,13 @@
 /** Constructor of the class Advantages.
 *
 * Modification of the constructor of Advantages
-*
-*
+* Initialisation of a Parsetext reference 
+* before the Advantages constructor be initialised
 *
 */
 
 
-vampireGameproject::Advantages::Advantages(){
-    /*
-    virtues.insert(std::pair<std::string, int>("Conscience", 0));
-    virtues.insert(std::pair<std::string, int>("Self-control", 0));
-    virtues.insert(std::pair<std::string, int>("Courage", 0));
-
-    */
-
-    /* backgrounds.insert(std::pair<char, int>("Allies", 0));
-    backgrounds.insert(std::pair<char, int>("Alternate identity", 0));
-    backgrounds.insert(std::pair<char, int>("Black Hand Membership", 0));
-    backgrounds.insert(std::pair<char, int>("Contacts", 0));
-    backgrounds.insert(std::pair<char, int>("Domain", 0));
-    backgrounds.insert(std::pair<char, int>("Fame", 0));
-    backgrounds.insert(std::pair<char, int>("Generation", 0));
-    backgrounds.insert(std::pair<char, int>("Herd", 0));
-    backgrounds.insert(std::pair<char, int>("Influence", 0));
-    backgrounds.insert(std::pair<char, int>("Mentor", 0));
-    backgrounds.insert(std::pair<char, int>("Resources", 0));
-    backgrounds.insert(std::pair<char, int>("Retainers", 0));
-    backgrounds.insert(std::pair<char, int>("Rituals", 0));
-    backgrounds.insert(std::pair<char, int>("Status", 0));
-     */
-}
+vampireGameproject::Advantages::Advantages(Parsetext& textParser): textParser(textParser){}
 
 
 /** Destructor of the class Advantages.
@@ -97,3 +74,15 @@ std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::st
  }
 
  
+/** Implementation of the getDescriptionadvantages method.
+*
+* Implementation of the getDescriptionadvantages method
+* getDescriptionadvantages method allows to return the description of 
+* an advantage 
+* 
+* @param table name of the table to look for an advantage 
+* @param attributeName name of the advantage to return the description
+*/
+
+
+std::string vampireGameproject::Advantages::getDescriptionadvantages(std::string table, std::string attributeName){}
