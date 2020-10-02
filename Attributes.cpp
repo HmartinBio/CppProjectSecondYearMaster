@@ -4,25 +4,13 @@
 /** Constructor of the class Attributes.
 *
 * Modification of the Constructor of Attributes
-* Declaration of attributes in the different map with 
-* the constructor of Attributes
+* Initialisation of a Parsetext reference 
+* before the Attributes constructor be initialised
 *
 */
 
 
-vampireGameproject::Attributes::Attributes(){
-    /*
-    physicalAttributes.insert(std::pair<std::string,int>("Strength", 0));
-    physicalAttributes.insert(std::pair<std::string,int>("Dexterity", 0));
-    physicalAttributes.insert(std::pair<std::string,int>("Stamina", 0));
-    socialAttributes.insert(std::pair<std::string,int>("Charisma",0));
-    socialAttributes.insert(std::pair<std::string,int>("Manipulation",0));
-    socialAttributes.insert(std::pair<std::string,int>("Appearance",0));
-    mentalAttributes.insert(std::pair<std::string,int>("Perception",0));
-    mentalAttributes.insert(std::pair<std::string,int>("Intelligence",0));
-    mentalAttributes.insert(std::pair<std::string,int>("Wits",0));
-    */ 
-}
+vampireGameproject::Attributes::Attributes(Parsetext& textParser): textParser(textParser){}
 
 
 
@@ -76,3 +64,16 @@ void vampireGameproject::Attributes::setAttributes(std::string tableName,std::st
     }
 }
 
+
+/** Implementation of the getDescriptionattributes method.
+*
+* Implementation of the getDescriptionattributes method
+* getDescriptionattributes method allows to return the description of 
+* an attribute 
+* 
+* @param table name of the table to look for an attribute 
+* @param attributeName name of the attribute to return the description
+*/
+
+
+std::string vampireGameproject::Attributes::getDescriptionattributes(std::string table, std::string attributeName){}
