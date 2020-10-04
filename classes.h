@@ -21,6 +21,7 @@
 #include <vector>
 #include "pystring.h"
 #include <fstream>
+#include <regex>
 
 namespace vampireGameproject{
 
