@@ -20,6 +20,7 @@
 #include <bits/stdc++.h> // imported to make multidimensional map
 #include <vector>
 #include "pystring.h"
+#include <fstream>
 
 namespace vampireGameproject{
 
@@ -472,6 +473,7 @@ namespace vampireGameproject{
             Parsetext();
             ~Parsetext();
             std::string parse_text(std::string categorie);
+            std::string parse_text(std::string categorie, std::string caracteristics);
             std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence);
     };
 
