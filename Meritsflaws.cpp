@@ -104,31 +104,21 @@ void vampireGameproject::Meritsflaws::setFlaws(std::string table, std::string fl
 }
 
 
-/** Implementation of the getDescriptionmerits method.
+/** Implementation of the getDescription method.
 *
-* Implementation of the getDescriptionmerits method
-* getDescriptionmerits method allows to return the description of 
-* a merit 
+* Implementation of the getDescription method
+* getDescription method allows to return the description of 
+* a merit or a flow
 * 
-* @param table name of the table to look for a merit 
+* @param table name of the table to look for a merit or flaw 
 * @param attributeName name of the merit to return the description
 */
 
 
-std::string vampireGameproject::Meritsflaws::getDescriptionmerits(std::string table, std::string attributeName){}
+std::string vampireGameproject::Meritsflaws::getDescription(std::string table, std::string attributeName){
+    return textParser.parse_text("Merits_flaws", table, attributeName);
+}
 
 
 
 
-/** Implementation of the getDescriptionflaws method.
-*
-* Implementation of the getDescriptionflows method
-* getDescriptionadvantages method allows to return the description of 
-* an advantage 
-* 
-* @param table name of the table to look for an advantage 
-* @param attributeName name of the advantage to return the description
-*/
-
-
-std::string vampireGameproject::Meritsflaws::getDescriptionflaws(std::string table, std::string attributeName){}
