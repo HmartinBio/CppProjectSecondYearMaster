@@ -161,8 +161,7 @@ namespace vampireGameproject{
             std::map<std::string,int> getFlaws(std::string type);
             void setMerits(std::string table, std::string meritsName, int number);
             void setFlaws(std::string table, std::string flawsName, int number);
-            std::string getDescriptionmerits(std::string table, std::string attributeName);
-            std::string getDescriptionflaws(std::string table, std::string attributeName);
+            std::string getDescription(std::string table, std::string attributeName);
 
         private:
             std::map<std::string, std::map<std::string, int>> merits;
