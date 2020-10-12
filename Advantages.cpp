@@ -86,4 +86,6 @@ std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::st
 */
 
 
-std::string vampireGameproject::Advantages::getDescriptionadvantages(std::string table, std::string attributeName){}
+std::string vampireGameproject::Advantages::getDescriptionadvantages(std::string table, std::string attributeName){
+    return textParser.parse_text(table, attributeName);
+}
