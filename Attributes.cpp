@@ -33,9 +33,9 @@ std::map<std::string,int> vampireGameproject::Attributes::getAttributes(std::str
         return socialAttributes;
     }
 
-    else if(attributeTable == "mental"){
-        return mentalAttributes;
-    }
+    //else if(attributeTable == "mental"){
+    return mentalAttributes;
+    //}
     
 }
 
