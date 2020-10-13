@@ -15,6 +15,21 @@ vampireGameproject::Attributes::Attributes(Parsetext& textParse): textParser(tex
 
 
 
+/** Destructor of the class Attributes.
+*
+* Modification of the destructor of Attributes
+*
+*
+*
+*/
+
+
+
+vampireGameproject::Attributes::~Attributes(){}
+
+
+
+
 /** Implementation of the getAttributes method.
 *
 * Implementation of the getAttributes method
