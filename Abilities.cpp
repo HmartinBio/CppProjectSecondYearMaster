@@ -32,12 +32,18 @@ std::map<std::string, int> vampireGameproject::Abilities::getAbilities(std::stri
     }
 
     else if(tableName == "skills"){
-        return talents;
+        return skills;
     }
     
     else if(tableName == "knowledges"){
         return knowledges;
     }
+
+    else{
+        std::cout << "ERROR, the tableName is false" << std::endl;
+        return std::map<std::string, int>(); 
+    }
+
 }
 
 
@@ -63,6 +69,10 @@ void vampireGameproject::Abilities::setAbilities(std::string tableName, std::str
 
     else if(tableName == "knowledges"){
         knowledges.insert(std::pair<std::string,int>(abilitieName, value));
+    }
+
+    else{
+        std::cout << "ERROR, the tableName is false" << std::endl;
     }
 
 }
