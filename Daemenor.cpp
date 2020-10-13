@@ -74,7 +74,8 @@ std::string vampireGameproject::Daemenor::getDaemenor(void){
 
 
 void vampireGameproject::Daemenor::setDescription(void){
-    description = textParser.parse_text();
+    //description = textParser.parse_text();
+    description = "test";
 }
 
 
