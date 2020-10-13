@@ -205,9 +205,9 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
         // while we don't find the searched nameofCompetence
         // beginning by "\t [0-9]:" we take the next line
 
-        while(pystring::startswith(lineOftext, "\t") != true &&
+        while((pystring::startswith(lineOftext, "\t") != true &&
             pystring::find(lineOftext, stringTofind1) != -1 || 
-            pystring::find(lineOftext, stringTofind2) != -1   
+            pystring::find(lineOftext, stringTofind2) != -1)   
             ){
                 std::getline(infile, lineOftext);
             }
@@ -240,6 +240,7 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 
     }
 
+}
 
     //while(lineOftext != lineTofind){
     //    std::getline(infile, lineOftext);
