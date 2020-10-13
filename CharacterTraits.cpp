@@ -89,7 +89,8 @@ void vampireGameproject::CharacterTraits::setBloodpool(int number){
 
 
 std::string vampireGameproject::CharacterTraits::getHumanity(void){
-    return textParser.parse_text();
+    //return textParser.parse_text();
+    return "test";
 
     /*
     switch(humanity){
@@ -132,7 +133,8 @@ std::string vampireGameproject::CharacterTraits::getHumanity(void){
 
 
 std::string vampireGameproject::CharacterTraits::getWillpower(void){
-    return textParser.parse_text();
+    //return textParser.parse_text();
+    return "test"; 
 
     /*
     switch(willPower){
