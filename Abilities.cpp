@@ -16,6 +16,21 @@
 vampireGameproject::Abilities::Abilities(Parsetext& textParse): textParser(textParse){}
 
 
+
+/** Destructor of the class Abilities.
+*
+* Modification of the destructor of Abilities
+*
+*
+*
+*/
+
+
+vampireGameproject::Abilities::~Abilities(){}
+
+
+
+
 /** Implementation of the getAbilities method.
 *
 * Implementation of the getAbilities method
