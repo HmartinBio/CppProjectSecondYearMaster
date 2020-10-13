@@ -45,9 +45,14 @@ std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::st
         return backgrounds;
     }
 
-    // else if(tableName == "virtues"){
+    else if(tableName == "virtues"){
+        return virtues;
+    }
 
-    return virtues; 
+    else{
+        std::cout << "ERROR, the tableName is false" << std::endl;
+        return std::map<std::string, int>();
+    } 
 }
 
 
@@ -71,6 +76,10 @@ std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::st
      else if(tableName == "virtues"){
          virtues.insert(std::pair<std::string, int>(abilitieName, value));
 
+     }
+
+     else{
+         std::cout << "ERROR, the tableName is false" << std::endl;
      }
  }
 
