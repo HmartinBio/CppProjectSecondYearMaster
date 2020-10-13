@@ -39,8 +39,9 @@ vampireGameproject::Parsetext::~Parsetext(){}
 // Allows to parse all the text of a categorie (Abilities, Attributes,...)
 
 std::string vampireGameproject::Parsetext::parse_text(std::string categorie){
-    std::string lineOftext = "";
+    std::string lineOftext;
     std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
 
     // while we don't find the searched categorie
     // beginning by "####" we take the next line
@@ -66,9 +67,9 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie){
         std::getline(infile, lineOftext);
         partOftext += lineOftext;
         partOftext += "\n";
-    
-    infile.close();
     }
+
+    infile.close();
     return partOftext;
 }
 
@@ -79,10 +80,12 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie){
 // Allows to parse Clans
 
 std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std::string caracteristics){
-    std::string lineOftext = "";
+    std::string lineOftext;
     std::string partOftext;
     std::ifstream infile("VampireV5.txt");
     std::string lineTofind;
+    // Reading the first line of the file
+    std::getline(infile, lineOftext);
     
     // while we don't find the searched categorie
     // beginning by "####" we take the next line
@@ -116,9 +119,9 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
         std::getline(infile, lineOftext);
         partOftext += lineOftext;
         partOftext += "\n";
-    
-    infile.close();
     }
+
+    infile.close();
     return partOftext;
 }
 
@@ -131,10 +134,10 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 
 std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std::string table, std::string nameOfcomptence){
     
-    
-    std::string lineOftext = "";
+    std::string lineOftext;
     std::string partOftext;
     std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
 
     // while we don't find the searched categorie
     // beginning by "####" we take the next line
@@ -186,13 +189,13 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
         return partOftext;
     }
 
-    else if(table == "Disciplines"){
+   else if(table == "Disciplines"){
         
         // while we don't find the searched table
         // beginning by "--" we take the next line
 
-        while(pystring::startswith(lineOftext, "--") != true && 
-            pystring::find(lineOftext, pystring::capitalize(table)) == -1){
+        while((pystring::startswith(lineOftext, "--") != true) && 
+            (pystring::find(lineOftext, pystring::capitalize(table)) == -1)){
                 std::getline(infile, lineOftext);
         }
         
@@ -205,12 +208,12 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
         // while we don't find the searched nameofCompetence
         // beginning by "\t [0-9]:" we take the next line
 
-        while((pystring::startswith(lineOftext, "\t") != true &&
-            pystring::find(lineOftext, stringTofind1) != -1 || 
-            pystring::find(lineOftext, stringTofind2) != -1)   
+        while((((pystring::startswith(lineOftext, "\t") != true) &&
+            (pystring::find(lineOftext, stringTofind1) != -1)) || 
+            (pystring::find(lineOftext, stringTofind2) != -1))   
             ){
                 std::getline(infile, lineOftext);
-            }
+        }
 
         // we create a string to save a part of 
         // the text we want
@@ -237,8 +240,14 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 
         infile.close();
         return partOftext;
+   }
 
-    }
+   else{
+       std::cout << "ERROR, the table name is uncorrect" << std::endl;
+       return "ERROR";
+   }
+
+  //  }
 
 }
 
