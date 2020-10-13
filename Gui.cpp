@@ -9,7 +9,8 @@
 *
 */
 
-vampireGameproject::Gui::Gui(): testGui(*this){}
+vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference): 
+    testGui(rulesGamereference){}
 
 
 /** Destructor of the class Gui.
