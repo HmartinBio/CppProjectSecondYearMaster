@@ -45,9 +45,9 @@ std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::st
         return backgrounds;
     }
 
-    else if(tableName == "virtues"){
-        return virtues;
-    }
+    // else if(tableName == "virtues"){
+
+    return virtues; 
 }
 
 
