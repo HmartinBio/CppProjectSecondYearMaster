@@ -28,6 +28,28 @@ namespace vampireGameproject{
 
 
 /**
+ * Implementation of the Class Parsetext
+ *
+ * Parsetext class is designed to retrieve some informations in a text file 
+ * The others class have a reference of the Parsetext class to avoid to 
+ * copy a same function in several classes
+ * 
+ *
+ */
+
+
+    class Parsetext{
+        public:
+            Parsetext();
+            ~Parsetext();
+            std::string parse_text(std::string categorie);
+            std::string parse_text(std::string categorie, std::string caracteristics);
+            std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence);
+    };
+
+
+
+/**
  * Implementation of the Class Attributes
  *
  * Attributes class is designed such as all the attributes of a character 
@@ -352,6 +374,30 @@ namespace vampireGameproject{
     };
 
 
+
+
+/**
+ * Implementation of the Class Gui
+ *
+ * Gui class is designed such as all the elements composing  
+ * the graphical user interface are contained in this class
+ *  
+ * 
+ *
+ */
+    class RulesofGame;
+
+    class Gui{
+        public:
+            Gui(RulesofGame& rulesGamereference);
+            ~Gui();
+        private:
+            RulesofGame& testGui;
+    };
+
+
+
+
 /**
  * Implementation of the Class RulesofGame
  *
@@ -376,25 +422,6 @@ namespace vampireGameproject{
 
 
 
-/**
- * Implementation of the Class Gui
- *
- * Gui class is designed such as all the elements composing  
- * the graphical user interface are contained in this class
- *  
- * 
- *
- */
-
-
-
-    class Gui{
-        public:
-            Gui();
-            ~Gui();
-        private:
-            RulesofGame testGui;
-    };
 
 
 // The second function parse_text aims to get the description of a skill, 
@@ -421,29 +448,10 @@ namespace vampireGameproject{
         private:
             Parsetext textParser;
             Gui graphicalUserinterface;
+            RulesofGame rulesGame;
     };
 
 
-/**
- * Implementation of the Class Parsetext
- *
- * Parsetext class is designed to retrieve some informations in a text file 
- * The others class have a reference of the Parsetext class to avoid to 
- * copy a same function in several classes
- * 
- *
- */
-
-
-
-    class Parsetext{
-        public:
-            Parsetext();
-            ~Parsetext();
-            std::string parse_text(std::string categorie);
-            std::string parse_text(std::string categorie, std::string caracteristics);
-            std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence);
-    };
 
 
 /**
