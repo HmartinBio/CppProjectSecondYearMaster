@@ -11,12 +11,12 @@
 
 
 vampireGameproject::Character::Character(Parsetext& textParser)
-    : characterDaemenor(textParser), characterClan(textParser), 
-    characterHealth(textParser), characterNature(textParser), 
-    characterChronicle(textParser), characterGeneration(textParser),
-    characterAttributes(textParser), characterAbilities(textParser),
-    characterAdvantages(textParser), characterMeritsflaws(textParser),
-    characterTraits(textParser){}
+    : characterChronicle(textParser), characterAttributes(textParser),
+    characterAbilities(textParser), characterAdvantages(textParser),
+    characterMeritsflaws(textParser), characterNature(textParser),
+    characterHealth(textParser), characterTraits(textParser),
+    characterGeneration(textParser), characterDaemenor(textParser), 
+    characterClan(textParser){}
 
 
 
