@@ -25,38 +25,6 @@
 
 namespace vampireGameproject{
 
-/**
-* Implementation of the Class Character
-*
-* Character class is designed such as all the informations concerning a
-* playable character are written in this class. Once this class is created
-* all the informations contained in a Character object are extracted to 
-* modify the character picture. Character object are created once the 
-* Graphical user interface received all the informations to create a character
-*/
-
-    class Character{
-        private:
-            std::string playerName;
-            Chronicle characterChronicle;
-            Attributes characterAttributes;
-            Abilities characterAbilities;
-            Advantages characterAdvantages;
-            Meritsflaws characterMeritsflaws;
-            Nature characterNature;
-            Health characterHealth;
-            CharacterTraits characterTraits;
-            Generation characterGeneration;
-            Daemenor characterDaemenor;
-            Clan characterClan;
-            
-        public:
-            std::string getPlayername(void);
-            void setPlayername(std::string name);
-            Character(Parsetext& textParser);
-            ~Character();
-            
-    };
 
 
 /**
@@ -487,6 +455,45 @@ namespace vampireGameproject{
  * the picture to generate a picture with all the informations about a character
  *
  */
+
+
+
+
+
+/**
+* Implementation of the Class Character
+*
+* Character class is designed such as all the informations concerning a
+* playable character are written in this class. Once this class is created
+* all the informations contained in a Character object are extracted to 
+* modify the character picture. Character object are created once the 
+* Graphical user interface received all the informations to create a character
+*/
+
+    class Character{
+        private:
+            std::string playerName;
+            Chronicle characterChronicle;
+            Attributes characterAttributes;
+            Abilities characterAbilities;
+            Advantages characterAdvantages;
+            Meritsflaws characterMeritsflaws;
+            Nature characterNature;
+            Health characterHealth;
+            CharacterTraits characterTraits;
+            Generation characterGeneration;
+            Daemenor characterDaemenor;
+            Clan characterClan;
+            
+        public:
+            std::string getPlayername(void);
+            void setPlayername(std::string name);
+            Character(Parsetext& textParser);
+            ~Character();
+            
+    };
+
+
 
 
     class Picturemodifying{
