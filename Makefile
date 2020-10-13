@@ -18,6 +18,6 @@ $(EXEC): $(OBJ)
 clean:
 	rm -rf *.o
 
-mrproprer: clean
+mrproper: clean
 	rm -rf $(EXEC)
 
