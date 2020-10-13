@@ -9,7 +9,8 @@
 *
 */
 
-vampireGameproject::Controllor::Controllor(){}
+vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
+    rulesGame(graphicalUserinterface){}
 
 
 /** Destructor of the class Controllor.
