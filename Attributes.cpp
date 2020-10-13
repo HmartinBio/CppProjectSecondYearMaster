@@ -33,9 +33,14 @@ std::map<std::string,int> vampireGameproject::Attributes::getAttributes(std::str
         return socialAttributes;
     }
 
-    //else if(attributeTable == "mental"){
-    return mentalAttributes;
-    //}
+    else if(attributeTable == "mental"){
+        return mentalAttributes;
+    }
+    
+    else{
+        std::cout << "ERROR, the attributeTable is wrong" << std::endl;
+        return std::map<std::string, int>();
+    }
     
 }
 
@@ -62,6 +67,10 @@ void vampireGameproject::Attributes::setAttributes(std::string tableName,std::st
 
     else if(tableName == "mental"){
           mentalAttributes.insert(std::pair<std::string,int>(attributeName, value));
+    }
+
+    else{
+        std::cout << "ERROR, the tableName is false" << std::endl;
     }
 }
 
