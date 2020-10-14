@@ -11,9 +11,9 @@
 
 vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference): 
     testGui(rulesGamereference){
-        window.set_title("Vampire Game Project");
-        window.resize(400, 300);
-        window.set_position(Gtk::WIN_POS_CENTER);
+        Gui::set_title("Vampire Game Project");
+        Gui::resize(400, 300);
+        Gui::set_position(Gtk::WIN_POS_CENTER);
         
         for(int iterator = 0; iterator <= 3; iterator++){
             tableLabel[iterator] = Gtk::Label();
@@ -41,8 +41,8 @@ vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference):
         mainGrid.attach_next_to(tableComboBox[1], tableLabel[3], Gtk::POS_RIGHT, 1, 1);
         //mainGrid.attach(tableComboBox[1], 1, 1, 1, 1);
         mainGrid.show_all();
-        window.add(mainGrid);
-        window.show_all_children();
+        Gui::add(mainGrid);
+        Gui::show_all_children();
     }
 
 
