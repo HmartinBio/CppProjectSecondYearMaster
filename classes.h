@@ -396,9 +396,8 @@ namespace vampireGameproject{
  */
     class RulesofGame;
 
-    class Gui{
+    class Gui : public Gtk::Window{
         public:
-            Gtk::Window window;
             Gui(RulesofGame& rulesGamereference);
             virtual ~Gui();
 
