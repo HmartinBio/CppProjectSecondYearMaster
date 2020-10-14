@@ -26,10 +26,11 @@ vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference):
         tableLabel[2].set_text("    Name of the Vampire:");
         tableLabel[3].set_text("Select Attributes:");
         tableLabel[3].set_xalign(0.0);
-        mainGrid.attach(tableLabel[0], 0, 0, 1, 3);
+        mainGrid.attach(tableLabel[0], 0, 0, 1, 1);
         mainGrid.attach(tableLabel[1], 0, 1, 1, 1);
         mainGrid.attach(tableLabel[2], 2, 0, 1, 1);
         mainGrid.attach(tableLabel[3], 0, 2, 1, 1);
+        mainGrid.insert_row(1);
         tableComboBox[0] = Gtk::ComboBoxText();
         tableComboBox[1] = Gtk::ComboBoxText();
         tableComboBox[0].append("Assamite");
