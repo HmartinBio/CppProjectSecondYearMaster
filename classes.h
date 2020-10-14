@@ -26,6 +26,12 @@
 #include <gtkmm/window.h>
 #include <gtkmm/grid.h>
 #include <gtkmm/label.h>
+#include <gtkmm/comboboxtext.h>
+#include <gtkmm/application.h>
+#include <gtkmm/button.h>
+#include <gtkmm/misc.h>
+#include <gtkmm.h>
+
 namespace vampireGameproject{
 
 
@@ -399,9 +405,22 @@ namespace vampireGameproject{
         private:
             Gtk::Grid mainGrid; 
             RulesofGame& testGui;
-            Gtk::Label tableLabel[1];
+            Gtk::Label tableLabel[4];
+            Gtk::ComboBoxText tableComboBox[2];
     };
 
+
+    class ButtonmultiInput{
+        public:
+            ButtonmultiInput();
+            virtual ~ButtonmultiInput();
+
+        
+        private:
+            Gtk::Button plusButton; 
+            Gtk::Button minusButton;
+            
+    };
 
 
 
