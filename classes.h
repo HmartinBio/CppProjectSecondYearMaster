@@ -22,7 +22,10 @@
 #include "pystring.h"
 #include <fstream>
 #include <regex>
-
+#include <gtkmm/main.h>
+#include <gtkmm/window.h>
+#include <gtkmm/grid.h>
+#include <gtkmm/label.h>
 namespace vampireGameproject{
 
 
@@ -389,10 +392,14 @@ namespace vampireGameproject{
 
     class Gui{
         public:
+            Gtk::Window window;
             Gui(RulesofGame& rulesGamereference);
-            ~Gui();
+            virtual ~Gui();
+
         private:
+            Gtk::Grid mainGrid; 
             RulesofGame& testGui;
+            Gtk::Label tableLabel[1];
     };
 
 
@@ -444,10 +451,10 @@ namespace vampireGameproject{
         public:
             Controllor();
             ~Controllor();
+            Gui graphicalUserinterface;
 
         private:
             Parsetext textParser;
-            Gui graphicalUserinterface;
             RulesofGame rulesGame;
     };
 
