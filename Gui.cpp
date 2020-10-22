@@ -40,6 +40,8 @@ vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference):
         mainGrid.attach_next_to(tableComboBox[0], tableLabel[0], Gtk::POS_RIGHT, 1, 1);
         mainGrid.attach_next_to(tableComboBox[1], tableLabel[3], Gtk::POS_RIGHT, 1, 1);
         //mainGrid.attach(tableComboBox[1], 1, 1, 1, 1);
+        //mainGrid.set_row_homogeneous(true);
+        //mainGrid.set_column_homogeneous(true);
         mainGrid.show_all();
         Gui::add(mainGrid);
         Gui::show_all_children();
