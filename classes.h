@@ -54,6 +54,8 @@ namespace vampireGameproject{
             std::string parse_text(std::string categorie);
             std::string parse_text(std::string categorie, std::string caracteristics);
             std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence);
+            std::vector<std::string> parse_listClans(void);
+            std::string parse_NicknameClan(std::string clanName);
     };
 
 
@@ -95,7 +97,6 @@ namespace vampireGameproject{
  * 
  *
  */
-
 
 
     class Abilities{
