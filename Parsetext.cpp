@@ -251,6 +251,96 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 
 }
 
+
+/** Implementation of the parse_text method.
+*
+* Implementation of the parse_text method
+* Method returning a parsed text corresponding to  
+* the description of the searched element 
+* 
+* @param categorie categorie name to parse on the file
+* 
+*/
+
+// Allows to parse all the text of a categorie (Abilities, Attributes,...)
+
+std::vector<std::string> vampireGameproject::Parsetext::parse_listClans(){
+    std::string lineOftext;
+    std::vector<std::string> vectorClans;
+    std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
+
+    // while we don't find the searched table
+    // beginning by "##" we take the next line
+
+    while(pystring::startswith(lineOftext, "##") != true || 
+        pystring::find(lineOftext, "Clans") == -1){
+            std::getline(infile, lineOftext);
+            std::cout << lineOftext << std::endl;
+        }
+    std::cout << lineOftext << std::endl;
+    std::getline(infile, lineOftext);
+    
+    while(pystring::startswith(lineOftext, "##") != true){
+        std::getline(infile, lineOftext);
+
+        if (pystring::startswith(lineOftext, "--") == true){
+            lineOftext = lineOftext.substr(2, lineOftext.size());
+            vectorClans.push_back(lineOftext);
+
+        }
+
+    }
+    return vectorClans;
+}
+
+
+/** Implementation of the parse_text method.
+*
+* Implementation of the parse_text method
+* Method returning a parsed text corresponding to  
+* the description of the searched element 
+* 
+* @param categorie categorie name to parse on the file
+* 
+*/
+
+// Allows to parse all the text of a categorie (Abilities, Attributes,...)
+
+
+
+std::string vampireGameproject::Parsetext::parse_NicknameClan(std::string clanName){
+    std::string lineOftext;
+    std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
+
+    // while we don't find the searched table
+    // beginning by "##" we take the next line
+
+    while(pystring::startswith(lineOftext, "##") != true || 
+        pystring::find(lineOftext, "Clans") == -1){
+            std::getline(infile, lineOftext);
+        }
+    
+    while(pystring::startswith(lineOftext, "--") != true || 
+        pystring::find(lineOftext, clanName) == - 1){
+            std::getline(infile, lineOftext);
+        }
+    
+    
+    while(pystring::find(lineOftext, "Nickname:") == - 1){
+        std::getline(infile, lineOftext);
+    }
+
+    std::vector<std::string> vectorSplitter; 
+
+    pystring::split(lineOftext, vectorSplitter, ":");
+
+    return vectorSplitter.at(1);
+
+
+}
+
     //while(lineOftext != lineTofind){
     //    std::getline(infile, lineOftext);
     //}
