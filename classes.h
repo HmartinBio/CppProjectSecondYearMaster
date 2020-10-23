@@ -55,7 +55,9 @@ namespace vampireGameproject{
             std::string parse_text(std::string categorie, std::string caracteristics);
             std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence);
             std::vector<std::string> parse_listClans(void);
+            std::vector<std::string> parse_listNature(void);
             std::string parse_NicknameClan(std::string clanName);
+            std::vector<std::string> parse_ClanDisciplines(std::string clanName);
     };
 
 
@@ -401,12 +403,22 @@ namespace vampireGameproject{
         public:
             Gui(RulesofGame& rulesGamereference);
             virtual ~Gui();
+            void setTableComboBox(int index, std::vector<std::string> vectorElements);
+            void initialiseTableLabel();
+            void initialiseTableComboBox();
+            void setTableLabelAlign(int index, std::string label);
+            void setTableLabel(int index, std::string label);
+            void setTableLabelOnGrid(int index, int xcoordinates, int ycoordinates, int width, int height);
+            void setTableComboBoxOnGrid(int index, int indexLabel);
+            void showAll();
 
         private:
             Gtk::Grid mainGrid; 
             RulesofGame& testGui;
             Gtk::Label tableLabel[4];
-            Gtk::ComboBoxText tableComboBox[2];
+            Gtk::ComboBoxText tableComboBox[3];
+
+            
     };
 
 
@@ -438,11 +450,19 @@ namespace vampireGameproject{
 
     class RulesofGame{
         public:
-            RulesofGame(Gui& classReference);
+            RulesofGame(Parsetext& parserReference, Gui& classReference);
             ~RulesofGame();
+            std::vector<std::string> returnVectorClans();
+            std::vector<std::string> returnVectorNature();
+            void setVectorClans();
+            void setVectorNature();
+
+            Parsetext& parser;
 
         private:
             Gui& referenceOutterclass;
+            std::vector<std::string> vectorClans;
+            std::vector<std::string> vectorNature;
     };
          
 
