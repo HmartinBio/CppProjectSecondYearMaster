@@ -10,7 +10,7 @@
 * @param classReference reference of the Gui class containing RulesofGame class
 */
 
-vampireGameproject::RulesofGame::RulesofGame(Gui& classReference): referenceOutterclass(classReference){}
+vampireGameproject::RulesofGame::RulesofGame(Parsetext& parserReference, Gui& classReference): parser(parserReference), referenceOutterclass(classReference){}
 
 
 /** Destructor of the class RulesofGame.
@@ -24,3 +24,18 @@ vampireGameproject::RulesofGame::RulesofGame(Gui& classReference): referenceOutt
 
 vampireGameproject::RulesofGame::~RulesofGame(){}
 
+void vampireGameproject::RulesofGame::setVectorClans(){
+    vectorClans = parser.parse_listClans();
+}
+
+void vampireGameproject::RulesofGame::setVectorNature(){
+    vectorNature = parser.parse_listNature();
+}
+
+std::vector<std::string> vampireGameproject::RulesofGame::returnVectorClans(){
+    return vectorClans;
+}
+
+std::vector<std::string> vampireGameproject::RulesofGame::returnVectorNature(){
+    return vectorNature;
+}
