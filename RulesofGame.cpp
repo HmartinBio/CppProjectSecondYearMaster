@@ -40,10 +40,15 @@ std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorNature(){
     return vectorNature;
 }
 
-void vampireGameproject::RulesofGame::setLimitSpinButton(vampireGameproject::ButtonmultiInput& buttonMultiInputReference, int limit){
-    buttonMultiInputReference.setLimitSpinButton(limit);
-}
+//void vampireGameproject::RulesofGame::setLimitSpinButton(vampireGameproject::ButtonmultiInput& buttonMultiInputReference, int limit){
+//    buttonMultiInputReference.setLimitSpinButton(limit);
+//}
 
-void vampireGameproject::RulesofGame::setLimitSpinButtonAttributes(int limit){
-    setLimitSpinButton(referenceOutterclass.returnAttributesInput(), limit);
+//void vampireGameproject::RulesofGame::setLimitSpinButtonAttributes(int limit){
+//    setLimitSpinButton(referenceOutterclass.returnAttributesInput(), limit);
+//}
+
+void vampireGameproject::RulesofGame::setVectorMultiInput(std::vector<std::string>& vectorInput){
+    
+
 }
