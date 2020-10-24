@@ -65,11 +65,17 @@ vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference):
 
 vampireGameproject::Gui::~Gui(){}
 
-void vampireGameproject::Gui::setTableComboBox(int index, std::vector<std::string> vectorElements){
+
+
+
+void vampireGameproject::Gui::setTableComboBox(int index, std::vector<std::string>& vectorElements){
     for(int iterator = 0; iterator < (int)vectorElements.size(); iterator++){
         tableComboBox[index].append(vectorElements.at(iterator));
     }
 }
+
+
+
 
 void vampireGameproject::Gui::initialiseTableLabel(){
     for(int iterator = 0; iterator <= 3; iterator++){
@@ -77,31 +83,92 @@ void vampireGameproject::Gui::initialiseTableLabel(){
         }
 }
 
+
+
 void vampireGameproject::Gui::initialiseTableComboBox(){
     tableComboBox[0] = Gtk::ComboBoxText();
     tableComboBox[1] = Gtk::ComboBoxText();
-    tableComboBox[2] = Gtk::ComboBoxText();
 }
+
+
+
 
 void vampireGameproject::Gui::setTableLabelAlign(int index, std::string label){
     tableLabel[index].set_text(label);
     tableLabel[index].set_xalign(0.0);
 }
 
+
+
 void vampireGameproject::Gui::setTableLabel(int index, std::string label){
     tableLabel[index].set_text(label);
 }
+
+
+
+
 
 void vampireGameproject::Gui::setTableLabelOnGrid(int index, int xcoordinates, int ycoordinates, int width, int height){
     mainGrid.attach(tableLabel[index], xcoordinates, ycoordinates, width, height);
 }
 
+
+
+
+
+
 void vampireGameproject::Gui::setTableComboBoxOnGrid(int index, int indexLabel){
     mainGrid.attach_next_to(tableComboBox[index], tableLabel[indexLabel], Gtk::POS_RIGHT, 1, 1);
 }
+
+
+
+
+
+void vampireGameproject::Gui::setMultiComboBox(Gtk::Button& buttonPlus, Gtk::Button& buttonMinus,
+                Gtk::ComboBoxText& ComboFirst, Gtk::ComboBoxText& ComboSecond,
+                Gtk::SpinButton& buttonSpin, int xcoordinates, int ycoordinates, 
+                int width, int height){
+
+        mainGrid.attach(buttonMinus, xcoordinates, ycoordinates, width, height);
+        mainGrid.attach_next_to(buttonPlus, buttonMinus, Gtk::POS_RIGHT, 1, 1);
+        mainGrid.attach_next_to(ComboFirst, buttonMinus, Gtk::POS_RIGHT, 1, 1);
+        mainGrid.attach_next_to(ComboSecond, ComboFirst, Gtk::POS_RIGHT, 1, 1);
+        mainGrid.attach_next_to(buttonSpin, ComboSecond, Gtk::POS_RIGHT, 1, 1);
+}
+
+
+
+
+
+void vampireGameproject::Gui::setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height){
+    setMultiComboBox(attributesInput.returnButton("plus"), attributesInput.returnButton("minus"),
+    attributesInput.returnComboBox("first"), attributesInput.returnComboBox("second"), 
+    attributesInput.returnSpinButton(), xcoordinates, ycoordinates, width, height);
+}
+
+
+
+
+void vampireGameproject::Gui::setLabelMultiComboBox(Gtk::Button& buttonPlus, Gtk::Button& buttonMinus){
+    buttonPlus.add_label("+");
+    buttonMinus.add_label("-");
+}
+
+
+
+
+void vampireGameproject::Gui::setLabelMultiComboBoxAttributes(){
+    setLabelMultiComboBox(attributesInput.returnButton("plus"), 
+        attributesInput.returnButton("minus"));
+}
+
+
+
 
 void vampireGameproject::Gui::showAll(){
     mainGrid.show_all();
     Gui::add(mainGrid);
     Gui::show_all_children();
 }
+
