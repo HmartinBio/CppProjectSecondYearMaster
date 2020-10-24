@@ -395,6 +395,8 @@ class ButtonmultiInput{
             Gtk::Button& returnButton(std::string sign);
             Gtk::ComboBoxText& returnComboBox(std::string position);
             Gtk::SpinButton& returnSpinButton();
+            void setLimitSpinButton(int limit);
+            void setLabelMultiComboBox();
         
         private:
             Gtk::Button plusButton; 
@@ -437,8 +439,8 @@ class ButtonmultiInput{
                 Gtk::SpinButton& buttonSpin, int xcoordinates, int ycoordinates, int width, int height);
             
             void setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height);
-            void setLabelMultiComboBox(Gtk::Button& buttonPlus, Gtk::Button& buttonMinus);
             void setLabelMultiComboBoxAttributes();
+            ButtonmultiInput& returnAttributesInput();
             void showAll();
 
         private:
@@ -474,7 +476,9 @@ class ButtonmultiInput{
             std::vector<std::string>& returnVectorNature();
             void setVectorClans();
             void setVectorNature();
-
+            void setLimitSpinButton(vampireGameproject::ButtonmultiInput& buttonMultiInputReference, 
+                int limit);
+            void setLimitSpinButtonAttributes(int limit);
             Parsetext& parser;
 
         private:
