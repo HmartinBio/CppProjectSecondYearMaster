@@ -388,6 +388,28 @@ namespace vampireGameproject{
 
 
 
+class ButtonmultiInput{
+        public:
+            ButtonmultiInput();
+            virtual ~ButtonmultiInput();
+            Gtk::Button& returnButton(std::string sign);
+            Gtk::ComboBoxText& returnComboBox(std::string position);
+            Gtk::SpinButton& returnSpinButton();
+        
+        private:
+            Gtk::Button plusButton; 
+            Gtk::Button minusButton;
+            Gtk::ComboBoxText firstComboBox;
+            Gtk::ComboBoxText secondComboBox;
+            Gtk::SpinButton spinButton;
+            
+    };
+
+
+
+
+
+
 /**
  * Implementation of the Class Gui
  *
@@ -397,40 +419,36 @@ namespace vampireGameproject{
  * 
  *
  */
-    class RulesofGame;
+    class RulesofGame; 
 
     class Gui : public Gtk::Window{
         public:
             Gui(RulesofGame& rulesGamereference);
             virtual ~Gui();
-            void setTableComboBox(int index, std::vector<std::string> vectorElements);
+            void setTableComboBox(int index, std::vector<std::string>& vectorElements);
             void initialiseTableLabel();
             void initialiseTableComboBox();
             void setTableLabelAlign(int index, std::string label);
             void setTableLabel(int index, std::string label);
             void setTableLabelOnGrid(int index, int xcoordinates, int ycoordinates, int width, int height);
             void setTableComboBoxOnGrid(int index, int indexLabel);
+            void setMultiComboBox(Gtk::Button& buttonPlus, Gtk::Button& buttonMinus,
+                Gtk::ComboBoxText& ComboFirst, Gtk::ComboBoxText& ComboSecond,
+                Gtk::SpinButton& buttonSpin, int xcoordinates, int ycoordinates, int width, int height);
+            
+            void setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height);
+            void setLabelMultiComboBox(Gtk::Button& buttonPlus, Gtk::Button& buttonMinus);
+            void setLabelMultiComboBoxAttributes();
             void showAll();
 
         private:
             Gtk::Grid mainGrid; 
             RulesofGame& testGui;
             Gtk::Label tableLabel[4];
-            Gtk::ComboBoxText tableComboBox[3];
-
-            
-    };
+            Gtk::ComboBoxText tableComboBox[2];
+            ButtonmultiInput attributesInput;
 
 
-    class ButtonmultiInput{
-        public:
-            ButtonmultiInput();
-            virtual ~ButtonmultiInput();
-
-        
-        private:
-            Gtk::Button plusButton; 
-            Gtk::Button minusButton;
             
     };
 
@@ -452,8 +470,8 @@ namespace vampireGameproject{
         public:
             RulesofGame(Parsetext& parserReference, Gui& classReference);
             ~RulesofGame();
-            std::vector<std::string> returnVectorClans();
-            std::vector<std::string> returnVectorNature();
+            std::vector<std::string>& returnVectorClans();
+            std::vector<std::string>& returnVectorNature();
             void setVectorClans();
             void setVectorNature();
 
