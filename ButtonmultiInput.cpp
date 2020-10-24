@@ -27,3 +27,13 @@ Gtk::ComboBoxText& vampireGameproject::ButtonmultiInput::returnComboBox(std::str
 Gtk::SpinButton& vampireGameproject::ButtonmultiInput::returnSpinButton(){
     return spinButton;
 } 
+
+void vampireGameproject::ButtonmultiInput::setLimitSpinButton(int limit){
+    spinButton.set_range(0, limit);
+    spinButton.set_increments(1,1);
+}
+
+void vampireGameproject::ButtonmultiInput::setLabelMultiComboBox(){
+    plusButton.add_label("+");
+    minusButton.add_label("-");
+}
