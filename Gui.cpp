@@ -150,20 +150,15 @@ void vampireGameproject::Gui::setMultiComboBoxAttributes(int xcoordinates, int y
 
 
 
-void vampireGameproject::Gui::setLabelMultiComboBox(Gtk::Button& buttonPlus, Gtk::Button& buttonMinus){
-    buttonPlus.add_label("+");
-    buttonMinus.add_label("-");
-}
-
-
 
 
 void vampireGameproject::Gui::setLabelMultiComboBoxAttributes(){
-    setLabelMultiComboBox(attributesInput.returnButton("plus"), 
-        attributesInput.returnButton("minus"));
+    attributesInput.setLabelMultiComboBox();
 }
 
-
+vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAttributesInput(){
+    return attributesInput;
+}
 
 
 void vampireGameproject::Gui::showAll(){
