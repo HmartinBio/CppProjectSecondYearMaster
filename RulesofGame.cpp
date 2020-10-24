@@ -32,10 +32,10 @@ void vampireGameproject::RulesofGame::setVectorNature(){
     vectorNature = parser.parse_listNature();
 }
 
-std::vector<std::string> vampireGameproject::RulesofGame::returnVectorClans(){
+std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorClans(){
     return vectorClans;
 }
 
-std::vector<std::string> vampireGameproject::RulesofGame::returnVectorNature(){
+std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorNature(){
     return vectorNature;
 }
