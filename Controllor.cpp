@@ -32,6 +32,7 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableComboBoxOnGrid(1, 1);
         graphicalUserinterface.setMultiComboBoxAttributes(1, 3, 1, 1);
         graphicalUserinterface.setLabelMultiComboBoxAttributes();
+        rulesGame.setLimitSpinButtonAttributes(7);
         graphicalUserinterface.showAll();
     }
 
