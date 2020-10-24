@@ -30,7 +30,8 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableComboBox(1, rulesGame.returnVectorNature());
         graphicalUserinterface.setTableComboBoxOnGrid(0, 0);
         graphicalUserinterface.setTableComboBoxOnGrid(1, 1);
-        graphicalUserinterface.setTableComboBoxOnGrid(2, 3);
+        graphicalUserinterface.setMultiComboBoxAttributes(1, 3, 1, 1);
+        graphicalUserinterface.setLabelMultiComboBoxAttributes();
         graphicalUserinterface.showAll();
     }
 
