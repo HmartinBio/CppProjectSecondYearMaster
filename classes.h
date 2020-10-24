@@ -386,25 +386,58 @@ namespace vampireGameproject{
     };
 
 
-
-
-class ButtonmultiInput{
+    class MultiInput{
         public:
-            ButtonmultiInput();
-            virtual ~ButtonmultiInput();
-            Gtk::Button& returnButton(std::string sign);
+            MultiInput();
+            //virtual ~MultiInput();
             Gtk::ComboBoxText& returnComboBox(std::string position);
             Gtk::SpinButton& returnSpinButton();
             void setLimitSpinButton(int limit);
-            void setLabelMultiComboBox();
-        
+            void AddText(std::string vectorPosition, std::string stringToAdd, int index);
+            void DeleteText(std::string vectorPosition, int index);
+            int returnSpinScore();
+            std::string returnTextComboBox(std::string index);
+    
         private:
-            Gtk::Button plusButton; 
-            Gtk::Button minusButton;
             Gtk::ComboBoxText firstComboBox;
             Gtk::ComboBoxText secondComboBox;
             Gtk::SpinButton spinButton;
-            
+    };
+
+
+
+    class ButtonmultiInput{
+            public:
+                ButtonmultiInput();
+                virtual ~ButtonmultiInput();
+                Gtk::Button& returnButton(std::string sign);
+                Gtk::ComboBoxText& returnComboBox(std::string position);
+                Gtk::SpinButton& returnSpinButton();
+                void setLabelMultiComboBox();
+                std::vector<MultiInput*> returnVectorMultiInput();
+                void setDicoSelectedInput();
+                void setVectorComboBox(std::vector<std::string>& vectorText, std::string index);
+                void setDicoScoreFirstComboBox();
+                void setMultiInput();
+                void deleteMultiInput();
+                void setCoordinates(int coordinateX, int coordinateY);
+                std::map<std::string, int> returnDicoScoreFirstComboBox();
+                std::map<std::string, std::string> returnDicoSelectedInput();
+                int xcoordinates;
+                int ycoordinates; 
+
+
+            private:
+                Gtk::Button plusButton; 
+                Gtk::Button minusButton;
+                Gtk::ComboBoxText firstComboBox;
+                Gtk::ComboBoxText secondComboBox;
+                Gtk::SpinButton spinButton;
+                std::vector<MultiInput*> vectorMultiInputs;
+                std::map<std::string, std::string> DicoSelectedInputs;
+                std::vector<std::string> vectorFirstComboBox;
+                std::vector<std::string> vectorSecondComboBox;
+                std::map<std::string, int> DicoScoreFirstComboBox;
     };
 
 
@@ -480,6 +513,7 @@ class ButtonmultiInput{
                 int limit);
             void setLimitSpinButtonAttributes(int limit);
             Parsetext& parser;
+            void setVectorMultiInput(std::vector<std::string>& vectorInput);
 
         private:
             Gui& referenceOutterclass;
