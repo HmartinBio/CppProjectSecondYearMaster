@@ -48,7 +48,16 @@ std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorNature(){
 //    setLimitSpinButton(referenceOutterclass.returnAttributesInput(), limit);
 //}
 
-void vampireGameproject::RulesofGame::setVectorMultiInput(std::vector<std::string>& vectorInput){
-    
+void vampireGameproject::RulesofGame::setVectorMultiInput(std::vector<std::string>& vectorInput){}
 
+
+
+void vampireGameproject::RulesofGame::setLimitPointsAttributes(int PhysicalPoints, int SocialPoints, int MentalPoints){
+    limitPointsAttributes.insert(std::pair<std::string, int>("Physical", PhysicalPoints));
+    limitPointsAttributes.insert(std::pair<std::string, int>("Social", SocialPoints));
+    limitPointsAttributes.insert(std::pair<std::string, int>("Mental", MentalPoints));
+}
+
+std::map<std::string, int> vampireGameproject::RulesofGame::returnLimitPointsAttributes(){
+    return limitPointsAttributes;
 }
