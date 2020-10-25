@@ -433,7 +433,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Attributes(){
     // while we don't find the searched table
     // beginning by "##" we take the next line
 
-    while(pystring::startswith(lineOftext, "####") != true || 
+    while(pystring::startswith(lineOftext, "####") != true ||
         pystring::find(lineOftext, "Attributes") == -1){
             std::getline(infile, lineOftext);
     }
