@@ -450,7 +450,7 @@ namespace vampireGameproject{
                 std::vector<std::string> vectorFirstComboBox;
                 int SecondComboBoxItemsNumber;
                 int xcoordinates;
-                int ycoordinates; 
+                int ycoordinates;
                 std::map<std::string, int> DicoScoreFirstComboBox;
                 std::vector<std::string> (*functionForComboBoxOne)();
                 std::vector<std::string> (*functionForSecondComboBox)(std::string categorie);
