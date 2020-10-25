@@ -161,6 +161,9 @@ vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAttributesI
 }
 
 
+
+
+
 void vampireGameproject::Gui::showAll(){
     mainGrid.show_all();
     Gui::add(mainGrid);
