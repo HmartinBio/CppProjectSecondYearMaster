@@ -177,7 +177,7 @@ void vampireGameproject::Controllor::testInputsFirstComboBox(ButtonmultiInput& B
     // Else, we retire the elements already selected 
 
     if (counter == 0){
-        ButtonMultiInputReference.setVectorComboBox(number, "second", 
+        ButtonMultiInputReference.setVectorComboBox(number, "second",
                 vectorAttributesCategorie);
     }
 
