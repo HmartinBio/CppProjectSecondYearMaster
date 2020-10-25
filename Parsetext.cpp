@@ -424,6 +424,73 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplines(st
     return vectorClansDisciplines;    
 }
 
+std::vector<std::string> vampireGameproject::Parsetext::parse_Attributes(){
+    std::string lineOftext;
+    std::vector<std::string> vectorAttributes;
+    std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
+
+    // while we don't find the searched table
+    // beginning by "##" we take the next line
+
+    while(pystring::startswith(lineOftext, "####") != true || 
+        pystring::find(lineOftext, "Attributes") == -1){
+            std::getline(infile, lineOftext);
+    }
+
+    std::getline(infile, lineOftext);    
+
+    while(pystring::startswith(lineOftext, "####") != true){
+            std::getline(infile, lineOftext);
+
+        if (pystring::startswith(lineOftext, "##")){
+            vectorAttributes.push_back(lineOftext.substr(4, lineOftext.size()));
+        }
+
+    }
+
+    infile.close();
+
+    return vectorAttributes;
+}
+
+
+std::vector<std::string> vampireGameproject::Parsetext::parse_AttributesCategorie(std::string categorie){
+    std::string lineOftext;
+    std::vector<std::string> vectorAttributes;
+    std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
+
+    // while we don't find the searched table
+    // beginning by "##" we take the next line
+
+    while(pystring::startswith(lineOftext, "####") != true || 
+        pystring::find(lineOftext, "Attributes") == -1){
+            std::getline(infile, lineOftext);
+    }
+
+    std::getline(infile, lineOftext);
+
+    while(pystring::startswith(lineOftext, "##") != true || 
+        pystring::find(lineOftext,categorie) == -1){
+            std::getline(infile, lineOftext);
+        }
+
+    std::getline(infile, lineOftext);
+
+    while(pystring::startswith(lineOftext, "##") != true){
+        std::getline(infile, lineOftext);
+        
+        if (pystring::startswith(lineOftext, "--") == true){
+            vectorAttributes.push_back(lineOftext.substr(3, lineOftext.size()));
+        }
+    }
+
+    infile.close();
+    return vectorAttributes;
+}
+
+
 
     //while(lineOftext != lineTofind){
     //    std::getline(infile, lineOftext);
