@@ -342,6 +342,44 @@ std::string vampireGameproject::ButtonmultiInput::returnTextComboBox(int number,
 }
 
 
+
+
+/** Implementation of the returnXCoordinate method.
+*
+* Implementation of the returnXCoordinate method
+* Method returning the x coordinate
+* 
+*
+*/
+
+
+
+int vampireGameproject::ButtonmultiInput::returnXCoordinate(){
+    return xcoordinates;
+}
+
+
+/** Implementation of the returnYCoordinate method.
+*
+* Implementation of the returnYCoordinate method
+* Method returning the y coordinate
+* 
+*
+*/
+
+
+
+int vampireGameproject::ButtonmultiInput::returnYCoordinate(){
+    return ycoordinates;
+}
+
+
+
+
+
+
+
+
 // Il faudrait passer les fonctions du Controlleur au buttonMultiInput
 // Le contrôleur regarderait si les points sont atteints où pas et 
 // supprimerait pour les autres MultiInput le texte choisis
