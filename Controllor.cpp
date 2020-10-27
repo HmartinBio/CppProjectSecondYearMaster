@@ -103,7 +103,10 @@ void vampireGameproject::Controllor::testInputsFirstComboBoxSpinButton(Buttonmul
 }
 
 
-
+// Don't forget to verify for the first comboBox 
+// If we changed of items, if it's the case, so, 
+// we need to clean the spin score et and the 
+// active text of the second ComboBox
 
 
 
@@ -124,6 +127,52 @@ void vampireGameproject::Controllor::testInputsFirstComboBoxSpinButton(Buttonmul
 
 
 
+/** Implementation of the testInputsFirstComboBoxChangingItems method.
+*
+* Implementation of the testInputsFirstComboBoxChangingItems method
+* Method unsetting the text of the Second Combo Box, if the
+* item of the first comboBox is changed. If it's changed, so, 
+* the text of the second comboBox is clear and the spin score is clear too 
+*
+*
+*
+*/
+
+
+// Il ne faudra pas oublier de rétablir le spin score de tous les autres
+// Pour cela utiliser la méthode propre au spin score 
+// !!!!!! A faire
+
+
+
+
+
+void vampireGameproject::Controllor::testInputsFirstComboBoxChangingItems(ButtonmultiInput& ButtonMultiInputReference, int number){
+    
+    // if the text of the second Combobox is not null whereas we changed the item
+    // of the first ComboBox
+
+    if (ButtonMultiInputReference.returnTextComboBox(number, "second") != ""){
+        std::map<std::string, std::string> dicoSelectedInputs = ButtonMultiInputReference.returnDicoSelectedInput(); 
+        
+        // If the item in the first comboBox is not associated to the 
+        // item in the Second ComboBox
+
+        if (dicoSelectedInputs[ButtonMultiInputReference.returnTextComboBox(number, "second")] != ButtonMultiInputReference.returnTextComboBox(number, "first")){
+            ButtonMultiInputReference.deleteItemDicoSelectedInput(ButtonMultiInputReference.returnTextComboBox(number, "second"));
+            
+            // Then we, delete the active text in the Second ComboBox
+            // And we reset the SpinCore of the Spin Button
+
+            std::vector<MultiInput*> vectorMultiInput;
+            vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+            vectorMultiInput[number]->unsetActiveText();
+            vectorMultiInput[number]->resetSpinScore();
+
+            // Method to update the spin score of all MultiInput
+        }
+    }
+}
 
 
 
@@ -209,12 +258,71 @@ void vampireGameproject::Controllor::testInputsFirstComboBox(ButtonmultiInput& B
 
 
 void vampireGameproject::Controllor::testAttributesInputsFirstComboBox(int number){
+    testInputsFirstComboBoxChangingItems(graphicalUserinterface.returnAttributesInput(), number);
     testInputsFirstComboBoxSpinButton(graphicalUserinterface.returnAttributesInput(), number);
     testInputsFirstComboBox(graphicalUserinterface.returnAttributesInput(), number);
 }
 
 
+/** Implementation of the testInputSecondComboBox method.
+*
+* Implementation of the testInputSecondComboBox method
+* Method updating the dictionnary of selected inputs
+* And from that, updating the items of the Second ComboBoxes
+* for all the Concerned MultiInputs  
+*
+*/
 
+
+void vampireGameproject::Controllor::testInputSecondComboBox(int number){
+    ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
+    ButtonMultiInputReference.setDicoSelectedInput();
+    testInputSecondComboBoxChosenItems(ButtonMultiInputReference, number);
+
+}
+
+
+
+/** Implementation of the testInputSecondComboBoxChosenItems method.
+*
+* Implementation of the testInputSecondComboBoxChosenItems method
+* Method detecting if in all the Second ComboBox of all MultiInput 
+* we dectect the last MultiInput modified, if it's not the case,
+* we look if the item of the First Combo Box is the same 
+* of the item we choose for our Combo Box. If it's the case, 
+* we delete the chosen item for all the concerned MultiInput  
+*
+*/
+
+
+void vampireGameproject::Controllor::testInputSecondComboBoxChosenItems(ButtonmultiInput& ButtonMultiInputReference, int number){
+    
+    // Declaration of the vectorMultinput
+
+    std::vector<MultiInput*> vectorMultiInput;
+
+    // Initialising the vectorMultiInput
+
+    vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+
+    // For all the elements of the vectorMultiInput, if the element 
+    // is not the chosen MultiInput and if the item of the first 
+    // Combo Box is the same than the chosen MultiInput
+    // Then, we update the choices for the second ComboBox
+
+    for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
+        if (vectorMultiInput[iterator] != vectorMultiInput[number]){
+            if (vectorMultiInput[iterator]->returnTextComboBox("first") == vectorMultiInput[number]->returnTextComboBox("first")){
+                testInputsFirstComboBox(ButtonMultiInputReference, iterator);
+            }
+        }
+    }
+}
+
+
+void vampireGameproject::Controllor::testInputSpinButton(ButtonmultiInput& ButtonMultiInputReference, int number){
+    
+}
 
 
 
