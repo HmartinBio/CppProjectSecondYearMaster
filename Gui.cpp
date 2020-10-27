@@ -10,49 +10,7 @@
 */
 
 vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference): 
-    testGui(rulesGamereference){
-        //Gui::set_title("Vampire Game Project");
-        //Gui::resize(400, 300);
-        //Gui::set_position(Gtk::WIN_POS_CENTER);
-        
-        //for(int iterator = 0; iterator <= 3; iterator++){
-        //    tableLabel[iterator] = Gtk::Label();
-        //}
-
-        //tableLabel[0].set_text("Select a clan:");
-        //tableLabel[0].set_xalign(0.0);
-        //tableLabel[1].set_text("Select a Nature:");
-        //tableLabel[1].set_xalign(0.0);
-        //tableLabel[2].set_text("    Name of the Vampire:");
-        //tableLabel[3].set_text("Select Attributes:");
-        //tableLabel[3].set_xalign(0.0);
-        //mainGrid.attach(tableLabel[0], 0, 0, 1, 1);
-        //mainGrid.attach(tableLabel[1], 0, 1, 1, 1);
-        //mainGrid.attach(tableLabel[2], 2, 0, 1, 1);
-        //mainGrid.attach(tableLabel[3], 0, 2, 1, 1);
-        //mainGrid.insert_row(1);
-        //tableComboBox[0] = Gtk::ComboBoxText();
-        //tableComboBox[1] = Gtk::ComboBoxText();
-        
-        ////std::vector<std::string> vectorClans = testGui.returnVectorClans();
-
-        ////for(int iterator = 0; iterator < (int)vectorClans.size(); iterator++){
-        ////    tableComboBox[0].append(vectorClans.at(iterator));
-        ////}
-        
-        //tableComboBox[0].append("Assamite");
-        //tableComboBox[0].append("Brujah");
-        //tableComboBox[1].append("Stealer");
-        ////mainGrid.attach(tableComboBox[0], 1, 0, 1, 1);
-        //mainGrid.attach_next_to(tableComboBox[0], tableLabel[0], Gtk::POS_RIGHT, 1, 1);
-        //mainGrid.attach_next_to(tableComboBox[1], tableLabel[3], Gtk::POS_RIGHT, 1, 1);
-        ////mainGrid.attach(tableComboBox[1], 1, 1, 1, 1);
-        ////mainGrid.set_row_homogeneous(true);
-        ////mainGrid.set_column_homogeneous(true);
-        //mainGrid.show_all();
-        //Gui::add(mainGrid);
-        //Gui::show_all_children();
-    }
+    testGui(rulesGamereference){}
 
 
 
@@ -68,12 +26,34 @@ vampireGameproject::Gui::~Gui(){}
 
 
 
+/** Implementation of the setTableComboBox method.
+*
+* Implementation of the setTableComboBox method
+* Method filling the ComboBoxes Clan and Nature
+* with Parsed Text
+*
+*
+*/
+
+
+
 void vampireGameproject::Gui::setTableComboBox(int index, std::vector<std::string>& vectorElements){
     for(int iterator = 0; iterator < (int)vectorElements.size(); iterator++){
         tableComboBox[index].append(vectorElements.at(iterator));
     }
 }
 
+
+
+
+/** Implementation of the initialiseTableLabel method.
+*
+* Implementation of the initialiseTableLabel method
+* Method setting the Label for Clan, Name of the Vampire, 
+* Attributes and Nature
+*
+*
+*/
 
 
 
@@ -85,11 +65,30 @@ void vampireGameproject::Gui::initialiseTableLabel(){
 
 
 
+/** Implementation of the initialiseTableLabel method.
+*
+* Implementation of the initialiseTableLabel method
+* Method creating the ComboBox Nature and Clan
+*
+*
+*/
+
+
+
 void vampireGameproject::Gui::initialiseTableComboBox(){
     tableComboBox[0] = Gtk::ComboBoxText();
     tableComboBox[1] = Gtk::ComboBoxText();
 }
 
+
+
+/** Implementation of the setTableLabelAlign method.
+*
+* Implementation of the setTableLabelAlign method
+* Method creating the ComboBox Nature and Clan
+*
+*
+*/
 
 
 
@@ -100,10 +99,30 @@ void vampireGameproject::Gui::setTableLabelAlign(int index, std::string label){
 
 
 
+
+/** Implementation of the setTableLabel method.
+*
+* Implementation of the setTableLabel method
+* Method assigning text to a precised label
+*
+*
+*/
+
+
+
+
 void vampireGameproject::Gui::setTableLabel(int index, std::string label){
     tableLabel[index].set_text(label);
 }
 
+
+/** Implementation of the setTableLabelOnGrid method.
+*
+* Implementation of the setTableLabelOnGrid method
+* Method displaying labels on the GUI
+*
+*
+*/
 
 
 
@@ -114,12 +133,33 @@ void vampireGameproject::Gui::setTableLabelOnGrid(int index, int xcoordinates, i
 
 
 
+/** Implementation of the setTableComboBoxOnGrid method.
+*
+* Implementation of the setTableComboBoxOnGrid method
+* Method displaying ComboBoxes on the GUI
+*
+*
+*/
 
 
 
 void vampireGameproject::Gui::setTableComboBoxOnGrid(int index, int indexLabel){
     mainGrid.attach_next_to(tableComboBox[index], tableLabel[indexLabel], Gtk::POS_RIGHT, 1, 1);
 }
+
+
+
+
+
+
+
+/** Implementation of the setMultiComboBox method.
+*
+* Implementation of the setTableComboBoxOnGrid method
+* Method displaying ComboBoxes on the GUI
+*
+*   !!!!!!!!!!!!!Method to delete!!!!!!!!!!!!!!!!!!
+*/
 
 
 
@@ -140,14 +180,38 @@ void vampireGameproject::Gui::setMultiComboBox(Gtk::Button& buttonPlus, Gtk::But
 
 
 
+/** Implementation of the setButtonMultiInputAttributes method.
+*
+* Implementation of the setButtonMultiInputAttributes method
+* Method displaying Plus and Minus button of ButtonMultiInput
+* And Displaying their labels on the buttons
+*
+*/
 
-void vampireGameproject::Gui::setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height){
-    setMultiComboBox(attributesInput.returnButton("plus"), attributesInput.returnButton("minus"),
-    attributesInput.returnComboBox("first"), attributesInput.returnComboBox("second"), 
-    attributesInput.returnSpinButton(), xcoordinates, ycoordinates, width, height);
+
+
+void vampireGameproject::Gui::setButtonMultiInputAttributes(){
+     mainGrid.attach(attributesInput.returnButton("minus"), 
+            attributesInput.returnXCoordinate(), 
+            attributesInput.returnYCoordinate(), 1, 1);
+     
+
+     mainGrid.attach_next_to(attributesInput.returnButton("plus"), 
+            attributesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
+    
+    setLabelMultiComboBoxAttributes();
 }
 
 
+
+
+/** Implementation of the setLabelMultiComboBoxAttributes method.
+*
+* Implementation of the setLabelMultiComboBoxAttributes method
+* Method displaying Plus and Minus on the buttons
+*
+*
+*/
 
 
 
@@ -156,11 +220,49 @@ void vampireGameproject::Gui::setLabelMultiComboBoxAttributes(){
     attributesInput.setLabelMultiComboBox();
 }
 
+
+/** Implementation of the returnAttributesInput method.
+*
+* Implementation of the returnAttributesInput method
+* Method returning a reference of ButtonMultiInput
+*
+*
+*/
+
+
+
 vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAttributesInput(){
     return attributesInput;
 }
 
 
+
+/** Implementation of the setMultiInputOnGrid method.
+*
+* Implementation of the setMultiInputOnGrid method
+* Method displaying new MultiInput on the GUI
+*
+*
+*/
+
+
+
+void vampireGameproject::Gui::setMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number){
+    mainGrid.attach(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("first"), ButtonMultiInputReference.returnXCoordinate(), ButtonMultiInputReference.returnYCoordinate() + number, 1, 1);
+    mainGrid.attach_next_to(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("second"), ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("first"), Gtk::POS_RIGHT, 1, 1);
+    mainGrid.attach_next_to(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnSpinButton(), ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("second"), Gtk::POS_RIGHT, 1, 1);
+}
+
+
+
+/** Implementation of the showAll method.
+*
+* Implementation of the showAll method
+* Method initiating the display of all the elements 
+* on the GUI
+*
+*
+*/
 
 
 
