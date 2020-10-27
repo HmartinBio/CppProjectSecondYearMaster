@@ -320,9 +320,55 @@ void vampireGameproject::Controllor::testInputSecondComboBoxChosenItems(Buttonmu
 }
 
 
+
+
+
+/** Implementation of the testInputSpinButton method.
+*
+* Implementation of the testInputSpinButton method
+* Method updating the Spin Score Limit for all the MultiInput 
+* when a SpinScore for a MultiInput is updated
+*  
+*
+*/
+
+
+
 void vampireGameproject::Controllor::testInputSpinButton(ButtonmultiInput& ButtonMultiInputReference, int number){
     
+    // Updating the Dictionnary of Spin Score
+
+    ButtonMultiInputReference.setDicoScoreFirstComboBox();
+    
+    // Setting a variable to use the VectorMultiInput
+    
+    std::vector<MultiInput*> vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    
+    // For all the MultiInputs, if the MultiInput has the same First ComboBox item
+    // Than the MultiInput where the spin score has been updated. Then, we update 
+    // the spin score limit, this one is computed such as : 
+    // newSpinScore = oldSpinScore + ruledSpinScoreItem - ActualSpinScoreItem 
+
+    for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
+        if(vectorMultiInput[iterator]->returnTextComboBox("first") == vectorMultiInput[number]->returnTextComboBox("first")){
+            
+            int newSpinButtonLimit = vectorMultiInput[iterator]->returnSpinScore() + (rulesGame.returnLimitPointsAttributes()[vectorMultiInput[number]->returnTextComboBox("first")] 
+                - ButtonMultiInputReference.returnDicoScoreFirstComboBox()[vectorMultiInput[number]->returnTextComboBox("first")]);
+            vectorMultiInput[iterator]->setLimitSpinButton(newSpinButtonLimit);
+        }
+    }
 }
+
+
+void vampireGameproject::Controllor::setMultiInput(){
+    ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
+    ButtonMultiInputReference.setMultiInput();
+    std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    graphicalUserinterface.setMultiInputOnGrid(ButtonMultiInputReference, VectorMultiInput.size() - 1);
+}
+
+
+
 
 
 
