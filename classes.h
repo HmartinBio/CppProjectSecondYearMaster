@@ -441,6 +441,9 @@ namespace vampireGameproject{
                 void setNumberMultiInput(int number);
                 std::string returnTextComboBox(int number, std::string index);
                 void deleteItemDicoSelectedInput(std::string item);
+                int returnXCoordinate();
+                int returnYCoordinate();
+
 
             private:
                 Gtk::Button plusButton; 
@@ -496,6 +499,8 @@ namespace vampireGameproject{
             void setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height);
             void setLabelMultiComboBoxAttributes();
             ButtonmultiInput& returnAttributesInput();
+            void setMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
+            void setButtonMultiInputAttributes();
             void showAll();
 
             
@@ -586,7 +591,7 @@ namespace vampireGameproject{
             void testInputSecondComboBox(int number);
             void testInputSecondComboBoxChosenItems(ButtonmultiInput& ButtonMultiInputReference, int number);
             void testInputSpinButton(ButtonmultiInput& ButtonMultiInputReference, int number);
-
+            void setMultiInput();
 
         private:
             Parsetext textParser;
