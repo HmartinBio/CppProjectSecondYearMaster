@@ -232,3 +232,34 @@ void vampireGameproject::MultiInput::setVectorComboBox(std::vector<std::string>&
     }
 
 }
+
+
+/** Implementation of the unsetActiveText method.
+*
+* Implementation of the unsetActiveText method
+* Method unsetting the active text of the Second 
+* ComboBox Text
+* 
+* 
+*
+*/
+
+
+void vampireGameproject::MultiInput::unsetActiveText(){
+    secondComboBox.set_active_text("");
+}
+
+
+/** Implementation of the resetSpinScore method.
+*
+* Implementation of the resetSpinScore method
+* Method reseting the spin Score of a MultiInput Spin Button
+* 
+* 
+*
+*/
+
+
+void vampireGameproject::MultiInput::resetSpinScore(){
+    spinButton.set_value(0);
+}
