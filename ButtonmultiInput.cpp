@@ -63,7 +63,7 @@ Gtk::Button& vampireGameproject::ButtonmultiInput::returnButton(std::string sign
 
 //Gtk::ComboBoxText& vampireGameproject::ButtonmultiInput::returnComboBox(std::string position){
 //    if (position == "first"){
-        return firstComboBox;
+       // return firstComboBox;
 //    }
 
 //    else{
@@ -348,3 +348,17 @@ std::string vampireGameproject::ButtonmultiInput::returnTextComboBox(int number,
 // Le contrôleur transmettrait une fonction où il regarde si il y a eu des choix ou pas encore 
 // Si il y en a pas eu c'est open bar sinon pour les MultiInput où le texte n'est 
 // pas encore actif, on restreint le spin button et le choix des combobox
+
+
+
+
+/** Implementation of the deleteItemDicoSelectedInput method.
+*
+* Implementation of the deleteItemDicoSelectedInput method
+* Method deleting the chosen item of the DictionnarySelectedInputs
+*
+*/
+
+ void vampireGameproject::ButtonmultiInput::deleteItemDicoSelectedInput(std::string item){
+     DicoSelectedInputs.erase(item);
+ }
