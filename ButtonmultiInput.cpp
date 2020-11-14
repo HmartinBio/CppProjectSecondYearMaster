@@ -36,7 +36,6 @@ vampireGameproject::ButtonmultiInput::~ButtonmultiInput(){}
 */
 
 
-
 Gtk::Button& vampireGameproject::ButtonmultiInput::returnButton(std::string sign){
     if (sign == "plus"){
         return plusButton;
@@ -120,7 +119,7 @@ void vampireGameproject::ButtonmultiInput::setLabelMultiComboBox(){
 
 
 
-std::vector<vampireGameproject::MultiInput*> vampireGameproject::ButtonmultiInput::returnVectorMultiInput(){
+std::vector<vampireGameproject::MultiInput*>& vampireGameproject::ButtonmultiInput::returnVectorMultiInput(){
     return vectorMultiInputs;
 }
 
@@ -227,6 +226,7 @@ void vampireGameproject::ButtonmultiInput::setDicoSelectedInput(){
 void vampireGameproject::ButtonmultiInput::setMultiInput(){
     vectorMultiInputs.push_back(new MultiInput);
 
+
 }
 
 
@@ -243,7 +243,9 @@ void vampireGameproject::ButtonmultiInput::setMultiInput(){
 
 
 void vampireGameproject::ButtonmultiInput::deleteMultiInput(){
+    MultiInput* lastElement = vectorMultiInputs.back();
     vectorMultiInputs.pop_back();
+    delete lastElement;
 }
 
 
@@ -307,7 +309,6 @@ std::map<std::string, std::string> vampireGameproject::ButtonmultiInput::returnD
 
 void vampireGameproject::ButtonmultiInput::initialize(){
     setMultiInput();
-    ControllorAddress->initializeButtonMultiInput();
 }
 
 
@@ -324,6 +325,9 @@ void vampireGameproject::ButtonmultiInput::initialize(){
 void vampireGameproject::ButtonmultiInput::setVectorComboBox(int index, std::string position, std::vector<std::string> vectorReference){
     vectorMultiInputs[index]->setVectorComboBox(vectorReference, position);
 }
+
+
+
 
 
 
