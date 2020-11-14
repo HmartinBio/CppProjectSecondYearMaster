@@ -191,9 +191,13 @@ void vampireGameproject::Gui::setMultiComboBox(Gtk::Button& buttonPlus, Gtk::But
 
 
 void vampireGameproject::Gui::setButtonMultiInputAttributes(){
-     mainGrid.attach(attributesInput.returnButton("minus"), 
-            attributesInput.returnXCoordinate(), 
-            attributesInput.returnYCoordinate(), 1, 1);
+     
+     mainGrid.attach_next_to(attributesInput.returnButton("minus"), 
+        tableLabel[3], Gtk::POS_RIGHT, 1, 1);
+
+     //mainGrid.attach(attributesInput.returnButton("minus"), 
+     //       attributesInput.returnXCoordinate(), 
+     //       attributesInput.returnYCoordinate(), 1, 1);
      
 
      mainGrid.attach_next_to(attributesInput.returnButton("plus"), 
@@ -251,8 +255,15 @@ void vampireGameproject::Gui::setMultiInputOnGrid(ButtonmultiInput& ButtonMultiI
     mainGrid.attach(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("first"), ButtonMultiInputReference.returnXCoordinate(), ButtonMultiInputReference.returnYCoordinate() + number, 1, 1);
     mainGrid.attach_next_to(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("second"), ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("first"), Gtk::POS_RIGHT, 1, 1);
     mainGrid.attach_next_to(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnSpinButton(), ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("second"), Gtk::POS_RIGHT, 1, 1);
+    mainGrid.show_all();
 }
 
+
+void vampireGameproject::Gui::deleteMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number){
+    mainGrid.remove(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("first"));
+    mainGrid.remove(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("second"));
+    mainGrid.remove(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnSpinButton());
+}
 
 
 /** Implementation of the showAll method.
