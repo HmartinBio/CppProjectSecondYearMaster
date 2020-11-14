@@ -30,6 +30,7 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableComboBox(1, rulesGame.returnVectorNature());
         graphicalUserinterface.setTableComboBoxOnGrid(0, 0);
         graphicalUserinterface.setTableComboBoxOnGrid(1, 1);
+        initializeButtonMultiInput();
         //graphicalUserinterface.setMultiComboBoxAttributes(1, 3, 1, 1);
         //graphicalUserinterface.setLabelMultiComboBoxAttributes();
         //rulesGame.setLimitSpinButtonAttributes(3);
@@ -364,6 +365,8 @@ void vampireGameproject::Controllor::setMultiInput(){
     ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
     ButtonMultiInputReference.setMultiInput();
     std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    ButtonMultiInputReference.setVectorComboBox(VectorMultiInput.size() - 1, "first", textParser.parse_Attributes());
+    //testAttributesInputsFirstComboBox(); 
     graphicalUserinterface.setMultiInputOnGrid(ButtonMultiInputReference, VectorMultiInput.size() - 1);
 }
 
@@ -383,13 +386,19 @@ void vampireGameproject::Controllor::setMultiInput(){
 
 
 void vampireGameproject::Controllor::initializeButtonMultiInputReference(ButtonmultiInput& ButtonMultiInputReference){
+    ButtonMultiInputReference.setCoordinates(4, 2);
+    ButtonMultiInputReference.initialize();
+    Gtk::Button& buttonPlus = ButtonMultiInputReference.returnButton("plus");
+    Gtk::Button& buttonMinus = ButtonMultiInputReference.returnButton("minus");
+    buttonPlus.signal_clicked().connect(sigc::mem_fun(*this, &vampireGameproject::Controllor::setMultiInput));
+    buttonMinus.signal_clicked().connect(sigc::mem_fun(*this, &vampireGameproject::Controllor::deleteMultiInput));
     ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parse_Attributes());
+    //ButtonMultiInputReference.setVectorComboBox(0, "second");
+    graphicalUserinterface.setButtonMultiInputAttributes();
+    graphicalUserinterface.setMultiInputOnGrid(ButtonMultiInputReference, 0);
+
+
 }
-
-
-
-
-
 
 
 
@@ -398,3 +407,10 @@ void vampireGameproject::Controllor::initializeButtonMultiInput(){
     initializeButtonMultiInputReference(graphicalUserinterface.returnAttributesInput());
 }
 
+
+void vampireGameproject::Controllor::deleteMultiInput(){
+    ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
+    std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput(); 
+    graphicalUserinterface.deleteMultiInputOnGrid(ButtonMultiInputReference, VectorMultiInput.size() - 1);
+    ButtonMultiInputReference.deleteMultiInput();
+}
