@@ -149,25 +149,30 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
     // item of the First ComboBox is in the dictionnary, then the 
     // Spin Score is incremented 
 
-    for(int iterator = 0; iterator < (int)vectorMultiInputs.size(); iterator++){
+    if (vectorMultiInputs.size() != 0){
 
-            if (mapCounter.find(vectorMultiInputs[iterator]->returnTextComboBox("first")) == mapCounter.end()){
-                mapCounter.insert(std::pair<std::string, int>(vectorMultiInputs[iterator]->returnTextComboBox("first"), 
-                    vectorMultiInputs[iterator]->returnSpinScore()));  
-            }
+        for(int iterator = 0; iterator < (int)vectorMultiInputs.size(); iterator++){
 
-            else{
-                mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] = 
-                    mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] + 
-                        vectorMultiInputs[iterator]->returnSpinScore();
-            }
+                if (mapCounter.find(vectorMultiInputs[iterator]->returnTextComboBox("first")) == mapCounter.end()){
+                    mapCounter.insert(std::pair<std::string, int>(vectorMultiInputs[iterator]->returnTextComboBox("first"), 
+                        vectorMultiInputs[iterator]->returnSpinScore()));  
+                }
+
+                else{
+                    mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] = 
+                        mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] + 
+                            vectorMultiInputs[iterator]->returnSpinScore();
+                }
                   
+        }
+
+        DicoScoreFirstComboBox = mapCounter;
     }
 
-    DicoScoreFirstComboBox = mapCounter;
-
+    else{
+        DicoScoreFirstComboBox = mapCounter;
+    }
 }
-
 
 
 
@@ -183,12 +188,13 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
 
 
 
-void vampireGameproject::ButtonmultiInput::setDicoSelectedInput(){
+void vampireGameproject::ButtonmultiInput::setVectorSelectedInput(){
 
-    // Cleaning the Dictionnary containing the selected items 
-    // of the Second ComboBox
+    // Cleaning the vectors containing the selected items 
+    // of the First and the Second ComboBox
 
-    DicoSelectedInputs.clear();
+    vectorFirstComboBoxSelectedInputs.clear();
+    vectorSecondComboBoxSelectedInputs.clear();
 
     // Iterating on the vector containing MultiInputs
     // For each MultiInputs, if the text in the Second ComboBox
@@ -197,15 +203,8 @@ void vampireGameproject::ButtonmultiInput::setDicoSelectedInput(){
 
     for(int iterator = 0; iterator < (int)vectorMultiInputs.size(); iterator++){
 
-        if (DicoSelectedInputs.find(vectorMultiInputs[iterator]->returnTextComboBox("second")) == DicoSelectedInputs.end()){
-            DicoSelectedInputs.insert(std::pair<std::string, std::string>(vectorMultiInputs[iterator]->returnTextComboBox("second"), 
-                vectorMultiInputs[iterator]->returnTextComboBox("first")));
-        }
-
-        //else{
-        //    DicoSelectedInputs[vectorMultiInputs[iterator]->returnTextComboBox("second")] = vectorMultiInputs[iterator]->returnTextComboBox("first");
-        //}
-
+        vectorFirstComboBoxSelectedInputs.push_back(vectorMultiInputs[iterator]->returnTextComboBox("first"));
+        vectorSecondComboBoxSelectedInputs.push_back(vectorMultiInputs[iterator]->returnTextComboBox("second"));
         
     }
 }
@@ -293,8 +292,14 @@ std::map<std::string, int> vampireGameproject::ButtonmultiInput::returnDicoScore
 
 
 
-std::map<std::string, std::string> vampireGameproject::ButtonmultiInput::returnDicoSelectedInput(){
-    return DicoSelectedInputs;
+std::vector<std::string> vampireGameproject::ButtonmultiInput::returnVectorSelectedInput(std::string index){
+    if (index == "first"){
+        return vectorFirstComboBoxSelectedInputs;
+    }
+
+    else{
+        return vectorSecondComboBoxSelectedInputs;
+    }
 }
 
 
@@ -325,9 +330,6 @@ void vampireGameproject::ButtonmultiInput::initialize(){
 void vampireGameproject::ButtonmultiInput::setVectorComboBox(int index, std::string position, std::vector<std::string> vectorReference){
     vectorMultiInputs[index]->setVectorComboBox(vectorReference, position);
 }
-
-
-
 
 
 
