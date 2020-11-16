@@ -446,7 +446,19 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Attributes(){
         if (pystring::find(lineOftext, "#####") == -1){
             
             if (pystring::startswith(lineOftext, "##")){
-                vectorAttributes.push_back(lineOftext.substr(3, lineOftext.size()));
+                
+              //  for(int i = 0; i < (int)lineOftext.size(); i++){
+              //      std::cout << lineOftext.substr(i, i) << std::endl;
+              //  }
+
+                if (lineOftext.substr(lineOftext.size() - 1, lineOftext.size() - 1) == " "){
+                    vectorAttributes.push_back(lineOftext.substr(3, (lineOftext.size() - 4)));
+                }
+
+                else{
+                    vectorAttributes.push_back(lineOftext.substr(3, lineOftext.size()));
+                }
+                
             }   
         }
     }
