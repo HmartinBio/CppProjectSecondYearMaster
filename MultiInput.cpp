@@ -262,4 +262,5 @@ void vampireGameproject::MultiInput::unsetActiveText(){
 
 void vampireGameproject::MultiInput::resetSpinScore(){
     spinButton.set_value(0);
+    spinButton.set_increments(0, 0);
 }
