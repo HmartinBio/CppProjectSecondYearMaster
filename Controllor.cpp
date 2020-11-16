@@ -30,6 +30,7 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableComboBox(1, rulesGame.returnVectorNature());
         graphicalUserinterface.setTableComboBoxOnGrid(0, 0);
         graphicalUserinterface.setTableComboBoxOnGrid(1, 1);
+        rulesGame.setLimitPointsAttributes(5, 5, 5);
         initializeButtonMultiInput();
         //graphicalUserinterface.setMultiComboBoxAttributes(1, 3, 1, 1);
         //graphicalUserinterface.setLabelMultiComboBoxAttributes();
@@ -55,74 +56,6 @@ vampireGameproject::Controllor::~Controllor(){}
 
 
 
-/** Implementation of the testInputsFirstComboBoxSpinButton method.
-*
-* Implementation of the testInputsFirstComboBoxSpinButton method
-* Method setting the limit of the Spin Button, if the 
-* user already chose an items, then this one doesn't appear
-* when we chooose the item in the first ComboBox
-*
-* @param ButtonMultiInputReference Reference of the MultiInput button
-*
-*/
-
-
-
-
-
-void vampireGameproject::Controllor::testInputsFirstComboBoxSpinButton(ButtonmultiInput& ButtonMultiInputReference, int number){
-    
-    // Updating the Dictionnary containing the Point numbers 
-    // by items of the First Combo Box
-    
-    ButtonMultiInputReference.setDicoScoreFirstComboBox();
-
-    // Building temporary maps to store Limits of Points Attributes
-    // By the Items of the First Combo Box and to store the Spin Button
-    // Scoree by Items of the First Combo Box 
-
-    std::map<std::string, int> DictionnaryScoreFirstComboBox;
-    std::map<std::string, int> DictionnaryLimitPointsAttributes;
-
-    // Setting maps
-
-    DictionnaryScoreFirstComboBox = ButtonMultiInputReference.returnDicoScoreFirstComboBox();
-    DictionnaryLimitPointsAttributes = rulesGame.returnLimitPointsAttributes();
-
-    // Building a map to store MultiInput in the aim to modify the spin limit
-    // for the MultiInput selected
-
-    std::vector<MultiInput*> vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
-
-    // Modifing the Spin Limit of the MultiInput selected according to the 
-    // rules of Game
-
-    vectorMultiInput[number]->setLimitSpinButton(DictionnaryLimitPointsAttributes[vectorMultiInput[number]->returnTextComboBox("first")] - 
-        DictionnaryScoreFirstComboBox[vectorMultiInput[number]->returnTextComboBox("first")]);
-
-
-}
-
-
-// Don't forget to verify for the first comboBox 
-// If we changed of items, if it's the case, so, 
-// we need to clean the spin score et and the 
-// active text of the second ComboBox
-
-
-
-
-/** Implementation of the testInputsFirstComboBox method.
-*
-* Implementation of the testInputsFirstComboBox method
-* Method setting the text in the secondComboBox, if the 
-* user already chose an items, then this one doesn't appear
-* when we chooose the item in the first ComboBox
-*
-* @param ButtonMultiInputReference Reference of the MultiInput button
-*
-*/
-
 
 
 
@@ -147,97 +80,77 @@ void vampireGameproject::Controllor::testInputsFirstComboBoxSpinButton(Buttonmul
 
 
 
-
 void vampireGameproject::Controllor::testInputsFirstComboBoxChangingItems(ButtonmultiInput& ButtonMultiInputReference, int number){
     
-    // if the text of the second Combobox is not null whereas we changed the item
-    // of the first ComboBox
+    // Then we, delete the active text in the Second ComboBox
+    // And we reset the SpinCore of the Spin Button
 
-    if (ButtonMultiInputReference.returnTextComboBox(number, "second") != ""){
-        std::map<std::string, std::string> dicoSelectedInputs = ButtonMultiInputReference.returnDicoSelectedInput(); 
-        
-        // If the item in the first comboBox is not associated to the 
-        // item in the Second ComboBox
+    std::vector<MultiInput*> vectorMultiInput;
+    vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    vectorMultiInput[number]->unsetActiveText();
+    vectorMultiInput[number]->resetSpinScore();
 
-        if (dicoSelectedInputs[ButtonMultiInputReference.returnTextComboBox(number, "second")] != ButtonMultiInputReference.returnTextComboBox(number, "first")){
-            ButtonMultiInputReference.deleteItemDicoSelectedInput(ButtonMultiInputReference.returnTextComboBox(number, "second"));
-            
-            // Then we, delete the active text in the Second ComboBox
-            // And we reset the SpinCore of the Spin Button
-
-            std::vector<MultiInput*> vectorMultiInput;
-            vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
-            vectorMultiInput[number]->unsetActiveText();
-            vectorMultiInput[number]->resetSpinScore();
-
-            // Method to update the spin score of all MultiInput
-        }
-    }
 }
 
 
 
-void vampireGameproject::Controllor::testInputsFirstComboBox(ButtonmultiInput& ButtonMultiInputReference, int number){
-    
-    // Building a map to store the selected items for the second Combo Box
 
-    std::map<std::string, std::string> mapSelectedInput;
-    
-    // Initialising the map
+/** Implementation of the testInputsFirstComboBox method.
+*
+* Implementation of the testInputsFirstComboBox method
+* Method setting the text in the secondComboBox, if the 
+* user already chose an items, then this one doesn't appear
+* when we chooose the item in the first ComboBox
+*
+* @param ButtonMultiInputReference Reference of the MultiInput button
+*
+*/
 
-    ButtonMultiInputReference.setDicoSelectedInput();
-    mapSelectedInput = ButtonMultiInputReference.returnDicoSelectedInput(); 
-    
-    // Initialising a counter to count the occurences in the text parsed with 
-    // the already choices in the comboBoxes
-    
-    int counter = 0;
-    
+
+
+
+void vampireGameproject::Controllor::testInputsSecondComboBox(ButtonmultiInput& ButtonMultiInputReference, int number){
+       
+    // Initialising vectors of selected inputs
+
+    ButtonMultiInputReference.setVectorSelectedInput();
+
+    std::vector<std::string> vectorFirstComboBox = ButtonMultiInputReference.returnVectorSelectedInput("first");
+    std::vector<std::string> vectorSecondComboBox = ButtonMultiInputReference.returnVectorSelectedInput("second");
+
+
     // Initialising a vector where are stored the parsed text corresponding to 
     // the items of the second combotext for the text entered in the first comboBox 
 
     std::vector<std::string> vectorAttributesCategorie = textParser.parse_AttributesCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
     
-    // Initialising a vector to store attributes positions found 
-    // in the other choices of the user 
+    // Initialising a vector to store all the MultiInputs
 
-    std::vector<int> vectorAttributesPosition;
+    std::vector<MultiInput*> vectorMultiInputs = ButtonMultiInputReference.returnVectorMultiInput();
 
     // Iteration of elements already entered by the user
-    // If a element entered by the user is detected in the 
-    // vector containing the text parsed for the second 
-    // ComboBox, then the index of the vector element is 
-    // stored in a vector
+    // If a first ComboBoxText iterated element entered 
+    // by the user for a MultiInput is detected somewhere else,  
+    // we look the iterated second item, if the iterated second item
+    // corresponds with a second term present in the vector of selected 
+    // second items, then, it means it's the same MultiInput 
+    // If it's not the case, the second term present in the vector 
+    // selected second item is deleted for this MultiInput whose the choice
+    // doesn't correspond to this second term
 
-    for(std::map<std::string,std::string>::iterator itertatorDictionnary = mapSelectedInput.begin(); itertatorDictionnary != mapSelectedInput.end(); ++itertatorDictionnary){
-        std::string key =  itertatorDictionnary->first;
-        std::vector<std::string>::iterator iteratorVector = std::find(vectorAttributesCategorie.begin(), 
-            vectorAttributesCategorie.end(), key);    
-        
-        if (iteratorVector != vectorAttributesCategorie.end()){
-            counter += 1;
-            int index = std::distance(vectorAttributesCategorie.begin(), iteratorVector);
-            vectorAttributesPosition.push_back(index);
-        }        
-    }
 
-    // If the number of found elements in the dictionnary of 
-    // already entered elements by the user is equal to 0
-    // Then all the vector is given at the comboBox.
-    // Else, we retire the elements already selected 
-
-    if (counter == 0){
-        ButtonMultiInputReference.setVectorComboBox(number, "second",
-                vectorAttributesCategorie);
-    }
-
-    else{
-        for(int iterator = 0; iterator < (int)vectorAttributesPosition.size(); iterator++){
-            vectorAttributesCategorie.erase(vectorAttributesCategorie.begin() + ((int)vectorAttributesPosition.at(iterator) - 1));
+    for(int iterator = 0; iterator < (int)vectorFirstComboBox.size(); iterator++){
+        if (vectorMultiInputs[number]->returnTextComboBox("first") == vectorFirstComboBox.at(iterator) && 
+            vectorMultiInputs[number]->returnTextComboBox("second") != vectorSecondComboBox.at(iterator)){
+                vectorAttributesCategorie.erase(std::remove(vectorAttributesCategorie.begin(), 
+                    vectorAttributesCategorie.end(), vectorSecondComboBox.at(iterator)),
+                        vectorAttributesCategorie.end());
         }
-
-        ButtonMultiInputReference.setVectorComboBox(number, "second", vectorAttributesCategorie);
     }
+
+     ButtonMultiInputReference.setVectorComboBox(number, "second", vectorAttributesCategorie);
+
+
     
 }
 
@@ -255,19 +168,28 @@ void vampireGameproject::Controllor::testInputsFirstComboBox(ButtonmultiInput& B
 
 
 
-
-
-
 void vampireGameproject::Controllor::testAttributesInputsFirstComboBox(int number){
     testInputsFirstComboBoxChangingItems(graphicalUserinterface.returnAttributesInput(), number);
-    testInputsFirstComboBoxSpinButton(graphicalUserinterface.returnAttributesInput(), number);
-    testInputsFirstComboBox(graphicalUserinterface.returnAttributesInput(), number);
+    testInputSpinButton(graphicalUserinterface.returnAttributesInput(), number);
+    testInputSecondComboBoxChosenItems(graphicalUserinterface.returnAttributesInput(), number);
 }
 
 
-/** Implementation of the testInputSecondComboBox method.
+
+
+void vampireGameproject::Controllor::testInputFirstComboBoxForGui(int number){
+    ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
+    testInputsFirstComboBoxChangingItems(graphicalUserinterface.returnAttributesInput(), number);
+    testInputSpinButton(graphicalUserinterface.returnAttributesInput(), number);
+    testInputSecondComboBoxChosenItems(graphicalUserinterface.returnAttributesInput(), number);
+}
+
+
+
+
+/** Implementation of the testInputSecondComboBoxForGui method.
 *
-* Implementation of the testInputSecondComboBox method
+* Implementation of the testInputSecondComboBoxForGui method
 * Method updating the dictionnary of selected inputs
 * And from that, updating the items of the Second ComboBoxes
 * for all the Concerned MultiInputs  
@@ -275,12 +197,67 @@ void vampireGameproject::Controllor::testAttributesInputsFirstComboBox(int numbe
 */
 
 
-void vampireGameproject::Controllor::testInputSecondComboBox(int number){
+void vampireGameproject::Controllor::testInputSecondComboBoxForGui(int number){
     ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
-    ButtonMultiInputReference.setDicoSelectedInput();
     testInputSecondComboBoxChosenItems(ButtonMultiInputReference, number);
+}
+
+
+
+void vampireGameproject::Controllor::testInputSpinButtonForGui(int number){
+    ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
+    testInputSpinButton(ButtonMultiInputReference, number);
+    testFirstComboBoxDisponibility();
+}
+
+
+void vampireGameproject::Controllor::testInputPlusButtonForGui(){
+    setMultiInput();
+    testFirstComboBoxDisponibility();
+}
+
+void vampireGameproject::Controllor::testInputMinusButtonForGui(){
+    deleteMultiInput();
+    testInputSpinButtonWhenRemoved();
+}
+
+
+void vampireGameproject::Controllor::testInputSpinButtonWhenRemoved(){
+    ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
+
+    // Updating the Dictionnary of Spin Score
+
+    ButtonMultiInputReference.setDicoScoreFirstComboBox();
+    
+    // Setting a variable to use the VectorMultiInput
+    
+    std::vector<MultiInput*> vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    
+    // For all the MultiInputs, if the MultiInput has the same First ComboBox item
+    // Than the MultiInput where the spin score has been updated. Then, we update 
+    // the spin score limit, this one is computed such as : 
+    // newSpinScore = oldSpinScore + ruledSpinScoreItem - ActualSpinScoreItem 
+
+    
+    for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
+        
+            int newSpinButtonLimit = vectorMultiInput[iterator]->returnSpinScore() + 
+                (rulesGame.returnLimitPointsAttributes()[vectorMultiInput[iterator]->returnTextComboBox("first")] - 
+                    ButtonMultiInputReference.returnDicoScoreFirstComboBox()[vectorMultiInput[iterator]->returnTextComboBox("first")]); 
+              
+            int spinScore = vectorMultiInput[iterator]->returnSpinScore();
+
+            std::cout << spinScore << std::endl;
+            std::cout << newSpinButtonLimit << std::endl;
+
+            vectorMultiInput[iterator]->setLimitSpinButton(newSpinButtonLimit);
+            vectorMultiInput[iterator]->returnSpinButton().set_value(spinScore);
+
+    }
+
 
 }
+
 
 
 
@@ -314,12 +291,91 @@ void vampireGameproject::Controllor::testInputSecondComboBoxChosenItems(Buttonmu
     for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
         if (vectorMultiInput[iterator] != vectorMultiInput[number]){
             if (vectorMultiInput[iterator]->returnTextComboBox("first") == vectorMultiInput[number]->returnTextComboBox("first")){
-                testInputsFirstComboBox(ButtonMultiInputReference, iterator);
+                testInputsSecondComboBox(ButtonMultiInputReference, iterator);
             }
         }
     }
 }
 
+
+
+/** Implementation of the testFirstComboBoxDisponibility method.
+*
+* Implementation of the testFirstComboBoxDisponibility method
+* Method verifying in all the MultiInput if the authorized Spin  
+* Score was been reached, if it's the case and if the actual 
+* value of the First ComboBoxText is not a value where the 
+* authorized Spin Score was reached, the element is deleted
+* from the user proposed list 
+*
+*/
+
+
+void vampireGameproject::Controllor::testFirstComboBoxDisponibility(){
+    ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
+    std::vector<MultiInput*> vectorMultiInput;
+    vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    ButtonMultiInputReference.setDicoScoreFirstComboBox();
+    std::map<std::string, int> dicoScoreFirstComboBox = ButtonMultiInputReference.returnDicoScoreFirstComboBox();
+    
+
+   
+    
+    std::map<std::string, int> dicoScoreFirstComboBoxRules = rulesGame.returnLimitPointsAttributes();
+    std::vector<std::string> vectorFirstComboBoxOutsider;
+
+    std::map<std::string, int>::iterator iterator;
+
+    // For all the elements in the dico Score, if the Spin Score max 
+    // was reached, then we register the element in a new vector 
+
+
+    for (iterator = dicoScoreFirstComboBox.begin(); iterator != dicoScoreFirstComboBox.end(); iterator++){
+           
+        if (iterator->first != ""){
+
+            if (dicoScoreFirstComboBoxRules.at(iterator->first) == iterator->second){
+                vectorFirstComboBoxOutsider.push_back(iterator->first);
+            }
+        }
+
+
+        // For all the MultiInputs, we create the vector of First ComboBox Items,
+        // Then, we iterate all the terms whose the score is equal to the limit 
+        // If the term is the active term of the First ComboBox of the iterated MultiInput
+        // We don't delete the value in the list of the items proposed to the user
+        // If it's not the case, the value is not proposed to the user anymore
+
+        for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
+            
+            std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_Attributes();
+
+            if (vectorMultiInput[iterator]->returnTextComboBox("first") != ""){
+
+                for(int iterator2 = 0; iterator2 < (int)vectorFirstComboBoxOutsider.size(); iterator2++){
+                    if (vectorMultiInput[iterator]->returnTextComboBox("first") != vectorFirstComboBoxOutsider.at(iterator2)){
+                        vectorFirstComboBoxChoices.erase(std::remove(vectorFirstComboBoxChoices.begin(), 
+                            vectorFirstComboBoxChoices.end(), vectorFirstComboBoxOutsider.at(iterator2)), 
+                                vectorFirstComboBoxChoices.end());
+                    }
+                }
+            }
+
+            int spinScore = vectorMultiInput[iterator]->returnSpinScore();
+            std::string textSetactive = vectorMultiInput[iterator]->returnTextComboBox("first");
+            vectorMultiInput[iterator]->returnComboBox("first").remove_all();
+            vectorMultiInput[iterator]->setVectorComboBox(vectorFirstComboBoxChoices, "first");
+            vectorMultiInput[iterator]->returnComboBox("first").set_active_text(textSetactive);
+            vectorMultiInput[iterator]->returnSpinButton().set_value(spinScore);
+        }
+    }
+
+    //else{
+    //    std::cout << "test" << std::endl;
+    //    std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_Attributes();
+    //    vectorMultiInput[vectorMultiInput.size()]->setVectorComboBox(vectorFirstComboBoxChoices, "first");
+    //}
+}
 
 
 
@@ -350,12 +406,21 @@ void vampireGameproject::Controllor::testInputSpinButton(ButtonmultiInput& Butto
     // the spin score limit, this one is computed such as : 
     // newSpinScore = oldSpinScore + ruledSpinScoreItem - ActualSpinScoreItem 
 
+
     for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
         if(vectorMultiInput[iterator]->returnTextComboBox("first") == vectorMultiInput[number]->returnTextComboBox("first")){
-            
-            int newSpinButtonLimit = vectorMultiInput[iterator]->returnSpinScore() + (rulesGame.returnLimitPointsAttributes()[vectorMultiInput[number]->returnTextComboBox("first")] 
-                - ButtonMultiInputReference.returnDicoScoreFirstComboBox()[vectorMultiInput[number]->returnTextComboBox("first")]);
+        
+            //std::cout << rulesGame.returnLimitPointsAttributes()["Mental"] << std::endl;
+            //std::cout << rulesGame.returnLimitPointsAttributes()[vectorMultiInput[iterator]->returnTextComboBox("first")] << std::endl;
+
+            int newSpinButtonLimit = vectorMultiInput[iterator]->returnSpinScore() + 
+                (rulesGame.returnLimitPointsAttributes()[vectorMultiInput[iterator]->returnTextComboBox("first")] - 
+                    ButtonMultiInputReference.returnDicoScoreFirstComboBox()[vectorMultiInput[iterator]->returnTextComboBox("first")]); 
+
+            int spinScore = vectorMultiInput[iterator]->returnSpinScore();
+
             vectorMultiInput[iterator]->setLimitSpinButton(newSpinButtonLimit);
+            vectorMultiInput[iterator]->returnSpinButton().set_value(spinScore);
         }
     }
 }
@@ -365,9 +430,19 @@ void vampireGameproject::Controllor::setMultiInput(){
     ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
     ButtonMultiInputReference.setMultiInput();
     std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
-    ButtonMultiInputReference.setVectorComboBox(VectorMultiInput.size() - 1, "first", textParser.parse_Attributes());
+    
+    //ButtonMultiInputReference.setVectorComboBox(VectorMultiInput.size() - 1, "first", textParser.parse_Attributes());
     //testAttributesInputsFirstComboBox(); 
-    graphicalUserinterface.setMultiInputOnGrid(ButtonMultiInputReference, VectorMultiInput.size() - 1);
+    
+    int numberVector = VectorMultiInput.size() - 1;
+
+    Gtk::ComboBoxText& firstComboBox = VectorMultiInput[numberVector]->returnComboBox("first");
+    
+    firstComboBox.signal_changed().connect(sigc::bind<int>(sigc::mem_fun(*this, &vampireGameproject::Controllor::testInputFirstComboBoxForGui), 
+        VectorMultiInput.size() - 1));
+
+
+    graphicalUserinterface.setMultiInputOnGrid(ButtonMultiInputReference, numberVector);
 }
 
 
@@ -390,8 +465,8 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReference(Buttonm
     ButtonMultiInputReference.initialize();
     Gtk::Button& buttonPlus = ButtonMultiInputReference.returnButton("plus");
     Gtk::Button& buttonMinus = ButtonMultiInputReference.returnButton("minus");
-    buttonPlus.signal_clicked().connect(sigc::mem_fun(*this, &vampireGameproject::Controllor::setMultiInput));
-    buttonMinus.signal_clicked().connect(sigc::mem_fun(*this, &vampireGameproject::Controllor::deleteMultiInput));
+    buttonPlus.signal_clicked().connect(sigc::mem_fun(*this, &vampireGameproject::Controllor::testInputPlusButtonForGui));
+    buttonMinus.signal_clicked().connect(sigc::mem_fun(*this, &vampireGameproject::Controllor::testInputMinusButtonForGui));
     ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parse_Attributes());
     //ButtonMultiInputReference.setVectorComboBox(0, "second");
     graphicalUserinterface.setButtonMultiInputAttributes();
@@ -411,6 +486,20 @@ void vampireGameproject::Controllor::initializeButtonMultiInput(){
 void vampireGameproject::Controllor::deleteMultiInput(){
     ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
     std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput(); 
-    graphicalUserinterface.deleteMultiInputOnGrid(ButtonMultiInputReference, VectorMultiInput.size() - 1);
-    ButtonMultiInputReference.deleteMultiInput();
+    
+    if (VectorMultiInput.size() != 1){
+
+        graphicalUserinterface.deleteMultiInputOnGrid(ButtonMultiInputReference, VectorMultiInput.size() - 1);
+        ButtonMultiInputReference.deleteMultiInput();
+    }
+}
+
+
+
+void vampireGameproject::Controllor::setVectorSecondComboBox(std::string ComboBoxFirstValue){
+    ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
+    std::vector<std::string> vectorSecondBoxElements = textParser.parse_AttributesCategorie(ComboBoxFirstValue);
+    std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    ButtonMultiInputReference.setVectorComboBox(VectorMultiInput.size() - 1, "second", vectorSecondBoxElements);
+
 }
