@@ -425,13 +425,13 @@ namespace vampireGameproject{
                 //
                 void setLabelMultiComboBox();
                 std::vector<MultiInput*>& returnVectorMultiInput();
-                void setDicoSelectedInput();
+                void setVectorSelectedInput();
                 void setDicoScoreFirstComboBox();
                 void setMultiInput();
                 void deleteMultiInput();
                 void setCoordinates(int coordinateX, int coordinateY);
                 std::map<std::string, int> returnDicoScoreFirstComboBox();
-                std::map<std::string, std::string> returnDicoSelectedInput();
+                std::vector<std::string> returnVectorSelectedInput(std::string index);
                 void setLimitMultiInput();
                 void setComboBoxFunction(std::string index);
                 void setFunctionForComboBox(std::string index, std::vector<std::string> (&functionToSet)());
@@ -453,7 +453,8 @@ namespace vampireGameproject{
                 Gtk::SpinButton spinButton;
                 std::vector<MultiInput*> vectorMultiInputs;
                 std::map<std::string, std::string> DicoSelectedInputs;
-                std::vector<std::string> vectorFirstComboBox;
+                std::vector<std::string> vectorFirstComboBoxSelectedInputs;
+                std::vector<std::string> vectorSecondComboBoxSelectedInputs;
                 int SecondComboBoxItemsNumber;
                 int xcoordinates;
                 int ycoordinates;
@@ -582,18 +583,25 @@ namespace vampireGameproject{
             ~Controllor();
             Gui graphicalUserinterface;
             void testAttributesInputsFirstComboBox(int number);
-            void testInputsFirstComboBox(ButtonmultiInput& ButtonMultiInputReference, int number);
+            void testInputsSecondComboBox(ButtonmultiInput& ButtonMultiInputReference, int number);
             void testInputsFirstComboBoxSpinButton(ButtonmultiInput& ButtonMultiInputReference, int number);
             void testInputsFirstComboBoxChangingItems(ButtonmultiInput& ButtonMultiInputReference, int number);
             void initializeButtonMultiInputReference(ButtonmultiInput& ButtonMultiInputReference);
             void initializeButtonMultiInput();
             //void testInputsSecondComboBox(ButtonmultiInput& ButtonMultiInputReference);
             void AttributesInputsSecondComboBox();
-            void testInputSecondComboBox(int number);
+            void testInputSecondComboBoxForGui(int number);
             void testInputSecondComboBoxChosenItems(ButtonmultiInput& ButtonMultiInputReference, int number);
             void testInputSpinButton(ButtonmultiInput& ButtonMultiInputReference, int number);
             void setMultiInput();
             void deleteMultiInput();
+            void setVectorSecondComboBox(std::string ComboBoxFirstValue);
+            void testFirstComboBoxDisponibility();
+            void testInputFirstComboBoxForGui(int number);
+            void testInputSpinButtonForGui(int number);
+            void testInputSpinButtonWhenRemoved();
+            void testInputPlusButtonForGui();
+            void testInputMinusButtonForGui();
 
         private:
             Parsetext textParser;
