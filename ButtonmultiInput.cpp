@@ -149,13 +149,16 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
     // item of the First ComboBox is in the dictionnary, then the 
     // Spin Score is incremented 
 
+   
+
     if (vectorMultiInputs.size() != 0){
 
         for(int iterator = 0; iterator < (int)vectorMultiInputs.size(); iterator++){
 
                 if (mapCounter.find(vectorMultiInputs[iterator]->returnTextComboBox("first")) == mapCounter.end()){
                     mapCounter.insert(std::pair<std::string, int>(vectorMultiInputs[iterator]->returnTextComboBox("first"), 
-                        vectorMultiInputs[iterator]->returnSpinScore()));  
+                        vectorMultiInputs[iterator]->returnSpinScore()));
+                        std::cout << "test" << std::endl;
                 }
 
                 else{
@@ -165,6 +168,12 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
                 }
                   
         }
+
+        for ( const auto &myPair : mapCounter ) {
+        std::cout << myPair.first <<  std::endl;
+    }
+
+
 
         DicoScoreFirstComboBox = mapCounter;
     }
@@ -195,6 +204,7 @@ void vampireGameproject::ButtonmultiInput::setVectorSelectedInput(){
 
     vectorFirstComboBoxSelectedInputs.clear();
     vectorSecondComboBoxSelectedInputs.clear();
+    
 
     // Iterating on the vector containing MultiInputs
     // For each MultiInputs, if the text in the Second ComboBox
@@ -406,3 +416,19 @@ int vampireGameproject::ButtonmultiInput::returnYCoordinate(){
  void vampireGameproject::ButtonmultiInput::deleteItemDicoSelectedInput(std::string item){
      DicoSelectedInputs.erase(item);
  }
+
+ void vampireGameproject::ButtonmultiInput::setCounter(){
+     numberMultiInput = 1;
+ }
+
+void vampireGameproject::ButtonmultiInput::increaseNumberMultiInput(){
+    numberMultiInput += 1;
+}
+
+void vampireGameproject::ButtonmultiInput::deacreaseNumberMultiInput(){
+    numberMultiInput -= 1;
+}
+
+int vampireGameproject::ButtonmultiInput::returnNumberMultiInput(){
+    return numberMultiInput;
+}
