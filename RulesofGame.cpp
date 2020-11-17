@@ -52,10 +52,14 @@ void vampireGameproject::RulesofGame::setVectorMultiInput(std::vector<std::strin
 
 
 
-void vampireGameproject::RulesofGame::setLimitPointsAttributes(int PhysicalPoints, int SocialPoints, int MentalPoints){
+void vampireGameproject::RulesofGame::setLimitPointsAttributes(int PhysicalPoints, int SocialPoints, int MentalPoints, int TalentsPoints,
+    int SkillsPoints, int KnowledgesPoints){
     limitPointsAttributes.insert(std::pair<std::string, int>("Physical", PhysicalPoints));
     limitPointsAttributes.insert(std::pair<std::string, int>("Social", SocialPoints));
     limitPointsAttributes.insert(std::pair<std::string, int>("Mental", MentalPoints));
+    limitPointsAttributes.insert(std::pair<std::string, int>("Talents", TalentsPoints));
+    limitPointsAttributes.insert(std::pair<std::string, int>("Skills", SkillsPoints));
+    limitPointsAttributes.insert(std::pair<std::string, int>("Knowledges", KnowledgesPoints));
 }
 
 std::map<std::string, int> vampireGameproject::RulesofGame::returnLimitPointsAttributes(){
