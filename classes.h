@@ -474,6 +474,116 @@ namespace vampireGameproject{
 
 
 
+class MultiInputOneComboBox{
+        public:
+            MultiInputOneComboBox();
+            virtual ~MultiInputOneComboBox();
+            Gtk::ComboBoxText& returnComboBox();
+            Gtk::SpinButton& returnSpinButton();
+            void setLimitSpinButton(int limit);
+            //void AddText(std::string vectorPosition, std::string stringToAdd, int index);
+            //void DeleteText(std::string vectorPosition, int index);
+            int returnSpinScore();
+            std::string returnTextComboBox();
+            void setVectorComboBox(std::vector<std::string>& vectorText);
+            void setComboBoxFunction(std::string index);
+            void unsetActiveText();
+            void resetSpinScore();
+
+        private:
+            Gtk::ComboBoxText ComboBox;
+            Gtk::SpinButton spinButton;
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+class ButtonmultiInputOneComboBox{
+            public:
+                ButtonmultiInputOneComboBox();
+                virtual ~ButtonmultiInputOneComboBox();
+                Gtk::Button& returnButton(std::string sign);
+                //
+                //Gtk::ComboBoxText& returnComboBox(std::string position);
+                //Gtk::SpinButton& returnSpinButton();
+                //
+                void setLabelMultiComboBox();
+                std::vector<MultiInputOneComboBox*>& returnVectorMultiInput();
+                void setVectorSelectedInput();
+                void setDicoScoreFirstComboBox();
+                void setMultiInput();
+                void deleteMultiInput();
+                void setCoordinates(int coordinateX, int coordinateY);
+                std::map<std::string, int> returnDicoScoreComboBox();
+                std::vector<std::string> returnVectorSelectedInput();
+                void setLimitMultiInput();
+                void setComboBoxFunction(std::string index);
+                void setFunctionForComboBox(std::string index, std::vector<std::string> (&functionToSet)());
+                void setVectorComboBox(int index, std::vector<std::string> vectorReference);
+                void initialize();
+                void setNumberMultiInput(int number);
+                std::string returnTextComboBox(int number);
+                void deleteItemDicoSelectedInput(std::string item);
+                int returnXCoordinate();
+                int returnYCoordinate();
+                void setCounter();
+                void increaseNumberMultiInput();
+                void deacreaseNumberMultiInput();
+                int returnNumberMultiInput();
+
+            private:
+                Gtk::Button plusButton;
+                Gtk::Button minusButton;
+                Gtk::ComboBoxText firstComboBox;
+                Gtk::ComboBoxText secondComboBox;
+                Gtk::SpinButton spinButton;
+                std::vector<MultiInputOneComboBox*> vectorMultiInputs;
+                std::map<std::string, std::string> DicoSelectedInputs;
+                std::vector<std::string> vectorComboBoxSelectedInputs;
+                int SecondComboBoxItemsNumber;
+                int xcoordinates;
+                int ycoordinates;
+                std::map<std::string, int> DicoScoreComboBox;
+                std::vector<std::string> (*functionForComboBoxOne)();
+                std::vector<std::string> (*functionForSecondComboBox)(std::string categorie);
+                void (*functionForSpinButton)();
+                //Controllor* ControllorAddress;
+                int numberMultiInput;
+                std::string dataToParse;
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**
@@ -504,10 +614,13 @@ namespace vampireGameproject{
             
             void setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height);
             void setLabelMultiComboBoxAttributes();
+            void setLabelMultiComboBoxAbilities();
             ButtonmultiInput& returnAttributesInput();
+            ButtonmultiInput& returnAbilitiesInput();
             void setMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
             void deleteMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
             void setButtonMultiInputAttributes();
+            void setButtonMultiInputAbilities();
             void showAll();
             
             
@@ -519,6 +632,7 @@ namespace vampireGameproject{
             Gtk::ComboBoxText tableComboBox[2];
             ButtonmultiInput attributesInput;
             ButtonmultiInput abilitiesInput;
+            ButtonmultiInputOneComboBox disciplinesInput;
             
     };
 
