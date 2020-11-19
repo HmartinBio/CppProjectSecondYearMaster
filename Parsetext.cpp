@@ -523,26 +523,29 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Abilities(){
 
     int counterAbilities = 0;
 
-
     while(counterAbilities < 3){
         std::getline(infile, lineOftext);
 
         if (pystring::startswith(lineOftext, "#") == true && 
-            pystring::find(lineOftext, "#####") != - 1){
+            pystring::find(lineOftext, "#####") == - 1){
 
                 std::vector<std::string> vectorToSplitText;
                 pystring::split(lineOftext, vectorToSplitText, "##");
-                
+
+                //std::cout << "test" << std::endl;
+            
                 if (vectorToSplitText.size() == 2){
                     std::string lineToRegister = vectorToSplitText.at(1);
-                    lineToRegister.substr(2, lineToRegister.size());
-                    vectorAbilities.push_back(vectorToSplitText.at(1));
+                    lineToRegister = lineToRegister.substr(1, lineToRegister.size());
+                    //std::cout << lineToRegister << std::endl;
+                    vectorAbilities.push_back(lineToRegister);
                 }
 
                 else{
                     std::string lineToRegister = vectorToSplitText.at(2);
-                    lineToRegister.substr(2, lineToRegister.size());
-                    vectorAbilities.push_back(vectorToSplitText.at(1));
+                    lineToRegister = lineToRegister.substr(1, lineToRegister.size());
+                    //std::cout << lineToRegister << std::endl;
+                    vectorAbilities.push_back(lineToRegister);
                 }
 
                 counterAbilities += 1;
