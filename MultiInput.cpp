@@ -10,7 +10,7 @@
 */
 
 
-vampireGameproject::MultiInput::MultiInput(){};
+vampireGameproject::MultiInput::MultiInput(){}
 
 
 
@@ -25,7 +25,7 @@ vampireGameproject::MultiInput::MultiInput(){};
 
 
 
-vampireGameproject::MultiInput::~MultiInput(){};
+vampireGameproject::MultiInput::~MultiInput(){}
 
 
 
