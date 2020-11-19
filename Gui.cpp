@@ -192,7 +192,7 @@ void vampireGameproject::Gui::setMultiComboBox(Gtk::Button& buttonPlus, Gtk::But
 
 void vampireGameproject::Gui::setButtonMultiInputAttributes(){
      
-     mainGrid.attach_next_to(attributesInput.returnButton("minus"), 
+    mainGrid.attach_next_to(attributesInput.returnButton("minus"), 
         tableLabel[3], Gtk::POS_RIGHT, 1, 1);
 
      //mainGrid.attach(attributesInput.returnButton("minus"), 
@@ -200,12 +200,26 @@ void vampireGameproject::Gui::setButtonMultiInputAttributes(){
      //       attributesInput.returnYCoordinate(), 1, 1);
      
 
-     mainGrid.attach_next_to(attributesInput.returnButton("plus"), 
-            attributesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
+    mainGrid.attach_next_to(attributesInput.returnButton("plus"), 
+        attributesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
     
     setLabelMultiComboBoxAttributes();
 }
 
+
+
+void vampireGameproject::Gui::setButtonMultiInputAbilities(){
+
+    mainGrid.attach_next_to(abilitiesInput.returnButton("minus"), 
+        tableLabel[4], Gtk::POS_RIGHT, 1, 1);
+    
+    mainGrid.attach_next_to(abilitiesInput.returnButton("plus"), 
+            abilitiesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
+
+    setLabelMultiComboBoxAbilities();
+
+
+}
 
 
 
@@ -225,6 +239,11 @@ void vampireGameproject::Gui::setLabelMultiComboBoxAttributes(){
 }
 
 
+void vampireGameproject::Gui::setLabelMultiComboBoxAbilities(){
+    abilitiesInput.setLabelMultiComboBox();
+}
+
+
 /** Implementation of the returnAttributesInput method.
 *
 * Implementation of the returnAttributesInput method
@@ -239,7 +258,9 @@ vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAttributesI
     return attributesInput;
 }
 
-
+vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAbilitiesInput(){
+    return abilitiesInput;
+}
 
 /** Implementation of the setMultiInputOnGrid method.
 *
