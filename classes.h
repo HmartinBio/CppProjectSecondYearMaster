@@ -66,6 +66,8 @@ namespace vampireGameproject{
             std::vector<std::string> parse_Backgrounds();
             std::vector<std::string> parse_ClanDisciplinesCategorie(std::string categorie);
             std::vector<std::string> parse_Viritues();
+            std::vector<std::string> parse_MeritsFlaws();
+            std::vector<std::string> parse_MeritsFlawsCategorie(std::string categorie);
     };
 
 
@@ -619,14 +621,17 @@ class ButtonmultiInputOneComboBox{
             void setLabelMultiComboBoxAttributes();
             void setLabelMultiComboBoxAbilities();
             void setLabelMultiComboBoxDisciplines();
+            void setLabelMultiComboBoxMeritsFlaws();
             ButtonmultiInput& returnAttributesInput();
             ButtonmultiInput& returnAbilitiesInput();
             ButtonmultiInput& returnDisciplinesInput();
+            ButtonmultiInput& returnMeritsFlawsInput();
             void setMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
             void deleteMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
             void setButtonMultiInputAttributes();
             void setButtonMultiInputAbilities();
             void setButtonMultiInputDisciplines();
+            void setButtonMultiInputMeritsFlaws();
             void showAll();
             ButtonmultiInputOneComboBox& returnBackgroundsInput();
             ButtonmultiInputOneComboBox& returnVirtuesInput();
@@ -637,18 +642,31 @@ class ButtonmultiInputOneComboBox{
             void setLabelMultiComboBoxBackgrounds();
             void setLabelMultiComboBoxVirtues();
             std::string returnClanName();
-            Gtk::ComboBoxText& returnComboBoxClan();         
+            Gtk::ComboBoxText& returnComboBoxClan();
+            void setSpinButtonHumanityPath();
+            void setSpinButtonWillPower();
+            void setSpinButtonBloodPool();
+            void setValidationButton();
+            Gtk::SpinButton& returnHumanityPathSpinButton(); 
+            Gtk::SpinButton& returnWillPowerSpinButton();
+            Gtk::SpinButton& returnBloodPoolSpinButton();
+            Gtk::Button& returnValidationButton();       
 
         private:
             Gtk::Grid mainGrid; 
             RulesofGame& testGui;
-            Gtk::Label tableLabel[8];
+            Gtk::Label tableLabel[12];
             Gtk::ComboBoxText tableComboBox[2];
             ButtonmultiInput attributesInput;
             ButtonmultiInput abilitiesInput;
             ButtonmultiInput disciplinesInput;
+            ButtonmultiInput meritsFlawsInput;
             ButtonmultiInputOneComboBox backgroundsInput;
             ButtonmultiInputOneComboBox virtuesInput;
+            Gtk::SpinButton HumanityPathScore;
+            Gtk::SpinButton WillPowerScore;
+            Gtk::SpinButton BloodPoolScore;
+            Gtk::Button validationButton;
             
     };
 
@@ -747,7 +765,8 @@ class ButtonmultiInputOneComboBox{
             void testInputsFirstComboBoxChangeItemsOneComboBox(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number);
             void testInputSpinButtonOneComboBox(ButtonmultiInputOneComboBox& ButtonMultiInputOneComboBoxReference, int number);
             void testClanButton();
-
+            void initializeSpinButton(std::string categorieSpinButton);
+            void initializeFinalButton();
 
         private:
             Parsetext textParser;
