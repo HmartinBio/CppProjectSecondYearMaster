@@ -260,6 +260,49 @@ void vampireGameproject::Gui::setButtonMultiInputDisciplines(){
 
 }
 
+void vampireGameproject::Gui::setButtonMultiInputMeritsFlaws(){
+     mainGrid.attach_next_to(meritsFlawsInput.returnButton("minus"), 
+        tableLabel[8], Gtk::POS_RIGHT, 1, 1);
+    
+    mainGrid.attach_next_to(meritsFlawsInput.returnButton("plus"), 
+        meritsFlawsInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
+
+    setLabelMultiComboBoxMeritsFlaws();
+}
+
+void vampireGameproject::Gui::setSpinButtonHumanityPath(){
+    mainGrid.attach_next_to(HumanityPathScore, tableLabel[9], Gtk::POS_RIGHT, 1, 1);  
+}
+
+void vampireGameproject::Gui::setSpinButtonWillPower(){
+    mainGrid.attach_next_to(WillPowerScore, tableLabel[10], Gtk::POS_RIGHT, 1, 1);
+}
+
+void vampireGameproject::Gui::setSpinButtonBloodPool(){
+    mainGrid.attach_next_to(BloodPoolScore, tableLabel[11], Gtk::POS_RIGHT, 1, 1);
+}
+
+void vampireGameproject::Gui::setValidationButton(){
+    validationButton.set_label("Save");
+    mainGrid.attach(validationButton, 0, 51, 1, 1);
+
+}
+
+Gtk::SpinButton& vampireGameproject::Gui::returnHumanityPathSpinButton(){
+    return HumanityPathScore;
+}
+
+Gtk::SpinButton& vampireGameproject::Gui::returnWillPowerSpinButton(){
+    return WillPowerScore;
+}
+
+Gtk::SpinButton& vampireGameproject::Gui::returnBloodPoolSpinButton(){
+    return BloodPoolScore;
+}
+
+Gtk::Button& vampireGameproject::Gui::returnValidationButton(){
+    return validationButton;
+}
 
 
 /** Implementation of the setLabelMultiComboBoxAttributes method.
@@ -294,6 +337,11 @@ void vampireGameproject::Gui::setLabelMultiComboBoxDisciplines(){
     disciplinesInput.setLabelMultiComboBox();
 }
 
+void vampireGameproject::Gui::setLabelMultiComboBoxMeritsFlaws(){
+    meritsFlawsInput.setLabelMultiComboBox();
+}
+
+
 /** Implementation of the returnAttributesInput method.
 *
 * Implementation of the returnAttributesInput method
@@ -316,6 +364,9 @@ vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAbilitiesIn
      return disciplinesInput;
  }
 
+vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnMeritsFlawsInput(){
+    return meritsFlawsInput;
+}
 
 vampireGameproject::ButtonmultiInputOneComboBox& vampireGameproject::Gui::returnBackgroundsInput(){
     return backgroundsInput;
