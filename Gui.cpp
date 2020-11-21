@@ -45,6 +45,10 @@ void vampireGameproject::Gui::setTableComboBox(int index, std::vector<std::strin
 
 
 
+std::string vampireGameproject::Gui::returnClanName(){
+    return tableComboBox[0].get_active_text();
+}
+
 
 /** Implementation of the initialiseTableLabel method.
 *
@@ -149,6 +153,9 @@ void vampireGameproject::Gui::setTableComboBoxOnGrid(int index, int indexLabel){
 
 
 
+Gtk::ComboBoxText& vampireGameproject::Gui::returnComboBoxClan(){
+    return tableComboBox[0];
+}
 
 
 
@@ -218,6 +225,38 @@ void vampireGameproject::Gui::setButtonMultiInputAbilities(){
 
     setLabelMultiComboBoxAbilities();
 
+}
+
+void vampireGameproject::Gui::setButtonMultiInputBackgrounds(){
+
+    mainGrid.attach_next_to(backgroundsInput.returnButton("minus"), 
+        tableLabel[6], Gtk::POS_RIGHT, 1, 1);
+    
+    mainGrid.attach_next_to(backgroundsInput.returnButton("plus"), 
+        backgroundsInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
+    
+    setLabelMultiComboBoxBackgrounds();
+}
+
+void vampireGameproject::Gui::setButtonMultiInputVirtues(){
+     mainGrid.attach_next_to(virtuesInput.returnButton("minus"), 
+        tableLabel[7], Gtk::POS_RIGHT, 1, 1);
+    
+    mainGrid.attach_next_to(virtuesInput.returnButton("plus"), 
+        virtuesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
+    
+    setLabelMultiComboBoxVirtues();
+
+}
+
+void vampireGameproject::Gui::setButtonMultiInputDisciplines(){
+    mainGrid.attach_next_to(disciplinesInput.returnButton("minus"), 
+        tableLabel[5], Gtk::POS_RIGHT, 1, 1);
+    
+    mainGrid.attach_next_to(disciplinesInput.returnButton("plus"), 
+        disciplinesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
+
+    setLabelMultiComboBoxDisciplines();
 
 }
 
@@ -243,6 +282,17 @@ void vampireGameproject::Gui::setLabelMultiComboBoxAbilities(){
     abilitiesInput.setLabelMultiComboBox();
 }
 
+void vampireGameproject::Gui::setLabelMultiComboBoxBackgrounds(){
+    backgroundsInput.setLabelMultiComboBox();
+}
+
+void vampireGameproject::Gui::setLabelMultiComboBoxVirtues(){
+    virtuesInput.setLabelMultiComboBox();
+}
+
+void vampireGameproject::Gui::setLabelMultiComboBoxDisciplines(){
+    disciplinesInput.setLabelMultiComboBox();
+}
 
 /** Implementation of the returnAttributesInput method.
 *
@@ -253,7 +303,6 @@ void vampireGameproject::Gui::setLabelMultiComboBoxAbilities(){
 */
 
 
-
 vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAttributesInput(){
     return attributesInput;
 }
@@ -261,6 +310,21 @@ vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAttributesI
 vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAbilitiesInput(){
     return abilitiesInput;
 }
+
+
+ vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnDisciplinesInput(){
+     return disciplinesInput;
+ }
+
+
+vampireGameproject::ButtonmultiInputOneComboBox& vampireGameproject::Gui::returnBackgroundsInput(){
+    return backgroundsInput;
+}
+
+vampireGameproject::ButtonmultiInputOneComboBox& vampireGameproject::Gui::returnVirtuesInput(){
+    return virtuesInput;
+}
+
 
 /** Implementation of the setMultiInputOnGrid method.
 *
@@ -279,12 +343,24 @@ void vampireGameproject::Gui::setMultiInputOnGrid(ButtonmultiInput& ButtonMultiI
     mainGrid.show_all();
 }
 
+void vampireGameproject::Gui::setMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number){
+     mainGrid.attach(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnComboBox(), ButtonmultiInputOneComboBoxReference.returnXCoordinate(), ButtonmultiInputOneComboBoxReference.returnYCoordinate() + number, 1, 1);
+     mainGrid.attach_next_to(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnSpinButton(), ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnComboBox(), Gtk::POS_RIGHT, 1, 1);
+     mainGrid.show_all();
+ }
 
 void vampireGameproject::Gui::deleteMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number){
     mainGrid.remove(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("first"));
     mainGrid.remove(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("second"));
     mainGrid.remove(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnSpinButton());
 }
+
+ void vampireGameproject::Gui::deleteMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number){
+     mainGrid.remove(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnComboBox());
+     mainGrid.remove(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnSpinButton());
+ }
+ 
+
 
 
 /** Implementation of the showAll method.
