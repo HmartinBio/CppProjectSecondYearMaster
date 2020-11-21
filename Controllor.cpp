@@ -23,6 +23,10 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableLabelAlign(5, "Select Disciplines:");
         graphicalUserinterface.setTableLabelAlign(6, "Select Backgrounds:");
         graphicalUserinterface.setTableLabelAlign(7, "Select Virtues:");
+        graphicalUserinterface.setTableLabelAlign(8, "Select Merits and Flaws:");
+        graphicalUserinterface.setTableLabelAlign(9, "Select Humanity Path:");
+        graphicalUserinterface.setTableLabelAlign(10, "Select WillPower:");
+        graphicalUserinterface.setTableLabelAlign(11, "Select Blood Pool:");
         graphicalUserinterface.setTableLabelOnGrid(0, 0, 0, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(1, 0, 1, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(2, 2, 0, 1, 1);
@@ -31,6 +35,10 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableLabelOnGrid(5, 0, 15, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(6, 0, 23, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(7, 0, 30, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(8, 0, 39, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(9, 0, 48, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(10, 0, 49, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(11, 0, 50, 1, 1 );
         graphicalUserinterface.initialiseTableComboBox();
         rulesGame.setVectorClans();
         rulesGame.setVectorNature();
@@ -44,6 +52,11 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         initializeButtonMultiInput("disciplines");
         initializeButtonMultiInputOneComboBox("backgrounds");
         initializeButtonMultiInputOneComboBox("virtues");
+        initializeButtonMultiInput("MeritsFlaws");
+        initializeSpinButton("humanityPath");
+        initializeSpinButton("willPower");
+        initializeSpinButton("bloodPool");
+        initializeFinalButton();
         graphicalUserinterface.showAll();
 
         //std::vector<std::string> abilities = textParser.parse_AbilitiesCategorie("Talents");
@@ -253,6 +266,41 @@ void vampireGameproject::Controllor::testInputsSecondComboBox(ButtonmultiInput& 
     }
 
 
+    if (categorieMultiInput == "MeritsFlaws"){
+
+        std::vector<std::string> vectorAttributesCategorie = textParser.parse_MeritsFlawsCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
+    
+
+        // Initialising a vector to store all the MultiInputs
+
+        std::vector<MultiInput*> vectorMultiInputs = ButtonMultiInputReference.returnVectorMultiInput();
+
+        // Iteration of elements already entered by the user
+        // If a first ComboBoxText iterated element entered 
+        // by the user for a MultiInput is detected somewhere else,  
+        // we look the iterated second item, if the iterated second item
+        // corresponds with a second term present in the vector of selected 
+        // second items, then, it means it's the same MultiInput 
+        // If it's not the case, the second term present in the vector 
+        // selected second item is deleted for this MultiInput whose the choice
+        // doesn't correspond to this second term
+
+
+        for(int iterator = 0; iterator < (int)vectorFirstComboBox.size(); iterator++){
+            if (vectorMultiInputs[number]->returnTextComboBox("first") == vectorFirstComboBox.at(iterator) && 
+                vectorMultiInputs[number]->returnTextComboBox("second") != vectorSecondComboBox.at(iterator)){
+                    vectorAttributesCategorie.erase(std::remove(vectorAttributesCategorie.begin(), 
+                        vectorAttributesCategorie.end(), vectorSecondComboBox.at(iterator)),
+                            vectorAttributesCategorie.end());
+            }
+        }
+
+        if (vectorMultiInputs[number]->returnTextComboBox("first") != ""){
+            ButtonMultiInputReference.setVectorComboBox(number, "second", vectorAttributesCategorie);
+        }
+    }
+
+
 
 }
 
@@ -349,6 +397,13 @@ void vampireGameproject::Controllor::testInputFirstComboBoxForGui(int number, st
         testInputsFirstComboBoxChangeItemsOneComboBox(ButtonmultiInputOneComboBoxReference, number);
         testInputSpinButtonOneComboBox(ButtonmultiInputOneComboBoxReference, number);
     }
+
+    if (categorieMultiInput == "MeritsFlaws"){
+        ButtonmultiInput& ButtonmultiInputReference = graphicalUserinterface.returnMeritsFlawsInput();
+        testInputsFirstComboBoxChangingItems(ButtonmultiInputReference, number);
+        testInputSpinButton(ButtonmultiInputReference, number);
+        testInputsSecondComboBox(ButtonmultiInputReference, number, categorieMultiInput);
+    }
     
 }
 
@@ -378,6 +433,11 @@ void vampireGameproject::Controllor::testInputSecondComboBoxForGui(int number, s
 
     if (categorieMultiInput == "disciplines"){
         ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnDisciplinesInput();
+        testInputSecondComboBoxChosenItems(ButtonMultiInputReference, number, categorieMultiInput);
+    }
+
+    if (categorieMultiInput == "MeritsFlaws"){
+        ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnMeritsFlawsInput();
         testInputSecondComboBoxChosenItems(ButtonMultiInputReference, number, categorieMultiInput);
     }
     
@@ -981,6 +1041,82 @@ void vampireGameproject::Controllor::testFirstComboBoxDisponibility(std::string 
 
 
 
+    if (categorieMultiInput == "MeritsFlaws"){
+         ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnMeritsFlawsInput();
+    
+
+    
+        std::vector<MultiInput*> vectorMultiInput;
+        vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    
+        ButtonMultiInputReference.setDicoScoreFirstComboBox();
+    
+        std::map<std::string, int> dicoScoreFirstComboBox = ButtonMultiInputReference.returnDicoScoreFirstComboBox();
+    
+
+    
+        std::map<std::string, int> dicoScoreFirstComboBoxRules = rulesGame.returnLimitPointsAttributes();
+        std::vector<std::string> vectorFirstComboBoxOutsider;
+
+        std::map<std::string, int>::iterator iterator;
+
+        // For all the elements in the dico Score, if the Spin Score max 
+        // was reached, then we register the element in a new vector 
+
+
+        for (iterator = dicoScoreFirstComboBox.begin(); iterator != dicoScoreFirstComboBox.end(); iterator++){
+           
+            if (iterator->first != ""){
+
+                if (dicoScoreFirstComboBoxRules.at(iterator->first) == iterator->second){
+                    vectorFirstComboBoxOutsider.push_back(iterator->first);
+                }
+            }
+
+
+        }   
+
+        // For all the MultiInputs, we create the vector of First ComboBox Items,
+        // Then, we iterate all the terms whose the score is equal to the limit 
+        // If the term is the active term of the First ComboBox of the iterated MultiInput
+        // We don't delete the value in the list of the items proposed to the user
+        // If it's not the case, the value is not proposed to the user anymore
+
+
+        
+
+        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_MeritsFlaws();
+        
+
+        for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
+            
+            std::vector<std::string> vectorFirstComboBoxChoicesCopy = vectorFirstComboBoxChoices;
+
+            if (!vectorFirstComboBoxOutsider.empty()){
+
+                for(int iterator2 = 0; iterator2 < (int)vectorFirstComboBoxOutsider.size(); iterator2++){
+
+                    if (vectorMultiInput[iterator]->returnTextComboBox("first") != vectorFirstComboBoxOutsider.at(iterator2)){
+                        vectorFirstComboBoxChoicesCopy.erase(std::remove(vectorFirstComboBoxChoicesCopy.begin(), 
+                            vectorFirstComboBoxChoicesCopy.end(), vectorFirstComboBoxOutsider.at(iterator2)), 
+                                vectorFirstComboBoxChoicesCopy.end());
+                    }
+                }
+            
+            }
+            
+            int spinScore = vectorMultiInput[iterator]->returnSpinScore();
+            std::string textSetactiveFirstComboBox = vectorMultiInput[iterator]->returnTextComboBox("first");
+            std::string textSetactiveSecondComboBox = vectorMultiInput[iterator]->returnTextComboBox("second");
+            vectorMultiInput[iterator]->returnComboBox("first").remove_all();
+            vectorMultiInput[iterator]->setVectorComboBox(vectorFirstComboBoxChoicesCopy, "first");
+            vectorMultiInput[iterator]->returnComboBox("first").set_active_text(textSetactiveFirstComboBox);
+            vectorMultiInput[iterator]->returnComboBox("second").set_active_text(textSetactiveSecondComboBox);
+            vectorMultiInput[iterator]->returnSpinButton().set_value(spinScore);
+        }    
+    
+    }
+
 
 
 
@@ -1199,6 +1335,34 @@ void vampireGameproject::Controllor::setMultiInput(std::string categorieMultiInp
     }
 
 
+    if (categorieMultiInput == "MeritsFlaws"){
+        ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnMeritsFlawsInput();
+    
+
+        ButtonMultiInputReference.setMultiInput();
+        std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
+    
+        //ButtonMultiInputReference.setVectorComboBox(VectorMultiInput.size() - 1, "first", textParser.parse_Attributes());
+        //testAttributesInputsFirstComboBox(); 
+    
+        int numberVector = VectorMultiInput.size() - 1;
+
+        Gtk::ComboBoxText& firstComboBox = VectorMultiInput[numberVector]->returnComboBox("first");
+        Gtk::ComboBoxText& secondComboBox = VectorMultiInput[numberVector]->returnComboBox("second");
+   
+        firstComboBox.signal_changed().connect(sigc::bind<int, std::string>(sigc::mem_fun(*this, &vampireGameproject::Controllor::testInputFirstComboBoxForGui), 
+            numberVector, categorieMultiInput));
+
+        secondComboBox.signal_changed().connect(sigc::bind<int, std::string>(sigc::mem_fun(*this, 
+            &vampireGameproject::Controllor::testInputSecondComboBoxForGui), 
+                numberVector, categorieMultiInput));
+
+   
+
+        graphicalUserinterface.setMultiInputOnGrid(ButtonMultiInputReference, numberVector);
+    }
+
+
 
 
 
@@ -1232,6 +1396,10 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReference(Buttonm
         ButtonMultiInputReference.setCoordinates(4, 15);
     }
 
+    if (categorieMultiInput == "MeritsFlaws"){
+        ButtonMultiInputReference.setCoordinates(4, 39);
+    }
+
 
     ButtonMultiInputReference.initialize();
     Gtk::Button& buttonPlus = ButtonMultiInputReference.returnButton("plus");
@@ -1252,7 +1420,9 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReference(Buttonm
     if (categorieMultiInput == "abilities"){
          ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parse_Abilities());
     }
-    
+    if (categorieMultiInput == "MeritsFlaws"){
+        ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parse_MeritsFlaws());
+    }
     
     std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
     int numberVector = VectorMultiInput.size() - 1;
@@ -1276,6 +1446,10 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReference(Buttonm
 
     if (categorieMultiInput == "disciplines"){
         graphicalUserinterface.setButtonMultiInputDisciplines();
+    }
+
+    if (categorieMultiInput == "MeritsFlaws"){
+        graphicalUserinterface.setButtonMultiInputMeritsFlaws();
     }
 
     graphicalUserinterface.setMultiInputOnGrid(ButtonMultiInputReference, 0);
@@ -1358,6 +1532,10 @@ void vampireGameproject::Controllor::initializeButtonMultiInput(std::string cate
         comboBoxClan.signal_changed().connect(sigc::mem_fun(*this, &vampireGameproject::Controllor::testClanButton));
         initializeButtonMultiInputReference(graphicalUserinterface.returnDisciplinesInput(), categorieMultiInput);
     }
+
+    if (categorieMultiInput == "MeritsFlaws"){
+        initializeButtonMultiInputReference(graphicalUserinterface.returnMeritsFlawsInput(), categorieMultiInput);
+    }
 }
 
 void vampireGameproject::Controllor::initializeButtonMultiInputOneComboBox(std::string categorieMultiInput){
@@ -1432,6 +1610,37 @@ void vampireGameproject::Controllor::deleteMultiInput(std::string categorieMulti
         }
     }
 }
+
+
+void vampireGameproject::Controllor::initializeSpinButton(std::string categorieSpinButton){
+    if (categorieSpinButton == "humanityPath"){
+        graphicalUserinterface.setSpinButtonHumanityPath();
+        Gtk::SpinButton& spinScoreHumanity = graphicalUserinterface.returnHumanityPathSpinButton();
+        spinScoreHumanity.set_range(0, 10);
+        spinScoreHumanity.set_increments(1, 1);
+    }
+
+    if (categorieSpinButton == "willPower"){
+        graphicalUserinterface.setSpinButtonWillPower();
+        Gtk::SpinButton& spinScoreWillPower = graphicalUserinterface.returnWillPowerSpinButton();
+        spinScoreWillPower.set_range(0, 10);
+        spinScoreWillPower.set_increments(1, 1);
+    }
+
+    if (categorieSpinButton == "bloodPool"){
+        graphicalUserinterface.setSpinButtonBloodPool();
+        Gtk::SpinButton& spinScoreBloodPool = graphicalUserinterface.returnBloodPoolSpinButton();
+        spinScoreBloodPool.set_range(0, 20);
+        spinScoreBloodPool.set_digits(2);
+        spinScoreBloodPool.set_increments(0.25, 0.25);
+    }
+}
+
+void vampireGameproject::Controllor::initializeFinalButton(){
+    graphicalUserinterface.setValidationButton();
+
+}
+
 
 
 /* 
