@@ -421,8 +421,82 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplines(st
 
     infile.close();
 
+    for(int i = 0; i < (int)vectorClansDisciplines.size(); i++){
+        std::string lineToAdd = vectorClansDisciplines.at(i);
+        if (pystring::startswith(lineToAdd, " ") == true){
+            lineToAdd = lineToAdd.substr(1, lineToAdd.size());
+            vectorClansDisciplines[i] = lineToAdd;
+        }
+    }
+
     return vectorClansDisciplines;    
 }
+
+
+
+std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplinesCategorie(std::string categorie){
+    std::string lineOftext;
+    std::vector<std::string> vectorClansDisciplines;
+    std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
+
+    // while we don't find the searched table
+    // beginning by "##" we take the next line
+
+    while(pystring::startswith(lineOftext, "####") != true || 
+        pystring::find(lineOftext, "Disciplines") == -1){
+            std::getline(infile, lineOftext);
+        }
+
+    while(pystring::startswith(lineOftext, "--") != true || 
+        pystring::find(lineOftext, categorie) == - 1){
+            std::getline(infile, lineOftext);
+        }
+    
+    std::getline(infile, lineOftext);
+    std::string secondLineOfText;
+    std::vector<std::string> vectorCategorieDisciplines;
+
+    while(pystring::startswith(lineOftext, "--") != true && 
+        pystring::startswith(lineOftext, "#") != true){
+        
+        std::getline(infile, secondLineOfText);
+
+        if (pystring::startswith(secondLineOfText, "\t*") == true && 
+            pystring::startswith(secondLineOfText, "\t**") == false){
+            std::cout << "coucou" << std::endl;
+            std::cout << lineOftext << std::endl;
+            std::cout << secondLineOfText << std::endl;
+            std::vector<std::string> vectorToSplitText;
+            pystring::split(lineOftext, vectorToSplitText, ":");
+
+            std::string lineToAdd;
+            lineToAdd = vectorToSplitText.at(1);
+
+            if (pystring::startswith(lineToAdd, " ") == true){
+                lineToAdd = lineToAdd.substr(1, lineToAdd.size());
+            }
+
+            std::cout << lineToAdd << std::endl;
+            std::cout << lineToAdd.size() << std::endl;
+
+            vectorCategorieDisciplines.push_back(lineToAdd);
+            lineOftext = secondLineOfText;
+        }
+
+        else{
+            lineOftext = secondLineOfText;
+        }
+
+    }
+
+    return vectorCategorieDisciplines;
+
+}
+
+
+
+
 
 std::vector<std::string> vampireGameproject::Parsetext::parse_Attributes(){
     std::string lineOftext;
@@ -595,7 +669,58 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_AbilitiesCategorie
 
 }
 
+std::vector<std::string> vampireGameproject::Parsetext::parse_Backgrounds(){
+    std::vector<std::string> vectorBackgrounds;
+    vectorBackgrounds.push_back("Allies");
+    vectorBackgrounds.push_back("Alternate Identity");
+    vectorBackgrounds.push_back("Black Hand Membership");
+    vectorBackgrounds.push_back("Contacts");
+    vectorBackgrounds.push_back("Domain");
+    vectorBackgrounds.push_back("Fame");
+    vectorBackgrounds.push_back("Generation");
+    vectorBackgrounds.push_back("Herd");
+    vectorBackgrounds.push_back("Influence");
+    vectorBackgrounds.push_back("Mentor");
+    vectorBackgrounds.push_back("Resources");
+    vectorBackgrounds.push_back("Retainers");
+    vectorBackgrounds.push_back("Rituals");
+    vectorBackgrounds.push_back("Status");
+
+    return vectorBackgrounds;
+
+}
 
 
+std::vector<std::string> vampireGameproject::Parsetext::parse_Viritues(){
+    std::string lineOftext;
+    std::vector<std::string> vectorVirtues;
+    std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
 
+    // while we don't find the searched table
+    // beginning by "##" we take the next line
+
+    while(pystring::startswith(lineOftext, "####") != true || 
+        pystring::find(lineOftext, "Virtues") == -1){
+            std::getline(infile, lineOftext);
+    }
+
+
+    std::getline(infile, lineOftext);
+
+    while(pystring::startswith(lineOftext, "##") != true && 
+        pystring::find(lineOftext, "Willpower") == -1){
+            std::getline(infile, lineOftext);
+        
+            
+            if (pystring::startswith(lineOftext, "--") == true &&
+                pystring::find(lineOftext, "Willpower") == -1){
+                vectorVirtues.push_back(lineOftext.substr(2, lineOftext.size()));
+            }
+
+        }
+
+        infile.close();
+        return vectorVirtues;
+}
 
