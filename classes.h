@@ -63,6 +63,9 @@ namespace vampireGameproject{
             std::vector<std::string> parse_AttributesCategorie(std::string categorie);
             std::vector<std::string> parse_Abilities();
             std::vector<std::string> parse_AbilitiesCategorie(std::string categorieToGet);
+            std::vector<std::string> parse_Backgrounds();
+            std::vector<std::string> parse_ClanDisciplinesCategorie(std::string categorie);
+            std::vector<std::string> parse_Viritues();
     };
 
 
@@ -615,24 +618,37 @@ class ButtonmultiInputOneComboBox{
             void setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height);
             void setLabelMultiComboBoxAttributes();
             void setLabelMultiComboBoxAbilities();
+            void setLabelMultiComboBoxDisciplines();
             ButtonmultiInput& returnAttributesInput();
             ButtonmultiInput& returnAbilitiesInput();
+            ButtonmultiInput& returnDisciplinesInput();
             void setMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
             void deleteMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
             void setButtonMultiInputAttributes();
             void setButtonMultiInputAbilities();
+            void setButtonMultiInputDisciplines();
             void showAll();
-            
-            
+            ButtonmultiInputOneComboBox& returnBackgroundsInput();
+            ButtonmultiInputOneComboBox& returnVirtuesInput();
+            void setMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number);
+            void deleteMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number);
+            void setButtonMultiInputBackgrounds();
+            void setButtonMultiInputVirtues();
+            void setLabelMultiComboBoxBackgrounds();
+            void setLabelMultiComboBoxVirtues();
+            std::string returnClanName();
+            Gtk::ComboBoxText& returnComboBoxClan();         
 
         private:
             Gtk::Grid mainGrid; 
             RulesofGame& testGui;
-            Gtk::Label tableLabel[5];
+            Gtk::Label tableLabel[8];
             Gtk::ComboBoxText tableComboBox[2];
             ButtonmultiInput attributesInput;
             ButtonmultiInput abilitiesInput;
-            ButtonmultiInputOneComboBox disciplinesInput;
+            ButtonmultiInput disciplinesInput;
+            ButtonmultiInputOneComboBox backgroundsInput;
+            ButtonmultiInputOneComboBox virtuesInput;
             
     };
 
@@ -725,6 +741,13 @@ class ButtonmultiInputOneComboBox{
             void testInputPlusButtonForGui(std::string categorieMultiInput);
             void testInputMinusButtonForGui(std::string categorieMultiInput);
             void setCounter();
+            void initializeButtonMultiInputOneComboBox(std::string categorieMultiInput);
+            void initializeButtonMultiInputReferenceOneComboBox(ButtonmultiInputOneComboBox& ButtonMultiInputOneComboBoxReference, 
+                std::string categorieMultiInputOneComboBox);
+            void testInputsFirstComboBoxChangeItemsOneComboBox(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number);
+            void testInputSpinButtonOneComboBox(ButtonmultiInputOneComboBox& ButtonMultiInputOneComboBoxReference, int number);
+            void testClanButton();
+
 
         private:
             Parsetext textParser;
