@@ -156,35 +156,26 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
         for(int iterator = 0; iterator < (int)vectorMultiInputs.size(); iterator++){
 
 
-
                 if (mapCounter.find(vectorMultiInputs[iterator]->returnTextComboBox("first")) == mapCounter.end()){
                     mapCounter.insert(std::pair<std::string, int>(vectorMultiInputs[iterator]->returnTextComboBox("first"), 
                         vectorMultiInputs[iterator]->returnSpinScore()));
-                        std::cout << "creation de points" << std::endl;
-                        std::cout << vectorMultiInputs[iterator]->returnTextComboBox("first") << std::endl;
-                        std::cout << mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] << std::endl;
-                        std::cout << "fin de creation de points" << std::endl;
+                        //std::cout << "creation de points" << std::endl;
+                        //std::cout << vectorMultiInputs[iterator]->returnTextComboBox("first") << std::endl;
+                        //std::cout << mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] << std::endl;
+                        //std::cout << "fin de creation de points" << std::endl;
                 }
 
                 else{
-                    std::cout << "ajout de points" << std::endl;
+                    //std::cout << "ajout de points" << std::endl;
                     mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] = 
                         mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] + 
                             vectorMultiInputs[iterator]->returnSpinScore();
-                    std::cout << vectorMultiInputs[iterator]->returnTextComboBox("first") << std::endl;
-                    std::cout << mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] << std::endl;
-                    std::cout << "fin d'ajout de points" << std::endl;
+                    //std::cout << vectorMultiInputs[iterator]->returnTextComboBox("first") << std::endl;
+                    //std::cout << mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] << std::endl;
+                    //std::cout << "fin d'ajout de points" << std::endl;
 
-                }
-                  
+                } 
         }
-
-        std::cout << "affichage du dictionnaire" << std::endl;
-        for ( const auto &myPair : mapCounter ) {
-            std::cout << myPair.first <<  std::endl;
-            std::cout << myPair.second << std::endl;
-        }
-
 
 
         DicoScoreFirstComboBox = mapCounter;
