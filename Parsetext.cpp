@@ -724,3 +724,68 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Viritues(){
         return vectorVirtues;
 }
 
+std::vector<std::string> vampireGameproject::Parsetext::parse_MeritsFlaws(){
+    std::string lineOftext;
+    std::vector<std::string> vectorMeritsFlaws;
+    std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
+
+    // while we don't find the searched table
+    // beginning by "##" we take the next line
+
+    while(pystring::startswith(lineOftext, "####") != true || 
+        pystring::find(lineOftext, "Merits and flaws") == -1){
+            std::getline(infile, lineOftext);
+    
+    }
+
+    std::getline(infile, lineOftext);
+
+    while(std::getline(infile, lineOftext)){
+        if (pystring::startswith(lineOftext, "##") == true){
+            std::string lineToAdd = lineOftext.substr(3, lineOftext.size());
+            lineToAdd =  pystring::capitalize(lineToAdd);
+            vectorMeritsFlaws.push_back(lineToAdd);
+
+        }
+    }
+
+    return vectorMeritsFlaws;
+
+}
+
+std::vector<std::string> vampireGameproject::Parsetext::parse_MeritsFlawsCategorie(std::string categorie){
+    std::string lineOftext;
+    std::vector<std::string> vectorMeritsFlaws;
+    std::ifstream infile("VampireV5.txt");
+    std::getline(infile, lineOftext);
+
+    // while we don't find the searched table
+    // beginning by "##" we take the next line
+
+    while(pystring::startswith(lineOftext, "####") != true || 
+        pystring::find(lineOftext, "Merits and flaws") == -1){
+            std::getline(infile, lineOftext);
+    }
+
+    while(pystring::startswith(lineOftext, "##") != true || 
+        pystring::find(lineOftext, pystring::upper(categorie)) == -1){
+            std::getline(infile, lineOftext);
+    }
+
+    while((pystring::startswith(lineOftext, "##") != true ||
+        pystring::find(lineOftext, pystring::upper(categorie)) != -1) &&
+            (std::getline(infile, lineOftext))){
+                if (pystring::startswith(lineOftext, "--") == true){
+                    std::vector<std::string> vectorTosplitText;
+                    pystring::split(lineOftext, vectorTosplitText, "(");
+                    std::string lineToAdd = vectorTosplitText.at(0);
+                    lineToAdd = lineToAdd.substr(2, lineToAdd.size() - 1);
+                    vectorMeritsFlaws.push_back(lineToAdd);
+                }
+            }
+
+    return vectorMeritsFlaws;
+
+
+}
