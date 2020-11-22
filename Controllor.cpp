@@ -1875,6 +1875,27 @@ void vampireGameproject::Controllor::deleteMultiInput(std::string categorieMulti
             ButtonmultiInputOneComboBoxReference.deleteMultiInput();
         }
     }
+
+    if (categorieMultiInput == "virtues"){
+        ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference = graphicalUserinterface.returnVirtuesInput();
+        std::vector<MultiInputOneComboBox*> VectorMultiInput = ButtonmultiInputOneComboBoxReference.returnVectorMultiInput();
+
+        if (VectorMultiInput.size() != 1){
+            graphicalUserinterface.deleteMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBoxReference, VectorMultiInput.size() - 1);
+            ButtonmultiInputOneComboBoxReference.deleteMultiInput();
+        }        
+    }
+
+    if (categorieMultiInput == "MeritsFlaws"){
+        ButtonmultiInput& ButtonmultiInputReference = graphicalUserinterface.returnMeritsFlawsInput();
+
+        std::vector<MultiInput*> VectorMultiInput = ButtonmultiInputReference.returnVectorMultiInput();
+
+        if (VectorMultiInput.size() != 1){
+            graphicalUserinterface.deleteMultiInputOnGrid(ButtonmultiInputReference, VectorMultiInput.size() - 1);
+            ButtonmultiInputReference.deleteMultiInput();
+        }
+    }
 }
 
 
@@ -1923,6 +1944,10 @@ void vampireGameproject::Controllor::initializeSpinButton(std::string categorieS
 *
 * Implementation of the initializeFinalButton method
 * Method setting the button to submit user choices*/
+
+
+
+
 
 void vampireGameproject::Controllor::initializeFinalButton(){
     graphicalUserinterface.setValidationButton();
