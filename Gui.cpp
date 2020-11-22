@@ -7,21 +7,29 @@
 * Initialisation of the testGui constructor 
 * before the Gui constructor be initialised
 *
+* @param rulesGamereference: Reference of the RulesOfGame object
 */
+
+
+
+
 
 vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference): 
     testGui(rulesGamereference){}
 
 
 
+
+
 /** Destructor of the class Gui.
-* Modification of the destructor of Gui
-*
-*
-*
-*/
+* Modification of the destructor of Gui */
+
+
+
+
 
 vampireGameproject::Gui::~Gui(){}
+
 
 
 
@@ -29,11 +37,14 @@ vampireGameproject::Gui::~Gui(){}
 /** Implementation of the setTableComboBox method.
 *
 * Implementation of the setTableComboBox method
-* Method filling the ComboBoxes Clan and Nature
+* Method filling the ComboBoxes Clan, Nature and Health
 * with Parsed Text
 *
-*
+* @param index: number of the ComboBoxText in the table of ComboBoxesTexts
+* @param vectorElements: vector containg the text to set in the ComboBoxText
 */
+
+
 
 
 
@@ -45,9 +56,22 @@ void vampireGameproject::Gui::setTableComboBox(int index, std::vector<std::strin
 
 
 
+
+
+/** Implementation of the returnClanName method.
+*
+* Implementation of the returnClanName method
+* Method returning the text active from the Clan 
+* ComboBox Text */
+
+
+
 std::string vampireGameproject::Gui::returnClanName(){
     return tableComboBox[0].get_active_text();
 }
+
+
+
 
 
 /** Implementation of the initialiseTableLabel method.
@@ -69,9 +93,9 @@ void vampireGameproject::Gui::initialiseTableLabel(){
 
 
 
-/** Implementation of the initialiseTableLabel method.
+/** Implementation of the initialiseTableComboBox method.
 *
-* Implementation of the initialiseTableLabel method
+* Implementation of the initialiseTableComboBox method
 * Method creating the ComboBox Nature and Clan
 *
 *
@@ -89,9 +113,11 @@ void vampireGameproject::Gui::initialiseTableComboBox(){
 /** Implementation of the setTableLabelAlign method.
 *
 * Implementation of the setTableLabelAlign method
-* Method creating the ComboBox Nature and Clan
+* Method setting the text of labels contained in the 
+* table of Labels and aligning this text to the interface
 *
-*
+* @param index: number of Label in the table 
+* @param label: text to set in the label
 */
 
 
@@ -125,7 +151,11 @@ void vampireGameproject::Gui::setTableLabel(int index, std::string label){
 * Implementation of the setTableLabelOnGrid method
 * Method displaying labels on the GUI
 *
-*
+* @param index: number of the Label in the Label table
+* @param xcoordinates: x coordinates to set the label in the gui
+* @param ycoordinates: y coordinate to set the label in the gui
+* @param width: width of the label in the gui
+* @param height: height of the label in the gui
 */
 
 
@@ -142,7 +172,8 @@ void vampireGameproject::Gui::setTableLabelOnGrid(int index, int xcoordinates, i
 * Implementation of the setTableComboBoxOnGrid method
 * Method displaying ComboBoxes on the GUI
 *
-*
+* @param index: number of the ComboBox in the ComboBox table
+* @param indexLabel: number of the Label in the Label Table
 */
 
 
@@ -153,9 +184,19 @@ void vampireGameproject::Gui::setTableComboBoxOnGrid(int index, int indexLabel){
 
 
 
+
+
+/** Implementation of the returnComboBoxClan method.
+*
+* Implementation of the returnComboBoxClan method
+* Method returning ComboBoxText associated to the Clan*/
+
+
+
 Gtk::ComboBoxText& vampireGameproject::Gui::returnComboBoxClan(){
     return tableComboBox[0];
 }
+
 
 
 
@@ -187,13 +228,14 @@ void vampireGameproject::Gui::setMultiComboBox(Gtk::Button& buttonPlus, Gtk::But
 
 
 
+
 /** Implementation of the setButtonMultiInputAttributes method.
 *
 * Implementation of the setButtonMultiInputAttributes method
 * Method displaying Plus and Minus button of ButtonMultiInput
-* And Displaying their labels on the buttons
-*
-*/
+* And Displaying their labels on the buttons*/
+
+
 
 
 
@@ -202,16 +244,23 @@ void vampireGameproject::Gui::setButtonMultiInputAttributes(){
     mainGrid.attach_next_to(attributesInput.returnButton("minus"), 
         tableLabel[3], Gtk::POS_RIGHT, 1, 1);
 
-     //mainGrid.attach(attributesInput.returnButton("minus"), 
-     //       attributesInput.returnXCoordinate(), 
-     //       attributesInput.returnYCoordinate(), 1, 1);
-     
-
     mainGrid.attach_next_to(attributesInput.returnButton("plus"), 
         attributesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
     
     setLabelMultiComboBoxAttributes();
 }
+
+
+
+
+
+/** Implementation of the setButtonMultiInputAbilities method.
+*
+* Implementation of the setButtonMultiInputAbilities method
+* Method displaying Plus and Minus button of ButtonMultiInput
+* And Displaying their labels on the buttons
+*
+*/
 
 
 
@@ -224,8 +273,21 @@ void vampireGameproject::Gui::setButtonMultiInputAbilities(){
             abilitiesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
 
     setLabelMultiComboBoxAbilities();
-
 }
+
+
+
+
+
+/** Implementation of the setButtonMultiInputBackgrounds method.
+*
+* Implementation of the setButtonMultiInputBackgrounds method
+* Method displaying Plus and Minus button of ButtonMultiInput
+* And Displaying their labels on the buttons
+*
+*/
+
+
 
 void vampireGameproject::Gui::setButtonMultiInputBackgrounds(){
 
@@ -238,6 +300,22 @@ void vampireGameproject::Gui::setButtonMultiInputBackgrounds(){
     setLabelMultiComboBoxBackgrounds();
 }
 
+
+
+
+
+/** Implementation of the setButtonMultiInputVirtues method.
+*
+* Implementation of the setButtonMultiInputVirtues method
+* Method displaying Plus and Minus button of ButtonMultiInput
+* And Displaying their labels on the buttons
+*
+*/
+
+
+
+
+
 void vampireGameproject::Gui::setButtonMultiInputVirtues(){
      mainGrid.attach_next_to(virtuesInput.returnButton("minus"), 
         tableLabel[7], Gtk::POS_RIGHT, 1, 1);
@@ -248,6 +326,17 @@ void vampireGameproject::Gui::setButtonMultiInputVirtues(){
     setLabelMultiComboBoxVirtues();
 
 }
+
+
+
+/** Implementation of the setButtonMultiInputDisciplines method.
+*
+* Implementation of the setButtonMultiInputDisciplines method
+* Method displaying Plus and Minus button of ButtonMultiInput
+* And Displaying their labels on the buttons
+*
+*/
+
 
 void vampireGameproject::Gui::setButtonMultiInputDisciplines(){
     mainGrid.attach_next_to(disciplinesInput.returnButton("minus"), 
@@ -260,6 +349,20 @@ void vampireGameproject::Gui::setButtonMultiInputDisciplines(){
 
 }
 
+
+
+
+
+/** Implementation of the setButtonMultiInputMeritsFlaws method.
+*
+* Implementation of the setButtonMultiInputMeritsFlaws method
+* Method displaying Plus and Minus button of ButtonMultiInput
+* And Displaying their labels on the buttons
+*
+*/
+
+
+
 void vampireGameproject::Gui::setButtonMultiInputMeritsFlaws(){
      mainGrid.attach_next_to(meritsFlawsInput.returnButton("minus"), 
         tableLabel[8], Gtk::POS_RIGHT, 1, 1);
@@ -270,17 +373,61 @@ void vampireGameproject::Gui::setButtonMultiInputMeritsFlaws(){
     setLabelMultiComboBoxMeritsFlaws();
 }
 
+
+/** Implementation of the setSpinButtonHumanityPath method.
+*
+* Implementation of the setSpinButtonHumanityPath method
+* Method displaying the Spin button associated to Humanity Path
+* next to the label in the gui*/
+
+
 void vampireGameproject::Gui::setSpinButtonHumanityPath(){
     mainGrid.attach_next_to(HumanityPathScore, tableLabel[9], Gtk::POS_RIGHT, 1, 1);  
 }
+
+
+
+
+
+/** Implementation of the setSpinButtonWillPower method.
+*
+* Implementation of the setSpinButtonWillPower method
+* Method displaying the Spin button associated to WillPower
+* next to the label in the gui*/
+
+
 
 void vampireGameproject::Gui::setSpinButtonWillPower(){
     mainGrid.attach_next_to(WillPowerScore, tableLabel[10], Gtk::POS_RIGHT, 1, 1);
 }
 
+
+
+
+
+/** Implementation of the setSpinButtonBloodPool method.
+*
+* Implementation of the setSpinButtonBloodPool method
+* Method displaying the Spin button associated to Humanity Path
+* next to the label in the gui*/
+
+
+
 void vampireGameproject::Gui::setSpinButtonBloodPool(){
     mainGrid.attach_next_to(BloodPoolScore, tableLabel[11], Gtk::POS_RIGHT, 1, 1);
 }
+
+
+
+
+
+/** Implementation of the setValidationButton method.
+*
+* Implementation of the setValidationButton method
+* Method displaying the button allowing to retrieve 
+* informations entered by the user and to generate the 
+* file containing the information*/
+
 
 void vampireGameproject::Gui::setValidationButton(){
     validationButton.set_label("Save");
@@ -288,17 +435,56 @@ void vampireGameproject::Gui::setValidationButton(){
 
 }
 
+
+/** Implementation of the returnHumanityPathSpinButton method.
+*
+* Implementation of the returnHumanityPathSpinButton method
+* Method allowing to return the Spinbutton associated to Humanity 
+* Path*/
+
+
+
 Gtk::SpinButton& vampireGameproject::Gui::returnHumanityPathSpinButton(){
     return HumanityPathScore;
 }
+
+
+
+
+
+/** Implementation of the returnWillPowerSpinButton method.
+*
+* Implementation of the returnWillPowerSpinButton method
+* Method allowing to return the Spinbutton associated to Willpower*/
+
+
 
 Gtk::SpinButton& vampireGameproject::Gui::returnWillPowerSpinButton(){
     return WillPowerScore;
 }
 
+
+
+/** Implementation of the returnBloodPoolSpinButton method.
+*
+* Implementation of the returnBloodPoolSpinButton method
+* Method allowing to return the Spinbutton associated to Blood Pool*/
+
+
+
 Gtk::SpinButton& vampireGameproject::Gui::returnBloodPoolSpinButton(){
     return BloodPoolScore;
 }
+
+
+
+/** Implementation of the returnValidationButton method.
+*
+* Implementation of the returnValidationButton method
+* Method allowing to return the button allowing to 
+* retrieve the informations from the user*/
+
+
 
 Gtk::Button& vampireGameproject::Gui::returnValidationButton(){
     return validationButton;
@@ -316,65 +502,193 @@ Gtk::Button& vampireGameproject::Gui::returnValidationButton(){
 
 
 
+
 void vampireGameproject::Gui::setLabelMultiComboBoxAttributes(){
     attributesInput.setLabelMultiComboBox();
 }
+
+
+
+
+
+/** Implementation of the setLabelMultiComboBoxAbilities method.
+*
+* Implementation of the setLabelMultiComboBoxAbilities method
+* Method displaying Plus and Minus on the buttons
+*
+*
+*/
 
 
 void vampireGameproject::Gui::setLabelMultiComboBoxAbilities(){
     abilitiesInput.setLabelMultiComboBox();
 }
 
+
+
+/** Implementation of the setLabelMultiComboBoxBackgrounds method.
+*
+* Implementation of the setLabelMultiComboBoxBackgrounds method
+* Method displaying Plus and Minus on the buttons
+*
+*
+*/
+
+
+
 void vampireGameproject::Gui::setLabelMultiComboBoxBackgrounds(){
     backgroundsInput.setLabelMultiComboBox();
 }
+
+
+
+
+
+/** Implementation of the setLabelMultiComboBoxVirtues method.
+*
+* Implementation of the setLabelMultiComboBoxVirtues method
+* Method displaying Plus and Minus on the buttons
+*
+*
+*/
+
+
+
+
 
 void vampireGameproject::Gui::setLabelMultiComboBoxVirtues(){
     virtuesInput.setLabelMultiComboBox();
 }
 
+
+
+
+/** Implementation of the setLabelMultiComboBoxDisciplines method.
+*
+* Implementation of the setLabelMultiComboBoxDisciplines method
+* Method displaying Plus and Minus on the buttons
+*
+*
+*/
+
+
+
+
 void vampireGameproject::Gui::setLabelMultiComboBoxDisciplines(){
     disciplinesInput.setLabelMultiComboBox();
 }
+
+
+
+
+/** Implementation of the setLabelMultiComboBoxMeritsFlaws method.
+*
+* Implementation of the setLabelMultiComboBoxMeritsFlaws method
+* Method displaying Plus and Minus on the buttons
+*
+*
+*/
+
+
+
 
 void vampireGameproject::Gui::setLabelMultiComboBoxMeritsFlaws(){
     meritsFlawsInput.setLabelMultiComboBox();
 }
 
 
+
+
+
 /** Implementation of the returnAttributesInput method.
 *
 * Implementation of the returnAttributesInput method
-* Method returning a reference of ButtonMultiInput
-*
-*
-*/
+* Method returning a reference of ButtonMultiInput associated 
+* to Attributes */
 
 
 vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAttributesInput(){
     return attributesInput;
 }
 
+
+/** Implementation of the returnAbilitiesInput method.
+*
+* Implementation of the returnAbilitiesInput method
+* Method returning a reference of ButtonMultiInput associated 
+* to Abilties */
+
+
+
+
 vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnAbilitiesInput(){
     return abilitiesInput;
 }
+
+
+
+/** Implementation of the returnDisciplinesInput method.
+*
+* Implementation of the returnDisciplinesInput method
+* Method returning a reference of ButtonMultiInput associated 
+* to Disciplines */
+
+
+
 
 
  vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnDisciplinesInput(){
      return disciplinesInput;
  }
 
+
+
+/** Implementation of the returnMeritsFlaws method.
+*
+* Implementation of the returnMeritsFlaws method
+* Method returning a reference of ButtonMultiInput associated 
+* to MeritsFlaws */
+
+
+
 vampireGameproject::ButtonmultiInput& vampireGameproject::Gui::returnMeritsFlawsInput(){
     return meritsFlawsInput;
 }
+
+
+
+/** Implementation of the returnBackgroundsInput method.
+*
+* Implementation of the returnAttributesInput method
+* Method returning a reference of ButtonMultiInputOneComboBox associated 
+* to Backgrounds */
+
+
+
+
 
 vampireGameproject::ButtonmultiInputOneComboBox& vampireGameproject::Gui::returnBackgroundsInput(){
     return backgroundsInput;
 }
 
+
+
+/** Implementation of the returnVirtuesInput method.
+*
+* Implementation of the returnVirtuesInput method
+* Method returning a reference of ButtonMultiInput associated 
+* to Virtues */
+
+
+
+
+
 vampireGameproject::ButtonmultiInputOneComboBox& vampireGameproject::Gui::returnVirtuesInput(){
     return virtuesInput;
 }
+
+
+
 
 
 /** Implementation of the setMultiInputOnGrid method.
@@ -382,7 +696,8 @@ vampireGameproject::ButtonmultiInputOneComboBox& vampireGameproject::Gui::return
 * Implementation of the setMultiInputOnGrid method
 * Method displaying new MultiInput on the GUI
 *
-*
+* @param ButtonMultiInputReference: Reference of the ButtonMultiInput object
+* @param number: number of the MultiInput in the MultiInput vector
 */
 
 
@@ -394,11 +709,42 @@ void vampireGameproject::Gui::setMultiInputOnGrid(ButtonmultiInput& ButtonMultiI
     mainGrid.show_all();
 }
 
+
+
+
+
+/** Implementation of the setMultiInputOneComboBoxOnGrid method.
+*
+* Implementation of the setMultiInputOneComboBoxOnGrid method
+* Method displaying new MultiInput on the GUI
+*
+* @param ButtonmultiInputOneComboBoxReference: Reference of the ButtonMultiInputOneComboBox object
+* @param number: number of the MultiInputOneComboBox in the MultiInputOneComboBox vector
+*/
+
+
+
 void vampireGameproject::Gui::setMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number){
      mainGrid.attach(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnComboBox(), ButtonmultiInputOneComboBoxReference.returnXCoordinate(), ButtonmultiInputOneComboBoxReference.returnYCoordinate() + number, 1, 1);
      mainGrid.attach_next_to(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnSpinButton(), ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnComboBox(), Gtk::POS_RIGHT, 1, 1);
      mainGrid.show_all();
  }
+
+
+
+
+
+/** Implementation of the deleteMultiInputOnGrid method.
+*
+* Implementation of the deleteMultiInputOnGrid method
+* Method deletng the last MultiInput from the Gui
+*
+* @param ButtonMultiInputReference: Reference of the ButtonMultiInput object
+* @param number: number of the MultiInput in the MultiInput vector
+*/
+
+
+
 
 void vampireGameproject::Gui::deleteMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number){
     mainGrid.remove(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnComboBox("first"));
@@ -406,22 +752,78 @@ void vampireGameproject::Gui::deleteMultiInputOnGrid(ButtonmultiInput& ButtonMul
     mainGrid.remove(ButtonMultiInputReference.returnVectorMultiInput()[number]->returnSpinButton());
 }
 
+
+
+
+
+/** Implementation of the deleteMultiInputOneComboBoxOnGrid method.
+*
+* Implementation of the deleteMultiInputOneComboBoxOnGrid method
+* Method deletng the last MultiInputOneComboBox from the Gui
+*
+* @param ButtonmultiInputOneComboBoxReference: Reference of the ButtonMultiInputOneComboBox object
+* @param number: number of the MultiInputOneComboBox in the MultiInputOneComboBox vector
+*/
+
+
+
+
  void vampireGameproject::Gui::deleteMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number){
      mainGrid.remove(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnComboBox());
      mainGrid.remove(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnSpinButton());
  }
- 
+
+
+
+
+/** Implementation of the returnLabelVampireNickName method.
+*
+* Implementation of the returnLabelVampireNickName method
+* Method returning the Label associated to the Vampire Nick Name*/
+
+
+
+
 Gtk::Label& vampireGameproject::Gui::returnLabelVampireNickName(){
     return tableLabel[13];
 }
+
+
+
+/** Implementation of the setNickNameLabel method.
+*
+* Implementation of the setNickNameLabel method
+* Method setting the Label associated to the Vampire Nick Name
+* on the Gui*/
+
+
+
 
 void vampireGameproject::Gui::setNicknameLabel(){
     mainGrid.attach_next_to(tableLabel[13], tableLabel[2], Gtk::POS_RIGHT, 1, 1);
 }
 
+
+
+
+/** Implementation of the setTextNicknameLabel method.
+*
+* Implementation of the setTextNicknameLabel method
+* Method updating the Label text associated to the Vampire Nick Name
+* on the Gui
+*
+* @param textToAdd: text to add to the Nickname Label
+*/
+
+
+
 void vampireGameproject::Gui::setTextNicknameLabel(std::string textToAdd){
     tableLabel[13].set_text(textToAdd);
 }
+
+
+
+
 
 /** Implementation of the showAll method.
 *
