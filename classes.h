@@ -68,6 +68,7 @@ namespace vampireGameproject{
             std::vector<std::string> parse_Viritues();
             std::vector<std::string> parse_MeritsFlaws();
             std::vector<std::string> parse_MeritsFlawsCategorie(std::string categorie);
+            std::vector<std::string> parse_Health();
     };
 
 
@@ -572,25 +573,6 @@ class ButtonmultiInputOneComboBox{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Implementation of the Class Gui
  *
@@ -650,13 +632,16 @@ class ButtonmultiInputOneComboBox{
             Gtk::SpinButton& returnHumanityPathSpinButton(); 
             Gtk::SpinButton& returnWillPowerSpinButton();
             Gtk::SpinButton& returnBloodPoolSpinButton();
-            Gtk::Button& returnValidationButton();       
+            Gtk::Button& returnValidationButton();
+            Gtk::Label& returnLabelVampireNickName();
+            void setNicknameLabel();
+            void setTextNicknameLabel(std::string textToAdd);       
 
         private:
             Gtk::Grid mainGrid; 
             RulesofGame& testGui;
-            Gtk::Label tableLabel[12];
-            Gtk::ComboBoxText tableComboBox[2];
+            Gtk::Label tableLabel[14];
+            Gtk::ComboBoxText tableComboBox[3];
             ButtonmultiInput attributesInput;
             ButtonmultiInput abilitiesInput;
             ButtonmultiInput disciplinesInput;
@@ -698,7 +683,15 @@ class ButtonmultiInputOneComboBox{
             Parsetext& parser;
             void setVectorMultiInput(std::vector<std::string>& vectorInput);
             void setLimitPointsAttributes(int PhysicalPoints, int SocialPoints, int MentalPoints, int TalentsPoints,
-                int SkillsPoints, int KnowledgesPoints);
+                int SkillsPoints, int KnowledgesPoints, int AnimalismPoints, int AuspexPoints, int CelerityPoints, 
+                    int ChimerstryPoints, int DementationPoints, int DominatePoints, int FortitudePoints, int NecromancyPoints, 
+                        int ObfuscatePoints, int ObtenebrationPoints, int PotencePoints, int PresencePoints, int ProteanPoints, 
+                            int QuietusPoints, int SerpentisPoints, int ThaumaturgyPoints, 
+                                int VicissitudePoints, int AlliesPoints, int AlternateIdentityPoints, int BlackHandMembershipPoints, 
+                                    int ContactsPoints, int DomainPoints, int FamePoints, int GenerationPoints, int HerdPoints, 
+                                        int InfluencePoints, int MentorPoints, int ResourcesPoints, int RetainersPoints, 
+                                            int RitualsPoints, int StatusPoints, int ConsciencePoints, 
+                                                int SelfControlPoints, int CouragePoints, int SupernaturalPoints);
 
             std::map<std::string, int> returnLimitPointsAttributes();
             
@@ -767,6 +760,10 @@ class ButtonmultiInputOneComboBox{
             void testClanButton();
             void initializeSpinButton(std::string categorieSpinButton);
             void initializeFinalButton();
+            void initializeNicknameLabel();
+            void updateNicknameLabel();
+            void initializeHealthComboBox();
+
 
         private:
             Parsetext textParser;
