@@ -1014,5 +1014,18 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_MeritsFlawsCategor
 
     return vectorMeritsFlaws;
 
+}
 
+
+std::vector<std::string> vampireGameproject::Parsetext::parse_Health(){
+    std::vector<std::string> vectorHealth;
+    vectorHealth.push_back("Bruised");
+    vectorHealth.push_back("Hurt");
+    vectorHealth.push_back("Injured");
+    vectorHealth.push_back("Wounded");
+    vectorHealth.push_back("Mauled");
+    vectorHealth.push_back("Crippled");
+    vectorHealth.push_back("Incapacitated");
+
+    return vectorHealth;
 }
