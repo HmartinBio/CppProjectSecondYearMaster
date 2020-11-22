@@ -17,7 +17,7 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.initialiseTableLabel();
         graphicalUserinterface.setTableLabelAlign(0, "Select a clan:");
         graphicalUserinterface.setTableLabelAlign(1, "Select a Nature:");
-        graphicalUserinterface.setTableLabel(2, "    Name of the Vampire:");
+        graphicalUserinterface.setTableLabelAlign(2, "Name of the Vampire:");
         graphicalUserinterface.setTableLabelAlign(3, "Select Attributes:");
         graphicalUserinterface.setTableLabelAlign(4, "Select Abilities:");
         graphicalUserinterface.setTableLabelAlign(5, "Select Disciplines:");
@@ -27,18 +27,20 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableLabelAlign(9, "Select Humanity Path:");
         graphicalUserinterface.setTableLabelAlign(10, "Select WillPower:");
         graphicalUserinterface.setTableLabelAlign(11, "Select Blood Pool:");
-        graphicalUserinterface.setTableLabelOnGrid(0, 0, 0, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(1, 0, 1, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(2, 2, 0, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(3, 0, 2, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(4, 0, 9, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(5, 0, 15, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(6, 0, 23, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(7, 0, 30, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(8, 0, 39, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(9, 0, 48, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(10, 0, 49, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(11, 0, 50, 1, 1 );
+        graphicalUserinterface.setTableLabelAlign(12, "Select Health:");
+        graphicalUserinterface.setTableLabelOnGrid(0, 0, 1, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(1, 0, 2, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(2, 0, 0, 1, 1); // 0
+        graphicalUserinterface.setTableLabelOnGrid(3, 0, 3, 1, 1); // 3
+        graphicalUserinterface.setTableLabelOnGrid(4, 0, 10, 1, 1); // 9
+        graphicalUserinterface.setTableLabelOnGrid(5, 0, 16, 1, 1); // 15
+        graphicalUserinterface.setTableLabelOnGrid(6, 0, 24, 1, 1); // 23
+        graphicalUserinterface.setTableLabelOnGrid(7, 0, 31, 1, 1); // 31
+        graphicalUserinterface.setTableLabelOnGrid(8, 0, 40, 1, 1); // 39
+        graphicalUserinterface.setTableLabelOnGrid(9, 0, 49, 1, 1); // 48
+        graphicalUserinterface.setTableLabelOnGrid(10, 0, 50, 1, 1); // 49
+        graphicalUserinterface.setTableLabelOnGrid(11, 0, 51, 1, 1); //50
+        graphicalUserinterface.setTableLabelOnGrid(12, 0, 52, 1, 1);
         graphicalUserinterface.initialiseTableComboBox();
         rulesGame.setVectorClans();
         rulesGame.setVectorNature();
@@ -46,7 +48,12 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableComboBox(1, rulesGame.returnVectorNature());
         graphicalUserinterface.setTableComboBoxOnGrid(0, 0);
         graphicalUserinterface.setTableComboBoxOnGrid(1, 1);
-        rulesGame.setLimitPointsAttributes(5, 5, 5, 13, 9, 5);
+        graphicalUserinterface.setTableComboBoxOnGrid(2, 12);
+        rulesGame.setLimitPointsAttributes(5, 5, 5, 13, 
+            9, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
+                3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 
+                    5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 5);
+        initializeNicknameLabel();
         initializeButtonMultiInput("attributes");
         initializeButtonMultiInput("abilities");
         initializeButtonMultiInput("disciplines");
@@ -56,6 +63,7 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         initializeSpinButton("humanityPath");
         initializeSpinButton("willPower");
         initializeSpinButton("bloodPool");
+        initializeHealthComboBox();
         initializeFinalButton();
         graphicalUserinterface.showAll();
 }
@@ -343,7 +351,7 @@ void vampireGameproject::Controllor::testClanButton(){
 
     /*When only one MultiInput is present, we reset the spin score and the
     First ComboBox and the Second ComboBox, then we update the FirstComboBox
-    with the new name of chosen clan*/
+    with the new name of chosen clan. Then, the nickname of the Clan is updated. */
 
     vectorMultiInputDisciplines[0]->resetSpinScore();
     vectorMultiInputDisciplines[0]->unsetActiveText();
@@ -354,7 +362,9 @@ void vampireGameproject::Controllor::testClanButton(){
 
     vectorMultiInputDisciplines[0]->returnComboBox("second").remove_all();
 
-    testFirstComboBoxDisponibility("disciplines");   
+    testFirstComboBoxDisponibility("disciplines");
+
+    updateNicknameLabel();  
 }
 
 
@@ -695,6 +705,9 @@ void vampireGameproject::Controllor::testInputSecondComboBoxChosenItems(Buttonmu
 *
 * @param categorieMultiInput: type of ButtonMultiInput alllowing to select the ButtonMutiInputobject to test first ComboBox
 */
+
+
+
 
 
 void vampireGameproject::Controllor::testFirstComboBoxDisponibility(std::string categorieMultiInput){
@@ -1561,19 +1574,19 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReference(Buttonm
     /*Setting coordinates of the ButtonMultiInput object*/
     
     if (categorieMultiInput == "attributes"){
-        ButtonMultiInputReference.setCoordinates(4, 2);
+        ButtonMultiInputReference.setCoordinates(4, 3);
     }
 
     if (categorieMultiInput == "abilities"){
-        ButtonMultiInputReference.setCoordinates(4, 9);
+        ButtonMultiInputReference.setCoordinates(4, 10);
     }
 
     if (categorieMultiInput == "disciplines"){
-        ButtonMultiInputReference.setCoordinates(4, 15);
+        ButtonMultiInputReference.setCoordinates(4, 16);
     }
 
     if (categorieMultiInput == "MeritsFlaws"){
-        ButtonMultiInputReference.setCoordinates(4, 39);
+        ButtonMultiInputReference.setCoordinates(4, 40);
     }
 
     /*Initialising the ButtonMultiInput*/
@@ -1676,11 +1689,11 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReferenceOneCombo
                     /*Setting coordinates of the ButtonMultiInput object*/
 
                     if (categorieMultiInputOneComboBox == "backgrounds"){
-                        ButtonMultiInputOneComboBoxReference.setCoordinates(4,23);
+                        ButtonMultiInputOneComboBoxReference.setCoordinates(4,24);
                     }
 
                     if (categorieMultiInputOneComboBox == "virtues"){
-                        ButtonMultiInputOneComboBoxReference.setCoordinates(4, 30);
+                        ButtonMultiInputOneComboBoxReference.setCoordinates(4, 31);
                     }
 
                     /*Initialising the ButtonMultiInputOneComboBox*/
@@ -1940,6 +1953,8 @@ void vampireGameproject::Controllor::initializeSpinButton(std::string categorieS
 
 
 
+
+
 /** Implementation of the initializeFinalButton method.
 *
 * Implementation of the initializeFinalButton method
@@ -1955,3 +1970,55 @@ void vampireGameproject::Controllor::initializeFinalButton(){
 }
 
 
+
+
+
+/** Implementation of the updateNicknameLabel method.
+*
+* Implementation of the updateNicknameLabel method
+* Method updating the label of Vampire Nickname*/
+
+
+
+
+
+void vampireGameproject::Controllor::updateNicknameLabel(){
+    std::string actualClanName = graphicalUserinterface.returnClanName();
+    std::string nicknameClan = textParser.parse_NicknameClan(actualClanName);
+    graphicalUserinterface.setTextNicknameLabel(nicknameClan);
+}
+
+
+
+
+
+/** Implementation of the initializeNicknameLabel method.
+*
+* Implementation of the initializeNicknameLabel method
+* Method initialising the Nickname Label in the interface*/
+
+
+
+
+
+void vampireGameproject::Controllor::initializeNicknameLabel(){
+    graphicalUserinterface.setNicknameLabel();
+}
+
+
+
+
+
+/** Implementation of the initializeHealthComboBox method.
+*
+* Implementation of the initializeHealthComboBox method
+* Method initialising the Health ComboBox*/
+
+
+
+
+
+void vampireGameproject::Controllor::initializeHealthComboBox(){
+    std::vector<std::string> vectorHealth = textParser.parse_Health();
+    graphicalUserinterface.setTableComboBox(2, vectorHealth);
+}
