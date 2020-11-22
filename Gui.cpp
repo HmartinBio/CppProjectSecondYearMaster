@@ -284,7 +284,7 @@ void vampireGameproject::Gui::setSpinButtonBloodPool(){
 
 void vampireGameproject::Gui::setValidationButton(){
     validationButton.set_label("Save");
-    mainGrid.attach(validationButton, 0, 51, 1, 1);
+    mainGrid.attach(validationButton, 0, 53, 1, 1);
 
 }
 
@@ -411,8 +411,17 @@ void vampireGameproject::Gui::deleteMultiInputOnGrid(ButtonmultiInput& ButtonMul
      mainGrid.remove(ButtonmultiInputOneComboBoxReference.returnVectorMultiInput()[number]->returnSpinButton());
  }
  
+Gtk::Label& vampireGameproject::Gui::returnLabelVampireNickName(){
+    return tableLabel[13];
+}
 
+void vampireGameproject::Gui::setNicknameLabel(){
+    mainGrid.attach_next_to(tableLabel[13], tableLabel[2], Gtk::POS_RIGHT, 1, 1);
+}
 
+void vampireGameproject::Gui::setTextNicknameLabel(std::string textToAdd){
+    tableLabel[13].set_text(textToAdd);
+}
 
 /** Implementation of the showAll method.
 *
