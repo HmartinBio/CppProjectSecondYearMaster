@@ -15,23 +15,16 @@
 
 
 vampireGameproject::Meritsflaws::Meritsflaws(Parsetext& textParse): textParser(textParse){
-    merits.insert(std::make_pair("Physical", std::map<std::string, int>()));
-    flaws.insert(std::make_pair("Physical", std::map<std::string, int>()));
-    merits.insert(std::make_pair("Social", std::map<std::string, int>()));
-    flaws.insert(std::make_pair("Social", std::map<std::string, int>()));
-    merits.insert(std::make_pair("Supernatural", std::map<std::string, int>()));
-    flaws.insert(std::make_pair("Supernatural", std::map<std::string, int>()));
+    meritsFlaws.insert(std::make_pair("Physical", std::map<std::string, int>()));
+    meritsFlaws.insert(std::make_pair("Social", std::map<std::string, int>()));
+    meritsFlaws.insert(std::make_pair("Supernatural", std::map<std::string, int>()));
 }
 
 
 
 /** Destructor of the class Meritsflaws.
 *
-* Modification of the Destructor of Meritsflaws
-*
-*
-*
-*/
+* Modification of the Destructor of Meritsflaws */
 
 
 
@@ -39,69 +32,37 @@ vampireGameproject::Meritsflaws::~Meritsflaws(){}
 
 
 
-/** Implementation of the getMerits method.
+/** Implementation of the getMeritsFlaws method.
 *
-* Implementation of the getMerits method
-* Method returning the Merits
+* Implementation of the getMeritsFlaws method
+* Method returning the Merits and Flaws
 * 
 * @param type name of the table to return 
 *
 */
 
 
-std::map<std::string,int> vampireGameproject::Meritsflaws::getMerits(std::string type){
-    return merits[type];
+std::map<std::string,int> vampireGameproject::Meritsflaws::getMeritsFlaws(std::string type){
+    return meritsFlaws[type];
 }
 
 
 
-/** Implementation of the getFlaws method.
+/** Implementation of the setMeritsFlaws method.
 *
-* Implementation of the getFlaws method
-* Method returning the Flaws 
-*
-* @param type name of the table to return 
-*
-*/
-
-
-std::map<std::string,int> vampireGameproject::Meritsflaws::getFlaws(std::string type){
-    return flaws[type];
-}
-
-
-
-/** Implementation of the setMerits method.
-*
-* Implementation of the setMerits method
-* Method setting Merits values
+* Implementation of the setMeritsFlaws method
+* Method setting Merits and Flaws values
 * 
-* @param table name of the table to add a merit 
-* @param meritsName name of the merit to add
-* @param number value of the merit to add
+* @param table name of the table to add a merit or flaw
+* @param meritsName name of the merit or flaw to add
+* @param number value of the merit or flaw to add
 */
 
 
-void vampireGameproject::Meritsflaws::setMerits(std::string table, std::string meritsName, int number){
-    merits[table].insert(std::make_pair(meritsName, number));
+void vampireGameproject::Meritsflaws::setMeritsFlaws(std::string table, std::string meritsFlawName, int number){
+    meritsFlaws[table].insert(std::make_pair(meritsFlawName, number));
 }
 
-
-
-/** Implementation of the setFlaws method.
-*
-* Implementation of the setFlaws method
-* Method setting Flaws values
-* 
-* @param table name of the table to add a flaw 
-* @param flawsName name of the flaw to add
-* @param number value of the flaw to add
-*/
-
-
-void vampireGameproject::Meritsflaws::setFlaws(std::string table, std::string flawsName, int number){
-    flaws[table].insert(std::make_pair(flawsName, number));
-}
 
 
 /** Implementation of the getDescription method.
