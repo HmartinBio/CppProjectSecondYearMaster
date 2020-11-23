@@ -89,37 +89,54 @@ void vampireGameproject::CharacterTraits::setBloodpool(int number){
 
 
 std::string vampireGameproject::CharacterTraits::getHumanity(void){
-    //return textParser.parse_text();
-    return "test";
-
-    /*
-    switch(humanity){
-        case 0 : return "Monstruous";
-            break;
-        case 1: return "Horrific";
-            break;
-        case 2: return "Bestial";
-            break;
-        case 3: return "Cold";
-            break;
-        case 4: return "Unfeeling" ;
-            break;
-        case 5: return "Distant"; 
-            break;
-        case 6: return "Removed";
-            break;
-        case 7: return "Normal";
-            break;
-        case 8: return "Caring";
-            break;
-        case 9: return "Compassionate";
-            break;
-        case 10: return "Saintly";
-            break;
-        default:
-            break;
+    
+    if (humanity == 0){
+        return "Monstruous";
     }
-    */
+
+    if (humanity == 1){
+        return "Horrific";
+    }
+
+    if (humanity == 2){
+        return "Bestial";
+    }
+
+    if (humanity == 3){
+        return "Cold";
+    }
+
+    if (humanity == 4){
+        return "Unfeeling";
+    }
+
+    if (humanity == 5){
+        return "Distant";
+    }
+
+    if (humanity == 6){
+        return "Removed";
+    }
+
+    if (humanity == 7){
+        return "Normal";
+    }
+
+    if (humanity == 8){
+        return "Caring";
+    }
+
+    if (humanity == 9){
+        return "Compassionate";
+    }
+
+    if (humanity == 10){
+        return "Saintly";
+    }
+
+    else{
+        return "";
+    }
 }
 
 
@@ -136,32 +153,51 @@ std::string vampireGameproject::CharacterTraits::getWillpower(void){
     //return textParser.parse_text();
     return "test"; 
 
-    /*
-    switch(willPower){
-    case 1: return "Spineless"; 
-        break;
-    case 2: return "Weak";
-        break;
-    case 3: return "Unassertive";
-        break;
-    case 4: return "Diffident";
-        break;
-    case 5: return "Certain";
-        break;
-    case 6: return "Confident";
-        break;
-    case 7: return "Determined";
-        break;
-    case 8: return "Controlled";
-        break;
-    case 9: return "Iron-willed";
-        break;
-    case 10: return "Unshakable";
-        break;
-    default:
-        break;
+    if (willPower == 1){
+        return "Spineless";
     }
-    */
+
+    if (willPower == 2){
+        return "Weak";
+    }
+
+    if (willPower == 3){
+        return "Unassertive";
+    }
+
+    if (willPower == 4){
+        return "Diffident";
+    }
+
+    if (willPower == 5){
+        return "Certain";
+    }
+
+    if (willPower == 6){
+        return "Confident";
+    }
+
+    if (willPower == 7){
+        return "Determined";
+    }
+
+    if (willPower == 8){
+        return "Controlled";
+    }
+
+    if (willPower == 9){
+        return "Iron-willed";
+    }
+
+    if (willPower == 10){
+        return "Unshakable";
+    }
+
+    else{
+        return "";
+    }
+
+    
 } 
 
 
