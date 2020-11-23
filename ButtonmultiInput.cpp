@@ -94,10 +94,7 @@ Gtk::Button& vampireGameproject::ButtonmultiInput::returnButton(std::string sign
 /** Implementation of the setLabelMultiComboBox method.
 *
 * Implementation of the setLabelMultiComboBox method
-* Method setting labels to buttons
-*  
-*
-*/
+* Method setting labels to buttons */
 
 
 
@@ -111,10 +108,7 @@ void vampireGameproject::ButtonmultiInput::setLabelMultiComboBox(){
 /** Implementation of the returnVectorMultiInput method.
 *
 * Implementation of the returnVectorMultiInput method
-* Method returning the vector of MultiInput
-* 
-*
-*/
+* Method returning the vector of MultiInput */
 
 
 
@@ -130,24 +124,21 @@ std::vector<vampireGameproject::MultiInput*>& vampireGameproject::ButtonmultiInp
 /** Implementation of the setDicoScoreFirstComboBox method.
 *
 * Implementation of the setDicoScoreFirstComboBox method
-* Method setting the score by item of the First Combo Box
-*  
-*
-*/
+* Method setting the score by item of the First Combo Box */
 
 
 
 void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
-    // Initialisation of a dictionnary to compute the SpinScore by item
-    // of the first ComboBox
+    /* Initialisation of a dictionnary to compute the SpinScore by item
+    of the first ComboBox*/
 
     std::map<std::string, int> mapCounter;
 
-    // Iterating on the set of MultiInput, for each MultiInput
-    // If the first ComboBox item is not in the dictionnary, 
-    // then it's added with the Spin Score. And if the MultiInput 
-    // item of the First ComboBox is in the dictionnary, then the 
-    // Spin Score is incremented 
+    /* Iterating on the set of MultiInput, for each MultiInput
+    If the first ComboBox item is not in the dictionnary, 
+    then it's added with the Spin Score. And if the MultiInput 
+    item of the First ComboBox is in the dictionnary, then the 
+    Spin Score is incremented*/ 
 
    
 
@@ -159,20 +150,12 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
                 if (mapCounter.find(vectorMultiInputs[iterator]->returnTextComboBox("first")) == mapCounter.end()){
                     mapCounter.insert(std::pair<std::string, int>(vectorMultiInputs[iterator]->returnTextComboBox("first"), 
                         vectorMultiInputs[iterator]->returnSpinScore()));
-                        //std::cout << "creation de points" << std::endl;
-                        //std::cout << vectorMultiInputs[iterator]->returnTextComboBox("first") << std::endl;
-                        //std::cout << mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] << std::endl;
-                        //std::cout << "fin de creation de points" << std::endl;
                 }
 
                 else{
-                    //std::cout << "ajout de points" << std::endl;
                     mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] = 
                         mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] + 
                             vectorMultiInputs[iterator]->returnSpinScore();
-                    //std::cout << vectorMultiInputs[iterator]->returnTextComboBox("first") << std::endl;
-                    //std::cout << mapCounter[vectorMultiInputs[iterator]->returnTextComboBox("first")] << std::endl;
-                    //std::cout << "fin d'ajout de points" << std::endl;
 
                 } 
         }
@@ -188,13 +171,10 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
 
 
 
-/** Implementation of the setDicoSelectedInput method.
+/** Implementation of the setVectorSelectedInput method.
 *
-* Implementation of the setDicoSelectedInput method
-* Method setting the choices of MultiInput in a map
-* 
-*
-*/
+* Implementation of the setVectorSelectedInput method
+* Method setting the choices of MultiInput in a map */
 
 
 
@@ -202,17 +182,18 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
 
 void vampireGameproject::ButtonmultiInput::setVectorSelectedInput(){
 
-    // Cleaning the vectors containing the selected items 
-    // of the First and the Second ComboBox
+    /* Cleaning the vectors containing the selected items 
+    of the First and the Second ComboBox */
 
     vectorFirstComboBoxSelectedInputs.clear();
     vectorSecondComboBoxSelectedInputs.clear();
     
 
-    // Iterating on the vector containing MultiInputs
-    // For each MultiInputs, if the text in the Second ComboBox
-    // doesn't exist again in the Dictionnary, then, it's 
-    // added in the Dictionnary else it's ignored
+    /* Iterating on the vector containing MultiInputs
+    For each MultiInputs, if the text in the Second ComboBox
+    doesn't exist again in the Dictionnary, then, it's 
+    added in the Dictionnary else it's ignored*/
+
 
     for(int iterator = 0; iterator < (int)vectorMultiInputs.size(); iterator++){
 
@@ -227,11 +208,7 @@ void vampireGameproject::ButtonmultiInput::setVectorSelectedInput(){
 /** Implementation of the setMultiInput method.
 *
 * Implementation of the setMultiInput method
-* Method setting a new MultiInput 
-*  
-*
-*/
-
+* Method setting a new MultiInput */
 
 
 
@@ -246,10 +223,7 @@ void vampireGameproject::ButtonmultiInput::setMultiInput(){
 /** Implementation of the deleteMultiInput method.
 *
 * Implementation of the deleteMultiInput method
-* Method deleting the last MultiInput of the vector
-* 
-*
-*/
+* Method deleting the last MultiInput of the vector */
 
 
 
@@ -284,10 +258,7 @@ void vampireGameproject::ButtonmultiInput::setCoordinates(int coordinateX, int c
 /** Implementation of the returnDicoScoreFirstComboBox method.
 *
 * Implementation of the returnDicoScoreFirstComboBox method
-* Method returning the point number for each First Combo Box items
-* 
-*
-*/
+* Method returning the point number for each First Combo Box items */
 
 
 std::map<std::string, int> vampireGameproject::ButtonmultiInput::returnDicoScoreFirstComboBox(){
@@ -295,12 +266,12 @@ std::map<std::string, int> vampireGameproject::ButtonmultiInput::returnDicoScore
 }
 
 
-/** Implementation of the returnDicoSelectedInputs method.
+/** Implementation of the returnVectorSelectedInput method.
 *
-* Implementation of the returnDicoSelectedInputs method
-* Method returning a map with all the selected items
+* Implementation of the returnVectorSelectedInput method
+* Method returning a vector with all the selected items
 * 
-*
+* @param index: index of the MultiInput ComboBox Selected items to return
 */
 
 
@@ -319,10 +290,7 @@ std::vector<std::string> vampireGameproject::ButtonmultiInput::returnVectorSelec
 /** Implementation of the initialize method.
 *
 * Implementation of the initialize method
-* Method initializing the ButtonMultiInput
-* 
-*
-*/
+* Method initializing the ButtonMultiInput */
 
 
 void vampireGameproject::ButtonmultiInput::initialize(){
@@ -334,9 +302,11 @@ void vampireGameproject::ButtonmultiInput::initialize(){
 /** Implementation of the setVectorComboBox method.
 *
 * Implementation of the setVectorComboBox method
-* Method initializing the choosen ComboBox with a chosen vector
+* Method initializing the chosen ComboBox with a chosen vector
 * 
-*
+* @param index: index of the MultiInput to select in the MultiInput Vector
+* @param position: position of the ComboBoxText where the text is set
+* @param vectorReference: vector containing the text to set in the ComboBox Text 
 */
 
 
@@ -351,7 +321,8 @@ void vampireGameproject::ButtonmultiInput::setVectorComboBox(int index, std::str
 * Implementation of the returnTextComboBox method
 * Method returning the text from the chosen ComboBox
 * 
-*
+* @param number: number of the MultiInput to select in the MultiInput vector
+* @param index: position of the ComboBoxText to return
 */
 
 
@@ -366,10 +337,7 @@ std::string vampireGameproject::ButtonmultiInput::returnTextComboBox(int number,
 /** Implementation of the returnXCoordinate method.
 *
 * Implementation of the returnXCoordinate method
-* Method returning the x coordinate
-* 
-*
-*/
+* Method returning the x coordinate */
 
 
 
