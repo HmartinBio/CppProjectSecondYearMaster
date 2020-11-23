@@ -842,3 +842,32 @@ void vampireGameproject::Gui::showAll(){
     Gui::show_all_children();
 }
 
+std::string vampireGameproject::Gui::setFileChooser(){
+    Gtk::FileChooserDialog* fileToSave = new Gtk::FileChooserDialog("Please choose a folder", 
+        Gtk::FILE_CHOOSER_ACTION_SAVE);
+    
+    fileToSave->set_transient_for(*this);
+    fileToSave->add_button("_Cancel", Gtk::ResponseType::RESPONSE_CANCEL);
+    fileToSave->add_button("Select", Gtk::ResponseType::RESPONSE_OK);
+
+    int result = fileToSave->run();
+    std::string filenameToReturn;
+
+    switch(result){
+        case Gtk::ResponseType::RESPONSE_OK:
+            filenameToReturn = fileToSave->get_filename();
+            break;
+
+        case Gtk::ResponseType::RESPONSE_CANCEL:
+            filenameToReturn = "";
+            break;
+        
+        default:
+            filenameToReturn = "";
+            break;
+    
+    }
+
+    delete fileToSave;
+    return filenameToReturn;
+}
