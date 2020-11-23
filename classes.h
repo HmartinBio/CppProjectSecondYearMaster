@@ -170,15 +170,12 @@ namespace vampireGameproject{
         public: 
             Meritsflaws(Parsetext& textParser);
             ~Meritsflaws();
-            std::map<std::string,int> getMerits(std::string type);
-            std::map<std::string,int> getFlaws(std::string type);
-            void setMerits(std::string table, std::string meritsName, int number);
-            void setFlaws(std::string table, std::string flawsName, int number);
+            std::map<std::string,int> getMeritsFlaws(std::string type);
+            void setMeritsFlaws(std::string table, std::string meritsFlawName, int number);
             std::string getDescription(std::string table, std::string attributeName);
 
         private:
-            std::map<std::string, std::map<std::string, int>> merits;
-            std::map<std::string, std::map<std::string, int>> flaws;
+            std::map<std::string, std::map<std::string, int>> meritsFlaws;
             Parsetext& textParser;
     };
 
@@ -199,15 +196,15 @@ namespace vampireGameproject{
         public:
             Health(Parsetext& textParser);
             ~Health();
-            int getPointlife(void);
+            std::string getPointlife(void);
             std::vector<std::string> getWeakness(void);
-            void setPointlife(int pointLife);
+            void setPointlife(std::string pointLife);
             void setWeakness(std::string weakness);
             void setPointlifeDescription(void);
             std::string getPointlifeDescription(void);
 
         private:
-            int pointLife;
+            std::string pointLife;
             std::vector<std::string> weakness;
             std::string pointLifedescription;
             Parsetext& textParser;
@@ -635,7 +632,8 @@ class ButtonmultiInputOneComboBox{
             Gtk::Button& returnValidationButton();
             Gtk::Label& returnLabelVampireNickName();
             void setNicknameLabel();
-            void setTextNicknameLabel(std::string textToAdd);       
+            void setTextNicknameLabel(std::string textToAdd);
+            std::string setFileChooser();       
 
         private:
             Gtk::Grid mainGrid; 
@@ -651,7 +649,7 @@ class ButtonmultiInputOneComboBox{
             Gtk::SpinButton HumanityPathScore;
             Gtk::SpinButton WillPowerScore;
             Gtk::SpinButton BloodPoolScore;
-            Gtk::Button validationButton;
+            Gtk::Button validationButton;      
             
     };
 
@@ -704,6 +702,110 @@ class ButtonmultiInputOneComboBox{
             
     };
          
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+* Implementation of the Class Character
+*
+* Character class is designed such as all the informations concerning a
+* playable character are written in this class. Once this class is created
+* all the informations contained in a Character object are extracted to 
+* modify the character picture. Character object are created once the 
+* Graphical user interface received all the informations to create a character
+*/
+
+    class Character{
+        private:
+            std::string playerName;
+            Chronicle characterChronicle;
+            Attributes characterAttributes;
+            Abilities characterAbilities;
+            Advantages characterAdvantages;
+            Meritsflaws characterMeritsflaws;
+            Nature characterNature;
+            Health characterHealth;
+            CharacterTraits characterTraits;
+            Generation characterGeneration;
+            Daemenor characterDaemenor;
+            Clan characterClan;
+            
+        public:
+            std::string getPlayername(void);
+            void setPlayername(std::string name);
+            Character(Parsetext& textParser);
+            ~Character();
+            void setAttributes(std::string firstComboBoxItem, 
+                std::string secondComboBoxItem, int SpinScore);
+            std::map<std::string,int> getAttributes(std::string firstComboBoxItem);
+            void setAbilities(std::string firstComboBoxItem, 
+                std::string secondComboBoxItem, int SpinScore);
+            std::map<std::string, int> getAbilties(std::string FirstComboBoxItem);
+            void setMeritsflaws(std::string firstComboBoxItem, 
+                std::string secondComboBoxItem, int SpinScore);
+            std::map<std::string, int> returnMeritsFlaws(std::string FirstComboBoxItem);
+            void setNature(std::string ComboBoxItem);
+            std::string getNature();
+            void setHealth(std::string ComboBoxItem);
+            std::string getHealth();
+            void setGeneration(float SpinScoreButton);
+            std::string getGeneration();
+            void setClan(std::string ComboBoxItem);
+            std::string getClan();
+            void setBackground(std::string ComboBoxItem, int SpinScore);
+            std::map<std::string, int> getBackground();
+            void setVirtues(std::string ComboBoxItem, int spinScore);
+            std::map<std::string, int> getVirtues();
+            void setHumanity(int number);
+            std::string getHumanity();
+            void setWillpower(int number);
+            std::string getWillpower();
+            void setBloodpool(int number);
+            int getBloodpool();
+
+    };
+
+
+
+
+/**
+ * Implementation of the Class Picturemodifying
+ *
+ * Picturemodifying class is designed to modify the picture to include  
+ * all the information about a character. Once the graphical user interface
+ * received all the informations about a character, Picturemodifying modifies 
+ * the picture to generate a picture with all the informations about a character
+ *
+ */
+
+
+    class Picturemodifying{
+        public:
+            Picturemodifying();
+            ~Picturemodifying();
+
+        private:
+    };
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -763,73 +865,17 @@ class ButtonmultiInputOneComboBox{
             void initializeNicknameLabel();
             void updateNicknameLabel();
             void initializeHealthComboBox();
+            void submitUserChoices();
 
 
         private:
             Parsetext textParser;
             RulesofGame rulesGame;
+            Character CharacterToCreate;
     };
 
 
 
-
-/**
- * Implementation of the Class Picturemodifying
- *
- * Picturemodifying class is designed to modify the picture to include  
- * all the information about a character. Once the graphical user interface
- * received all the informations about a character, Picturemodifying modifies 
- * the picture to generate a picture with all the informations about a character
- *
- */
-
-
-
-
-
-/**
-* Implementation of the Class Character
-*
-* Character class is designed such as all the informations concerning a
-* playable character are written in this class. Once this class is created
-* all the informations contained in a Character object are extracted to 
-* modify the character picture. Character object are created once the 
-* Graphical user interface received all the informations to create a character
-*/
-
-    class Character{
-        private:
-            std::string playerName;
-            Chronicle characterChronicle;
-            Attributes characterAttributes;
-            Abilities characterAbilities;
-            Advantages characterAdvantages;
-            Meritsflaws characterMeritsflaws;
-            Nature characterNature;
-            Health characterHealth;
-            CharacterTraits characterTraits;
-            Generation characterGeneration;
-            Daemenor characterDaemenor;
-            Clan characterClan;
-            
-        public:
-            std::string getPlayername(void);
-            void setPlayername(std::string name);
-            Character(Parsetext& textParser);
-            ~Character();
-            
-    };
-
-
-
-
-    class Picturemodifying{
-        public:
-            Picturemodifying();
-            ~Picturemodifying();
-
-        private:
-    };
 
 }
 
