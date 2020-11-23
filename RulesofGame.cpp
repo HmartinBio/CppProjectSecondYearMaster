@@ -7,7 +7,8 @@
 * Initialisation of a Gui reference 
 * before the Nature constructor be initialised
 *
-* @param classReference reference of the Gui class containing RulesofGame class
+* @param parserReference: Reference of ParseText object 
+* @param classReference: reference of the Gui class containing RulesofGame class
 */
 
 vampireGameproject::RulesofGame::RulesofGame(Parsetext& parserReference, Gui& classReference): parser(parserReference), referenceOutterclass(classReference){}
@@ -15,26 +16,63 @@ vampireGameproject::RulesofGame::RulesofGame(Parsetext& parserReference, Gui& cl
 
 /** Destructor of the class RulesofGame.
 *
-* Modification of the destructor of RulesofGame
-*
-*
-*
-*/
+* Modification of the destructor of RulesofGame*/
 
 
 vampireGameproject::RulesofGame::~RulesofGame(){}
+
+
+
+/** Implementation of the setVectorClans method.
+*
+* Implementation of the setVectorClans method
+* Method*/
+
+
 
 void vampireGameproject::RulesofGame::setVectorClans(){
     vectorClans = parser.parse_listClans();
 }
 
+
+
+/** Implementation of the setVectorNature method.
+*
+* Implementation of the setVectorNature method
+* Method*/
+
+
 void vampireGameproject::RulesofGame::setVectorNature(){
     vectorNature = parser.parse_listNature();
 }
 
+
+
+
+/** Implementation of the returnVectorClans method.
+*
+* Implementation of the returnVectorClans method
+* Method allowign to return vector of Clans*/
+
+
+
 std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorClans(){
     return vectorClans;
 }
+
+
+
+
+/** Implementation of the returnVectorNature method.
+*
+* Implementation of the returnVectorNature method
+* Method allowign to return vector of Nature*/
+
+
+
+
+
+
 
 std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorNature(){
     return vectorNature;
@@ -48,7 +86,65 @@ std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorNature(){
 //    setLimitSpinButton(referenceOutterclass.returnAttributesInput(), limit);
 //}
 
+
+
+
 void vampireGameproject::RulesofGame::setVectorMultiInput(std::vector<std::string>& vectorInput){}
+
+
+
+
+
+/** Implementation of the setLimitiPointsAttributes method.
+*
+* Implementation of the setLimitPointsAttributes method
+* Method allowing to set the limiti points of the Spin Box in the Gui
+*
+* @param PhysicalPoints: Limit of Physical Points 
+* @param SocialPoints: Limit of Social Points 
+* @param MentalPoints: Limit of Mental Points  
+* @param TalentsPoints: Limit of Talents Points 
+* @param SkillsPoints: Limit of Skills Points  
+* @param KnowledgesPoints: Limit of Knowledges Points  
+* @param AnimalismPoints: Limit of Animalism Points  
+* @param  AuspexPoints: Limit of Auspex Points 
+* @param CelerityPoints: Limit of Celerity Points 
+* @param ChimerstryPoints: Limit of Chimertstry Points 
+* @param DementationPoints: Limit of Dementation Points 
+* @param DominatePoints: Limit of Dominate Points 
+* @param FortitudePoints: Limit of Fortitude Points 
+* @param NecromancyPoints: Limit of Necromancy Points 
+* @param ObfuscatePoints: Limit of Obfuscate Points 
+* @param ObtenebrationPoints: Limit of Obtenebration Points 
+* @param PotencePoints: Limit of Potence Points 
+* @param PresencePoints: Limit of Presence Points 
+* @param ProteanPoints: Limit of Protean Points 
+* @param QuietusPoints: Limit of Quietus Points 
+* @param SerpentisPoints: Limit of Serpentis Points 
+* @param ThaumaturgyPoints: Limit of Thaumaturgy Points 
+* @param VicissitudePoints: Limit of Vicissitude Points 
+* @param AlliesPoints: Limit of Allies Points 
+* @param AlternateIdentityPoints: Limit of Alternate Identity Points 
+* @param BlackHandMembershipPoints: Limit of Black Hand Membership Points 
+* @param ContactsPoints: Limit of Contacts Points 
+* @param DomainPoints: Limit of Domain Points 
+* @param FamePoints: Limit of Fame Points 
+* @param GenerationPoints: Limit of Generation Points 
+* @param HerdPoints: Limit of Herd Points 
+* @param InfluencePoints: Limit of Influence Points 
+* @param MentorPoints: Limit of Mentor Points 
+* @param ResourcesPoints: Limit of Resources Points 
+* @param RetainersPoints: Limit of Retainers Points 
+* @param RitualsPoints: Limit of Rituals Points 
+* @param StatusPoints: Limit of Status Points 
+* @param ConsciencePoints: Limit of Conscience Points 
+* @param SelfControlPoints: Limit of Self-Control Points 
+* @param CouragePoints: Limit of Courage Points 
+* @param SupernaturalPoints: Limit of Supernatural Points 
+*/
+
+
+
 
 
 
@@ -100,8 +196,20 @@ void vampireGameproject::RulesofGame::setLimitPointsAttributes(int PhysicalPoint
                         limitPointsAttributes.insert(std::pair<std::string, int>("Conscience", ConsciencePoints));
                         limitPointsAttributes.insert(std::pair<std::string, int>("Self-Control", SelfControlPoints));
                         limitPointsAttributes.insert(std::pair<std::string, int>("Courage", CouragePoints));
-                         limitPointsAttributes.insert(std::pair<std::string, int>("Supernatural", SupernaturalPoints));
+                        limitPointsAttributes.insert(std::pair<std::string, int>("Supernatural", SupernaturalPoints));
 }
+
+
+
+
+
+/** Implementation of the returnLimitiPointsAttributes method.
+*
+* Implementation of the returnLimitPointsAttributes method
+* Method returning the dictionnary containing the Points Limit
+* for all the fields in the interface **/
+
+
 
 std::map<std::string, int> vampireGameproject::RulesofGame::returnLimitPointsAttributes(){
     return limitPointsAttributes;
