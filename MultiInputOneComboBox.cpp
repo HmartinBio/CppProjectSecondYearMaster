@@ -1,13 +1,9 @@
 #include "classes.h"
 
 
-/** Constructor of the class MultiInput.
+/** Constructor of the class MultiInputOneComboBox.
 *
-* Modification of the constructor of MultiInput
-* 
-*
-*
-*/
+* Modification of the constructor of MultiInputOneComboBox */
 
 
 vampireGameproject::MultiInputOneComboBox::MultiInputOneComboBox(){}
@@ -15,13 +11,9 @@ vampireGameproject::MultiInputOneComboBox::MultiInputOneComboBox(){}
 
 
 
-/** Destructor of the class MultiInput.
+/** Destructor of the class MultiInputOneComboBox.
 *
-* Modification of the destructor of MultiInput
-*
-*
-*
-*/
+* Modification of the destructor of MultiInputOneComboBox */
 
 
 
@@ -33,10 +25,7 @@ vampireGameproject::MultiInputOneComboBox::~MultiInputOneComboBox(){}
 /** Implementation of the returnSpinButton method.
 *
 * Implementation of the returnSpinButton method
-* Method returning the reference of the SpinButton
-*  
-*
-*/
+* Method returning the reference of the SpinButton */
 
 
 
@@ -50,10 +39,7 @@ Gtk::SpinButton& vampireGameproject::MultiInputOneComboBox::returnSpinButton(){
 /** Implementation of the returnComboBox method.
 *
 * Implementation of the returnComboBox method
-* Method returning the reference of the chosen ComboBox
-*  
-*
-*/
+* Method returning the reference of the ComboBox */
 
 
 
@@ -69,7 +55,7 @@ Gtk::ComboBoxText& vampireGameproject::MultiInputOneComboBox::returnComboBox(){
 * Implementation of the setLimitSpinButton method
 * Method setting the limit of the SpinButton
 *  
-*
+* @param limit: limit of the SpinButton
 */
 
 
@@ -84,10 +70,7 @@ void vampireGameproject::MultiInputOneComboBox::setLimitSpinButton(int limit){
 /** Implementation of the returnSpinScore method.
 *
 * Implementation of the returnSpinScore method
-* Method returning the Spin Score
-*  
-*
-*/
+* Method returning the Spin Score from the Spin Button */
 
 
 
@@ -186,8 +169,6 @@ void vampireGameproject::MultiInput::DeleteText(std::string vectorPosition, int 
 * Method setting the vector containing the ComboBox items
 * 
 * @param vectorText vector containing the items
-* @param index position of the Combobox to set 
-*
 */
 
 
@@ -222,11 +203,7 @@ void vampireGameproject::MultiInputOneComboBox::unsetActiveText(){
 /** Implementation of the resetSpinScore method.
 *
 * Implementation of the resetSpinScore method
-* Method reseting the spin Score of a MultiInput Spin Button
-* 
-* 
-*
-*/
+* Method reseting the spin Score of a MultiInputOneComboBox Spin Button */
 
 
 void vampireGameproject::MultiInputOneComboBox::resetSpinScore(){
