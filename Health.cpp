@@ -37,7 +37,7 @@ vampireGameproject::Health::~Health(){}
 */
 
 
-int vampireGameproject::Health::getPointlife(void){
+std::string vampireGameproject::Health::getPointlife(void){
     return pointLife;
 }
 
@@ -54,7 +54,7 @@ int vampireGameproject::Health::getPointlife(void){
 
 
 
-void vampireGameproject::Health::setPointlife(int pointLife){
+void vampireGameproject::Health::setPointlife(std::string pointLife){
     Health::pointLife = pointLife;
 }
 
