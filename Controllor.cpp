@@ -10,7 +10,7 @@
 */
 
 vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
-    rulesGame(textParser, graphicalUserinterface){
+    rulesGame(textParser, graphicalUserinterface), CharacterToCreate(textParser){
         graphicalUserinterface.set_title("Vampire Game Project");
         graphicalUserinterface.resize(400, 300);
         graphicalUserinterface.set_position(Gtk::WIN_POS_CENTER);
@@ -1938,7 +1938,7 @@ void vampireGameproject::Controllor::initializeSpinButton(std::string categorieS
     if (categorieSpinButton == "willPower"){
         graphicalUserinterface.setSpinButtonWillPower();
         Gtk::SpinButton& spinScoreWillPower = graphicalUserinterface.returnWillPowerSpinButton();
-        spinScoreWillPower.set_range(0, 10);
+        spinScoreWillPower.set_range(1, 10);
         spinScoreWillPower.set_increments(1, 1);
     }
 
@@ -1966,6 +1966,8 @@ void vampireGameproject::Controllor::initializeSpinButton(std::string categorieS
 
 void vampireGameproject::Controllor::initializeFinalButton(){
     graphicalUserinterface.setValidationButton();
+    Gtk::Button& submitButton = graphicalUserinterface.returnValidationButton();
+    submitButton.signal_clicked().connect(sigc::mem_fun(*this, &vampireGameproject::Controllor::submitUserChoices));
 
 }
 
@@ -2021,4 +2023,9 @@ void vampireGameproject::Controllor::initializeNicknameLabel(){
 void vampireGameproject::Controllor::initializeHealthComboBox(){
     std::vector<std::string> vectorHealth = textParser.parse_Health();
     graphicalUserinterface.setTableComboBox(2, vectorHealth);
+}
+
+void vampireGameproject::Controllor::submitUserChoices(){
+   std::string filename = graphicalUserinterface.setFileChooser();
+   std::cout << filename << std::endl;
 }
