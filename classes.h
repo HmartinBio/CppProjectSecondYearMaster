@@ -228,16 +228,16 @@ namespace vampireGameproject{
             ~CharacterTraits();
             std::string getHumanity(void);
             std::string getWillpower(void); 
-            int getBloodpool(void);
+            float getBloodpool(void);
             void setHumanity(int number); 
             void setWillpower(int number);
-            void setBloodpool(int number); // Il faut tenir compte de la generation
+            void setBloodpool(float number); // Il faut tenir compte de la generation
 
 
         private:
             int humanity;
             int willPower;
-            int bloodPool;
+            float bloodPool;
             Parsetext& textParser;
     };
 
@@ -347,7 +347,7 @@ namespace vampireGameproject{
             ~Clan();
             std::string getClan(void);
             void setClan(std::string clan);
-            void setVampirename(void);
+            void setVampirename(std::string vampireNickName);
             std::string getVampirename(void);
             void setDescription(void); 
             std::string getDescription(void);
@@ -633,7 +633,9 @@ class ButtonmultiInputOneComboBox{
             Gtk::Label& returnLabelVampireNickName();
             void setNicknameLabel();
             void setTextNicknameLabel(std::string textToAdd);
-            std::string setFileChooser();       
+            std::string setFileChooser();
+            std::string returnNature();
+            std::string returnHealth();       
 
         private:
             Gtk::Grid mainGrid; 
@@ -769,9 +771,12 @@ class ButtonmultiInputOneComboBox{
             std::string getHumanity();
             void setWillpower(int number);
             std::string getWillpower();
-            void setBloodpool(int number);
-            int getBloodpool();
-
+            void setBloodpool(float number);
+            float getBloodpool();
+            void setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines);
+            std::map<std::string,std::map<std::string, int>> returnDisciplines();
+            void setVampireNickName(std::string Nickname);
+            std::string returnVampireNickName();
     };
 
 
@@ -792,6 +797,11 @@ class ButtonmultiInputOneComboBox{
         public:
             Picturemodifying();
             ~Picturemodifying();
+            void writeResultsFile(std::string NickName, int bloodPool, 
+                std::string willPower, std::string humanityPath, 
+                    std::map<std::string, int> virtues, 
+                        std::map<std::string, int> background,
+                            std::string clan);
 
         private:
     };
@@ -866,17 +876,21 @@ class ButtonmultiInputOneComboBox{
             void updateNicknameLabel();
             void initializeHealthComboBox();
             void submitUserChoices();
+            void saveAttributesInCharacter();
+            void saveAbilitiesInCharacter();
+            void saveDisciplinesInCharacter();
+            void saveBackgroundsInCharacter();
+            void saveVirtuesInCharacter();
+            void saveMeritsFlawsCharacter();
+            void saveUserChoices();
 
 
         private:
             Parsetext textParser;
             RulesofGame rulesGame;
             Character CharacterToCreate;
+            Picturemodifying createResultsFile;
     };
-
-
-
-
 }
 
 #endif
