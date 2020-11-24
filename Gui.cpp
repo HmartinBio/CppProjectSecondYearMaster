@@ -73,6 +73,27 @@ std::string vampireGameproject::Gui::returnClanName(){
 
 
 
+/** Implementation of the returnNature method.
+*
+* Implementation of the returnNature method
+* Method returning the text active from the Nature 
+* ComboBox Text */
+
+
+
+
+std::string vampireGameproject::Gui::returnNature(){
+    return tableComboBox[1].get_active_text();
+}
+
+
+
+std::string vampireGameproject::Gui::returnHealth(){
+    return tableComboBox[2].get_active_text();
+}
+
+
+
 
 /** Implementation of the initialiseTableLabel method.
 *
