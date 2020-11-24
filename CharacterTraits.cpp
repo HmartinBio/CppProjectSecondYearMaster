@@ -74,7 +74,7 @@ void vampireGameproject::CharacterTraits::setWillpower(int number){
 
 
 
-void vampireGameproject::CharacterTraits::setBloodpool(int number){
+void vampireGameproject::CharacterTraits::setBloodpool(float number){
     bloodPool = number;
 }
 
@@ -210,7 +210,7 @@ std::string vampireGameproject::CharacterTraits::getWillpower(void){
 */
 
 
-int vampireGameproject::CharacterTraits::getBloodpool(void){
+float vampireGameproject::CharacterTraits::getBloodpool(void){
     return bloodPool;
 }
 
