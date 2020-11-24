@@ -496,7 +496,7 @@ std::string vampireGameproject::Character::getWillpower(){
 
 
 
-void vampireGameproject::Character::setBloodpool(int number){
+void vampireGameproject::Character::setBloodpool(float number){
     characterTraits.setBloodpool(number);
 }
 
@@ -510,6 +510,18 @@ void vampireGameproject::Character::setBloodpool(int number){
 
 
 
-int vampireGameproject::Character::getBloodpool(){
+float vampireGameproject::Character::getBloodpool(){
    return characterTraits.getBloodpool();
+}
+
+void vampireGameproject::Character::setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines){
+    characterClan.setDisciplines(disciplines);
+}
+
+void vampireGameproject::Character::setVampireNickName(std::string Nickname){
+    characterClan.setVampirename(Nickname);
+}
+
+std::string vampireGameproject::Character::returnVampireNickName(){
+    return characterClan.getVampirename();
 }
