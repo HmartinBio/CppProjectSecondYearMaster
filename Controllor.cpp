@@ -2025,7 +2025,138 @@ void vampireGameproject::Controllor::initializeHealthComboBox(){
     graphicalUserinterface.setTableComboBox(2, vectorHealth);
 }
 
+
+
+void vampireGameproject::Controllor::saveAttributesInCharacter(){
+    ButtonmultiInput& ButtonmultiInputreference = graphicalUserinterface.returnAttributesInput();
+    std::vector<MultiInput*> vectorMultiInputReference = ButtonmultiInputreference.returnVectorMultiInput();
+
+    for(int iterator = 0; iterator < (int)vectorMultiInputReference.size(); iterator++){
+       
+       if (vectorMultiInputReference[iterator]->returnTextComboBox("first") != "" && 
+            vectorMultiInputReference[iterator]->returnTextComboBox("second") != ""){
+
+                CharacterToCreate.setAttributes(vectorMultiInputReference[iterator]->returnTextComboBox("first"), 
+                    vectorMultiInputReference[iterator]->returnTextComboBox("second"), 
+                        vectorMultiInputReference[iterator]->returnSpinScore());  
+        }
+    }
+}
+
+
+void vampireGameproject::Controllor::saveAbilitiesInCharacter(){
+    ButtonmultiInput& ButtonmultiInputreference = graphicalUserinterface.returnAbilitiesInput();
+    std::vector<MultiInput*> vectorMultiInputReference = ButtonmultiInputreference.returnVectorMultiInput();
+
+    for(int iterator = 0; iterator < (int)vectorMultiInputReference.size(); iterator++){
+        
+        if (vectorMultiInputReference[iterator]->returnTextComboBox("first") != "" && 
+            vectorMultiInputReference[iterator]->returnTextComboBox("second") != ""){
+        
+                CharacterToCreate.setAbilities(vectorMultiInputReference[iterator]->returnTextComboBox("first"), 
+                    vectorMultiInputReference[iterator]->returnTextComboBox("second"), 
+                        vectorMultiInputReference[iterator]->returnSpinScore());    
+        }
+    }
+}
+
+
+
+void vampireGameproject::Controllor::saveDisciplinesInCharacter(){
+    ButtonmultiInput& ButtonmultiInputreference = graphicalUserinterface.returnDisciplinesInput();
+    std::vector<MultiInput*> vectorMultiInputReference = ButtonmultiInputreference.returnVectorMultiInput();
+
+    std::map<std::string,std::map<std::string, int>> disciplinesDictionnary;
+
+    for(int iterator = 0; iterator < (int)vectorMultiInputReference.size(); iterator++){
+        
+        if (vectorMultiInputReference[iterator]->returnTextComboBox("first") != "" && 
+            vectorMultiInputReference[iterator]->returnTextComboBox("second") != ""){
+        
+                disciplinesDictionnary[vectorMultiInputReference[iterator]->returnTextComboBox("first")].insert(
+                    std::make_pair(vectorMultiInputReference[iterator]->returnTextComboBox("second"), 
+                        vectorMultiInputReference[iterator]->returnSpinScore()));
+        }
+    }
+
+    CharacterToCreate.setDisciplines(disciplinesDictionnary);  
+}
+
+
+void vampireGameproject::Controllor::saveBackgroundsInCharacter(){
+    ButtonmultiInputOneComboBox& ButtonmultiInputreferenceOneComboBox = graphicalUserinterface.returnBackgroundsInput();
+    std::vector<MultiInputOneComboBox*> vectorMultiInputReference = ButtonmultiInputreferenceOneComboBox.returnVectorMultiInput();
+
+    for(int iterator = 0; iterator < (int)vectorMultiInputReference.size(); iterator++){
+        
+        if (vectorMultiInputReference[iterator]->returnTextComboBox() != ""){
+        
+            CharacterToCreate.setBackground(vectorMultiInputReference[iterator]->returnTextComboBox(),
+                vectorMultiInputReference[iterator]->returnSpinScore());
+        }
+    }
+}
+
+void vampireGameproject::Controllor::saveVirtuesInCharacter(){
+    ButtonmultiInputOneComboBox& ButtonmultiInputreferenceOneComboBox = graphicalUserinterface.returnVirtuesInput();
+    std::vector<MultiInputOneComboBox*> vectorMultiInputReference = ButtonmultiInputreferenceOneComboBox.returnVectorMultiInput();
+
+
+    for(int iterator = 0; iterator < (int)vectorMultiInputReference.size(); iterator++){
+        
+        if (vectorMultiInputReference[iterator]->returnTextComboBox() != ""){
+        
+            CharacterToCreate.setVirtues(vectorMultiInputReference[iterator]->returnTextComboBox(),
+                vectorMultiInputReference[iterator]->returnSpinScore());
+        }
+    }
+
+}
+
+
+void vampireGameproject::Controllor::saveMeritsFlawsCharacter(){
+    ButtonmultiInput& ButtonmultiInputreference = graphicalUserinterface.returnMeritsFlawsInput();
+    std::vector<MultiInput*> vectorMultiInputReference = ButtonmultiInputreference.returnVectorMultiInput();
+
+    for(int iterator = 0; iterator < (int)vectorMultiInputReference.size(); iterator++){
+       
+       if (vectorMultiInputReference[iterator]->returnTextComboBox("first") != "" && 
+            vectorMultiInputReference[iterator]->returnTextComboBox("second") != ""){
+       
+            CharacterToCreate.setMeritsflaws(vectorMultiInputReference[iterator]->returnTextComboBox("first"),
+                vectorMultiInputReference[iterator]->returnTextComboBox("second"), 
+                    vectorMultiInputReference[iterator]->returnSpinScore());
+        }
+    }
+}
+
+void vampireGameproject::Controllor::saveUserChoices(){
+    
+    CharacterToCreate.setVampireNickName(graphicalUserinterface.returnLabelVampireNickName().get_text());
+    CharacterToCreate.setClan(graphicalUserinterface.returnClanName());
+    CharacterToCreate.setNature(graphicalUserinterface.returnNature());
+   
+    saveAttributesInCharacter();
+    saveAbilitiesInCharacter();
+    saveDisciplinesInCharacter();
+    saveBackgroundsInCharacter();
+    saveVirtuesInCharacter();
+    saveMeritsFlawsCharacter();
+
+    CharacterToCreate.setHumanity(graphicalUserinterface.returnHumanityPathSpinButton().get_value());
+    CharacterToCreate.setWillpower(graphicalUserinterface.returnWillPowerSpinButton().get_value());
+    CharacterToCreate.setBloodpool(graphicalUserinterface.returnBloodPoolSpinButton().get_value());
+    CharacterToCreate.setHealth(graphicalUserinterface.returnHealth());
+    CharacterToCreate.setGeneration(graphicalUserinterface.returnBloodPoolSpinButton().get_value());
+
+}
+
 void vampireGameproject::Controllor::submitUserChoices(){
    std::string filename = graphicalUserinterface.setFileChooser();
-   std::cout << filename << std::endl;
+   
+   if (filename != ""){
+       saveUserChoices();
+       std::cout << filename << std::endl;
+   }
+
 }
