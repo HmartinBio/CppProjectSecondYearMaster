@@ -76,10 +76,8 @@ void vampireGameproject::Clan::setClan(std::string clan){
 
 
 
-void vampireGameproject::Clan::setVampirename(void){
-    // function parsing the Vampirename
-    //vampireName = textParser.parse_text();
-    vampireName = "test";
+void vampireGameproject::Clan::setVampirename(std::string vampireNickName){
+    vampireName = vampireNickName;
 }    
 
 
