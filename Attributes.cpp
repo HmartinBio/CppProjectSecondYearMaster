@@ -41,14 +41,14 @@ vampireGameproject::Attributes::~Attributes(){}
 
 
 std::map<std::string,int> vampireGameproject::Attributes::getAttributes(std::string attributeTable){
-    if(attributeTable == "physical"){
+    if(attributeTable == "Physical"){
         return physicalAttributes;
     }
-    else if(attributeTable == "social"){
+    else if(attributeTable == "Social"){
         return socialAttributes;
     }
 
-    else if(attributeTable == "mental"){
+    else if(attributeTable == "Mental"){
         return mentalAttributes;
     }
     
@@ -73,14 +73,14 @@ std::map<std::string,int> vampireGameproject::Attributes::getAttributes(std::str
 
 
 void vampireGameproject::Attributes::setAttributes(std::string tableName,std::string attributeName, int value){
-    if(tableName == "physical"){
+    if(tableName == "Physical"){
         physicalAttributes.insert(std::pair<std::string,int>(attributeName, value));
     }
-    else if(tableName == "social"){
+    else if(tableName == "Social"){
         socialAttributes.insert(std::pair<std::string,int>(attributeName, value));
     }
 
-    else if(tableName == "mental"){
+    else if(tableName == "Mental"){
           mentalAttributes.insert(std::pair<std::string,int>(attributeName, value));
     }
 
