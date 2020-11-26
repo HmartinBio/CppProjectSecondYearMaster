@@ -263,7 +263,7 @@ void vampireGameproject::Gui::setMultiComboBox(Gtk::Button& buttonPlus, Gtk::But
 void vampireGameproject::Gui::setButtonMultiInputAttributes(){
      
     mainGrid.attach_next_to(attributesInput.returnButton("minus"), 
-        tableLabel[3], Gtk::POS_RIGHT, 1, 1);
+        tableLabel[5], Gtk::POS_RIGHT, 1, 1);
 
     mainGrid.attach_next_to(attributesInput.returnButton("plus"), 
         attributesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
@@ -288,7 +288,7 @@ void vampireGameproject::Gui::setButtonMultiInputAttributes(){
 void vampireGameproject::Gui::setButtonMultiInputAbilities(){
 
     mainGrid.attach_next_to(abilitiesInput.returnButton("minus"), 
-        tableLabel[4], Gtk::POS_RIGHT, 1, 1);
+        tableLabel[6], Gtk::POS_RIGHT, 1, 1);
     
     mainGrid.attach_next_to(abilitiesInput.returnButton("plus"), 
             abilitiesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
@@ -313,7 +313,7 @@ void vampireGameproject::Gui::setButtonMultiInputAbilities(){
 void vampireGameproject::Gui::setButtonMultiInputBackgrounds(){
 
     mainGrid.attach_next_to(backgroundsInput.returnButton("minus"), 
-        tableLabel[6], Gtk::POS_RIGHT, 1, 1);
+        tableLabel[8], Gtk::POS_RIGHT, 1, 1);
     
     mainGrid.attach_next_to(backgroundsInput.returnButton("plus"), 
         backgroundsInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
@@ -339,7 +339,7 @@ void vampireGameproject::Gui::setButtonMultiInputBackgrounds(){
 
 void vampireGameproject::Gui::setButtonMultiInputVirtues(){
      mainGrid.attach_next_to(virtuesInput.returnButton("minus"), 
-        tableLabel[7], Gtk::POS_RIGHT, 1, 1);
+        tableLabel[9], Gtk::POS_RIGHT, 1, 1);
     
     mainGrid.attach_next_to(virtuesInput.returnButton("plus"), 
         virtuesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
@@ -361,7 +361,7 @@ void vampireGameproject::Gui::setButtonMultiInputVirtues(){
 
 void vampireGameproject::Gui::setButtonMultiInputDisciplines(){
     mainGrid.attach_next_to(disciplinesInput.returnButton("minus"), 
-        tableLabel[5], Gtk::POS_RIGHT, 1, 1);
+        tableLabel[7], Gtk::POS_RIGHT, 1, 1);
     
     mainGrid.attach_next_to(disciplinesInput.returnButton("plus"), 
         disciplinesInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
@@ -386,7 +386,7 @@ void vampireGameproject::Gui::setButtonMultiInputDisciplines(){
 
 void vampireGameproject::Gui::setButtonMultiInputMeritsFlaws(){
      mainGrid.attach_next_to(meritsFlawsInput.returnButton("minus"), 
-        tableLabel[8], Gtk::POS_RIGHT, 1, 1);
+        tableLabel[10], Gtk::POS_RIGHT, 1, 1);
     
     mainGrid.attach_next_to(meritsFlawsInput.returnButton("plus"), 
         meritsFlawsInput.returnButton("minus"), Gtk::POS_RIGHT, 1, 1);
@@ -403,7 +403,7 @@ void vampireGameproject::Gui::setButtonMultiInputMeritsFlaws(){
 
 
 void vampireGameproject::Gui::setSpinButtonHumanityPath(){
-    mainGrid.attach_next_to(HumanityPathScore, tableLabel[9], Gtk::POS_RIGHT, 1, 1);  
+    mainGrid.attach_next_to(HumanityPathScore, tableLabel[11], Gtk::POS_RIGHT, 1, 1);  
 }
 
 
@@ -419,7 +419,7 @@ void vampireGameproject::Gui::setSpinButtonHumanityPath(){
 
 
 void vampireGameproject::Gui::setSpinButtonWillPower(){
-    mainGrid.attach_next_to(WillPowerScore, tableLabel[10], Gtk::POS_RIGHT, 1, 1);
+    mainGrid.attach_next_to(WillPowerScore, tableLabel[12], Gtk::POS_RIGHT, 1, 1);
 }
 
 
@@ -435,7 +435,7 @@ void vampireGameproject::Gui::setSpinButtonWillPower(){
 
 
 void vampireGameproject::Gui::setSpinButtonBloodPool(){
-    mainGrid.attach_next_to(BloodPoolScore, tableLabel[11], Gtk::POS_RIGHT, 1, 1);
+    mainGrid.attach_next_to(BloodPoolScore, tableLabel[13], Gtk::POS_RIGHT, 1, 1);
 }
 
 
@@ -452,7 +452,7 @@ void vampireGameproject::Gui::setSpinButtonBloodPool(){
 
 void vampireGameproject::Gui::setValidationButton(){
     validationButton.set_label("Save");
-    mainGrid.attach(validationButton, 0, 53, 1, 1);
+    mainGrid.attach(validationButton, 0, 54, 1, 1);
 
 }
 
@@ -806,7 +806,7 @@ void vampireGameproject::Gui::deleteMultiInputOnGrid(ButtonmultiInput& ButtonMul
 
 
 Gtk::Label& vampireGameproject::Gui::returnLabelVampireNickName(){
-    return tableLabel[13];
+    return tableLabel[2];
 }
 
 
@@ -821,7 +821,7 @@ Gtk::Label& vampireGameproject::Gui::returnLabelVampireNickName(){
 
 
 void vampireGameproject::Gui::setNicknameLabel(){
-    mainGrid.attach_next_to(tableLabel[13], tableLabel[2], Gtk::POS_RIGHT, 1, 1);
+    mainGrid.attach_next_to(tableLabel[2], tableLabel[0], Gtk::POS_RIGHT, 1, 1);
 }
 
 
@@ -839,7 +839,7 @@ void vampireGameproject::Gui::setNicknameLabel(){
 
 
 void vampireGameproject::Gui::setTextNicknameLabel(std::string textToAdd){
-    tableLabel[13].set_text(textToAdd);
+    tableLabel[2].set_text(textToAdd);
 }
 
 
@@ -891,4 +891,12 @@ std::string vampireGameproject::Gui::setFileChooser(){
 
     delete fileToSave;
     return filenameToReturn;
+}
+
+void vampireGameproject::Gui::initialiseEntryName(){
+    mainGrid.attach_next_to(NameEntry, tableLabel[1], Gtk::POS_RIGHT, 1, 1);
+}
+
+std::string vampireGameproject::Gui::returnPlayerName(){
+    return NameEntry.get_text();
 }
