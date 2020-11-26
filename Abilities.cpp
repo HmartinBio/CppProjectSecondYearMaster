@@ -74,15 +74,15 @@ std::map<std::string, int> vampireGameproject::Abilities::getAbilities(std::stri
 
 
 void vampireGameproject::Abilities::setAbilities(std::string tableName, std::string abilitieName, int value){
-    if(tableName == "talents"){
+    if(tableName == "Talents"){
         talents.insert(std::pair<std::string,int>(abilitieName, value));
     }
 
-    else if(tableName == "skills"){
+    else if(tableName == "Skills"){
         skills.insert(std::pair<std::string,int>(abilitieName, value));
     }
 
-    else if(tableName == "knowledges"){
+    else if(tableName == "Knowledges"){
         knowledges.insert(std::pair<std::string,int>(abilitieName, value));
     }
 
