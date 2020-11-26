@@ -329,6 +329,19 @@ namespace vampireGameproject{
     };
 
 
+union MultiDimensionnalDataStructure{
+    MultiDimensionnalDataStructure(std::string categorieToEnter);
+    MultiDimensionnalDataStructure(int categorieValue);
+    ~MultiDimensionnalDataStructure();
+    std::string categorie;
+    int value;
+};
+
+
+
+
+
+
 /**
  * Implementation of the Class Clan
  *
@@ -351,13 +364,16 @@ namespace vampireGameproject{
             std::string getVampirename(void);
             void setDescription(void); 
             std::string getDescription(void);
-            void setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines);
-            std::map<std::string,std::map<std::string, int>> getDisciplines(void);
+            //void setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines);
+            void setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines);
+            //std::map<std::string,std::map<std::string, int>> getDisciplines(void);
+            std::vector<MultiDimensionnalDataStructure*> getDisciplines();
 
         private:
             std::string clan;
             std::string description;
-            std::map<std::string,std::map<std::string, int>> disciplines;
+            //std::map<std::string,std::map<std::string, int>> disciplines;
+            std::vector<MultiDimensionnalDataStructure*> disciplines;
             std::string vampireName;
             Parsetext& textParser;
     };
@@ -635,12 +651,14 @@ class ButtonmultiInputOneComboBox{
             void setTextNicknameLabel(std::string textToAdd);
             std::string setFileChooser();
             std::string returnNature();
-            std::string returnHealth();       
+            std::string returnHealth();
+            void initialiseEntryName();
+            std::string returnPlayerName();       
 
         private:
             Gtk::Grid mainGrid; 
             RulesofGame& testGui;
-            Gtk::Label tableLabel[14];
+            Gtk::Label tableLabel[15];
             Gtk::ComboBoxText tableComboBox[3];
             ButtonmultiInput attributesInput;
             ButtonmultiInput abilitiesInput;
@@ -651,7 +669,8 @@ class ButtonmultiInputOneComboBox{
             Gtk::SpinButton HumanityPathScore;
             Gtk::SpinButton WillPowerScore;
             Gtk::SpinButton BloodPoolScore;
-            Gtk::Button validationButton;      
+            Gtk::Button validationButton;
+            Gtk::Entry NameEntry;      
             
     };
 
@@ -773,8 +792,11 @@ class ButtonmultiInputOneComboBox{
             std::string getWillpower();
             void setBloodpool(float number);
             float getBloodpool();
-            void setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines);
-            std::map<std::string,std::map<std::string, int>> returnDisciplines();
+            //void setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines);
+            //std::map<std::string,std::map<std::string, int>> returnDisciplines();
+            void setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines);
+            std::vector<MultiDimensionnalDataStructure*> returnDisciplines();
+            
             void setVampireNickName(std::string Nickname);
             std::string returnVampireNickName();
     };
@@ -795,15 +817,18 @@ class ButtonmultiInputOneComboBox{
 
     class Picturemodifying{
         public:
-            Picturemodifying();
+            Picturemodifying(Character& ReferenceCharacter);
             ~Picturemodifying();
-            void writeResultsFile(std::string NickName, int bloodPool, 
-                std::string willPower, std::string humanityPath, 
-                    std::map<std::string, int> virtues, 
-                        std::map<std::string, int> background,
-                            std::string clan);
+            void writeResultsFile(std::string filename);
+            void writeResultsAttributes(std::ofstream& fileToWrite);
+            void writeResultsAbilities(std::ofstream& fileToWrite);
+            void writeResultsAdvantages(std::ofstream& fileToWrite);
+            void writeResultsHumanityPathToHealth(std::ofstream& fileToWrite);
+            void writeResultsMeritsFlaws(std::ofstream& fileToWrite);
+            void writeResultsOthersCaracteristics(std::ofstream& fileToWrite);
 
         private:
+            Character& CharacterReference;
     };
 
 
