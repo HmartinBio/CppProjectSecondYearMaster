@@ -151,7 +151,6 @@ std::string vampireGameproject::CharacterTraits::getHumanity(void){
 
 std::string vampireGameproject::CharacterTraits::getWillpower(void){
     //return textParser.parse_text();
-    return "test"; 
 
     if (willPower == 1){
         return "Spineless";
