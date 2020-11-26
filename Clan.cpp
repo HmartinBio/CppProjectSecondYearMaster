@@ -136,7 +136,11 @@ std::string vampireGameproject::Clan::getVampirename(void){
 * 
 */
 
-void vampireGameproject::Clan::setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines){
+//void vampireGameproject::Clan::setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines){
+//    vampireGameproject::Clan::disciplines = disciplines;
+//}
+
+void vampireGameproject::Clan::setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines){
     vampireGameproject::Clan::disciplines = disciplines;
 }
 
@@ -149,6 +153,10 @@ void vampireGameproject::Clan::setDisciplines(std::map<std::string,std::map<std:
 * 
 */
 
-std::map<std::string,std::map<std::string, int>> vampireGameproject::Clan::getDisciplines(void){
+//std::map<std::string,std::map<std::string, int>> vampireGameproject::Clan::getDisciplines(void){
+//    return disciplines;
+//}
+
+std::vector<vampireGameproject::MultiDimensionnalDataStructure*> vampireGameproject::Clan::getDisciplines(){
     return disciplines;
 }
