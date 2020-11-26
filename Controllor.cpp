@@ -10,45 +10,50 @@
 */
 
 vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
-    rulesGame(textParser, graphicalUserinterface), CharacterToCreate(textParser){
+    rulesGame(textParser, graphicalUserinterface), CharacterToCreate(textParser), 
+        createResultsFile(CharacterToCreate){
         graphicalUserinterface.set_title("Vampire Game Project");
         graphicalUserinterface.resize(400, 300);
         graphicalUserinterface.set_position(Gtk::WIN_POS_CENTER);
         graphicalUserinterface.initialiseTableLabel();
-        graphicalUserinterface.setTableLabelAlign(0, "Select a clan:");
-        graphicalUserinterface.setTableLabelAlign(1, "Select a Nature:");
-        graphicalUserinterface.setTableLabelAlign(2, "Name of the Vampire:");
-        graphicalUserinterface.setTableLabelAlign(3, "Select Attributes:");
-        graphicalUserinterface.setTableLabelAlign(4, "Select Abilities:");
-        graphicalUserinterface.setTableLabelAlign(5, "Select Disciplines:");
-        graphicalUserinterface.setTableLabelAlign(6, "Select Backgrounds:");
-        graphicalUserinterface.setTableLabelAlign(7, "Select Virtues:");
-        graphicalUserinterface.setTableLabelAlign(8, "Select Merits and Flaws:");
-        graphicalUserinterface.setTableLabelAlign(9, "Select Humanity Path:");
-        graphicalUserinterface.setTableLabelAlign(10, "Select WillPower:");
-        graphicalUserinterface.setTableLabelAlign(11, "Select Blood Pool:");
-        graphicalUserinterface.setTableLabelAlign(12, "Select Health:");
-        graphicalUserinterface.setTableLabelOnGrid(0, 0, 1, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(1, 0, 2, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(2, 0, 0, 1, 1); // 0
-        graphicalUserinterface.setTableLabelOnGrid(3, 0, 3, 1, 1); // 3
-        graphicalUserinterface.setTableLabelOnGrid(4, 0, 10, 1, 1); // 9
-        graphicalUserinterface.setTableLabelOnGrid(5, 0, 16, 1, 1); // 15
-        graphicalUserinterface.setTableLabelOnGrid(6, 0, 24, 1, 1); // 23
-        graphicalUserinterface.setTableLabelOnGrid(7, 0, 31, 1, 1); // 31
-        graphicalUserinterface.setTableLabelOnGrid(8, 0, 40, 1, 1); // 39
-        graphicalUserinterface.setTableLabelOnGrid(9, 0, 49, 1, 1); // 48
-        graphicalUserinterface.setTableLabelOnGrid(10, 0, 50, 1, 1); // 49
-        graphicalUserinterface.setTableLabelOnGrid(11, 0, 51, 1, 1); //50
-        graphicalUserinterface.setTableLabelOnGrid(12, 0, 52, 1, 1);
+        graphicalUserinterface.setTableLabelAlign(0, "Name of the Vampire:");
+        graphicalUserinterface.setTableLabelAlign(1, "Player name:");
+        graphicalUserinterface.setTableLabelAlign(3, "Select a clan:");
+        graphicalUserinterface.setTableLabelAlign(4, "Select a Nature:");
+        graphicalUserinterface.setTableLabelAlign(5, "Select Attributes:");
+        graphicalUserinterface.setTableLabelAlign(6, "Select Abilities:");
+        graphicalUserinterface.setTableLabelAlign(7, "Select Disciplines:");
+        graphicalUserinterface.setTableLabelAlign(8, "Select Backgrounds:");
+        graphicalUserinterface.setTableLabelAlign(9, "Select Virtues:");
+        graphicalUserinterface.setTableLabelAlign(10, "Select Merits and Flaws:");
+        graphicalUserinterface.setTableLabelAlign(11, "Select Humanity Path:");
+        graphicalUserinterface.setTableLabelAlign(12, "Select WillPower:");
+        graphicalUserinterface.setTableLabelAlign(13, "Select Blood Pool:");
+        graphicalUserinterface.setTableLabelAlign(14, "Select Health:");
+        
+        graphicalUserinterface.setTableLabelOnGrid(0, 0, 0, 1, 1); // 0
+        graphicalUserinterface.setTableLabelOnGrid(1, 0, 1, 1, 1); // 1
+        graphicalUserinterface.setTableLabelOnGrid(3, 0, 2, 1, 1); // 2
+        graphicalUserinterface.setTableLabelOnGrid(4, 0, 3, 1, 1); // 3
+        graphicalUserinterface.setTableLabelOnGrid(5, 0, 10, 1, 1); // 4
+        graphicalUserinterface.setTableLabelOnGrid(6, 0, 16, 1, 1); // 5
+        graphicalUserinterface.setTableLabelOnGrid(7, 0, 24, 1, 1); // 6
+        graphicalUserinterface.setTableLabelOnGrid(8, 0, 31, 1, 1); // 7
+        graphicalUserinterface.setTableLabelOnGrid(9, 0, 40, 1, 1); // 8
+        graphicalUserinterface.setTableLabelOnGrid(10, 0, 49, 1, 1); // 8
+        graphicalUserinterface.setTableLabelOnGrid(11, 0, 50, 1, 1); // 10
+        graphicalUserinterface.setTableLabelOnGrid(12, 0, 51, 1, 1); // 11
+        graphicalUserinterface.setTableLabelOnGrid(13, 0, 52, 1, 1); // 12
+        graphicalUserinterface.setTableLabelOnGrid(14, 0, 53, 1, 1);
+        graphicalUserinterface.initialiseEntryName();
         graphicalUserinterface.initialiseTableComboBox();
         rulesGame.setVectorClans();
         rulesGame.setVectorNature();
         graphicalUserinterface.setTableComboBox(0, rulesGame.returnVectorClans());
         graphicalUserinterface.setTableComboBox(1, rulesGame.returnVectorNature());
-        graphicalUserinterface.setTableComboBoxOnGrid(0, 0);
-        graphicalUserinterface.setTableComboBoxOnGrid(1, 1);
-        graphicalUserinterface.setTableComboBoxOnGrid(2, 12);
+        graphicalUserinterface.setTableComboBoxOnGrid(0, 3);
+        graphicalUserinterface.setTableComboBoxOnGrid(1, 4);
+        graphicalUserinterface.setTableComboBoxOnGrid(2, 14);
         rulesGame.setLimitPointsAttributes(5, 5, 5, 13, 
             9, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
                 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 
@@ -1574,19 +1579,19 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReference(Buttonm
     /*Setting coordinates of the ButtonMultiInput object*/
     
     if (categorieMultiInput == "attributes"){
-        ButtonMultiInputReference.setCoordinates(4, 3);
-    }
-
-    if (categorieMultiInput == "abilities"){
         ButtonMultiInputReference.setCoordinates(4, 10);
     }
 
-    if (categorieMultiInput == "disciplines"){
+    if (categorieMultiInput == "abilities"){
         ButtonMultiInputReference.setCoordinates(4, 16);
     }
 
+    if (categorieMultiInput == "disciplines"){
+        ButtonMultiInputReference.setCoordinates(4, 24);
+    }
+
     if (categorieMultiInput == "MeritsFlaws"){
-        ButtonMultiInputReference.setCoordinates(4, 40);
+        ButtonMultiInputReference.setCoordinates(4, 49);
     }
 
     /*Initialising the ButtonMultiInput*/
@@ -1689,11 +1694,11 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReferenceOneCombo
                     /*Setting coordinates of the ButtonMultiInput object*/
 
                     if (categorieMultiInputOneComboBox == "backgrounds"){
-                        ButtonMultiInputOneComboBoxReference.setCoordinates(4,24);
+                        ButtonMultiInputOneComboBoxReference.setCoordinates(4,31);
                     }
 
                     if (categorieMultiInputOneComboBox == "virtues"){
-                        ButtonMultiInputOneComboBoxReference.setCoordinates(4, 31);
+                        ButtonMultiInputOneComboBoxReference.setCoordinates(4, 40);
                     }
 
                     /*Initialising the ButtonMultiInputOneComboBox*/
@@ -2066,20 +2071,29 @@ void vampireGameproject::Controllor::saveDisciplinesInCharacter(){
     ButtonmultiInput& ButtonmultiInputreference = graphicalUserinterface.returnDisciplinesInput();
     std::vector<MultiInput*> vectorMultiInputReference = ButtonmultiInputreference.returnVectorMultiInput();
 
-    std::map<std::string,std::map<std::string, int>> disciplinesDictionnary;
+    //std::map<std::string,std::map<std::string, int>> disciplinesDictionnary;
+    std::vector<MultiDimensionnalDataStructure*> disciplinesVector;
 
     for(int iterator = 0; iterator < (int)vectorMultiInputReference.size(); iterator++){
         
         if (vectorMultiInputReference[iterator]->returnTextComboBox("first") != "" && 
             vectorMultiInputReference[iterator]->returnTextComboBox("second") != ""){
-        
-                disciplinesDictionnary[vectorMultiInputReference[iterator]->returnTextComboBox("first")].insert(
-                    std::make_pair(vectorMultiInputReference[iterator]->returnTextComboBox("second"), 
-                        vectorMultiInputReference[iterator]->returnSpinScore()));
+                
+
+                disciplinesVector.push_back(new MultiDimensionnalDataStructure(vectorMultiInputReference[iterator]->returnTextComboBox("first")));
+                disciplinesVector.push_back(new MultiDimensionnalDataStructure(vectorMultiInputReference[iterator]->returnTextComboBox("second")));
+                disciplinesVector.push_back(new MultiDimensionnalDataStructure(vectorMultiInputReference[iterator]->returnSpinScore()));
+
+
+                //disciplinesDictionnary[vectorMultiInputReference[iterator]->returnTextComboBox("first")].insert(
+                //    std::make_pair(vectorMultiInputReference[iterator]->returnTextComboBox("second"), 
+                //        vectorMultiInputReference[iterator]->returnSpinScore()));
         }
     }
 
-    CharacterToCreate.setDisciplines(disciplinesDictionnary);  
+    std::cout << "testCharacter" << std::endl;
+
+    CharacterToCreate.setDisciplines(disciplinesVector);  
 }
 
 
@@ -2148,7 +2162,7 @@ void vampireGameproject::Controllor::saveUserChoices(){
     CharacterToCreate.setBloodpool(graphicalUserinterface.returnBloodPoolSpinButton().get_value());
     CharacterToCreate.setHealth(graphicalUserinterface.returnHealth());
     CharacterToCreate.setGeneration(graphicalUserinterface.returnBloodPoolSpinButton().get_value());
-
+    CharacterToCreate.setPlayername(graphicalUserinterface.returnPlayerName());
 }
 
 void vampireGameproject::Controllor::submitUserChoices(){
@@ -2156,6 +2170,7 @@ void vampireGameproject::Controllor::submitUserChoices(){
    
    if (filename != ""){
        saveUserChoices();
+       createResultsFile.writeResultsFile(filename);
        std::cout << filename << std::endl;
    }
 
