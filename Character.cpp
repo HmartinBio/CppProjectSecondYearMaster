@@ -514,7 +514,11 @@ float vampireGameproject::Character::getBloodpool(){
    return characterTraits.getBloodpool();
 }
 
-void vampireGameproject::Character::setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines){
+//void vampireGameproject::Character::setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines){
+//    characterClan.setDisciplines(disciplines);
+//}
+
+void vampireGameproject::Character::setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines){
     characterClan.setDisciplines(disciplines);
 }
 
@@ -524,4 +528,8 @@ void vampireGameproject::Character::setVampireNickName(std::string Nickname){
 
 std::string vampireGameproject::Character::returnVampireNickName(){
     return characterClan.getVampirename();
+}
+
+std::vector<vampireGameproject::MultiDimensionnalDataStructure*> vampireGameproject::Character::returnDisciplines(){
+    return characterClan.getDisciplines();
 }
