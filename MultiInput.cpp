@@ -150,57 +150,6 @@ std::string vampireGameproject::MultiInput::returnTextComboBox(std::string index
 
 
 
-/** Implementation of the AddText method.
-*
-* Implementation of the AddText method
-* Method adding an item to a specific position
-* in the ComboBox 
-*
-*/
-
-
-
-
-void vampireGameproject::MultiInput::AddText(std::string vectorPosition, std::string stringToAdd, int index){
-    if (vectorPosition == "first"){
-        firstComboBox.insert(index, stringToAdd);
-    }
-
-    else{
-        secondComboBox.insert(index, stringToAdd);
-    }
-}
-
-
-
-
-/** Implementation of the DeleteText method.
-*
-* Implementation of the DeleteText method
-* Method deleting an item to a specific position
-* of a ComboBox
-*
-*/
-
-
-
-
-
-
-void vampireGameproject::MultiInput::DeleteText(std::string vectorPosition, int index){
-    if (vectorPosition == "first"){
-        firstComboBox.remove_text(index);
-    }
-
-    else{
-        secondComboBox.remove_text(index);
-    }
-}
-
-
-
-
-
 
 
 /** Implementation of the setVectorComboBox method.
