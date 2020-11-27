@@ -1,9 +1,9 @@
 /**
  * @file classes.h
  *
- * @brief Header file containing the class prototypes of the Game project
+ * @brief Header file containing the class prototypes of the VampireGameproject
  *
- * @ingroup PackageName
+ * @ingroup vampireGameProject
  * (Note: this needs exactly one @defgroup somewhere)
  *
  * @author Hugo MARTIN
@@ -17,7 +17,7 @@
 
 #include <string>
 #include <map>
-#include <bits/stdc++.h> // imported to make multidimensional map
+#include <bits/stdc++.h>
 #include <vector>
 #include "pystring.h"
 #include <fstream>
@@ -231,7 +231,7 @@ namespace vampireGameproject{
             float getBloodpool(void);
             void setHumanity(int number); 
             void setWillpower(int number);
-            void setBloodpool(float number); // Il faut tenir compte de la generation
+            void setBloodpool(float number);
 
 
         private:
@@ -364,15 +364,12 @@ union MultiDimensionnalDataStructure{
             std::string getVampirename(void);
             void setDescription(void); 
             std::string getDescription(void);
-            //void setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines);
             void setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines);
-            //std::map<std::string,std::map<std::string, int>> getDisciplines(void);
             std::vector<MultiDimensionnalDataStructure*> getDisciplines();
 
         private:
             std::string clan;
             std::string description;
-            //std::map<std::string,std::map<std::string, int>> disciplines;
             std::vector<MultiDimensionnalDataStructure*> disciplines;
             std::string vampireName;
             Parsetext& textParser;
@@ -438,10 +435,6 @@ union MultiDimensionnalDataStructure{
                 ButtonmultiInput();
                 virtual ~ButtonmultiInput();
                 Gtk::Button& returnButton(std::string sign);
-                //
-                //Gtk::ComboBoxText& returnComboBox(std::string position);
-                //Gtk::SpinButton& returnSpinButton();
-                //
                 void setLabelMultiComboBox();
                 std::vector<MultiInput*>& returnVectorMultiInput();
                 void setVectorSelectedInput();
@@ -452,40 +445,23 @@ union MultiDimensionnalDataStructure{
                 std::map<std::string, int> returnDicoScoreFirstComboBox();
                 std::vector<std::string> returnVectorSelectedInput(std::string index);
                 void setLimitMultiInput();
-                void setComboBoxFunction(std::string index);
-                void setFunctionForComboBox(std::string index, std::vector<std::string> (&functionToSet)());
                 void setVectorComboBox(int index, std::string position, std::vector<std::string> vectorReference);
                 void initialize();
-                void setNumberMultiInput(int number);
                 std::string returnTextComboBox(int number, std::string index);
-                void deleteItemDicoSelectedInput(std::string item);
                 int returnXCoordinate();
                 int returnYCoordinate();
-                void setCounter();
-                void increaseNumberMultiInput();
-                void deacreaseNumberMultiInput();
-                int returnNumberMultiInput();
 
             private:
                 Gtk::Button plusButton;
                 Gtk::Button minusButton;
                 Gtk::ComboBoxText firstComboBox;
                 Gtk::ComboBoxText secondComboBox;
-                Gtk::SpinButton spinButton;
                 std::vector<MultiInput*> vectorMultiInputs;
-                std::map<std::string, std::string> DicoSelectedInputs;
                 std::vector<std::string> vectorFirstComboBoxSelectedInputs;
                 std::vector<std::string> vectorSecondComboBoxSelectedInputs;
-                int SecondComboBoxItemsNumber;
                 int xcoordinates;
                 int ycoordinates;
                 std::map<std::string, int> DicoScoreFirstComboBox;
-                std::vector<std::string> (*functionForComboBoxOne)();
-                std::vector<std::string> (*functionForSecondComboBox)(std::string categorie);
-                void (*functionForSpinButton)();
-                //Controllor* ControllorAddress;
-                int numberMultiInput;
-                std::string dataToParse;
     };
 
 
@@ -498,12 +474,9 @@ class MultiInputOneComboBox{
             Gtk::ComboBoxText& returnComboBox();
             Gtk::SpinButton& returnSpinButton();
             void setLimitSpinButton(int limit);
-            //void AddText(std::string vectorPosition, std::string stringToAdd, int index);
-            //void DeleteText(std::string vectorPosition, int index);
             int returnSpinScore();
             std::string returnTextComboBox();
             void setVectorComboBox(std::vector<std::string>& vectorText);
-            void setComboBoxFunction(std::string index);
             void unsetActiveText();
             void resetSpinScore();
 
@@ -528,10 +501,6 @@ class ButtonmultiInputOneComboBox{
                 ButtonmultiInputOneComboBox();
                 virtual ~ButtonmultiInputOneComboBox();
                 Gtk::Button& returnButton(std::string sign);
-                //
-                //Gtk::ComboBoxText& returnComboBox(std::string position);
-                //Gtk::SpinButton& returnSpinButton();
-                //
                 void setLabelMultiComboBox();
                 std::vector<MultiInputOneComboBox*>& returnVectorMultiInput();
                 void setVectorSelectedInput();
@@ -542,39 +511,23 @@ class ButtonmultiInputOneComboBox{
                 std::map<std::string, int> returnDicoScoreComboBox();
                 std::vector<std::string> returnVectorSelectedInput();
                 void setLimitMultiInput();
-                void setComboBoxFunction(std::string index);
-                void setFunctionForComboBox(std::string index, std::vector<std::string> (&functionToSet)());
                 void setVectorComboBox(int index, std::vector<std::string> vectorReference);
                 void initialize();
                 void setNumberMultiInput(int number);
                 std::string returnTextComboBox(int number);
-                void deleteItemDicoSelectedInput(std::string item);
                 int returnXCoordinate();
                 int returnYCoordinate();
-                void setCounter();
-                void increaseNumberMultiInput();
-                void deacreaseNumberMultiInput();
-                int returnNumberMultiInput();
 
             private:
                 Gtk::Button plusButton;
                 Gtk::Button minusButton;
                 Gtk::ComboBoxText firstComboBox;
                 Gtk::ComboBoxText secondComboBox;
-                Gtk::SpinButton spinButton;
                 std::vector<MultiInputOneComboBox*> vectorMultiInputs;
-                std::map<std::string, std::string> DicoSelectedInputs;
                 std::vector<std::string> vectorComboBoxSelectedInputs;
-                int SecondComboBoxItemsNumber;
                 int xcoordinates;
                 int ycoordinates;
                 std::map<std::string, int> DicoScoreComboBox;
-                std::vector<std::string> (*functionForComboBoxOne)();
-                std::vector<std::string> (*functionForSecondComboBox)(std::string categorie);
-                void (*functionForSpinButton)();
-                //Controllor* ControllorAddress;
-                int numberMultiInput;
-                std::string dataToParse;
     };
 
 
@@ -597,7 +550,7 @@ class ButtonmultiInputOneComboBox{
 
     class Gui : public Gtk::Window{
         public:
-            Gui(RulesofGame& rulesGamereference);
+            Gui();
             virtual ~Gui();
             void setTableComboBox(int index, std::vector<std::string>& vectorElements);
             void initialiseTableLabel();
@@ -655,7 +608,6 @@ class ButtonmultiInputOneComboBox{
 
         private:
             Gtk::Grid mainGrid; 
-            RulesofGame& testGui;
             Gtk::Label tableLabel[15];
             Gtk::ComboBoxText tableComboBox[3];
             ButtonmultiInput attributesInput;
@@ -688,15 +640,12 @@ class ButtonmultiInputOneComboBox{
 
     class RulesofGame{
         public:
-            RulesofGame(Parsetext& parserReference, Gui& classReference);
+            RulesofGame(Parsetext& parserReference);
             ~RulesofGame();
             std::vector<std::string>& returnVectorClans();
             std::vector<std::string>& returnVectorNature();
             void setVectorClans();
             void setVectorNature();
-            //void setLimitSpinButton(vampireGameproject::ButtonmultiInput& buttonMultiInputReference, 
-            //    int limit);
-            //void setLimitSpinButtonAttributes(int limit);
             Parsetext& parser;
             void setVectorMultiInput(std::vector<std::string>& vectorInput);
             void setLimitPointsAttributes(int PhysicalPoints, int SocialPoints, int MentalPoints, int TalentsPoints,
@@ -715,10 +664,8 @@ class ButtonmultiInputOneComboBox{
             std::map<std::string, int> returnLimitPointsAttributes();
             
         private:
-            Gui& referenceOutterclass;
             std::vector<std::string> vectorClans;
             std::vector<std::string> vectorNature;
-            std::map<std::string, int> dictionnaryLimitWidget;
             std::map<std::string, int> limitPointsAttributes;
             
     };
@@ -792,8 +739,6 @@ class ButtonmultiInputOneComboBox{
             std::string getWillpower();
             void setBloodpool(float number);
             float getBloodpool();
-            //void setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines);
-            //std::map<std::string,std::map<std::string, int>> returnDisciplines();
             void setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines);
             std::vector<MultiDimensionnalDataStructure*> returnDisciplines();
             
@@ -874,8 +819,6 @@ class ButtonmultiInputOneComboBox{
             void initializeButtonMultiInputReference(ButtonmultiInput& ButtonMultiInputReference, 
                 std::string categorieMultiInput);
             void initializeButtonMultiInput(std::string categorieMultiInput);
-            //void testInputsSecondComboBox(ButtonmultiInput& ButtonMultiInputReference);
-            void AttributesInputsSecondComboBox();
             void testInputSecondComboBoxForGui(int number, std::string categorieMultiInput);
             void testInputSecondComboBoxChosenItems(ButtonmultiInput& ButtonMultiInputReference, int number, std::string categorieMultiInput);
             void testInputSpinButton(ButtonmultiInput& ButtonMultiInputReference, int number);
@@ -888,7 +831,6 @@ class ButtonmultiInputOneComboBox{
             void testInputSpinButtonWhenRemoved(std::string categorieMultiInput);
             void testInputPlusButtonForGui(std::string categorieMultiInput);
             void testInputMinusButtonForGui(std::string categorieMultiInput);
-            void setCounter();
             void initializeButtonMultiInputOneComboBox(std::string categorieMultiInput);
             void initializeButtonMultiInputReferenceOneComboBox(ButtonmultiInputOneComboBox& ButtonMultiInputOneComboBoxReference, 
                 std::string categorieMultiInputOneComboBox);
