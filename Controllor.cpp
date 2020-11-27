@@ -9,9 +9,8 @@
 *
 */
 
-vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
-    rulesGame(textParser, graphicalUserinterface), CharacterToCreate(textParser), 
-        createResultsFile(CharacterToCreate){
+vampireGameproject::Controllor::Controllor():rulesGame(textParser), CharacterToCreate(textParser),
+    createResultsFile(CharacterToCreate){
         graphicalUserinterface.set_title("Vampire Game Project");
         graphicalUserinterface.resize(400, 300);
         graphicalUserinterface.set_position(Gtk::WIN_POS_CENTER);
@@ -398,17 +397,17 @@ void vampireGameproject::Controllor::testClanButton(){
 void vampireGameproject::Controllor::testInputFirstComboBoxForGui(int number, std::string categorieMultiInput){
     if (categorieMultiInput == "attributes"){
         ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
-        testInputsFirstComboBoxChangingItems(graphicalUserinterface.returnAttributesInput(), number);
-        testInputSpinButton(graphicalUserinterface.returnAttributesInput(), number);
-        testInputsSecondComboBox(graphicalUserinterface.returnAttributesInput(), number, categorieMultiInput);
+        testInputsFirstComboBoxChangingItems(ButtonMultiInputReference, number);
+        testInputSpinButton(ButtonMultiInputReference, number);
+        testInputsSecondComboBox(ButtonMultiInputReference, number, categorieMultiInput);
     
     }
 
     if (categorieMultiInput == "abilities"){
         ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAbilitiesInput();
-        testInputsFirstComboBoxChangingItems(graphicalUserinterface.returnAbilitiesInput(), number);
-        testInputSpinButton(graphicalUserinterface.returnAbilitiesInput(), number);
-        testInputsSecondComboBox(graphicalUserinterface.returnAbilitiesInput(), number, categorieMultiInput);
+        testInputsFirstComboBoxChangingItems(ButtonMultiInputReference, number);
+        testInputSpinButton(ButtonMultiInputReference, number);
+        testInputsSecondComboBox(ButtonMultiInputReference, number, categorieMultiInput);
     }
 
     if (categorieMultiInput == "disciplines"){
@@ -2174,5 +2173,13 @@ void vampireGameproject::Controllor::submitUserChoices(){
        createResultsFile.writeResultsFile(filename);
        std::cout << filename << std::endl;
    }
+
+   std::vector<MultiDimensionnalDataStructure*> disciplinesVector;
+   
+   for(int iterator = 0; iterator < (int)disciplinesVector.size(); iterator++){
+       MultiDimensionnalDataStructure* MultiDimensionnalDataStructureReference = disciplinesVector[iterator];
+       disciplinesVector.erase(disciplinesVector.begin() + iterator);
+       delete MultiDimensionnalDataStructureReference;
+    }
 
 }
