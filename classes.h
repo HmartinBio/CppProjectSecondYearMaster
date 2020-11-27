@@ -417,8 +417,6 @@ union MultiDimensionnalDataStructure{
             Gtk::ComboBoxText& returnComboBox(std::string position);
             Gtk::SpinButton& returnSpinButton();
             void setLimitSpinButton(int limit);
-            void AddText(std::string vectorPosition, std::string stringToAdd, int index);
-            void DeleteText(std::string vectorPosition, int index);
             int returnSpinScore();
             std::string returnTextComboBox(std::string index);
             void setVectorComboBox(std::vector<std::string>& vectorText, std::string index);
@@ -710,7 +708,9 @@ class ButtonmultiInputOneComboBox{
                                     int ContactsPoints, int DomainPoints, int FamePoints, int GenerationPoints, int HerdPoints, 
                                         int InfluencePoints, int MentorPoints, int ResourcesPoints, int RetainersPoints, 
                                             int RitualsPoints, int StatusPoints, int ConsciencePoints, 
-                                                int SelfControlPoints, int CouragePoints, int SupernaturalPoints);
+                                                int SelfControlPoints, int CouragePoints, int SupernaturalPoints, 
+                                                    int DaimoinonPoints, int Sanginus, int MelpomineePoints, int FlightPoints, 
+                                                        int TemporisPoints, int OghamPoints);
 
             std::map<std::string, int> returnLimitPointsAttributes();
             
