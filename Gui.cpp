@@ -14,8 +14,7 @@
 
 
 
-vampireGameproject::Gui::Gui(RulesofGame& rulesGamereference): 
-    testGui(rulesGamereference){}
+vampireGameproject::Gui::Gui(){}
 
 
 
