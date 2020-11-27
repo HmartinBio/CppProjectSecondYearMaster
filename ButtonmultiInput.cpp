@@ -23,7 +23,13 @@ vampireGameproject::ButtonmultiInput::ButtonmultiInput(){}
 
 
 
-vampireGameproject::ButtonmultiInput::~ButtonmultiInput(){}
+vampireGameproject::ButtonmultiInput::~ButtonmultiInput(){
+    for(int iterator = 0; iterator < (int) vectorMultiInputs.size(); iterator++){
+        MultiInput* referenceMultiInput = vectorMultiInputs[iterator];
+        vectorMultiInputs.erase(vectorMultiInputs.begin() + iterator);
+        delete referenceMultiInput;   
+    }
+}
 
 
 /** Implementation of the returnButton method.
@@ -374,32 +380,3 @@ int vampireGameproject::ButtonmultiInput::returnYCoordinate(){
 // Si il y en a pas eu c'est open bar sinon pour les MultiInput où le texte n'est 
 // pas encore actif, on restreint le spin button et le choix des combobox
 
-
-
-
-/** Implementation of the deleteItemDicoSelectedInput method.
-*
-* Implementation of the deleteItemDicoSelectedInput method
-* Method deleting the chosen item of the DictionnarySelectedInputs
-*
-*/
-
- void vampireGameproject::ButtonmultiInput::deleteItemDicoSelectedInput(std::string item){
-     DicoSelectedInputs.erase(item);
- }
-
- void vampireGameproject::ButtonmultiInput::setCounter(){
-     numberMultiInput = 1;
- }
-
-void vampireGameproject::ButtonmultiInput::increaseNumberMultiInput(){
-    numberMultiInput += 1;
-}
-
-void vampireGameproject::ButtonmultiInput::deacreaseNumberMultiInput(){
-    numberMultiInput -= 1;
-}
-
-int vampireGameproject::ButtonmultiInput::returnNumberMultiInput(){
-    return numberMultiInput;
-}
