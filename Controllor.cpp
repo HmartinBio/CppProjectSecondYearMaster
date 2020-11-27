@@ -31,19 +31,18 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         graphicalUserinterface.setTableLabelAlign(13, "Select Blood Pool:");
         graphicalUserinterface.setTableLabelAlign(14, "Select Health:");
         
-        graphicalUserinterface.setTableLabelOnGrid(0, 0, 0, 1, 1); // 0
-        graphicalUserinterface.setTableLabelOnGrid(1, 0, 1, 1, 1); // 1
-        graphicalUserinterface.setTableLabelOnGrid(3, 0, 2, 1, 1); // 2
-        graphicalUserinterface.setTableLabelOnGrid(4, 0, 3, 1, 1); // 3
-        graphicalUserinterface.setTableLabelOnGrid(5, 0, 10, 1, 1); // 4
-        graphicalUserinterface.setTableLabelOnGrid(6, 0, 16, 1, 1); // 5
-        graphicalUserinterface.setTableLabelOnGrid(7, 0, 24, 1, 1); // 6
-        graphicalUserinterface.setTableLabelOnGrid(8, 0, 31, 1, 1); // 7
-        graphicalUserinterface.setTableLabelOnGrid(9, 0, 40, 1, 1); // 8
-        graphicalUserinterface.setTableLabelOnGrid(10, 0, 49, 1, 1); // 8
-        graphicalUserinterface.setTableLabelOnGrid(11, 0, 50, 1, 1); // 10
-        graphicalUserinterface.setTableLabelOnGrid(12, 0, 51, 1, 1); // 11
-        graphicalUserinterface.setTableLabelOnGrid(13, 0, 52, 1, 1); // 12
+        graphicalUserinterface.setTableLabelOnGrid(0, 0, 0, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(1, 0, 1, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(3, 0, 2, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(4, 0, 3, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(5, 0, 10, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(6, 0, 16, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(7, 0, 24, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(8, 0, 31, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(9, 0, 40, 1, 1);        graphicalUserinterface.setTableLabelOnGrid(10, 0, 49, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(11, 0, 50, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(12, 0, 51, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(13, 0, 52, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(14, 0, 53, 1, 1);
         graphicalUserinterface.initialiseEntryName();
         graphicalUserinterface.initialiseTableComboBox();
@@ -57,7 +56,8 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         rulesGame.setLimitPointsAttributes(5, 5, 5, 13, 
             9, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
                 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 
-                    5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 5);
+                    5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 
+                        5, 3, 3, 3, 3, 3, 3);
         initializeNicknameLabel();
         initializeButtonMultiInput("attributes");
         initializeButtonMultiInput("abilities");
@@ -71,6 +71,7 @@ vampireGameproject::Controllor::Controllor(): graphicalUserinterface(rulesGame),
         initializeHealthComboBox();
         initializeFinalButton();
         graphicalUserinterface.showAll();
+
 }
 
 
