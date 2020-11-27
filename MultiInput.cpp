@@ -150,8 +150,6 @@ std::string vampireGameproject::MultiInput::returnTextComboBox(std::string index
 
 
 
-
-
 /** Implementation of the setVectorComboBox method.
 *
 * Implementation of the setVectorComboBox method
