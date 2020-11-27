@@ -15,7 +15,13 @@ vampireGameproject::ButtonmultiInputOneComboBox::ButtonmultiInputOneComboBox(){}
 
 
 
-vampireGameproject::ButtonmultiInputOneComboBox::~ButtonmultiInputOneComboBox(){}
+vampireGameproject::ButtonmultiInputOneComboBox::~ButtonmultiInputOneComboBox(){
+    for(int iterator = 0; iterator < (int)vectorMultiInputs.size(); iterator++){
+        MultiInputOneComboBox* referenceMultiInput = vectorMultiInputs[iterator];
+        vectorMultiInputs.erase(vectorMultiInputs.begin() + iterator);
+        delete referenceMultiInput;
+    }
+}
 
 
 /** Implementation of the returnButton method.
@@ -362,10 +368,10 @@ int vampireGameproject::ButtonmultiInputOneComboBox::returnYCoordinate(){
 * Method deleting the chosen item of the DictionnarySelectedInputs
 *
 */
-
+/* 
  void vampireGameproject::ButtonmultiInputOneComboBox::deleteItemDicoSelectedInput(std::string item){
      DicoSelectedInputs.erase(item);
- }
+ } */
 
  /* void vampireGameproject::ButtonmultiInput::setCounter(){
      numberMultiInput = 1;
