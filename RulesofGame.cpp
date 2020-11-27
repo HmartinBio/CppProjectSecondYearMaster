@@ -155,7 +155,8 @@ void vampireGameproject::RulesofGame::setLimitPointsAttributes(int PhysicalPoint
             int VicissitudePoints, int AlliesPoints, int AlternateIdentityPoints, int BlackHandMembershipPoints, int ContactsPoints, 
                 int DomainPoints, int FamePoints, int GenerationPoints, int HerdPoints, int InfluencePoints, int MentorPoints, 
                     int ResourcesPoints, int RetainersPoints, int RitualsPoints, int StatusPoints, int ConsciencePoints, 
-                        int SelfControlPoints, int CouragePoints, int SupernaturalPoints){
+                        int SelfControlPoints, int CouragePoints, int SupernaturalPoints, int DaimoinonPoints, int SanginusPoints, 
+                            int MelpomineePoints, int FlightPoints, int TemporisPoints, int OghamPoints){
                         limitPointsAttributes.insert(std::pair<std::string, int>("Physical", PhysicalPoints));
                         limitPointsAttributes.insert(std::pair<std::string, int>("Social", SocialPoints));
                         limitPointsAttributes.insert(std::pair<std::string, int>("Mental", MentalPoints));
@@ -197,6 +198,12 @@ void vampireGameproject::RulesofGame::setLimitPointsAttributes(int PhysicalPoint
                         limitPointsAttributes.insert(std::pair<std::string, int>("Self-Control", SelfControlPoints));
                         limitPointsAttributes.insert(std::pair<std::string, int>("Courage", CouragePoints));
                         limitPointsAttributes.insert(std::pair<std::string, int>("Supernatural", SupernaturalPoints));
+                        limitPointsAttributes.insert(std::pair<std::string, int>("Daimoinon", DaimoinonPoints));
+                        limitPointsAttributes.insert(std::pair<std::string, int>("Sanginus", SanginusPoints));
+                        limitPointsAttributes.insert(std::pair<std::string, int>("Melpominee", MelpomineePoints));
+                        limitPointsAttributes.insert(std::pair<std::string, int>("Flight", FlightPoints));
+                        limitPointsAttributes.insert(std::pair<std::string, int>("Temporis", TemporisPoints));
+                        limitPointsAttributes.insert(std::pair<std::string, int>("Ogham", OghamPoints));
 }
 
 
