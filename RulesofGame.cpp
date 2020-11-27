@@ -11,7 +11,7 @@
 * @param classReference: reference of the Gui class containing RulesofGame class
 */
 
-vampireGameproject::RulesofGame::RulesofGame(Parsetext& parserReference, Gui& classReference): parser(parserReference), referenceOutterclass(classReference){}
+vampireGameproject::RulesofGame::RulesofGame(Parsetext& parserReference): parser(parserReference){}
 
 
 /** Destructor of the class RulesofGame.
