@@ -633,10 +633,6 @@ namespace vampireGameproject{
             void setTableLabel(int index, std::string label);
             void setTableLabelOnGrid(int index, int xcoordinates, int ycoordinates, int width, int height);
             void setTableComboBoxOnGrid(int index, int indexLabel);
-            void setMultiComboBox(Gtk::Button& buttonPlus, Gtk::Button& buttonMinus,
-                Gtk::ComboBoxText& ComboFirst, Gtk::ComboBoxText& ComboSecond,
-                Gtk::SpinButton& buttonSpin, int xcoordinates, int ycoordinates, int width, int height);
-            
             void setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height);
             void setLabelMultiComboBoxAttributes();
             void setLabelMultiComboBoxAbilities();
@@ -721,7 +717,6 @@ namespace vampireGameproject{
             void setVectorClans();
             void setVectorNature();
             Parsetext& parser;
-            void setVectorMultiInput(std::vector<std::string>& vectorInput);
             void setLimitPointsAttributes(int PhysicalPoints, int SocialPoints, int MentalPoints, int TalentsPoints,
                 int SkillsPoints, int KnowledgesPoints, int AnimalismPoints, int AuspexPoints, int CelerityPoints, 
                     int ChimerstryPoints, int DementationPoints, int DominatePoints, int FortitudePoints, int NecromancyPoints, 
