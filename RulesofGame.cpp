@@ -5,11 +5,12 @@
 *
 * Modification of the constructor of RulesofGame
 * Initialisation of a Gui reference 
-* before the Nature constructor be initialised
+* before the RulesofGame constructor be initialised
 *
-* @param parserReference: Reference of ParseText object 
-* @param classReference: reference of the Gui class containing RulesofGame class
+* @param parserReference: Reference of ParseText object
 */
+
+
 
 vampireGameproject::RulesofGame::RulesofGame(Parsetext& parserReference): parser(parserReference){}
 
@@ -26,7 +27,8 @@ vampireGameproject::RulesofGame::~RulesofGame(){}
 /** Implementation of the setVectorClans method.
 *
 * Implementation of the setVectorClans method
-* Method*/
+* Method setting the list of Clans in the vector
+* Clans */
 
 
 
@@ -39,7 +41,8 @@ void vampireGameproject::RulesofGame::setVectorClans(){
 /** Implementation of the setVectorNature method.
 *
 * Implementation of the setVectorNature method
-* Method*/
+* Method setting the list of Nature in the 
+* vectorNature */
 
 
 void vampireGameproject::RulesofGame::setVectorNature(){
@@ -52,7 +55,7 @@ void vampireGameproject::RulesofGame::setVectorNature(){
 /** Implementation of the returnVectorClans method.
 *
 * Implementation of the returnVectorClans method
-* Method allowign to return vector of Clans*/
+* Method allowing to return vector of Clans*/
 
 
 
@@ -66,9 +69,7 @@ std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorClans(){
 /** Implementation of the returnVectorNature method.
 *
 * Implementation of the returnVectorNature method
-* Method allowign to return vector of Nature*/
-
-
+* Method allowing to return vector of Nature*/
 
 
 
@@ -78,19 +79,6 @@ std::vector<std::string>& vampireGameproject::RulesofGame::returnVectorNature(){
     return vectorNature;
 }
 
-//void vampireGameproject::RulesofGame::setLimitSpinButton(vampireGameproject::ButtonmultiInput& buttonMultiInputReference, int limit){
-//    buttonMultiInputReference.setLimitSpinButton(limit);
-//}
-
-//void vampireGameproject::RulesofGame::setLimitSpinButtonAttributes(int limit){
-//    setLimitSpinButton(referenceOutterclass.returnAttributesInput(), limit);
-//}
-
-
-
-
-void vampireGameproject::RulesofGame::setVectorMultiInput(std::vector<std::string>& vectorInput){}
-
 
 
 
@@ -98,7 +86,7 @@ void vampireGameproject::RulesofGame::setVectorMultiInput(std::vector<std::strin
 /** Implementation of the setLimitiPointsAttributes method.
 *
 * Implementation of the setLimitPointsAttributes method
-* Method allowing to set the limiti points of the Spin Box in the Gui
+* Method allowing to set the limit points of the Spin Box in the Gui
 *
 * @param PhysicalPoints: Limit of Physical Points 
 * @param SocialPoints: Limit of Social Points 
@@ -140,7 +128,13 @@ void vampireGameproject::RulesofGame::setVectorMultiInput(std::vector<std::strin
 * @param ConsciencePoints: Limit of Conscience Points 
 * @param SelfControlPoints: Limit of Self-Control Points 
 * @param CouragePoints: Limit of Courage Points 
-* @param SupernaturalPoints: Limit of Supernatural Points 
+* @param SupernaturalPoints: Limit of Supernatural Points
+* @param DaimoinonPoints: Limit of Daimoinon Points
+* @param SanginusPoints: Limit of Sanginus Points
+* @param MelpomineePoints: Limit of Melpominee Points
+* @param FlightPoints: Limit of Flight Points
+* @param TemporisPoints: Limit of Temporis Points
+* @param OghamPoints: Limit of Ogham Points
 */
 
 
