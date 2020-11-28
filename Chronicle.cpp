@@ -75,7 +75,7 @@ void vampireGameproject::Chronicle::setChronicle(std::string chronicle){
 
 
 void vampireGameproject::Chronicle::setDescription(void){
-    //description = textParser.parse_text();
+    //description = textParser.parseText();
     description = "test";
 }
 
