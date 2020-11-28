@@ -8,7 +8,7 @@
 * Initialisation of a Parsetext reference 
 * before the Nature constructor be initialised
 *
-* @param textParse reference of Parsetext object
+* @param textParse: reference of Parsetext object
 *
 */
 
@@ -52,7 +52,7 @@ std::string vampireGameproject::Generation::getGeneration(void){
 * Implementation of the setGeneration method
 * Method setting the generation
 * 
-* @param generation generation categorie to set
+* @param generation: generation categorie to set
 * 
 */
 
@@ -84,7 +84,7 @@ int vampireGameproject::Generation::getAge(void){
 * Implementation of the setAge method
 * Method setting the age value
 * 
-* @param age age value to set
+* @param age: age value to set
 * 
 */
 
