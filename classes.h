@@ -52,23 +52,23 @@ namespace vampireGameproject{
         public:
             Parsetext();
             ~Parsetext();
-            std::string parse_text(std::string categorie);
-            std::string parse_text(std::string categorie, std::string caracteristics);
-            std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence);
-            std::vector<std::string> parse_listClans(void);
-            std::vector<std::string> parse_listNature(void);
-            std::string parse_NicknameClan(std::string clanName);
-            std::vector<std::string> parse_ClanDisciplines(std::string clanName);
-            std::vector<std::string> parse_Attributes();
-            std::vector<std::string> parse_AttributesCategorie(std::string categorie);
-            std::vector<std::string> parse_Abilities();
-            std::vector<std::string> parse_AbilitiesCategorie(std::string categorieToGet);
-            std::vector<std::string> parse_Backgrounds();
-            std::vector<std::string> parse_ClanDisciplinesCategorie(std::string categorie);
-            std::vector<std::string> parse_Viritues();
-            std::vector<std::string> parse_MeritsFlaws();
-            std::vector<std::string> parse_MeritsFlawsCategorie(std::string categorie);
-            std::vector<std::string> parse_Health();
+            std::string parseText(std::string categorie);
+            std::string parseText(std::string categorie, std::string caracteristics);
+            std::string parseText(std::string categorie, std::string table, std::string nameOfcomptence);
+            std::vector<std::string> parselistClans(void);
+            std::vector<std::string> parselistNature(void);
+            std::string parseNicknameClan(std::string clanName);
+            std::vector<std::string> parseClanDisciplines(std::string clanName);
+            std::vector<std::string> parseAttributes();
+            std::vector<std::string> parseAttributesCategorie(std::string categorie);
+            std::vector<std::string> parseAbilities();
+            std::vector<std::string> parseAbilitiesCategorie(std::string categorieToGet);
+            std::vector<std::string> parseBackgrounds();
+            std::vector<std::string> parseClanDisciplinesCategorie(std::string categorie);
+            std::vector<std::string> parseViritues();
+            std::vector<std::string> parseMeritsFlaws();
+            std::vector<std::string> parseMeritsFlawsCategorie(std::string categorie);
+            std::vector<std::string> parseHealth();
     };
 
 
