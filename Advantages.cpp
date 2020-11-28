@@ -8,11 +8,14 @@
 * Initialisation of a Parsetext reference 
 * before the Advantages constructor be initialised
 *
-* @param textParse reference of Parsetext
+* @param textParse: reference of Parsetext
 */
 
 
 vampireGameproject::Advantages::Advantages(Parsetext& textParse): textParser(textParse){}
+
+
+
 
 
 /** Destructor of the class Advantages.
@@ -33,7 +36,7 @@ vampireGameproject::Advantages::~Advantages(){}
 * Implementation of the getAdvantages method
 * Method returning the Advantages
 * 
-* @param tableName
+* @param tableName: name of the map category to return the associated map  
 *
 */
 
@@ -62,9 +65,9 @@ std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::st
 * Implementation of the setAdvantages method
 * Method setting the advantages
 * 
-* @param tableName name of the table where setting the abilitie
-* @param abilitieName name of the abilitie to set
-* @param value value of the abilitie to set
+* @param tableName: name of the table where setting the advantage
+* @param abilitieName: name of the advantage to set
+* @param value: value of the advantage to set
 */
 
 
@@ -90,8 +93,8 @@ std::map<std::string, int> vampireGameproject::Advantages::getAdvantages(std::st
 * getDescriptionadvantages method allows to return the description of 
 * an advantage 
 * 
-* @param table name of the table to look for an advantage 
-* @param attributeName name of the advantage to return the description
+* @param table: name of the table to look for an advantage 
+* @param attributeName: name of the advantage to return the description
 */
 
 
