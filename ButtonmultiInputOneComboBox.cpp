@@ -5,13 +5,17 @@
 *
 * Modification of the constructor of ButtonmultiInputOneComboBox*/
 
+
 vampireGameproject::ButtonmultiInputOneComboBox::ButtonmultiInputOneComboBox(){}
 
 
 
 /** Destructor of the class ButtonmultiInputOneComboBox.
 *
-* Modification of the destructor of ButtonmultiInputOneComboBox*/
+* Modification of the destructor of ButtonmultiInputOneComboBox
+* Deleting all the MultiInput address contained in
+* the vectorMultiInputs
+*/
 
 
 
@@ -24,12 +28,13 @@ vampireGameproject::ButtonmultiInputOneComboBox::~ButtonmultiInputOneComboBox(){
 }
 
 
+
 /** Implementation of the returnButton method.
 *
 * Implementation of the returnButton method
 * Method returning the button reference
 * 
-* @param sign sign of the button to return 
+* @param sign: sign of the button to return 
 * 
 */
 
@@ -45,48 +50,6 @@ Gtk::Button& vampireGameproject::ButtonmultiInputOneComboBox::returnButton(std::
 }
 
 
-
-/** Implementation of the returnComboBox method.
-*
-* Implementation of the returnComboBox method
-* Method returning the Combobox Reference
-* 
-* @param position position of the ComboBox to return 
-*
-*/
-
-
-////
-
-//Gtk::ComboBoxText& vampireGameproject::ButtonmultiInput::returnComboBox(std::string position){
-//    if (position == "first"){
-       // return firstComboBox;
-//    }
-
-//    else{
-//        return secondComboBox;
-//    }
-//}
-
-
-
-/** Implementation of the returnSpinButton method.
-*
-* Implementation of the returnSpinButton method
-* Method returning the SpinButton of the MultiInputOneComboBox
-* 
-* @param tableName name of the table to return 
-*
-*/
-
-
-
-//Gtk::SpinButton& vampireGameproject::ButtonmultiInput::returnSpinButton(){
-//    return spinButton;
-//} 
-
-
-////
 
 
 /** Implementation of the setLabelMultiComboBox method.
@@ -122,7 +85,9 @@ std::vector<vampireGameproject::MultiInputOneComboBox*>& vampireGameproject::But
 /** Implementation of the setDicoScoreFirstComboBox method.
 *
 * Implementation of the setDicoScoreFirstComboBox method
-* Method setting the score by item of the Combo Box*/
+* Method setting the score by item of the ComboBoxText*/
+
+
 
 
 
@@ -131,6 +96,7 @@ void vampireGameproject::ButtonmultiInputOneComboBox::setDicoScoreFirstComboBox(
     of the ComboBox*/
 
     std::map<std::string, int> mapCounter;
+
 
     /*Iterating on the set of MultiInputOneComboBox, for each MultiInputOneComboBox
     If the ComboBox item is not in the dictionnary, 
@@ -170,6 +136,7 @@ void vampireGameproject::ButtonmultiInputOneComboBox::setDicoScoreFirstComboBox(
 
 
 
+
 /** Implementation of the setVectorSelectedInput method.
 *
 * Implementation of the setVectorSelectedInput method
@@ -178,11 +145,11 @@ void vampireGameproject::ButtonmultiInputOneComboBox::setDicoScoreFirstComboBox(
 
 
 
-
 void vampireGameproject::ButtonmultiInputOneComboBox::setVectorSelectedInput(){
 
     /* Cleaning the vectors containing the selected items 
-    of the First and the Second ComboBox*/
+    of the ComboBox in each MultiInputOneComboBox object*/
+
 
     vectorComboBoxSelectedInputs.clear();
     
@@ -201,10 +168,11 @@ void vampireGameproject::ButtonmultiInputOneComboBox::setVectorSelectedInput(){
 
 
 
+
 /** Implementation of the setMultiInput method.
 *
 * Implementation of the setMultiInput method
-* Method setting a new MultiInputOneComboBox */
+* Method setting a new MultiInputOneComboBox object*/
 
 
 
@@ -220,7 +188,7 @@ void vampireGameproject::ButtonmultiInputOneComboBox::setMultiInput(){
 /** Implementation of the deleteMultiInput method.
 *
 * Implementation of the deleteMultiInput method
-* Method deleting the last MultiInputOneComboBox of the vector*/
+* Method deleting the last MultiInputOneComboBox from the vectorMultiInputs */
 
 
 
@@ -236,13 +204,12 @@ void vampireGameproject::ButtonmultiInputOneComboBox::deleteMultiInput(){
 /** Implementation of the setCoordinates method.
 *
 * Implementation of the setCoordinates method
-* Method setting the coordinates of the ButtonMultiInputOneComboBox
+* Method setting the coordinates of the ButtonMultiInputOneComboBox object
 * 
-* @param coordinateX absciss coordinate 
-* @param coordinateY image coordinate
+* @param coordinateX: absciss coordinate 
+* @param coordinateY: image coordinate
 *
 */
-
 
 
 void vampireGameproject::ButtonmultiInputOneComboBox::setCoordinates(int coordinateX, int coordinateY){
@@ -278,7 +245,7 @@ std::vector<std::string> vampireGameproject::ButtonmultiInputOneComboBox::return
 /** Implementation of the initialize method.
 *
 * Implementation of the initialize method
-* Method initializing the ButtonMultiInputOneComboBox */
+* Method initializing the ButtonMultiInputOneComboBox object */
 
 
 void vampireGameproject::ButtonmultiInputOneComboBox::initialize(){
@@ -319,12 +286,11 @@ std::string vampireGameproject::ButtonmultiInputOneComboBox::returnTextComboBox(
 
 
 
-
 /** Implementation of the returnXCoordinate method.
 *
 * Implementation of the returnXCoordinate method
-* Method returning the x coordinate of the 
-* ButtonMultiInputOneComboBox */
+* Method returning the x coordinate from the 
+* ButtonMultiInputOneComboBox object */
 
 
 
@@ -333,11 +299,12 @@ int vampireGameproject::ButtonmultiInputOneComboBox::returnXCoordinate(){
 }
 
 
+
 /** Implementation of the returnYCoordinate method.
 *
 * Implementation of the returnYCoordinate method
-* Method returning the y coordinate of the 
-* ButtonMultiInputOneComboBox */
+* Method returning the y coordinate from the 
+* ButtonMultiInputOneComboBox object */
 
 
 
@@ -345,46 +312,3 @@ int vampireGameproject::ButtonmultiInputOneComboBox::returnYCoordinate(){
     return ycoordinates;
 }
 
-
-
-
-
-
-
-
-// Il faudrait passer les fonctions du Controlleur au buttonMultiInput
-// Le contrôleur regarderait si les points sont atteints où pas et 
-// supprimerait pour les autres MultiInput le texte choisis
-// Le contrôleur transmettrait une fonction où il regarde si il y a eu des choix ou pas encore 
-// Si il y en a pas eu c'est open bar sinon pour les MultiInput où le texte n'est 
-// pas encore actif, on restreint le spin button et le choix des combobox
-
-
-
-
-/** Implementation of the deleteItemDicoSelectedInput method.
-*
-* Implementation of the deleteItemDicoSelectedInput method
-* Method deleting the chosen item of the DictionnarySelectedInputs
-*
-*/
-/* 
- void vampireGameproject::ButtonmultiInputOneComboBox::deleteItemDicoSelectedInput(std::string item){
-     DicoSelectedInputs.erase(item);
- } */
-
- /* void vampireGameproject::ButtonmultiInput::setCounter(){
-     numberMultiInput = 1;
- }
-
-void vampireGameproject::ButtonmultiInput::increaseNumberMultiInput(){
-    numberMultiInput += 1;
-}
-
-void vampireGameproject::ButtonmultiInput::deacreaseNumberMultiInput(){
-    numberMultiInput -= 1;
-}
-
-int vampireGameproject::ButtonmultiInput::returnNumberMultiInput(){
-    return numberMultiInput;
-} */
