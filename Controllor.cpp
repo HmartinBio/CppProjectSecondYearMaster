@@ -4,13 +4,19 @@
 /** Constructor of the class Controllor.
 *
 * Modification of the constructor of Controllor
-* 
-*
+* Initialising all the elements to build the 
+* Graphical User Interface
 *
 */
 
 vampireGameproject::Controllor::Controllor():rulesGame(textParser), CharacterToCreate(textParser),
     createResultsFile(CharacterToCreate){
+        
+
+        /*Setting the title of the Window
+        Resizing the Window and Initialising labels */
+
+
         graphicalUserinterface.set_title("Vampire Game Project");
         graphicalUserinterface.resize(400, 300);
         graphicalUserinterface.set_position(Gtk::WIN_POS_CENTER);
@@ -30,6 +36,10 @@ vampireGameproject::Controllor::Controllor():rulesGame(textParser), CharacterToC
         graphicalUserinterface.setTableLabelAlign(13, "Select Blood Pool:");
         graphicalUserinterface.setTableLabelAlign(14, "Select Health:");
         
+
+        /*Placing labels on the Graphical User Interface*/
+
+
         graphicalUserinterface.setTableLabelOnGrid(0, 0, 0, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(1, 0, 1, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(3, 0, 2, 1, 1);
@@ -38,25 +48,69 @@ vampireGameproject::Controllor::Controllor():rulesGame(textParser), CharacterToC
         graphicalUserinterface.setTableLabelOnGrid(6, 0, 16, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(7, 0, 24, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(8, 0, 31, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(9, 0, 40, 1, 1);        graphicalUserinterface.setTableLabelOnGrid(10, 0, 49, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(9, 0, 40, 1, 1);        
+        graphicalUserinterface.setTableLabelOnGrid(10, 0, 49, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(11, 0, 50, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(12, 0, 51, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(13, 0, 52, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(14, 0, 53, 1, 1);
+        
+
+        /*Initialising the Entry Widget
+        Initialising ComboBoxText which are not
+        a part of MultiInput objects*/
+
+
         graphicalUserinterface.initialiseEntryName();
         graphicalUserinterface.initialiseTableComboBox();
+
+
+        /*Initialising list of clans and list of 
+        Nature*/
+
+
         rulesGame.setVectorClans();
         rulesGame.setVectorNature();
+
+
+        /*Initialising ComboBoxText not linked to MultiInput Object
+        with vector containing the associated text to display 
+        in the ComboBoxText items*/
+
+
         graphicalUserinterface.setTableComboBox(0, rulesGame.returnVectorClans());
         graphicalUserinterface.setTableComboBox(1, rulesGame.returnVectorNature());
+
+
+        /*Placing ComboBoxTexts not linked to MultiInput Object
+        on the Graphical User Interface */
+
+
         graphicalUserinterface.setTableComboBoxOnGrid(0, 3);
         graphicalUserinterface.setTableComboBoxOnGrid(1, 4);
         graphicalUserinterface.setTableComboBoxOnGrid(2, 14);
+
+
+        /*Setting the limit points to all the elements
+        in all the categories in the game to limit the user 
+        to choose items in the game with a some limit points
+        for all the elements */
+
+
         rulesGame.setLimitPointsAttributes(5, 5, 5, 13, 
             9, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
                 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 
                     5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 
                         5, 3, 3, 3, 3, 3, 3);
+
+
+
+        /*Initialising the NickNameLabel and all the 
+        ButtonMultiInput and ButtonMultiInputOneComboBox
+        objects
+        Initialising SpinButton, Health ComboBoxText and submit button*/
+
+
         initializeNicknameLabel();
         initializeButtonMultiInput("attributes");
         initializeButtonMultiInput("abilities");
@@ -69,6 +123,9 @@ vampireGameproject::Controllor::Controllor():rulesGame(textParser), CharacterToC
         initializeSpinButton("bloodPool");
         initializeHealthComboBox();
         initializeFinalButton();
+        
+        /*Displaying all the elements on the interface*/
+        
         graphicalUserinterface.showAll();
 
 }
@@ -86,10 +143,11 @@ vampireGameproject::Controllor::~Controllor(){}
 
 
 
+
 /** Implementation of the testInputsFirstComboBoxChangingItems method.
 *
 * Implementation of the testInputsFirstComboBoxChangingItems method
-* Method unsetting the text of the Second Combo Box, if the
+* Method unsetting the text of the Second Combo BoxText, if the
 * item of the first comboBox is changed. If it's changed, so, 
 * the text of the second comboBox is clear and the spin score is clear too 
 * This method works with the MultiInputs composed of two comboBoxesText.
@@ -111,6 +169,11 @@ void vampireGameproject::Controllor::testInputsFirstComboBoxChangingItems(Button
     vectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput();
     
     if (vectorMultiInput[number]->returnTextComboBox("first") != ""){
+
+        /*If the first ComboBoxText is empty, we append an element to avoid 
+        conflicts with the use of the gtkmm function when we clean all the 
+        elements in the FirstComboBoxText*/
+
         vectorMultiInput[number]->returnComboBox("second").append("test");
         vectorMultiInput[number]->returnComboBox("second").remove_all();
     }
@@ -125,20 +188,20 @@ void vampireGameproject::Controllor::testInputsFirstComboBoxChangingItems(Button
 /** Implementation of the testInputsFirstComboBoxChangingItemsOneComboBox method.
 *
 * Implementation of the testInputsFirstComboBoxChangingItemsOneComboBox method
-* Method resetting the spin score associated to the selected MultiInput.
-* This method works for the MultiInput composed of only one ComboBoxText  
+* Method resetting the spin score associated to the selected MultiInputOneComboBox.
+* This method works for the MultiInputOneComboBox composed of only one ComboBoxText  
 *
 * @param ButtonmultiInputOneComboBoxReference: Reference of the ButtonMultiInputOneComboBox object 
     to retrieve the MultiInputOneComboBox vector to clear the spin Button score and the text of the 
-    Second Combo Box of the selected MultiInputOneComboBox in the vector
+    Combo BoxText of the selected MultiInputOneComboBox in the vector
 * @param number: number of the MultiInputOneComboBox to select in the MultiInputOneComboBox vector
 */
 
 
  void vampireGameproject::Controllor::testInputsFirstComboBoxChangeItemsOneComboBox(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number){
     std::vector<MultiInputOneComboBox*> vectorMultiInputOneComboBox;
+    
     vectorMultiInputOneComboBox = ButtonmultiInputOneComboBoxReference.returnVectorMultiInput();
-
     vectorMultiInputOneComboBox[number]->resetSpinScore();
  } 
 
@@ -148,10 +211,10 @@ void vampireGameproject::Controllor::testInputsFirstComboBoxChangingItems(Button
 
 /** Implementation of the testInputsSecondComboBox method.
 *
-* Implementation of the testInputsFirstComboBox method
-* Method setting the text in the secondComboBox, if the 
-* user already chose an item in the FirstComboBox, 
-* When the user chose an item in the second comboBox, 
+* Implementation of the testInputsSecondComboBox method
+* Method setting the text in the secondComboBoxText, if the 
+* user already chose an item in the FirstComboBoxText, 
+* When the user chose an item in the secondcomboBox, 
 * this item can't be used by the others secondComboBox
 *
 * @param ButtonMultiInputReference: Reference of the ButtonMultiInput object
@@ -179,18 +242,18 @@ void vampireGameproject::Controllor::testInputsSecondComboBox(ButtonmultiInput& 
 
         std::vector<std::string> vectorAttributesCategorie = textParser.parse_AttributesCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
     
-        /*Initialising a vector to save all the MultiInputs*/
+        /*Initialising a vector to save all the MultiInputs objects*/
 
         std::vector<MultiInput*> vectorMultiInputs = ButtonMultiInputReference.returnVectorMultiInput();
 
         /*Iteration of elements already entered by the user
         If a first ComboBoxText iterated element entered 
-        by the user for a MultiInput is detected somewhere else,  
+        by the user for a MultiInput object is detected somewhere else,  
         we look the iterated second item, if the iterated second item
         corresponds with a second term present in the vector of selected 
-        second items, then, it means it's the same MultiInput 
+        second items, then, it means it's the same MultiInput object
         If it's not the case, the second term present in the vector 
-        selected second item is deleted for this MultiInput whose the choice
+        selected second item is deleted for this MultiInput object whose the choice
         doesn't correspond to this second term*/
 
 
@@ -317,14 +380,15 @@ void vampireGameproject::Controllor::testInputsSecondComboBox(ButtonmultiInput& 
 
 
 
+
 /** Implementation of the testClanButton method.
 *
 * Implementation of the testClanButton method
-* Method updating the text in the First ComboBox associated 
-* to the ButtonMultiInput linked to disciplines when the user
+* Method updating the text in the First ComboBoxText associated 
+* to the ButtonMultiInput object linked to disciplines when the user
 * chooses a clan. If the user chooses another clan and fields exist 
-* in MultiInput ComboBoxes associated to disciplines, then, these one 
-* are destroyed*/
+* in MultiInput ComboBoxes associated to disciplines of the old clan, 
+* then, these one are destroyed*/
 
 
 
@@ -379,15 +443,15 @@ void vampireGameproject::Controllor::testClanButton(){
 /** Implementation of the testInputsFirstComboBoxForGui method.
 *
 * Implementation of the testInputsFirstComboBoxForGui method
-* Method reseting the second comboboxtext and the spin score
+* Method reseting the second ComboBoxText and the spin score
 * and the Spin Button is tested such as we select a score available
 * for the First ComboBoxText item. Then, the SecondComboBoxText is updated
 * to make appear Second ComboBoxText items corresponding to the selected First 
 * ComboBoxText item
 * 
 * @param number: number of the MultiInput to select in the MultiInput Vector
-* @param categorieMultiInput: type of ButtonMultiInput alllowing to select the ButtonMutiInputobject to test SpinScore and Second ComboBox
-* when it's available
+* @param categorieMultiInput: type of ButtonMultiInput alllowing to select the ButtonMutiInputobject 
+* to test SpinScore and Second ComboBoxText when it's available
 */
 
 
@@ -446,7 +510,7 @@ void vampireGameproject::Controllor::testInputFirstComboBoxForGui(int number, st
 /** Implementation of the testInputSecondComboBoxForGui method.
 *
 * Implementation of the testInputSecondComboBoxForGui method
-* Method updating the dictionnary of selected inputs
+* Method updating the vectors of selected inputs
 * And from that, updating the items of the Second ComboBoxes
 * for all the Concerned MultiInputs. This methods works for   
 * MultiInputs composed of two ComboBoxesText
@@ -493,7 +557,7 @@ void vampireGameproject::Controllor::testInputSecondComboBoxForGui(int number, s
 * of the First ComboBox Item 
 *
 * @param number: number of the MultiInput to select in the MultiInput Vector
-* @param categorieMultiInput: 
+* @param categorieMultiInput: MultiInput categorie to select
 */
 
 
@@ -568,7 +632,7 @@ void vampireGameproject::Controllor::testInputMinusButtonForGui(std::string cate
 
 /** Implementation of the testInputSpinButtonWhenRemoved method.
 *
-* Implementation of the testInputSpinButtonWhenRemove method
+* Implementation of the testInputSpinButtonWhenRemoved method
 * Method updating the Spin Score when a MultiInput is deleted
 * The Spin Score for all the others MultiInput is actualised 
 * in real time when an item is deleted
@@ -1767,6 +1831,8 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReferenceOneCombo
 
 
 
+
+
 /** Implementation of the initializeButtonMultiInput method.
 *
 * Implementation of the initializeButtonMultiInput method
@@ -1814,7 +1880,6 @@ void vampireGameproject::Controllor::initializeButtonMultiInput(std::string cate
 
 
 
-
 void vampireGameproject::Controllor::initializeButtonMultiInputOneComboBox(std::string categorieMultiInput){
     if (categorieMultiInput == "backgrounds"){
         initializeButtonMultiInputReferenceOneComboBox(graphicalUserinterface.returnBackgroundsInput(), 
@@ -1847,10 +1912,10 @@ void vampireGameproject::Controllor::deleteMultiInput(std::string categorieMulti
     
     if (categorieMultiInput == "attributes"){
          ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAttributesInput();
-    
-   
+       
         std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput(); 
     
+
         if (VectorMultiInput.size() != 1){
 
             graphicalUserinterface.deleteMultiInputOnGrid(ButtonMultiInputReference, VectorMultiInput.size() - 1);
@@ -1861,9 +1926,9 @@ void vampireGameproject::Controllor::deleteMultiInput(std::string categorieMulti
     if (categorieMultiInput == "abilities"){
         ButtonmultiInput& ButtonMultiInputReference = graphicalUserinterface.returnAbilitiesInput();
     
-   
         std::vector<MultiInput*> VectorMultiInput = ButtonMultiInputReference.returnVectorMultiInput(); 
     
+
         if (VectorMultiInput.size() != 1){
 
             graphicalUserinterface.deleteMultiInputOnGrid(ButtonMultiInputReference, VectorMultiInput.size() - 1);
@@ -1875,7 +1940,8 @@ void vampireGameproject::Controllor::deleteMultiInput(std::string categorieMulti
         ButtonmultiInput& ButtonmultiInputReference = graphicalUserinterface.returnDisciplinesInput();
 
         std::vector<MultiInput*> VectorMultiInput = ButtonmultiInputReference.returnVectorMultiInput(); 
-    
+
+
         if (VectorMultiInput.size() != 1){
 
             graphicalUserinterface.deleteMultiInputOnGrid(ButtonmultiInputReference, VectorMultiInput.size() - 1);
@@ -1888,6 +1954,7 @@ void vampireGameproject::Controllor::deleteMultiInput(std::string categorieMulti
         ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference = graphicalUserinterface.returnBackgroundsInput();
         std::vector<MultiInputOneComboBox*> VectorMultiInput = ButtonmultiInputOneComboBoxReference.returnVectorMultiInput();
 
+
         if (VectorMultiInput.size() != 1){
             graphicalUserinterface.deleteMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBoxReference, VectorMultiInput.size() - 1);
             ButtonmultiInputOneComboBoxReference.deleteMultiInput();
@@ -1897,6 +1964,7 @@ void vampireGameproject::Controllor::deleteMultiInput(std::string categorieMulti
     if (categorieMultiInput == "virtues"){
         ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference = graphicalUserinterface.returnVirtuesInput();
         std::vector<MultiInputOneComboBox*> VectorMultiInput = ButtonmultiInputOneComboBoxReference.returnVectorMultiInput();
+
 
         if (VectorMultiInput.size() != 1){
             graphicalUserinterface.deleteMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBoxReference, VectorMultiInput.size() - 1);
@@ -1908,6 +1976,7 @@ void vampireGameproject::Controllor::deleteMultiInput(std::string categorieMulti
         ButtonmultiInput& ButtonmultiInputReference = graphicalUserinterface.returnMeritsFlawsInput();
 
         std::vector<MultiInput*> VectorMultiInput = ButtonmultiInputReference.returnVectorMultiInput();
+
 
         if (VectorMultiInput.size() != 1){
             graphicalUserinterface.deleteMultiInputOnGrid(ButtonmultiInputReference, VectorMultiInput.size() - 1);
@@ -1964,7 +2033,6 @@ void vampireGameproject::Controllor::initializeSpinButton(std::string categorieS
 *
 * Implementation of the initializeFinalButton method
 * Method setting the button to submit user choices*/
-
 
 
 
@@ -2032,6 +2100,14 @@ void vampireGameproject::Controllor::initializeHealthComboBox(){
 
 
 
+/** Implementation of the saveAttributesInCharacter method.
+*
+* Implementation of the saveAttributesInCharacter method
+* Method allowing to retrieve the Attributes choices of 
+* the user on the interface and to save it in CharacterToCreate*/
+
+
+
 void vampireGameproject::Controllor::saveAttributesInCharacter(){
     ButtonmultiInput& ButtonmultiInputreference = graphicalUserinterface.returnAttributesInput();
     std::vector<MultiInput*> vectorMultiInputReference = ButtonmultiInputreference.returnVectorMultiInput();
@@ -2047,6 +2123,16 @@ void vampireGameproject::Controllor::saveAttributesInCharacter(){
         }
     }
 }
+
+
+
+
+/** Implementation of the saveAttributesInCharacter method.
+*
+* Implementation of the saveAttributesInCharacter method
+* Method allowing to retrieve the Attributes choices of 
+* the user on the interface and to save it in CharacterToCreate*/
+
 
 
 void vampireGameproject::Controllor::saveAbilitiesInCharacter(){
@@ -2067,34 +2153,46 @@ void vampireGameproject::Controllor::saveAbilitiesInCharacter(){
 
 
 
+
+/** Implementation of the saveDisciplinesInCharacter method.
+*
+* Implementation of the saveDisciplinesInCharacter method
+* Method allowing to retrieve the Disciplines choices of 
+* the user on the interface and to save it in CharacterToCreate*/
+
+
+
+
 void vampireGameproject::Controllor::saveDisciplinesInCharacter(){
     ButtonmultiInput& ButtonmultiInputreference = graphicalUserinterface.returnDisciplinesInput();
     std::vector<MultiInput*> vectorMultiInputReference = ButtonmultiInputreference.returnVectorMultiInput();
 
-    //std::map<std::string,std::map<std::string, int>> disciplinesDictionnary;
     std::vector<MultiDimensionnalDataStructure*> disciplinesVector;
 
     for(int iterator = 0; iterator < (int)vectorMultiInputReference.size(); iterator++){
-        
+
+
         if (vectorMultiInputReference[iterator]->returnTextComboBox("first") != "" && 
             vectorMultiInputReference[iterator]->returnTextComboBox("second") != ""){
                 
-
                 disciplinesVector.push_back(new MultiDimensionnalDataStructure(vectorMultiInputReference[iterator]->returnTextComboBox("first")));
                 disciplinesVector.push_back(new MultiDimensionnalDataStructure(vectorMultiInputReference[iterator]->returnTextComboBox("second")));
                 disciplinesVector.push_back(new MultiDimensionnalDataStructure(vectorMultiInputReference[iterator]->returnSpinScore()));
 
-
-                //disciplinesDictionnary[vectorMultiInputReference[iterator]->returnTextComboBox("first")].insert(
-                //    std::make_pair(vectorMultiInputReference[iterator]->returnTextComboBox("second"), 
-                //        vectorMultiInputReference[iterator]->returnSpinScore()));
         }
     }
 
-    std::cout << "testCharacter" << std::endl;
-
     CharacterToCreate.setDisciplines(disciplinesVector);  
 }
+
+
+
+/** Implementation of the saveBackgroundsInCharacter method.
+*
+* Implementation of the saveBackgroundsInCharacter method
+* Method allowing to retrieve the Backgrounds choices of 
+* the user on the interface and to save it in CharacterToCreate*/
+
 
 
 void vampireGameproject::Controllor::saveBackgroundsInCharacter(){
@@ -2110,6 +2208,17 @@ void vampireGameproject::Controllor::saveBackgroundsInCharacter(){
         }
     }
 }
+
+
+
+
+/** Implementation of the saveVirtuesInCharacter method.
+*
+* Implementation of the saveVirtuesInCharacter method
+* Method allowing to retrieve the Virtues choices of 
+* the user on the interface and to save it in CharacterToCreate*/
+
+
 
 void vampireGameproject::Controllor::saveVirtuesInCharacter(){
     ButtonmultiInputOneComboBox& ButtonmultiInputreferenceOneComboBox = graphicalUserinterface.returnVirtuesInput();
@@ -2128,6 +2237,15 @@ void vampireGameproject::Controllor::saveVirtuesInCharacter(){
 }
 
 
+
+/** Implementation of the saveMeritsFlawsCharacter method.
+*
+* Implementation of the saveMeritsFlawsCharacter method
+* Method allowing to retrieve the MeritsFlaws choices of 
+* the user on the interface and to save it in CharacterToCreate*/
+
+
+
 void vampireGameproject::Controllor::saveMeritsFlawsCharacter(){
     ButtonmultiInput& ButtonmultiInputreference = graphicalUserinterface.returnMeritsFlawsInput();
     std::vector<MultiInput*> vectorMultiInputReference = ButtonmultiInputreference.returnVectorMultiInput();
@@ -2143,6 +2261,17 @@ void vampireGameproject::Controllor::saveMeritsFlawsCharacter(){
         }
     }
 }
+
+
+
+
+/** Implementation of the saveUserChoices method.
+*
+* Implementation of the saveUserChoices method
+* Method allowing to retrieve the all the choices of 
+* the user on the interface and to save it in CharacterToCreate */
+
+
 
 void vampireGameproject::Controllor::saveUserChoices(){
     
@@ -2165,17 +2294,34 @@ void vampireGameproject::Controllor::saveUserChoices(){
     CharacterToCreate.setPlayername(graphicalUserinterface.returnPlayerName());
 }
 
+
+
+
+
+
+/** Implementation of the submitUserChoices method.
+*
+* Implementation of the submitUserChoices method
+* Method allowing to propose to the user to save 
+* the file to create in a selected folder. 
+* After that, all the choices of 
+* the user on the interface are save in CharacterToCreate
+* Then, the output file containing all the user choices is created*/
+
+
+
 void vampireGameproject::Controllor::submitUserChoices(){
    std::string filename = graphicalUserinterface.setFileChooser();
    
    if (filename != ""){
        saveUserChoices();
        createResultsFile.writeResultsFile(filename);
-       std::cout << filename << std::endl;
    }
 
    std::vector<MultiDimensionnalDataStructure*> disciplinesVector;
    
+   /*Deleting all the address contained in the disciplinesVector*/
+
    for(int iterator = 0; iterator < (int)disciplinesVector.size(); iterator++){
        MultiDimensionnalDataStructure* MultiDimensionnalDataStructureReference = disciplinesVector[iterator];
        disciplinesVector.erase(disciplinesVector.begin() + iterator);
