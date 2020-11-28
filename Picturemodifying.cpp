@@ -4,8 +4,8 @@
 /** Constructor of the class Picturemodifying.
 *
 * Modification of the constructor of Picturemodifying
-*
-*
+* Giving a reference of Character object before the 
+* initialisation of constructor
 *
 */
 
@@ -21,6 +21,17 @@ vampireGameproject::Picturemodifying::Picturemodifying(Character& ReferenceChara
 */
 
 vampireGameproject::Picturemodifying::~Picturemodifying(){}
+
+
+
+
+/** Implementation of the writeResultsAttributes method.
+*
+* Implementation of the writeResultsAttributes method
+* Method writting the Attributes choices in the output
+* file
+* 
+* @param fileToWrite: reference of the output file to write the contain */
 
 
 
@@ -41,6 +52,8 @@ void vampireGameproject::Picturemodifying::writeResultsAttributes(std::ofstream&
 
     std::map<std::string, int>::iterator iteratorMap;
 
+    /*We iterate on all the tableAttributes, and according to the index, 
+    of the item, this one is a part of a some categorie (Physical, Social, Mental) */
 
     for(int iterator = 0; iterator < tableAttributesSize; iterator++){
         if (iterator % 3 == 0){
@@ -81,6 +94,16 @@ void vampireGameproject::Picturemodifying::writeResultsAttributes(std::ofstream&
 }
 
 
+/** Implementation of the writeResultsAbilities method.
+*
+* Implementation of the writeResultsAbilities method
+* Method writting the Abilities choices in the output
+* file
+* 
+* @param fileToWrite: reference of the output file to write the contain */
+
+
+
 void vampireGameproject::Picturemodifying::writeResultsAbilities(std::ofstream& fileToWrite){
     fileToWrite << "\n";
     fileToWrite << "<------------------------------------------Abilities------------------------------------------->" << std::endl;
@@ -105,7 +128,8 @@ void vampireGameproject::Picturemodifying::writeResultsAbilities(std::ofstream& 
     std::map<std::string, int>::iterator iteratorMap;
 
 
-
+    /*We iterate on all the tableAbilities, and according to the index, 
+    of the item, this one is a part of a some categorie (Talents, Skills, Knowledges) */
 
 
     for(int iterator = 0; iterator < tableAbilitiesSize; iterator++){
@@ -146,6 +170,20 @@ void vampireGameproject::Picturemodifying::writeResultsAbilities(std::ofstream& 
 }
 
 
+
+
+/** Implementation of the writeResultsAdvantages method.
+*
+* Implementation of the writeResultsAdvantages method
+* Method writting the Advantages choices in the output
+* file
+* 
+* @param fileToWrite: reference of the output file to write the contain */
+
+
+
+
+
 void vampireGameproject::Picturemodifying::writeResultsAdvantages(std::ofstream& fileToWrite){
     fileToWrite << "\n";
     fileToWrite << "<-------------------------------------------Advantages----------------------------------------->" << std::endl;
@@ -154,7 +192,6 @@ void vampireGameproject::Picturemodifying::writeResultsAdvantages(std::ofstream&
     std::map<std::string, int> backgroundMap = CharacterReference.getBackground();
     std::map<std::string, int> virtuesMap = CharacterReference.getVirtues();
 
-    std::cout << "Firstdictionnary" << std::endl;
 
     std::map<std::string, int> DisciplinesDictionnary;
 
@@ -173,7 +210,6 @@ void vampireGameproject::Picturemodifying::writeResultsAdvantages(std::ofstream&
     }
 
     
-
 
     fileToWrite << "Disciplines" << std::endl;
 
@@ -201,6 +237,19 @@ void vampireGameproject::Picturemodifying::writeResultsAdvantages(std::ofstream&
 }
 
 
+
+
+
+/** Implementation of the writeResultsHumanityPathToHealth method.
+*
+* Implementation of the writeResultsHumanityPathToHealth method
+* Method writting the HumanityPath until Health choices in the output
+* file
+* 
+* @param fileToWrite: reference of the output file to write the contain */
+
+
+
 void vampireGameproject::Picturemodifying::writeResultsHumanityPathToHealth(std::ofstream& fileToWrite){
     fileToWrite << "\t<-------Humanity/Path------>\t<-------Health--------->" << std::endl;
     
@@ -217,6 +266,21 @@ void vampireGameproject::Picturemodifying::writeResultsHumanityPathToHealth(std:
     fileToWrite << "\n";
     fileToWrite << "\t\t\t\t\t<-------Experience------>\n" << std::endl;
 }
+
+
+
+
+
+/** Implementation of the writeResultsMeritsFlaws method.
+*
+* Implementation of the writeResultsMeritsFlaws method
+* Method writting the MeritsFlaws choices in the output
+* file
+* 
+* @param fileToWrite: reference of the output file to write the contain */
+
+
+
 
 
 void vampireGameproject::Picturemodifying::writeResultsMeritsFlaws(std::ofstream& fileToWrite){
@@ -253,6 +317,18 @@ void vampireGameproject::Picturemodifying::writeResultsMeritsFlaws(std::ofstream
         }
     }
 }
+
+
+
+
+/** Implementation of the writeResultsOthersCaracteristics method.
+*
+* Implementation of the writeResultsOthersCaracteristics method
+* Method writting the other characteristics choices in the output
+* file
+* 
+* @param fileToWrite: reference of the output file to write the contain */
+
 
 
 void vampireGameproject::Picturemodifying::writeResultsOthersCaracteristics(std::ofstream& fileToWrite){
@@ -320,9 +396,19 @@ void vampireGameproject::Picturemodifying::writeResultsOthersCaracteristics(std:
     fileToWrite << "<-------------------------------------------Visuals-------------------------------------------->" << std::endl;
     fileToWrite << "\tCoterie Chat\t\t\t\t\t\t\tCharacterSketch" << std::endl;
 
-
-
 }
+
+
+
+
+/** Implementation of the writeResultsFile method.
+*
+* Implementation of the writeResultsFile method
+* Method writting the user choices in the output
+* file
+* 
+* @param filename: filename to save the output file*/
+
 
 
 void vampireGameproject::Picturemodifying::writeResultsFile(std::string filename){
@@ -338,7 +424,6 @@ void vampireGameproject::Picturemodifying::writeResultsFile(std::string filename
     outfile << "\n";
     writeResultsAttributes(outfile);
     writeResultsAbilities(outfile);
-    std::cout << "test" << std::endl;
     writeResultsAdvantages(outfile);
     writeResultsHumanityPathToHealth(outfile);
     writeResultsMeritsFlaws(outfile);
