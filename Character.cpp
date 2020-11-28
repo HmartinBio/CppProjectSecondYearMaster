@@ -6,7 +6,7 @@
 * for this one gives the Parsetext reference to 
 * the other class members contained in Character 
 *
-* @param textParse reference of Parsetext
+* @param textParse: reference of Parsetext
 */
 
 
@@ -50,9 +50,9 @@ std::string vampireGameproject::Character::getPlayername(void){
 /** Implementation of the setPlayername method.
 *
 * Implementation of the setPlayername method
-* Method modifing the attribute playerName 
+* Method modifing the attribute playerName of the class
 *
-* @param name string to assign to playerName
+* @param name: string to assign to playerName
 */
 
 
@@ -69,8 +69,8 @@ void vampireGameproject::Character::setPlayername(std::string name){
 * Implementation of the setAttributes method
 * Method setting the attributes in the Character object
 *
-* @param firstComboBoxItem: string extracted from the FirstComboBox on the interface
-* @param secondComboBoxItem: string extracted from the SecondComboBox on the interface
+* @param firstComboBoxItem: string extracted from the FirstComboBoxText on the interface
+* @param secondComboBoxItem: string extracted from the SecondComboBoxText on the interface
 * @param SpinScore: Spin Score extracted from the interface
 */
 
@@ -80,6 +80,7 @@ void vampireGameproject::Character::setAttributes(std::string firstComboBoxItem,
                     characterAttributes.setAttributes(firstComboBoxItem, 
                         secondComboBoxItem, SpinScore);
                 }
+
 
 
 
@@ -105,8 +106,8 @@ std::map<std::string, int> vampireGameproject::Character::getAttributes(std::str
 * Implementation of the setAbilities method
 * Method setting the abilities in the Character object
 *
-* @param firstComboBoxItem: string extracted from the FirstComboBox on the interface
-* @param secondComboBoxItem: string extracted from the SecondComboBox on the interface 
+* @param firstComboBoxItem: string extracted from the FirstComboBoxText on the interface
+* @param secondComboBoxItem: string extracted from the SecondComboBoxText on the interface 
 * @param SpinScore: Spin Score extracted from the interface
 */
 
@@ -147,8 +148,8 @@ std::map<std::string, int> vampireGameproject::Character::getAbilties(std::strin
 * Implementation of the setMeritsFlaws method
 * Method setting the Merits and Flaws in the Character object
 *
-* @param firstComboBoxItem: string extracted from the FirstComboBox on the interface
-* @param secondComboBoxItem: string extracted from the SecondComboBox on the interface 
+* @param firstComboBoxItem: string extracted from the FirstComboBoxText on the interface
+* @param secondComboBoxItem: string extracted from the SecondComboBoxText on the interface 
 * @param SpinScore: Spin Score extracted from the interface
 */
 
@@ -219,7 +220,7 @@ std::string vampireGameproject::Character::getNature(){
 * Implementation of the setHealth method
 * Method setting the Health in the Character object
 *
-* @param ComboBoxItem: string extracted from the ComboBox on the interface
+* @param ComboBoxItem: string extracted from the ComboBoxText on the interface
 */
 
 
@@ -319,7 +320,7 @@ std::string vampireGameproject::Character::getGeneration(){
 * Implementation of the setClan method
 * Method setting the Clan in the Character object
 *
-* @param ComboBoxItem: string extracted from the ComboBox on the interface
+* @param ComboBoxItem: string extracted from the ComboBoxText on the interface
 */
 
 
@@ -341,7 +342,6 @@ void vampireGameproject::Character::setClan(std::string ComboBoxItem){
 
 
 
-
 std::string vampireGameproject::Character::getClan(){
     return characterClan.getClan();
 }
@@ -355,7 +355,7 @@ std::string vampireGameproject::Character::getClan(){
 * Implementation of the setBackground method
 * Method setting the Background in the Character object
 *
-* @param ComboBoxItem: string extracted from the ComboBox on the interface
+* @param ComboBoxItem: string extracted from the ComboBoxText on the interface
 * @param SpinScore: SpinScore extracted from the Spin Button on the interface
 */
 
@@ -390,7 +390,7 @@ std::map<std::string, int> vampireGameproject::Character::getBackground(){
 * Implementation of the setVirtues method
 * Method setting the Virtues in the Character object
 *
-* @param ComboBoxItem: string extracted from the ComboBox on the interface
+* @param ComboBoxItem: string extracted from the ComboBoxText on the interface
 * @param spinScore: SpinScore extracted from the Spin Button on the interface
 */
 
@@ -514,21 +514,65 @@ float vampireGameproject::Character::getBloodpool(){
    return characterTraits.getBloodpool();
 }
 
-//void vampireGameproject::Character::setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines){
-//    characterClan.setDisciplines(disciplines);
-//}
+
+
+/** Implementation of the setDisciplines method.
+*
+* Implementation of the setDisciplines method
+* Method setting the Disciplines in the Character object
+*
+* @param disciplines: vector containing disciplines objects to set
+*/
+
+
 
 void vampireGameproject::Character::setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines){
     characterClan.setDisciplines(disciplines);
 }
 
+
+
+
+
+/** Implementation of the setVampireNickName method.
+*
+* Implementation of the setVampireNickName method
+* Method setting the Vampire Nick Name in the Character object
+*
+* @param Nickname: string containing the NickName of the Vampire
+*/
+
+
+
+
 void vampireGameproject::Character::setVampireNickName(std::string Nickname){
     characterClan.setVampirename(Nickname);
 }
 
+
+
+
+/** Implementation of the returnVampireNickName method.
+*
+* Implementation of the returnVampireNickName method
+* Method getting the NickName from the Character object */
+
+
+
 std::string vampireGameproject::Character::returnVampireNickName(){
     return characterClan.getVampirename();
 }
+
+
+
+
+/** Implementation of the returnDisciplines method.
+*
+* Implementation of the returnDisciplines method
+* Method getting the Disciplines from the Character object */
+
+
+
 
 std::vector<vampireGameproject::MultiDimensionnalDataStructure*> vampireGameproject::Character::returnDisciplines(){
     return characterClan.getDisciplines();
