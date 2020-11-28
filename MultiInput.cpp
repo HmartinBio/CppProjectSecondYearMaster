@@ -52,7 +52,7 @@ Gtk::SpinButton& vampireGameproject::MultiInput::returnSpinButton(){
 * Implementation of the returnComboBox method
 * Method returning the reference of the chosen ComboBox
 *  
-*
+* @param position: position of the ComboBox to return
 */
 
 
@@ -75,7 +75,7 @@ Gtk::ComboBoxText& vampireGameproject::MultiInput::returnComboBox(std::string po
 * Implementation of the setLimitSpinButton method
 * Method setting the limit of the SpinButton
 *  
-*
+* @param limit: limit of the SpinButton to set
 */
 
 
@@ -112,8 +112,9 @@ int vampireGameproject::MultiInput::returnSpinScore(){
 * Method returning the Text from ComboBox
 * If nothing is set for the Combobox, then an empty string 
 * is returned
+* 
+* @param index: index of the ComboBoxText to return text
 */
-
 
 
 
@@ -139,12 +140,9 @@ std::string vampireGameproject::MultiInput::returnTextComboBox(std::string index
         }
 
         return "";
-        
-        
             
     }
 }
-
 
 
 
@@ -195,6 +193,7 @@ void vampireGameproject::MultiInput::setVectorComboBox(std::vector<std::string>&
 void vampireGameproject::MultiInput::unsetActiveText(){
     secondComboBox.set_active_text("");
 }
+
 
 
 /** Implementation of the resetSpinScore method.
