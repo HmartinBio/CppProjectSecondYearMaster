@@ -16,8 +16,8 @@ vampireGameproject::ButtonmultiInput::ButtonmultiInput(){}
 /** Destructor of the class ButtonmultiInput.
 *
 * Modification of the destructor of ButtonmultiInput
-*
-*
+* Deleting all the MultiInput address contained in
+* the vectorMultiInputs
 *
 */
 
