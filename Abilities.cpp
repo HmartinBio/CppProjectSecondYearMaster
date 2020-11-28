@@ -8,7 +8,7 @@
 * Initialisation of a Parsetext reference 
 * before the Abilities constructor be initialised
 * 
-* @param textParse reference of Parsetext
+* @param textParse: reference of Parsetext
 */
 
 
@@ -36,7 +36,7 @@ vampireGameproject::Abilities::~Abilities(){}
 * Implementation of the getAbilities method
 * Method returning the abilities
 * 
-* @param tableName name of the table to return 
+* @param tableName: name of the table to return 
 *
 */
 
@@ -67,9 +67,9 @@ std::map<std::string, int> vampireGameproject::Abilities::getAbilities(std::stri
 * Implementation of the setAbilities method
 * Method setting the abilities
 * 
-* @param tableName name of the table to add an attribute 
-* @param abilitieName name of the abilitie to add
-* @param value value of the abilitie to add
+* @param tableName: name of the table to add an abilitie 
+* @param abilitieName: name of the abilitie to add
+* @param value: value of the abilitie to add
 */
 
 
@@ -100,8 +100,8 @@ void vampireGameproject::Abilities::setAbilities(std::string tableName, std::str
 * getDescriptionabilities method allows to return the description of 
 * an abilitie 
 * 
-* @param table name of the table to look for an abilitie 
-* @param attributeName name of the abilitie to return the description
+* @param table: name of the table to look for an abilitie 
+* @param attributeName: name of the abilitie to return the description
 */
 
 
