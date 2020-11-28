@@ -102,5 +102,5 @@ void vampireGameproject::Attributes::setAttributes(std::string tableName,std::st
 
 
 std::string vampireGameproject::Attributes::getDescriptionattributes(std::string table, std::string attributeName){
-    return textParser.parse_text(table, attributeName);
+    return textParser.parseText(table, attributeName);
 }
