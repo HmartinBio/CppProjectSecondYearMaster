@@ -8,7 +8,7 @@
 * Initialisation of a Parsetext reference 
 * before the Nature constructor be initialised
 *
-* @param textParse reference of Parsetext object
+* @param textParse: reference of Parsetext object
 *
 */
 
@@ -52,7 +52,7 @@ std::string vampireGameproject::Chronicle::getChronicle(void){
 * Implementation of the setChronicle method
 * Method setting the chronicle value 
 *
-* @param chronicle nature categorie to set
+* @param chronicle: chronicle categorie to set
 * 
 */
 
