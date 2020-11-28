@@ -119,7 +119,7 @@ void vampireGameproject::Health::setWeakness(std::string weakness){
 
 
 void vampireGameproject::Health::setPointlifeDescription(void){
-    //pointLifedescription = textParser.parse_text();
+    //pointLifedescription = textParser.parseText();
     pointLifedescription = "test";
 }
 
