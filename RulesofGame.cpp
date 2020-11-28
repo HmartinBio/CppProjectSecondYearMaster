@@ -33,7 +33,7 @@ vampireGameproject::RulesofGame::~RulesofGame(){}
 
 
 void vampireGameproject::RulesofGame::setVectorClans(){
-    vectorClans = parser.parse_listClans();
+    vectorClans = parser.parselistClans();
 }
 
 
@@ -46,7 +46,7 @@ void vampireGameproject::RulesofGame::setVectorClans(){
 
 
 void vampireGameproject::RulesofGame::setVectorNature(){
-    vectorNature = parser.parse_listNature();
+    vectorNature = parser.parselistNature();
 }
 
 
