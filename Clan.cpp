@@ -93,7 +93,7 @@ void vampireGameproject::Clan::setVampirename(std::string vampireNickName){
 
 
 void vampireGameproject::Clan::setDescription(void){
-    //description = textParser.parse_text();
+    //description = textParser.parseText();
     description = "test";
 }
 
