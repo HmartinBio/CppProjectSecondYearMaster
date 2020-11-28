@@ -8,7 +8,7 @@
 * Initialisation of the Parsetext reference before
 * the constructor of Health class be initialised
 *
-* @param textParse reference of Parsetext
+* @param textParse: reference of Parsetext
 */
 
 
@@ -48,7 +48,7 @@ std::string vampireGameproject::Health::getPointlife(void){
 * Implementation of the setPointlife method
 * Method setting the pointLife value
 * 
-* @param pointLife value of points of life to set
+* @param pointLife: value of points of life to set
 * 
 */
 
@@ -95,7 +95,7 @@ std::vector<std::string> vampireGameproject::Health::getWeakness(void){
 * Implementation of the setWeakness method
 * Method setting Weakness 
 *
-* @param weakness weakness to set
+* @param weakness: weakness to set
 *
 */
 
