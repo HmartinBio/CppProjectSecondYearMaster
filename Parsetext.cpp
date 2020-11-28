@@ -28,10 +28,9 @@ vampireGameproject::Parsetext::~Parsetext(){}
 * 
 * @param categorie: categorie name to parse on the file */
 
+
+
 /*Allows to parse all the text of a categorie (Abilities, Attributes,...)*/
-
-
-
 
 
 std::string vampireGameproject::Parsetext::parse_text(std::string categorie){
@@ -72,10 +71,10 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie){
 
 
 
-
 /**
  # @overload std::string parse_text(std::string categorie, std::string caracteristics)
  */
+
 
 /*Allows to parse Clans*/
 
@@ -136,8 +135,8 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
  # @overload std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence)
  */
 
-/*allows to parse disciplines and merits_flaws*/
 
+/*allows to parse disciplines and merits_flaws*/
 
 
 
@@ -268,7 +267,6 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 * Method returning the list of Clans */
 
 /*Allows to parse all the text of a categorie (Abilities, Attributes,...)*/
-
 
 
 
@@ -490,7 +488,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplines(st
 *
 * Implementation of the parse_ClanDisciplinesCategorie method
 * Method returning a vector corresponding to  
-*  sub-Disciplines associated to a clan 
+* sub-Disciplines associated to a clan 
 * 
 * @param categorie: name of the discipline to retrieve sub-disciplines*/
 
@@ -574,7 +572,6 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplinesCat
 *
 * Implementation of the parse_Attributes method
 * Method returning a vector containing the attributes*/
-
 
 
 
