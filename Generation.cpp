@@ -103,7 +103,7 @@ void vampireGameproject::Generation::setAge(int age){
 */
 
 void vampireGameproject::Generation::setDescription(void){
-    //description = textParser.parse_text();
+    //description = textParser.parseText();
     description = "test";
 }
 
