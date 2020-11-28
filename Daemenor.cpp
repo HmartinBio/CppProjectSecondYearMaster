@@ -8,7 +8,7 @@
 * Initialisation of a Parsetext reference 
 * before the Daemenor constructor be initialised
 *
-* @param textParse reference of Parsetext object
+* @param textParse: reference of Parsetext object
 *
 */
 
@@ -35,7 +35,7 @@ vampireGameproject::Daemenor::~Daemenor(){}
 * Implementation of the setDaemenor method
 * Method setting the Daemenor value
 * 
-* @param daemenor deamenor categorie to set
+* @param daemenor:: deamenor categorie to set
 * 
 */
 
@@ -66,7 +66,7 @@ std::string vampireGameproject::Daemenor::getDaemenor(void){
 /** Implementation of the setDescription method.
 *
 * Implementation of the setDescription method
-* Method setting the description to Daemenor
+* Method setting the description to Daemenor value
 *
 *
 */
