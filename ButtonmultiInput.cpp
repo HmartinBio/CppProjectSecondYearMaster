@@ -37,7 +37,7 @@ vampireGameproject::ButtonmultiInput::~ButtonmultiInput(){
 * Implementation of the returnButton method
 * Method returning the button reference
 * 
-* @param sign sign of the button to return 
+* @param sign: sign of the button to return 
 *
 */
 
@@ -54,47 +54,8 @@ Gtk::Button& vampireGameproject::ButtonmultiInput::returnButton(std::string sign
 
 
 
-/** Implementation of the returnComboBox method.
-*
-* Implementation of the returnComboBox method
-* Method returning the Combobox Reference
-* 
-* @param position position of the ComboBox to return 
-*
-*/
 
 
-////
-
-//Gtk::ComboBoxText& vampireGameproject::ButtonmultiInput::returnComboBox(std::string position){
-//    if (position == "first"){
-       // return firstComboBox;
-//    }
-
-//    else{
-//        return secondComboBox;
-//    }
-//}
-
-
-
-/** Implementation of the returnSpinButton method.
-*
-* Implementation of the returnSpinButton method
-* Method returning the SpinButton
-* 
-* @param tableName name of the table to return 
-*
-*/
-
-
-
-//Gtk::SpinButton& vampireGameproject::ButtonmultiInput::returnSpinButton(){
-//    return spinButton;
-//} 
-
-
-////
 
 
 /** Implementation of the setLabelMultiComboBox method.
@@ -180,9 +141,7 @@ void vampireGameproject::ButtonmultiInput::setDicoScoreFirstComboBox(){
 /** Implementation of the setVectorSelectedInput method.
 *
 * Implementation of the setVectorSelectedInput method
-* Method setting the choices of MultiInput in a map */
-
-
+* Method setting the choices of MultiInput objects in a map */
 
 
 
@@ -229,7 +188,7 @@ void vampireGameproject::ButtonmultiInput::setMultiInput(){
 /** Implementation of the deleteMultiInput method.
 *
 * Implementation of the deleteMultiInput method
-* Method deleting the last MultiInput of the vector */
+* Method deleting the last MultiInput object from the vector */
 
 
 
@@ -247,8 +206,8 @@ void vampireGameproject::ButtonmultiInput::deleteMultiInput(){
 * Implementation of the setCoordinates method
 * Method setting the coordinates of the ButtonMultiInput
 * 
-* @param coordinateX absciss coordinate 
-* @param coordinateY image coordinate
+* @param coordinateX: absciss coordinate 
+* @param coordinateY: image coordinate
 *
 */
 
@@ -308,7 +267,7 @@ void vampireGameproject::ButtonmultiInput::initialize(){
 /** Implementation of the setVectorComboBox method.
 *
 * Implementation of the setVectorComboBox method
-* Method initializing the chosen ComboBox with a chosen vector
+* Method initializing the chosen ComboBoxText with a chosen vector
 * 
 * @param index: index of the MultiInput to select in the MultiInput Vector
 * @param position: position of the ComboBoxText where the text is set
@@ -325,7 +284,7 @@ void vampireGameproject::ButtonmultiInput::setVectorComboBox(int index, std::str
 /** Implementation of the returnTextComboBox method.
 *
 * Implementation of the returnTextComboBox method
-* Method returning the text from the chosen ComboBox
+* Method returning the text from the chosen ComboBoxText
 * 
 * @param number: number of the MultiInput to select in the MultiInput vector
 * @param index: position of the ComboBoxText to return
@@ -343,7 +302,7 @@ std::string vampireGameproject::ButtonmultiInput::returnTextComboBox(int number,
 /** Implementation of the returnXCoordinate method.
 *
 * Implementation of the returnXCoordinate method
-* Method returning the x coordinate */
+* Method returning the x coordinate from the ButtonMultiInput object */
 
 
 
@@ -355,7 +314,7 @@ int vampireGameproject::ButtonmultiInput::returnXCoordinate(){
 /** Implementation of the returnYCoordinate method.
 *
 * Implementation of the returnYCoordinate method
-* Method returning the y coordinate
+* Method returning the y coordinate from the ButtonMultiInput object
 * 
 *
 */
@@ -365,18 +324,3 @@ int vampireGameproject::ButtonmultiInput::returnXCoordinate(){
 int vampireGameproject::ButtonmultiInput::returnYCoordinate(){
     return ycoordinates;
 }
-
-
-
-
-
-
-
-
-// Il faudrait passer les fonctions du Controlleur au buttonMultiInput
-// Le contrôleur regarderait si les points sont atteints où pas et 
-// supprimerait pour les autres MultiInput le texte choisis
-// Le contrôleur transmettrait une fonction où il regarde si il y a eu des choix ou pas encore 
-// Si il y en a pas eu c'est open bar sinon pour les MultiInput où le texte n'est 
-// pas encore actif, on restreint le spin button et le choix des combobox
-
