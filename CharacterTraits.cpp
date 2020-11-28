@@ -8,7 +8,7 @@
 * Initialisation of the Parsetext reference before
 * the constructor of CharacterTraits class be initialised
 *
-* @param textParse reference of Parsetext
+* @param textParse: reference of Parsetext
 */
 
 
@@ -29,12 +29,13 @@ vampireGameproject::CharacterTraits::~CharacterTraits(){}
 
 
 
+
 /** Implementation of the setHumanity method.
 *
 * Implementation of the setHumanity method
 * Method setting the humanity value 
 *
-* @param number humanity value to set
+* @param number: humanity value to set
 * 
 */
 
@@ -48,10 +49,10 @@ void vampireGameproject::CharacterTraits::setHumanity(int number){
 
 /** Implementation of the setWillpower method.
 *
-* Implementation of the setWillepower method
+* Implementation of the setWillpower method
 * Method setting the willPower value
 * 
-* @param number value of points of life to set
+* @param number: value of points of life to set
 * 
 */
 
@@ -68,7 +69,7 @@ void vampireGameproject::CharacterTraits::setWillpower(int number){
 * Implementation of the setBloodpool method
 * Method setting the bloodPool value
 * 
-* @param number value of points of bloodPool to set
+* @param number: value of points of bloodPool to set
 * 
 */
 
@@ -150,7 +151,6 @@ std::string vampireGameproject::CharacterTraits::getHumanity(void){
 
 
 std::string vampireGameproject::CharacterTraits::getWillpower(void){
-    //return textParser.parse_text();
 
     if (willPower == 1){
         return "Spineless";
