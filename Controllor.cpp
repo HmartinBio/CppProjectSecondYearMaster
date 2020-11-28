@@ -240,7 +240,7 @@ void vampireGameproject::Controllor::testInputsSecondComboBox(ButtonmultiInput& 
 
     if (categorieMultiInput == "attributes"){
 
-        std::vector<std::string> vectorAttributesCategorie = textParser.parse_AttributesCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
+        std::vector<std::string> vectorAttributesCategorie = textParser.parseAttributesCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
     
         /*Initialising a vector to save all the MultiInputs objects*/
 
@@ -275,7 +275,7 @@ void vampireGameproject::Controllor::testInputsSecondComboBox(ButtonmultiInput& 
 
     if (categorieMultiInput == "abilities"){
 
-        std::vector<std::string> vectorAbilitiesCategorie = textParser.parse_AbilitiesCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
+        std::vector<std::string> vectorAbilitiesCategorie = textParser.parseAbilitiesCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
     
         /*Initialising a vector to store all the MultiInputs*/
 
@@ -309,7 +309,7 @@ void vampireGameproject::Controllor::testInputsSecondComboBox(ButtonmultiInput& 
 
     if (categorieMultiInput == "disciplines"){
 
-        std::vector<std::string> vectorAttributesCategorie = textParser.parse_ClanDisciplinesCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
+        std::vector<std::string> vectorAttributesCategorie = textParser.parseClanDisciplinesCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
     
         /*Initialising a vector to store all the MultiInputs*/
 
@@ -343,7 +343,7 @@ void vampireGameproject::Controllor::testInputsSecondComboBox(ButtonmultiInput& 
 
     if (categorieMultiInput == "MeritsFlaws"){
 
-        std::vector<std::string> vectorAttributesCategorie = textParser.parse_MeritsFlawsCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
+        std::vector<std::string> vectorAttributesCategorie = textParser.parseMeritsFlawsCategorie(ButtonMultiInputReference.returnTextComboBox(number, "first"));
     
         /*Initialising a vector to store all the MultiInputs*/
 
@@ -825,7 +825,7 @@ void vampireGameproject::Controllor::testFirstComboBoxDisponibility(std::string 
 
 
 
-        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_Attributes();
+        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parseAttributes();
         
         for(int i = 0; i < (int)vectorFirstComboBoxOutsider.size(); i++){
             std::cout << vectorFirstComboBoxOutsider.at(i) << std::endl;
@@ -914,7 +914,7 @@ void vampireGameproject::Controllor::testFirstComboBoxDisponibility(std::string 
         If it's not the case, the value is not proposed to the user anymore*/
 
 
-        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_Abilities();
+        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parseAbilities();
         
 
         for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
@@ -1001,7 +1001,7 @@ void vampireGameproject::Controllor::testFirstComboBoxDisponibility(std::string 
 
         std::string clanName = graphicalUserinterface.returnClanName();
 
-        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_ClanDisciplines(clanName);
+        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parseClanDisciplines(clanName);
         
 
         for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
@@ -1088,7 +1088,7 @@ void vampireGameproject::Controllor::testFirstComboBoxDisponibility(std::string 
 
         
 
-        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_Backgrounds();
+        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parseBackgrounds();
         
 
         for(int iterator = 0; iterator < (int)vectorMultiInputOneComboBox.size(); iterator++){
@@ -1170,7 +1170,7 @@ void vampireGameproject::Controllor::testFirstComboBoxDisponibility(std::string 
         If it's not the case, the value is not proposed to the user anymore*/
 
 
-        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_Viritues();
+        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parseViritues();
         
 
         for(int iterator = 0; iterator < (int)vectorMultiInputOneComboBox.size(); iterator++){
@@ -1254,7 +1254,7 @@ void vampireGameproject::Controllor::testFirstComboBoxDisponibility(std::string 
 
 
 
-        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parse_MeritsFlaws();
+        std::vector<std::string> vectorFirstComboBoxChoices = textParser.parseMeritsFlaws();
         
 
         for(int iterator = 0; iterator < (int)vectorMultiInput.size(); iterator++){
@@ -1679,14 +1679,14 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReference(Buttonm
     /*Filling the vector of the first ComboBox from the first MultiInput*/
 
     if (categorieMultiInput == "attributes"){
-        ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parse_Attributes());
+        ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parseAttributes());
     }
 
     if (categorieMultiInput == "abilities"){
-         ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parse_Abilities());
+         ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parseAbilities());
     }
     if (categorieMultiInput == "MeritsFlaws"){
-        ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parse_MeritsFlaws());
+        ButtonMultiInputReference.setVectorComboBox(0, "first", textParser.parseMeritsFlaws());
     }
     
     /*Returning the VectorMultiInput from the ButtonMultiInput object*/
@@ -1788,11 +1788,11 @@ void vampireGameproject::Controllor::initializeButtonMultiInputReferenceOneCombo
                     /*Filling the vector of the first ComboBox from the first MultiInputOneComboBox*/
 
                     if (categorieMultiInputOneComboBox == "backgrounds"){
-                        ButtonMultiInputOneComboBoxReference.setVectorComboBox(0, textParser.parse_Backgrounds());
+                        ButtonMultiInputOneComboBoxReference.setVectorComboBox(0, textParser.parseBackgrounds());
                     }
 
                     if (categorieMultiInputOneComboBox == "virtues"){
-                        ButtonMultiInputOneComboBoxReference.setVectorComboBox(0, textParser.parse_Viritues());
+                        ButtonMultiInputOneComboBoxReference.setVectorComboBox(0, textParser.parseViritues());
                     }
 
                     /*Returning the VectorMultiInput from the ButtonMultiInput object*/
@@ -2059,7 +2059,7 @@ void vampireGameproject::Controllor::initializeFinalButton(){
 
 void vampireGameproject::Controllor::updateNicknameLabel(){
     std::string actualClanName = graphicalUserinterface.returnClanName();
-    std::string nicknameClan = textParser.parse_NicknameClan(actualClanName);
+    std::string nicknameClan = textParser.parseNicknameClan(actualClanName);
     graphicalUserinterface.setTextNicknameLabel(nicknameClan);
 }
 
@@ -2094,7 +2094,7 @@ void vampireGameproject::Controllor::initializeNicknameLabel(){
 
 
 void vampireGameproject::Controllor::initializeHealthComboBox(){
-    std::vector<std::string> vectorHealth = textParser.parse_Health();
+    std::vector<std::string> vectorHealth = textParser.parseHealth();
     graphicalUserinterface.setTableComboBox(2, vectorHealth);
 }
 
