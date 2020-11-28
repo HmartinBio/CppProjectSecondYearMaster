@@ -109,66 +109,12 @@ std::string vampireGameproject::MultiInputOneComboBox::returnTextComboBox(){
 
 
 
-
-/** Implementation of the AddText method.
-*
-* Implementation of the AddText method
-* Method adding an item to a specific position
-* in the ComboBox 
-*
-*/
-
-
-
-
-/* void vampireGameproject::MultiInputO::AddText(std::string vectorPosition, std::string stringToAdd, int index){
-    if (vectorPosition == "first"){
-        ComboBox.insert(index, stringToAdd);
-    }
-
-    else{
-        ComboBox.insert(index, stringToAdd);
-    }
-} */
-
-
-
-
-/** Implementation of the DeleteText method.
-*
-* Implementation of the DeleteText method
-* Method deleting an item to a specific position
-* of a ComboBox
-*
-*/
-
-
-
-
-
-/* 
-void vampireGameproject::MultiInput::DeleteText(std::string vectorPosition, int index){
-    if (vectorPosition == "first"){
-        firstComboBox.remove_text(index);
-    }
-
-    else{
-        secondComboBox.remove_text(index);
-    }
-}
-
- */
-
-
-
-
-
 /** Implementation of the setVectorComboBox method.
 *
 * Implementation of the setVectorComboBox method
 * Method setting the vector containing the ComboBox items
 * 
-* @param vectorText vector containing the items
+* @param vectorText: vector containing the items
 */
 
 
@@ -180,16 +126,13 @@ void vampireGameproject::MultiInputOneComboBox::setVectorComboBox(std::vector<st
         ComboBox.append(vectorText.at(iterator));
     }
  
-
 }
 
 
 /** Implementation of the unsetActiveText method.
 *
 * Implementation of the unsetActiveText method
-* Method unsetting the active text of the Second 
-* ComboBox Text
-* 
+* Method unsetting the active text of the ComboBox Text
 * 
 *
 */
@@ -198,6 +141,7 @@ void vampireGameproject::MultiInputOneComboBox::setVectorComboBox(std::vector<st
 void vampireGameproject::MultiInputOneComboBox::unsetActiveText(){
     ComboBox.set_active_text("");
 }
+
 
 
 /** Implementation of the resetSpinScore method.
