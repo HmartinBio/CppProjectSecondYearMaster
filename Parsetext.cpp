@@ -20,9 +20,9 @@ vampireGameproject::Parsetext::~Parsetext(){}
 
 
 
-/** Implementation of the parse_text method.
+/** Implementation of the parseText method.
 *
-* Implementation of the parse_text method
+* Implementation of the parseText method
 * Method returning a parsed text corresponding to  
 * the description of the searched element 
 * 
@@ -33,7 +33,7 @@ vampireGameproject::Parsetext::~Parsetext(){}
 /*Allows to parse all the text of a categorie (Abilities, Attributes,...)*/
 
 
-std::string vampireGameproject::Parsetext::parse_text(std::string categorie){
+std::string vampireGameproject::Parsetext::parseText(std::string categorie){
     std::string lineOftext;
     std::ifstream infile("VampireV5.txt");
     std::getline(infile, lineOftext);
@@ -72,7 +72,7 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie){
 
 
 /**
- # @overload std::string parse_text(std::string categorie, std::string caracteristics)
+ # @overload std::string parseText(std::string categorie, std::string caracteristics)
  */
 
 
@@ -82,7 +82,7 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie){
 
 
 
-std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std::string caracteristics){
+std::string vampireGameproject::Parsetext::parseText(std::string categorie, std::string caracteristics){
     std::string lineOftext;
     std::string partOftext;
     std::ifstream infile("VampireV5.txt");
@@ -132,7 +132,7 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 
 
 /**
- # @overload std::string parse_text(std::string categorie, std::string table, std::string nameOfcomptence)
+ # @overload std::string parseText(std::string categorie, std::string table, std::string nameOfcomptence)
  */
 
 
@@ -141,7 +141,7 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 
 
 
-std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std::string table, std::string nameOfcomptence){
+std::string vampireGameproject::Parsetext::parseText(std::string categorie, std::string table, std::string nameOfcomptence){
     
     std::string lineOftext;
     std::string partOftext;
@@ -261,9 +261,9 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 
 
 
-/** Implementation of the parse_listClans method.
+/** Implementation of the parselistClans method.
 *
-* Implementation of the parse_listClans method
+* Implementation of the parselistClans method
 * Method returning the list of Clans */
 
 /*Allows to parse all the text of a categorie (Abilities, Attributes,...)*/
@@ -271,7 +271,7 @@ std::string vampireGameproject::Parsetext::parse_text(std::string categorie, std
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_listClans(){
+std::vector<std::string> vampireGameproject::Parsetext::parselistClans(){
     std::string lineOftext;
     std::vector<std::string> vectorClans;
     std::ifstream infile("VampireV5.txt");
@@ -312,16 +312,16 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_listClans(){
 
 
 
-/** Implementation of the parse_listNature method.
+/** Implementation of the parselistNature method.
 *
-* Implementation of the parse_listNature method
+* Implementation of the parselistNature method
 * Method returning the list of Nature */
 
 
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_listNature(){
+std::vector<std::string> vampireGameproject::Parsetext::parselistNature(){
     std::string lineOftext;
     std::vector<std::string> vectorNature;
     std::ifstream infile("VampireV5.txt");
@@ -361,9 +361,9 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_listNature(){
 
 
 
-/** Implementation of the parse_NicknameClan method.
+/** Implementation of the parseNicknameClan method.
 *
-* Implementation of the parse_NicknameClan method
+* Implementation of the parseNicknameClan method
 * Method returning a nickname corresponding to  
 * a Vampire Clan 
 * 
@@ -373,7 +373,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_listNature(){
 
 
 
-std::string vampireGameproject::Parsetext::parse_NicknameClan(std::string clanName){
+std::string vampireGameproject::Parsetext::parseNicknameClan(std::string clanName){
     std::string lineOftext;
     std::ifstream infile("VampireV5.txt");
     std::getline(infile, lineOftext);
@@ -416,9 +416,9 @@ std::string vampireGameproject::Parsetext::parse_NicknameClan(std::string clanNa
 
 
 
-/** Implementation of the parse_ClanDisciplines method.
+/** Implementation of the parseClanDisciplines method.
 *
-* Implementation of the parse_ClanDisciplines method
+* Implementation of the parseClanDisciplines method
 * Method returning a vector corresponding to  
 * Disciplines associated to a clan 
 * 
@@ -428,7 +428,7 @@ std::string vampireGameproject::Parsetext::parse_NicknameClan(std::string clanNa
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplines(std::string clanName){
+std::vector<std::string> vampireGameproject::Parsetext::parseClanDisciplines(std::string clanName){
     std::string lineOftext;
     std::vector<std::string> vectorClansDisciplines;
     std::ifstream infile("VampireV5.txt");
@@ -484,9 +484,9 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplines(st
 
 
 
-/** Implementation of the parse_ClanDisciplinesCategorie method.
+/** Implementation of the parseClanDisciplinesCategorie method.
 *
-* Implementation of the parse_ClanDisciplinesCategorie method
+* Implementation of the parseClanDisciplinesCategorie method
 * Method returning a vector corresponding to  
 * sub-Disciplines associated to a clan 
 * 
@@ -496,7 +496,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplines(st
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplinesCategorie(std::string categorie){
+std::vector<std::string> vampireGameproject::Parsetext::parseClanDisciplinesCategorie(std::string categorie){
     std::string lineOftext;
     std::vector<std::string> vectorClansDisciplines;
     std::ifstream infile("VampireV5.txt");
@@ -568,15 +568,15 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_ClanDisciplinesCat
 
 
 
-/** Implementation of the parse_Attributes method.
+/** Implementation of the parseAttributes method.
 *
-* Implementation of the parse_Attributes method
+* Implementation of the parseAttributes method
 * Method returning a vector containing the attributes*/
 
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_Attributes(){
+std::vector<std::string> vampireGameproject::Parsetext::parseAttributes(){
     std::string lineOftext;
     std::vector<std::string> vectorAttributes;
     std::ifstream infile("VampireV5.txt");
@@ -629,9 +629,9 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Attributes(){
 
 
 
-/** Implementation of the parse_AttributesCategorie method.
+/** Implementation of the parseAttributesCategorie method.
 *
-* Implementation of the parse_AttributesCategorie method
+* Implementation of the parseAttributesCategorie method
 * Method returning a vector containing the sub-attributes
 * associated to an attribute 
 *
@@ -642,7 +642,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Attributes(){
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_AttributesCategorie(std::string categorie){
+std::vector<std::string> vampireGameproject::Parsetext::parseAttributesCategorie(std::string categorie){
     std::string lineOftext;
     std::vector<std::string> vectorAttributes;
     std::ifstream infile("VampireV5.txt");
@@ -689,16 +689,16 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_AttributesCategori
 
 
 
-/** Implementation of the parse_Abilities method.
+/** Implementation of the parseAbilities method.
 *
-* Implementation of the parse_Abilities method
+* Implementation of the parseAbilities method
 * Method returning a vector containing the abilities*/
 
 
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_Abilities(){
+std::vector<std::string> vampireGameproject::Parsetext::parseAbilities(){
     std::string lineOftext;
     std::vector<std::string> vectorAbilities;
     std::ifstream infile("VampireV5.txt");
@@ -763,9 +763,9 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Abilities(){
 
 
 
-/** Implementation of the parse_AbilitiesCategorie method.
+/** Implementation of the parseAbilitiesCategorie method.
 *
-* Implementation of the parse_AbilitiesCategorie method
+* Implementation of the parseAbilitiesCategorie method
 * Method returning a vector containing the sub-abilities 
 * from a selected abilitie
 *
@@ -776,7 +776,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Abilities(){
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_AbilitiesCategorie(std::string categorieToGet){
+std::vector<std::string> vampireGameproject::Parsetext::parseAbilitiesCategorie(std::string categorieToGet){
     std::string lineOftext;
     std::vector<std::string> vectorAbilities;
     std::ifstream infile("VampireV5.txt");
@@ -825,9 +825,9 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_AbilitiesCategorie
 
 
 
-/** Implementation of the parse_Background method.
+/** Implementation of the parseBackground method.
 *
-* Implementation of the parse_Background method
+* Implementation of the parseBackground method
 * Method creating the Background elements in a vector
 * and returning it*/
 
@@ -835,7 +835,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_AbilitiesCategorie
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_Backgrounds(){
+std::vector<std::string> vampireGameproject::Parsetext::parseBackgrounds(){
     std::vector<std::string> vectorBackgrounds;
     vectorBackgrounds.push_back("Allies");
     vectorBackgrounds.push_back("Alternate Identity");
@@ -860,16 +860,16 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Backgrounds(){
 
 
 
-/** Implementation of the parse_Virtues method.
+/** Implementation of the parseVirtues method.
 *
-* Implementation of the parse_Virtues method
+* Implementation of the parseVirtues method
 * Method returning a vector containing the Vertues*/
 
 
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_Viritues(){
+std::vector<std::string> vampireGameproject::Parsetext::parseViritues(){
     std::string lineOftext;
     std::vector<std::string> vectorVirtues;
     std::ifstream infile("VampireV5.txt");
@@ -911,16 +911,16 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_Viritues(){
 
 
 
-/** Implementation of the parse_MeritsFlaws method.
+/** Implementation of the parseMeritsFlaws method.
 *
-* Implementation of the parse_MeritsFlaws method
+* Implementation of the parseMeritsFlaws method
 * Method returning a vector containing the MeritsFlaws*/
 
 
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_MeritsFlaws(){
+std::vector<std::string> vampireGameproject::Parsetext::parseMeritsFlaws(){
     std::string lineOftext;
     std::vector<std::string> vectorMeritsFlaws;
     std::ifstream infile("VampireV5.txt");
@@ -958,9 +958,9 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_MeritsFlaws(){
 
 
 
-/** Implementation of the parse_MeritsFlawsCategorie method.
+/** Implementation of the parseMeritsFlawsCategorie method.
 *
-* Implementation of the parse_MeritsFlawsCategorie method
+* Implementation of the parseMeritsFlawsCategorie method
 * Method returning a vector containing the sub-MeritsFlaws associated to 
 * a MeritsFlaws
 *
@@ -969,7 +969,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_MeritsFlaws(){
 
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_MeritsFlawsCategorie(std::string categorie){
+std::vector<std::string> vampireGameproject::Parsetext::parseMeritsFlawsCategorie(std::string categorie){
     std::string lineOftext;
     std::vector<std::string> vectorMeritsFlaws;
     std::ifstream infile("VampireV5.txt");
@@ -1014,7 +1014,7 @@ std::vector<std::string> vampireGameproject::Parsetext::parse_MeritsFlawsCategor
 }
 
 
-std::vector<std::string> vampireGameproject::Parsetext::parse_Health(){
+std::vector<std::string> vampireGameproject::Parsetext::parseHealth(){
     std::vector<std::string> vectorHealth;
     vectorHealth.push_back("Bruised");
     vectorHealth.push_back("Hurt");
