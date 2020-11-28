@@ -87,6 +87,15 @@ std::string vampireGameproject::Gui::returnNature(){
 
 
 
+
+/** Implementation of the returnHealth method.
+*
+* Implementation of the returnHealth method
+* Method returning the text active from the Health 
+* ComboBox Text */
+
+
+
 std::string vampireGameproject::Gui::returnHealth(){
     return tableComboBox[2].get_active_text();
 }
@@ -155,7 +164,8 @@ void vampireGameproject::Gui::setTableLabelAlign(int index, std::string label){
 * Implementation of the setTableLabel method
 * Method assigning text to a precised label
 *
-*
+* @param index: number of Label in the table 
+* @param label: text to set in the label
 */
 
 
@@ -164,6 +174,7 @@ void vampireGameproject::Gui::setTableLabelAlign(int index, std::string label){
 void vampireGameproject::Gui::setTableLabel(int index, std::string label){
     tableLabel[index].set_text(label);
 }
+
 
 
 /** Implementation of the setTableLabelOnGrid method.
@@ -187,6 +198,7 @@ void vampireGameproject::Gui::setTableLabelOnGrid(int index, int xcoordinates, i
 
 
 
+
 /** Implementation of the setTableComboBoxOnGrid method.
 *
 * Implementation of the setTableComboBoxOnGrid method
@@ -205,7 +217,6 @@ void vampireGameproject::Gui::setTableComboBoxOnGrid(int index, int indexLabel){
 
 
 
-
 /** Implementation of the returnComboBoxClan method.
 *
 * Implementation of the returnComboBoxClan method
@@ -215,34 +226,6 @@ void vampireGameproject::Gui::setTableComboBoxOnGrid(int index, int indexLabel){
 
 Gtk::ComboBoxText& vampireGameproject::Gui::returnComboBoxClan(){
     return tableComboBox[0];
-}
-
-
-
-
-
-/** Implementation of the setMultiComboBox method.
-*
-* Implementation of the setTableComboBoxOnGrid method
-* Method displaying ComboBoxes on the GUI
-*
-*   !!!!!!!!!!!!!Method to delete!!!!!!!!!!!!!!!!!!
-*/
-
-
-
-
-
-void vampireGameproject::Gui::setMultiComboBox(Gtk::Button& buttonPlus, Gtk::Button& buttonMinus,
-                Gtk::ComboBoxText& ComboFirst, Gtk::ComboBoxText& ComboSecond,
-                Gtk::SpinButton& buttonSpin, int xcoordinates, int ycoordinates, 
-                int width, int height){
-
-        mainGrid.attach(buttonMinus, xcoordinates, ycoordinates, width, height);
-        mainGrid.attach_next_to(buttonPlus, buttonMinus, Gtk::POS_RIGHT, 1, 1);
-        mainGrid.attach_next_to(ComboFirst, buttonMinus, Gtk::POS_RIGHT, 1, 1);
-        mainGrid.attach_next_to(ComboSecond, ComboFirst, Gtk::POS_RIGHT, 1, 1);
-        mainGrid.attach_next_to(buttonSpin, ComboSecond, Gtk::POS_RIGHT, 1, 1);
 }
 
 
@@ -392,6 +375,7 @@ void vampireGameproject::Gui::setButtonMultiInputMeritsFlaws(){
 
     setLabelMultiComboBoxMeritsFlaws();
 }
+
 
 
 /** Implementation of the setSpinButtonHumanityPath method.
@@ -862,6 +846,20 @@ void vampireGameproject::Gui::showAll(){
     Gui::show_all_children();
 }
 
+
+
+
+/** Implementation of the setFileChooser method.
+*
+* Implementation of the setFileChooser method
+* Method initiating the file chooser when user 
+* choices are submitted
+*
+*
+*/
+
+
+
 std::string vampireGameproject::Gui::setFileChooser(){
     Gtk::FileChooserDialog* fileToSave = new Gtk::FileChooserDialog("Please choose a folder", 
         Gtk::FILE_CHOOSER_ACTION_SAVE);
@@ -892,9 +890,38 @@ std::string vampireGameproject::Gui::setFileChooser(){
     return filenameToReturn;
 }
 
+
+
+
+/** Implementation of the initialiseEntryName method.
+*
+* Implementation of the initialiseEntryName method
+* Method initiating the Entry Name on the GUI
+*
+*
+*/
+
+
+
+
 void vampireGameproject::Gui::initialiseEntryName(){
     mainGrid.attach_next_to(NameEntry, tableLabel[1], Gtk::POS_RIGHT, 1, 1);
 }
+
+
+
+
+/** Implementation of the returnPlayerName method.
+*
+* Implementation of the returnPlayerName method
+* Method returning the Player Name from the Entry Widget
+* on the Gui
+*
+*/
+
+
+
+
 
 std::string vampireGameproject::Gui::returnPlayerName(){
     return NameEntry.get_text();
