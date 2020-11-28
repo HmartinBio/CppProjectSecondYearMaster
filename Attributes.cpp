@@ -7,7 +7,7 @@
 * Initialisation of a Parsetext reference 
 * before the Attributes constructor be initialised
 *
-* @param textParse reference of Parsetext
+* @param textParse: reference of Parsetext
 */
 
 
@@ -35,7 +35,7 @@ vampireGameproject::Attributes::~Attributes(){}
 * Implementation of the getAttributes method
 * Method returning the attributes
 *
-* @param attributeTable name of the table to return
+* @param attributeTable: name of the table to return
 *
 */
 
@@ -66,9 +66,9 @@ std::map<std::string,int> vampireGameproject::Attributes::getAttributes(std::str
 * setAttributes method allows to allocate Attributes 
 * to character 
 * 
-* @param tableName name of the table to add an attribute 
-* @param attributeName name of the attribute to add
-* @param value value of the attribute to add
+* @param tableName: name of the table to add an attribute 
+* @param attributeName: name of the attribute to add
+* @param value: value of the attribute to add
 */
 
 
@@ -96,8 +96,8 @@ void vampireGameproject::Attributes::setAttributes(std::string tableName,std::st
 * getDescriptionattributes method allows to return the description of 
 * an attribute 
 * 
-* @param table name of the table to look for an attribute 
-* @param attributeName name of the attribute to return the description
+* @param table: name of the table to look for an attribute 
+* @param attributeName: name of the attribute to return the description
 */
 
 
