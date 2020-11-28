@@ -329,13 +329,28 @@ namespace vampireGameproject{
     };
 
 
-union MultiDimensionnalDataStructure{
-    MultiDimensionnalDataStructure(std::string categorieToEnter);
-    MultiDimensionnalDataStructure(int categorieValue);
-    ~MultiDimensionnalDataStructure();
-    std::string categorie;
-    int value;
-};
+
+
+/**
+ * Implementation of the union MultiDimensionnalDataStructure
+ *
+ * MultiDimensionnalDataStructure union is designed such 
+ * as it is possible into the Clan class to save Disciplines 
+ * points or Disciplines names into a same vector 
+ * 
+ *
+ */
+
+
+
+
+    union MultiDimensionnalDataStructure{
+        MultiDimensionnalDataStructure(std::string categorieToEnter);
+        MultiDimensionnalDataStructure(int categorieValue);
+        ~MultiDimensionnalDataStructure();
+        std::string categorie;
+        int value;
+    };
 
 
 
@@ -407,6 +422,20 @@ union MultiDimensionnalDataStructure{
     };
 
 
+
+/**
+ * Implementation of the Class MultiInput
+ *
+ * MultiInput class is designed such as the two ComboBoxTexts and the SpinButton
+ * which are appended by the ButtonMultiInput class are designed with this 
+ * class
+ * 
+ *
+ */
+
+
+
+
     class MultiInput{
         public:
             MultiInput();
@@ -429,6 +458,23 @@ union MultiDimensionnalDataStructure{
 
 
     class Controllor;
+
+
+
+
+/**
+ * Implementation of the Class ButtonmultiInput
+ *
+ * ButtonmultiInput class is designed such as this one contains address of 
+ * MultiInputs object appended by the ButtonmultiInput class and this 
+ * class allows to count points attributed by the user on each MultiInput First ComboBoxText 
+ * contained in this class 
+ * 
+ * 
+ */
+
+
+
 
     class ButtonmultiInput{
             public:
@@ -467,73 +513,100 @@ union MultiDimensionnalDataStructure{
 
 
 
-class MultiInputOneComboBox{
-        public:
-            MultiInputOneComboBox();
-            virtual ~MultiInputOneComboBox();
-            Gtk::ComboBoxText& returnComboBox();
-            Gtk::SpinButton& returnSpinButton();
-            void setLimitSpinButton(int limit);
-            int returnSpinScore();
-            std::string returnTextComboBox();
-            void setVectorComboBox(std::vector<std::string>& vectorText);
-            void unsetActiveText();
-            void resetSpinScore();
 
-        private:
-            Gtk::ComboBoxText ComboBox;
-            Gtk::SpinButton spinButton;
-    };
+/**
+ * Implementation of the Class MultiInputOneComboBox
+ *
+ * MultiInputOneComboBox class is designed such as the ComboBoxText and the SpinButton
+ * which are appended by the ButtonMultiInputOneComboBox class are designed with this 
+ * class
+ * 
+ *
+ */
 
 
 
 
 
 
-
-
-
-
-
-
-class ButtonmultiInputOneComboBox{
+    class MultiInputOneComboBox{
             public:
-                ButtonmultiInputOneComboBox();
-                virtual ~ButtonmultiInputOneComboBox();
-                Gtk::Button& returnButton(std::string sign);
-                void setLabelMultiComboBox();
-                std::vector<MultiInputOneComboBox*>& returnVectorMultiInput();
-                void setVectorSelectedInput();
-                void setDicoScoreFirstComboBox();
-                void setMultiInput();
-                void deleteMultiInput();
-                void setCoordinates(int coordinateX, int coordinateY);
-                std::map<std::string, int> returnDicoScoreComboBox();
-                std::vector<std::string> returnVectorSelectedInput();
-                void setLimitMultiInput();
-                void setVectorComboBox(int index, std::vector<std::string> vectorReference);
-                void initialize();
-                void setNumberMultiInput(int number);
-                std::string returnTextComboBox(int number);
-                int returnXCoordinate();
-                int returnYCoordinate();
+                MultiInputOneComboBox();
+                virtual ~MultiInputOneComboBox();
+                Gtk::ComboBoxText& returnComboBox();
+                Gtk::SpinButton& returnSpinButton();
+                void setLimitSpinButton(int limit);
+                int returnSpinScore();
+                std::string returnTextComboBox();
+                void setVectorComboBox(std::vector<std::string>& vectorText);
+                void unsetActiveText();
+                void resetSpinScore();
 
             private:
-                Gtk::Button plusButton;
-                Gtk::Button minusButton;
-                Gtk::ComboBoxText firstComboBox;
-                Gtk::ComboBoxText secondComboBox;
-                std::vector<MultiInputOneComboBox*> vectorMultiInputs;
-                std::vector<std::string> vectorComboBoxSelectedInputs;
-                int xcoordinates;
-                int ycoordinates;
-                std::map<std::string, int> DicoScoreComboBox;
+                Gtk::ComboBoxText ComboBox;
+                Gtk::SpinButton spinButton;
     };
 
 
 
 
 
+
+/**
+ * Implementation of the Class ButtonmultiInputOneComboBox
+ *
+ * ButtonmultiInputOneComboBox class is designed such as this one contains address of 
+ * MultiInputOneComboBox object appended by the ButtonmultiInput class and this 
+ * class allows to count points attributed by the user on each MultiInputOneComboBox ComboBoxText 
+ * contained in this class 
+ * 
+ * 
+ */
+
+
+
+
+
+
+
+    class ButtonmultiInputOneComboBox{
+        public:
+            ButtonmultiInputOneComboBox();
+            virtual ~ButtonmultiInputOneComboBox();
+            Gtk::Button& returnButton(std::string sign);
+            void setLabelMultiComboBox();
+            std::vector<MultiInputOneComboBox*>& returnVectorMultiInput();
+            void setVectorSelectedInput();
+            void setDicoScoreFirstComboBox();
+            void setMultiInput();
+            void deleteMultiInput();
+            void setCoordinates(int coordinateX, int coordinateY);
+            std::map<std::string, int> returnDicoScoreComboBox();
+            std::vector<std::string> returnVectorSelectedInput();
+            void setLimitMultiInput();
+            void setVectorComboBox(int index, std::vector<std::string> vectorReference);
+            void initialize();
+            void setNumberMultiInput(int number);
+            std::string returnTextComboBox(int number);
+            int returnXCoordinate();
+            int returnYCoordinate();
+
+        private:
+            Gtk::Button plusButton;
+            Gtk::Button minusButton;
+            Gtk::ComboBoxText firstComboBox;
+            Gtk::ComboBoxText secondComboBox;
+            std::vector<MultiInputOneComboBox*> vectorMultiInputs;
+            std::vector<std::string> vectorComboBoxSelectedInputs;
+            int xcoordinates;
+            int ycoordinates;
+            std::map<std::string, int> DicoScoreComboBox;
+    };
+
+
+
+
+    class RulesofGame; 
 
 
 
@@ -546,7 +619,8 @@ class ButtonmultiInputOneComboBox{
  * 
  *
  */
-    class RulesofGame; 
+
+    
 
     class Gui : public Gtk::Window{
         public:
@@ -629,7 +703,7 @@ class ButtonmultiInputOneComboBox{
 /**
  * Implementation of the Class RulesofGame
  *
- * RulesofGame class is designed such as all the tests 
+ * RulesofGame class is designed such as all the informations 
  * to verify inputted informations on the graphical user
  * interface are contained in this class
  * 
@@ -672,16 +746,6 @@ class ButtonmultiInputOneComboBox{
          
 
 
-
-
-
-
-
-
-
-
-
-
 /**
 * Implementation of the Class Character
 *
@@ -691,6 +755,8 @@ class ButtonmultiInputOneComboBox{
 * modify the character picture. Character object are created once the 
 * Graphical user interface received all the informations to create a character
 */
+
+
 
     class Character{
         private:
@@ -752,10 +818,10 @@ class ButtonmultiInputOneComboBox{
 /**
  * Implementation of the Class Picturemodifying
  *
- * Picturemodifying class is designed to modify the picture to include  
+ * Picturemodifying class is designed to create a text file including  
  * all the information about a character. Once the graphical user interface
- * received all the informations about a character, Picturemodifying modifies 
- * the picture to generate a picture with all the informations about a character
+ * received all the informations about a character, Picturemodifying writes 
+ * the text file with all the informations about a character
  *
  */
 
@@ -778,22 +844,6 @@ class ButtonmultiInputOneComboBox{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// The second function parse_text aims to get the description of a skill, 
-// a virtue, etc... proper to the character
-// The function is not contained in each class but in the controller
 
 
 /**
