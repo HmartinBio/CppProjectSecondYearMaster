@@ -10,7 +10,7 @@
 * before the Meritsflaws constructor be initialised
 * Initialisation of map containing Merits and Flaws
 * 
-* @param textParse reference of Parsetext
+* @param textParse: reference of Parsetext
 */
 
 
@@ -37,7 +37,7 @@ vampireGameproject::Meritsflaws::~Meritsflaws(){}
 * Implementation of the getMeritsFlaws method
 * Method returning the Merits and Flaws
 * 
-* @param type name of the table to return 
+* @param type: name of the table to return 
 *
 */
 
@@ -53,9 +53,9 @@ std::map<std::string,int> vampireGameproject::Meritsflaws::getMeritsFlaws(std::s
 * Implementation of the setMeritsFlaws method
 * Method setting Merits and Flaws values
 * 
-* @param table name of the table to add a merit or flaw
-* @param meritsName name of the merit or flaw to add
-* @param number value of the merit or flaw to add
+* @param table: name of the table to add a merit or flaw
+* @param meritsName: name of the merit or flaw to add
+* @param number: value of the merit or flaw to add
 */
 
 
@@ -71,8 +71,8 @@ void vampireGameproject::Meritsflaws::setMeritsFlaws(std::string table, std::str
 * getDescription method allows to return the description of 
 * a merit or a flow
 * 
-* @param table name of the table to look for a merit or flaw 
-* @param attributeName name of the merit to return the description
+* @param table: name of the table to look for a merit or flaw 
+* @param attributeName: name of the merit to return the description
 */
 
 
