@@ -8,7 +8,7 @@
 * Initialisation of a Parsetext reference 
 * before the Nature constructor be initialised
 *
-* @param textParse reference of Parsetext object
+* @param textParse: reference of Parsetext object
 *
 */
 
@@ -52,7 +52,7 @@ std::string vampireGameproject::Nature::getNature(void){
 * Implementation of the setNature method
 * Method setting the nature value
 * 
-* @param nature nature categorie to set
+* @param nature: nature categorie to set
 * 
 */
 
@@ -72,8 +72,8 @@ void vampireGameproject::Nature::setNature(std::string nature){
 
 
 void vampireGameproject::Nature::setDescription(void){
-   // description = textParser.parse_text("Nature", nature);
-   description = "test";
+    // description = textParser.parse_text("Nature", nature);
+    description = "test";
 }
 
 
