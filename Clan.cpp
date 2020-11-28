@@ -8,7 +8,7 @@
 * Initialisation of a Parsetext reference 
 * before the Nature constructor be initialised
 *
-* @param textParse reference of Parsetext object
+* @param textParse: reference of Parsetext object
 *
 */
 
@@ -52,7 +52,7 @@ std::string vampireGameproject::Clan::getClan(void){
 * Implementation of the setClan method
 * Method setting the clan 
 * 
-* @param clan clan categorie to set
+* @param clan: clan categorie to set
 * 
 */
 
@@ -70,7 +70,7 @@ void vampireGameproject::Clan::setClan(std::string clan){
 * Implementation of the setVampirename method
 * Method setting the name of the Vampire
 *
-* 
+* @param vampireNickName: vampireNickName to set
 */
 
 
@@ -132,17 +132,17 @@ std::string vampireGameproject::Clan::getVampirename(void){
 * Implementation of the setDisciplines method
 * Method setting the disciplines 
 * 
-* @param disciplines disciplines to set
+* @param disciplines: disciplines to set
 * 
 */
 
-//void vampireGameproject::Clan::setDisciplines(std::map<std::string,std::map<std::string, int>> disciplines){
-//    vampireGameproject::Clan::disciplines = disciplines;
-//}
+
 
 void vampireGameproject::Clan::setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines){
     vampireGameproject::Clan::disciplines = disciplines;
 }
+
+
 
 /** Implementation of the getDisciplines method.
 *
@@ -153,9 +153,6 @@ void vampireGameproject::Clan::setDisciplines(std::vector<MultiDimensionnalDataS
 * 
 */
 
-//std::map<std::string,std::map<std::string, int>> vampireGameproject::Clan::getDisciplines(void){
-//    return disciplines;
-//}
 
 std::vector<vampireGameproject::MultiDimensionnalDataStructure*> vampireGameproject::Clan::getDisciplines(){
     return disciplines;
