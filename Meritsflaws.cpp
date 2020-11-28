@@ -77,7 +77,7 @@ void vampireGameproject::Meritsflaws::setMeritsFlaws(std::string table, std::str
 
 
 std::string vampireGameproject::Meritsflaws::getDescription(std::string table, std::string attributeName){
-    return textParser.parse_text("Merits_flaws", table, attributeName);
+    return textParser.parseText("Merits_flaws", table, attributeName);
 }
 
 
