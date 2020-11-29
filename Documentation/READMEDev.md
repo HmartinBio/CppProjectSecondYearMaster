@@ -459,6 +459,30 @@ class ButtonmultiInput{
 
 ```
 
+The previous Widgets were designed a second time with other class names(**MultiInputOneComboBox**, **ButtonmultiInputOneComboBox**). These are the same Widgets except that **MultiInputOneComboBox** Widget has only one **ComboBoxText** compared to **MultiInput** Widget.
+
+
+```cpp
+class MultiInputOneComboBox{
+    public:
+        MultiInputOneComboBox();
+        virtual ~MultiInputOneComboBox();
+        Gtk::ComboBoxText& returnComboBox();
+        Gtk::SpinButton& returnSpinButton();
+        void setLimitSpinButton(int limit);
+        int returnSpinScore();
+        std::string returnTextComboBox();
+        void setVectorComboBox(std::vector<std::string>& vectorText);
+        void unsetActiveText();
+        void resetSpinScore();
+
+    private:
+        Gtk::ComboBoxText ComboBox;
+        Gtk::SpinButton spinButton;
+};
+
+```
+
 
 
 ```cpp
@@ -498,29 +522,13 @@ class ButtonmultiInput{
 
 ```
 
-```cpp
-class MultiInputOneComboBox{
-    public:
-        MultiInputOneComboBox();
-        virtual ~MultiInputOneComboBox();
-        Gtk::ComboBoxText& returnComboBox();
-        Gtk::SpinButton& returnSpinButton();
-        void setLimitSpinButton(int limit);
-        int returnSpinScore();
-        std::string returnTextComboBox();
-        void setVectorComboBox(std::vector<std::string>& vectorText);
-        void unsetActiveText();
-        void resetSpinScore();
-
-    private:
-        Gtk::ComboBoxText ComboBox;
-        Gtk::SpinButton spinButton;
-};
-
-```
-
 
 ### Meta Data Structure built during the project
+
+During the project, we built a **union** in the aim to save **string** and **integer** in the vector containing **Disciplines** in the class **Clan**. This data structure allowed to avoid to make a double loop when we retrieve the **Disciplines** information. 
+
+**Union** are data structure allowing to save a variable in a type chosen according to the developper need.
+
 
 ```cpp
 union MultiDimensionnalDataStructure{
@@ -536,6 +544,9 @@ union MultiDimensionnalDataStructure{
 
 ## Improvements
 
+Some **bugs** persist in the application, these one are caused by **double loop** in the application code. To correct these troubles, some parts of the application code are to revise in the aim to use others
+data structure allowing to avoid to make double loops.
 
+Moreover, the limit points attributed to game fields in the class **RulesofGame** doesn't reflect the limit points in the true rules of game. For that, we need to create several dictionnary for each game fields in the aim each field must have its own dictionnary allowing to control the points sum for each game field.  
 
-
+To finish, we could add more game fields for the output file be as representative as possible. And we could propose to the user to download a Picture Character Sheet with the [OpenCV](https://docs.opencv.org/3.4/d6/d6e/group__imgproc__draw.html) library. 
