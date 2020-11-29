@@ -391,6 +391,35 @@ Once the graphical user interface set all the informations about a character in 
 
 ### Custom Widgets built during the project
 
+During the project, we designed four custom Widgets.
+The first one is the **MultiInput**, this **Widget** allows to represent
+two side by side **ComboBoxText** Widgets. These one are next to a **SpinButton** Widget. The selection of an item in the First **ComboBoxText** allows to fill the Second **ComboBoxText** and to activate the **SpinButton** Widget. **MultiInput** Widget is contained in the **ButtonmultiInput** Widget, this one allows to synchronize **ComboBoxText** with the **SpinButton**.
+
+
+```cpp
+class MultiInput{
+    public:
+        MultiInput();
+        virtual ~MultiInput();
+        Gtk::ComboBoxText& returnComboBox(std::string position);
+        Gtk::SpinButton& returnSpinButton();
+        void setLimitSpinButton(int limit);
+        int returnSpinScore();
+        std::string returnTextComboBox(std::string index);
+        void setVectorComboBox(std::vector<std::string>& vectorText, std::string index);
+        void setComboBoxFunction(std::string index);
+        void unsetActiveText();
+        void resetSpinScore();
+
+    private:
+        Gtk::ComboBoxText firstComboBox;
+        Gtk::ComboBoxText secondComboBox;
+        Gtk::SpinButton spinButton;
+};
+
+```
+
+**ButtonmultiInput** Widget allows to create dynamically **MultiInput** Widgets, methods of the **ButtonmultiInput** class allows to append or delete **MultiInput** objects in a vector contained in the **ButtonmultiInput** class. **ButtonmultiInput** Widget is composed of at least one **MultiInput** Widget, one Plus **Button** Widget and one minus Button **Widget** allowing to append or delete **MultiInput** Widgets.
 
 
 ```cpp
@@ -430,28 +459,7 @@ class ButtonmultiInput{
 
 ```
 
-```cpp
-class MultiInput{
-    public:
-        MultiInput();
-        virtual ~MultiInput();
-        Gtk::ComboBoxText& returnComboBox(std::string position);
-        Gtk::SpinButton& returnSpinButton();
-        void setLimitSpinButton(int limit);
-        int returnSpinScore();
-        std::string returnTextComboBox(std::string index);
-        void setVectorComboBox(std::vector<std::string>& vectorText, std::string index);
-        void setComboBoxFunction(std::string index);
-        void unsetActiveText();
-        void resetSpinScore();
 
-    private:
-        Gtk::ComboBoxText firstComboBox;
-        Gtk::ComboBoxText secondComboBox;
-        Gtk::SpinButton spinButton;
-};
-
-```
 
 ```cpp
     class ButtonmultiInputOneComboBox{
