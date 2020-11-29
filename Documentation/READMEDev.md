@@ -193,57 +193,57 @@ The constructor of the **Character** class is not executed yet. It allows to the
 ```cpp
 
  class Character{
-        private:
-            std::string playerName;
-            Chronicle characterChronicle;
-            Attributes characterAttributes;
-            Abilities characterAbilities;
-            Advantages characterAdvantages;
-            Meritsflaws characterMeritsflaws;
-            Nature characterNature;
-            Health characterHealth;
-            CharacterTraits characterTraits;
-            Generation characterGeneration;
-            Daemenor characterDaemenor;
-            Clan characterClan;
+    private:
+        std::string playerName;
+        Chronicle characterChronicle;
+        Attributes characterAttributes;
+        Abilities characterAbilities;
+        Advantages characterAdvantages;
+        Meritsflaws characterMeritsflaws;
+        Nature characterNature;
+        Health characterHealth;
+        CharacterTraits characterTraits;
+        Generation characterGeneration;
+        Daemenor characterDaemenor;
+        Clan characterClan;
             
-        public:
-            std::string getPlayername(void);
-            void setPlayername(std::string name);
-            Character(Parsetext& textParser);
-            ~Character();
-            void setAttributes(std::string firstComboBoxItem, 
-                std::string secondComboBoxItem, int SpinScore);
-            std::map<std::string,int> getAttributes(std::string firstComboBoxItem);
-            void setAbilities(std::string firstComboBoxItem, 
-                std::string secondComboBoxItem, int SpinScore);
-            std::map<std::string, int> getAbilties(std::string FirstComboBoxItem);
-            void setMeritsflaws(std::string firstComboBoxItem, 
-                std::string secondComboBoxItem, int SpinScore);
-            std::map<std::string, int> returnMeritsFlaws(std::string FirstComboBoxItem);
-            void setNature(std::string ComboBoxItem);
-            std::string getNature();
-            void setHealth(std::string ComboBoxItem);
-            std::string getHealth();
-            void setGeneration(float SpinScoreButton);
-            std::string getGeneration();
-            void setClan(std::string ComboBoxItem);
-            std::string getClan();
-            void setBackground(std::string ComboBoxItem, int SpinScore);
-            std::map<std::string, int> getBackground();
-            void setVirtues(std::string ComboBoxItem, int spinScore);
-            std::map<std::string, int> getVirtues();
-            void setHumanity(int number);
-            std::string getHumanity();
-            void setWillpower(int number);
-            std::string getWillpower();
-            void setBloodpool(float number);
-            float getBloodpool();
-            void setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines);
-            std::vector<MultiDimensionnalDataStructure*> returnDisciplines();
+    public:
+        std::string getPlayername(void);
+        void setPlayername(std::string name);
+        Character(Parsetext& textParser);
+        ~Character();
+        void setAttributes(std::string firstComboBoxItem, 
+            std::string secondComboBoxItem, int SpinScore);
+        std::map<std::string,int> getAttributes(std::string firstComboBoxItem);
+        void setAbilities(std::string firstComboBoxItem, 
+            std::string secondComboBoxItem, int SpinScore);
+        std::map<std::string, int> getAbilties(std::string FirstComboBoxItem);
+        void setMeritsflaws(std::string firstComboBoxItem, 
+            std::string secondComboBoxItem, int SpinScore);
+        std::map<std::string, int> returnMeritsFlaws(std::string FirstComboBoxItem);
+        void setNature(std::string ComboBoxItem);
+        std::string getNature();
+        void setHealth(std::string ComboBoxItem);
+        std::string getHealth();
+        void setGeneration(float SpinScoreButton);
+        std::string getGeneration();
+        void setClan(std::string ComboBoxItem);
+        std::string getClan();
+        void setBackground(std::string ComboBoxItem, int SpinScore);
+        std::map<std::string, int> getBackground();
+        void setVirtues(std::string ComboBoxItem, int spinScore);
+        std::map<std::string, int> getVirtues();
+        void setHumanity(int number);
+        std::string getHumanity();
+        void setWillpower(int number);
+        std::string getWillpower();
+        void setBloodpool(float number);
+        float getBloodpool();
+        void setDisciplines(std::vector<MultiDimensionnalDataStructure*> disciplines);
+        std::vector<MultiDimensionnalDataStructure*> returnDisciplines();
             
-            void setVampireNickName(std::string Nickname);
-            std::string returnVampireNickName();
+        void setVampireNickName(std::string Nickname);
+        std::string returnVampireNickName();
     };
 
 ```
@@ -296,74 +296,74 @@ For example, each **Clan** has its own disciplines, so, when the user chooses th
 
 ```cpp
 class Gui : public Gtk::Window{
-        public:
-            Gui();
-            virtual ~Gui();
-            void setTableComboBox(int index, std::vector<std::string>& vectorElements);
-            void initialiseTableLabel();
-            void initialiseTableComboBox();
-            void setTableLabelAlign(int index, std::string label);
-            void setTableLabel(int index, std::string label);
-            void setTableLabelOnGrid(int index, int xcoordinates, int ycoordinates, int width, int height);
-            void setTableComboBoxOnGrid(int index, int indexLabel);
-            void setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height);
-            void setLabelMultiComboBoxAttributes();
-            void setLabelMultiComboBoxAbilities();
-            void setLabelMultiComboBoxDisciplines();
-            void setLabelMultiComboBoxMeritsFlaws();
-            ButtonmultiInput& returnAttributesInput();
-            ButtonmultiInput& returnAbilitiesInput();
-            ButtonmultiInput& returnDisciplinesInput();
-            ButtonmultiInput& returnMeritsFlawsInput();
-            void setMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
-            void deleteMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
-            void setButtonMultiInputAttributes();
-            void setButtonMultiInputAbilities();
-            void setButtonMultiInputDisciplines();
-            void setButtonMultiInputMeritsFlaws();
-            void showAll();
-            ButtonmultiInputOneComboBox& returnBackgroundsInput();
-            ButtonmultiInputOneComboBox& returnVirtuesInput();
-            void setMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number);
-            void deleteMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number);
-            void setButtonMultiInputBackgrounds();
-            void setButtonMultiInputVirtues();
-            void setLabelMultiComboBoxBackgrounds();
-            void setLabelMultiComboBoxVirtues();
-            std::string returnClanName();
-            Gtk::ComboBoxText& returnComboBoxClan();
-            void setSpinButtonHumanityPath();
-            void setSpinButtonWillPower();
-            void setSpinButtonBloodPool();
-            void setValidationButton();
-            Gtk::SpinButton& returnHumanityPathSpinButton(); 
-            Gtk::SpinButton& returnWillPowerSpinButton();
-            Gtk::SpinButton& returnBloodPoolSpinButton();
-            Gtk::Button& returnValidationButton();
-            Gtk::Label& returnLabelVampireNickName();
-            void setNicknameLabel();
-            void setTextNicknameLabel(std::string textToAdd);
-            std::string setFileChooser();
-            std::string returnNature();
-            std::string returnHealth();
-            void initialiseEntryName();
-            std::string returnPlayerName();       
+    public:
+        Gui();
+        virtual ~Gui();
+        void setTableComboBox(int index, std::vector<std::string>& vectorElements);
+        void initialiseTableLabel();
+        void initialiseTableComboBox();
+        void setTableLabelAlign(int index, std::string label);
+        void setTableLabel(int index, std::string label);
+        void setTableLabelOnGrid(int index, int xcoordinates, int ycoordinates, int width, int height);
+        void setTableComboBoxOnGrid(int index, int indexLabel);
+        void setMultiComboBoxAttributes(int xcoordinates, int ycoordinates, int width, int height);
+        void setLabelMultiComboBoxAttributes();
+        void setLabelMultiComboBoxAbilities();
+        void setLabelMultiComboBoxDisciplines();
+        void setLabelMultiComboBoxMeritsFlaws();
+        ButtonmultiInput& returnAttributesInput();
+        ButtonmultiInput& returnAbilitiesInput();
+        ButtonmultiInput& returnDisciplinesInput();
+        ButtonmultiInput& returnMeritsFlawsInput();
+        void setMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
+        void deleteMultiInputOnGrid(ButtonmultiInput& ButtonMultiInputReference, int number);
+        void setButtonMultiInputAttributes();
+        void setButtonMultiInputAbilities();
+        void setButtonMultiInputDisciplines();
+        void setButtonMultiInputMeritsFlaws();
+        void showAll();
+        ButtonmultiInputOneComboBox& returnBackgroundsInput();
+        ButtonmultiInputOneComboBox& returnVirtuesInput();
+        void setMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number);
+        void deleteMultiInputOneComboBoxOnGrid(ButtonmultiInputOneComboBox& ButtonmultiInputOneComboBoxReference, int number);
+        void setButtonMultiInputBackgrounds();
+        void setButtonMultiInputVirtues();
+        void setLabelMultiComboBoxBackgrounds();
+        void setLabelMultiComboBoxVirtues();
+        std::string returnClanName();
+        Gtk::ComboBoxText& returnComboBoxClan();
+        void setSpinButtonHumanityPath();
+        void setSpinButtonWillPower();
+        void setSpinButtonBloodPool();
+        void setValidationButton();
+        Gtk::SpinButton& returnHumanityPathSpinButton(); 
+        Gtk::SpinButton& returnWillPowerSpinButton();
+        Gtk::SpinButton& returnBloodPoolSpinButton();
+        Gtk::Button& returnValidationButton();
+        Gtk::Label& returnLabelVampireNickName();
+        void setNicknameLabel();
+        void setTextNicknameLabel(std::string textToAdd);
+        std::string setFileChooser();
+        std::string returnNature();
+        std::string returnHealth();
+        void initialiseEntryName();
+        std::string returnPlayerName();       
 
-        private:
-            Gtk::Grid mainGrid; 
-            Gtk::Label tableLabel[15];
-            Gtk::ComboBoxText tableComboBox[3];
-            ButtonmultiInput attributesInput;
-            ButtonmultiInput abilitiesInput;
-            ButtonmultiInput disciplinesInput;
-            ButtonmultiInput meritsFlawsInput;
-            ButtonmultiInputOneComboBox backgroundsInput;
-            ButtonmultiInputOneComboBox virtuesInput;
-            Gtk::SpinButton HumanityPathScore;
-            Gtk::SpinButton WillPowerScore;
-            Gtk::SpinButton BloodPoolScore;
-            Gtk::Button validationButton;
-            Gtk::Entry NameEntry;           
+    private:
+        Gtk::Grid mainGrid; 
+        Gtk::Label tableLabel[15];
+        Gtk::ComboBoxText tableComboBox[3];
+        ButtonmultiInput attributesInput;
+        ButtonmultiInput abilitiesInput;
+        ButtonmultiInput disciplinesInput;
+        ButtonmultiInput meritsFlawsInput;
+        ButtonmultiInputOneComboBox backgroundsInput;
+        ButtonmultiInputOneComboBox virtuesInput;
+        Gtk::SpinButton HumanityPathScore;
+        Gtk::SpinButton WillPowerScore;
+        Gtk::SpinButton BloodPoolScore;
+        Gtk::Button validationButton;
+        Gtk::Entry NameEntry;           
 };
 ```
 
@@ -375,7 +375,7 @@ Once the graphical user interface set all the informations about a character in 
 
 
 ```cpp
-     class Picturemodifying{
+    class Picturemodifying{
         public:
             Picturemodifying(Character& ReferenceCharacter);
             ~Picturemodifying();
@@ -393,6 +393,130 @@ Once the graphical user interface set all the informations about a character in 
 ```
 
 ### Custom Widgets built during the project
+
+
+
+```{cpp}
+
+class ButtonmultiInput{
+    public:
+        ButtonmultiInput();
+        virtual ~ButtonmultiInput();
+        Gtk::Button& returnButton(std::string sign);
+        void setLabelMultiComboBox();
+        std::vector<MultiInput*>& returnVectorMultiInput();
+        void setVectorSelectedInput();
+        void setDicoScoreFirstComboBox();
+        void setMultiInput();
+        void deleteMultiInput();
+        void setCoordinates(int coordinateX, int coordinateY);
+        std::map<std::string, int> returnDicoScoreFirstComboBox();
+        std::vector<std::string> returnVectorSelectedInput(std::string index);
+        void setLimitMultiInput();
+        void setVectorComboBox(int index, std::string position, std::vector<std::string> vectorReference);
+        void initialize();
+        std::string returnTextComboBox(int number, std::string index);
+        int returnXCoordinate();
+        int returnYCoordinate();
+
+    private:
+        Gtk::Button plusButton;
+        Gtk::Button minusButton;
+        Gtk::ComboBoxText firstComboBox;
+        Gtk::ComboBoxText secondComboBox;
+        std::vector<MultiInput*> vectorMultiInputs;
+        std::vector<std::string> vectorFirstComboBoxSelectedInputs;
+        std::vector<std::string> vectorSecondComboBoxSelectedInputs;
+        int xcoordinates;
+        int ycoordinates;
+        std::map<std::string, int> DicoScoreFirstComboBox;
+};
+
+```
+
+```{cpp}
+class MultiInput{
+    public:
+        MultiInput();
+        virtual ~MultiInput();
+        Gtk::ComboBoxText& returnComboBox(std::string position);
+        Gtk::SpinButton& returnSpinButton();
+        void setLimitSpinButton(int limit);
+        int returnSpinScore();
+        std::string returnTextComboBox(std::string index);
+        void setVectorComboBox(std::vector<std::string>& vectorText, std::string index);
+        void setComboBoxFunction(std::string index);
+        void unsetActiveText();
+        void resetSpinScore();
+
+    private:
+        Gtk::ComboBoxText firstComboBox;
+        Gtk::ComboBoxText secondComboBox;
+        Gtk::SpinButton spinButton;
+};
+
+```
+
+```{cpp}
+
+    class ButtonmultiInputOneComboBox{
+        public:
+            ButtonmultiInputOneComboBox();
+            virtual ~ButtonmultiInputOneComboBox();
+            Gtk::Button& returnButton(std::string sign);
+            void setLabelMultiComboBox();
+            std::vector<MultiInputOneComboBox*>& returnVectorMultiInput();
+            void setVectorSelectedInput();
+            void setDicoScoreFirstComboBox();
+            void setMultiInput();
+            void deleteMultiInput();
+            void setCoordinates(int coordinateX, int coordinateY);
+            std::map<std::string, int> returnDicoScoreComboBox();
+            std::vector<std::string> returnVectorSelectedInput();
+            void setLimitMultiInput();
+            void setVectorComboBox(int index, std::vector<std::string> vectorReference);
+            void initialize();
+            void setNumberMultiInput(int number);
+            std::string returnTextComboBox(int number);
+            int returnXCoordinate();
+            int returnYCoordinate();
+
+        private:
+            Gtk::Button plusButton;
+            Gtk::Button minusButton;
+            Gtk::ComboBoxText firstComboBox;
+            Gtk::ComboBoxText secondComboBox;
+            std::vector<MultiInputOneComboBox*> vectorMultiInputs;
+            std::vector<std::string> vectorComboBoxSelectedInputs;
+            int xcoordinates;
+            int ycoordinates;
+            std::map<std::string, int> DicoScoreComboBox;
+    };
+
+```
+
+```{cpp}
+class MultiInputOneComboBox{
+    public:
+        MultiInputOneComboBox();
+        virtual ~MultiInputOneComboBox();
+        Gtk::ComboBoxText& returnComboBox();
+        Gtk::SpinButton& returnSpinButton();
+        void setLimitSpinButton(int limit);
+        int returnSpinScore();
+        std::string returnTextComboBox();
+        void setVectorComboBox(std::vector<std::string>& vectorText);
+        void unsetActiveText();
+        void resetSpinScore();
+
+    private:
+        Gtk::ComboBoxText ComboBox;
+        Gtk::SpinButton spinButton;
+};
+
+```
+
+
 ### Meta Data Structure built during the project
 
 
