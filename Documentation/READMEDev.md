@@ -550,7 +550,7 @@ data structure allowing to avoid to make double loops.
 
 Moreover, the limit points attributed to game fields in the class **RulesofGame** doesn't reflect the limit points in the true rules of game. For that, we need to create several dictionnary for each game fields in the aim each field must have its own dictionnary allowing to control the points sum for each game field.  
 
-To finish, we could add more game fields for the output file be as representative as possible. And we could propose to the user to download a Picture Character Sheet with the [OpenCV](https://docs.opencv.org/3.4/d6/d6e/group__imgproc__draw.html) library. 
+To finish, we could add more game fields for the output file be as representative as possible. And we could propose to the user to download a Picture Character Sheet by using the [OpenCV](https://docs.opencv.org/3.4/d6/d6e/group__imgproc__draw.html) library. 
 
 
 ## Doxygen Documentation
