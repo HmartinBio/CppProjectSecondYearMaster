@@ -525,9 +525,9 @@ class MultiInputOneComboBox{
 
 ### Meta Data Structure built during the project
 
-During the project, we built a **union** in the aim to save **string** and **integer** in the vector containing **Disciplines** in the class **Clan**. This data structure allowed to avoid to make a double loop when we retrieve the **Disciplines** information. 
+During the project, we built a **union** in the aim to save **string** and **integer** in the vector containing **Disciplines** in the class **Clan**. This data structure allowed to avoid to make a double loop when we retrieve the **Disciplines** informations. 
 
-**Union** are data structure allowing to save a variable in a type chosen according to the developper need.
+**Union** are data structures allowing to save a variable in a type chosen according to the developper need.
 
 
 ```cpp
