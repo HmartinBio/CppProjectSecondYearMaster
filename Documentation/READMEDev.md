@@ -288,7 +288,7 @@ For example, each **Clan** has its own disciplines, so, when the user chooses th
 ```
 
 
-**Gui** class is designed such as all the elements composing the graphical user interface are contained in this class. The **Gui** class object contains all the methods allowing to the **Controllor** class to activate the Graphical User Interface when the **Controllor** constructor is launched.
+**Gui** class is designed such as all the elements composing the **Graphical User Interface** are contained in this class. The **Gui** class object contains all the methods allowing to the **Controllor** class to activate the **Graphical User Interface** when the **Controllor** constructor is launched.
 
 
 ```cpp
