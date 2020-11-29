@@ -1,3 +1,17 @@
+/**
+ * @file Character.cpp
+ *
+ * @brief File containing source code of the Character class
+ *
+ *
+ * @author Hugo MARTIN
+ * Contact: hugo.martin.1@etu.univ-amu.fr
+ *
+ */
+
+
+
+
 #include "classes.h"
 
 /** Constructor of the class Character.
