@@ -1,5 +1,5 @@
 ---
-title: Vampire Game Project
+title: Developper Guide
 author: Hugo MARTIN
 date: 26/09/2020
 ---
