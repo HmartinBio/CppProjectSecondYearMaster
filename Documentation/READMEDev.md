@@ -58,9 +58,9 @@ sudo apt-get install libgtkmm-3.0-dev
 
 
 To install the application, you need to move on the folder containing the app with the **command-line**.\
-Once you are in the folder, you need to execute the **make** command such as:\
+Once you are in the folder, you need to execute the **make** command such as:
 
-```console
+```{bash}
 make
 ```
 
