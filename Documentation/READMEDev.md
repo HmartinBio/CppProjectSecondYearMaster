@@ -155,7 +155,6 @@ The **Parsetext** class contains all the functions to parse the text from the **
 
 
 ```cpp
-
       class Parsetext{
         public:
             Parsetext();
@@ -191,7 +190,6 @@ The constructor of the **Character** class is not executed yet. It allows to the
 
 
 ```cpp
-
  class Character{
     private:
         std::string playerName;
@@ -257,7 +255,6 @@ It allows to the interface to restrain some user choices for these one be in ade
 For example, each **Clan** has its own disciplines, so, when the user chooses the clan, this one can only chooses a discipline among the disciplines attributed to the **Clan**. 
 
 ```cpp
-
     class RulesofGame{
         public:
             RulesofGame(Parsetext& parserReference);
@@ -397,7 +394,6 @@ Once the graphical user interface set all the informations about a character in 
 
 
 ```{cpp}
-
 class ButtonmultiInput{
     public:
         ButtonmultiInput();
@@ -458,7 +454,6 @@ class MultiInput{
 ```
 
 ```{cpp}
-
     class ButtonmultiInputOneComboBox{
         public:
             ButtonmultiInputOneComboBox();
@@ -519,6 +514,15 @@ class MultiInputOneComboBox{
 
 ### Meta Data Structure built during the project
 
+```{cpp}
+union MultiDimensionnalDataStructure{
+        MultiDimensionnalDataStructure(std::string categorieToEnter);
+        MultiDimensionnalDataStructure(int categorieValue);
+        ~MultiDimensionnalDataStructure();
+        std::string categorie;
+        int value;
+};
+```
 
 <br>
 
