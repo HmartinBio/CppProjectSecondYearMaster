@@ -1,0 +1,25 @@
+<map id="classes.h" name="classes.h">
+<area shape="rect" id="node1" title="Header file containing the class prototypes of the VampireGameproject." alt="" coords="1599,5,1682,32"/>
+<area shape="rect" id="node2" href="$Abilities_8cpp.html" title="File containing source code of the Abilities class." alt="" coords="5,87,108,114"/>
+<area shape="rect" id="node3" href="$Advantages_8cpp.html" title="File containing source code of the Advantages class." alt="" coords="132,87,259,114"/>
+<area shape="rect" id="node4" href="$Attributes_8cpp.html" title="File containing source code of the Attributes class." alt="" coords="283,87,396,114"/>
+<area shape="rect" id="node5" href="$ButtonmultiInput_8cpp.html" title="File containing source code of the ButtonmultiInput class." alt="" coords="420,87,579,114"/>
+<area shape="rect" id="node6" href="$ButtonmultiInputOneComboBox_8cpp.html" title="File containing source code of the ButtonmultiInputOneComboBox class." alt="" coords="603,80,807,121"/>
+<area shape="rect" id="node7" href="$Character_8cpp.html" title="File containing source code of the Character class." alt="" coords="831,87,941,114"/>
+<area shape="rect" id="node8" href="$CharacterTraits_8cpp.html" title="File containing source code of the CharacterTraits class." alt="" coords="966,87,1113,114"/>
+<area shape="rect" id="node9" href="$Chronicle_8cpp.html" title="File containing source code of the Chronicle class." alt="" coords="1137,87,1248,114"/>
+<area shape="rect" id="node10" href="$Clan_8cpp.html" title="File containing source code of the Clan class." alt="" coords="1272,87,1351,114"/>
+<area shape="rect" id="node11" href="$Controllor_8cpp.html" title="File containing source code of the Controllor class." alt="" coords="1375,87,1487,114"/>
+<area shape="rect" id="node12" href="$Daemenor_8cpp.html" title="File containing source code of the Daemenor class." alt="" coords="1512,87,1628,114"/>
+<area shape="rect" id="node13" href="$Generation_8cpp.html" title="File containing source code of the Generation class." alt="" coords="1652,87,1773,114"/>
+<area shape="rect" id="node14" href="$Gui_8cpp.html" title="File containing source code of the Gui class." alt="" coords="1797,87,1868,114"/>
+<area shape="rect" id="node15" href="$Health_8cpp.html" title="File containing source code of the Health class." alt="" coords="1892,87,1984,114"/>
+<area shape="rect" id="node16" href="$Meritsflaws_8cpp.html" title="File containing source code of the Meritsflaws class." alt="" coords="2008,87,2132,114"/>
+<area shape="rect" id="node17" href="$MultiDimensionnalDataStructure_8cpp.html" title="File containing source code of the MultiDimensionnalDataStrucutre union." alt="" coords="2156,87,2419,114"/>
+<area shape="rect" id="node18" href="$MultiInput_8cpp.html" title="File containing source code of the MultiInput class." alt="" coords="2443,87,2558,114"/>
+<area shape="rect" id="node19" href="$MultiInputOneComboBox_8cpp.html" title="File containing source code of the MultiInputOneComboBox class." alt="" coords="2583,87,2795,114"/>
+<area shape="rect" id="node20" href="$Nature_8cpp.html" title="File containing source code of the Nature class." alt="" coords="2819,87,2913,114"/>
+<area shape="rect" id="node21" href="$Parsetext_8cpp.html" title="File containing source code of the Parsetext class." alt="" coords="2937,87,3048,114"/>
+<area shape="rect" id="node22" href="$Picturemodifying_8cpp.html" title="File containing source code of the Picturesmodifying class." alt="" coords="3072,87,3231,114"/>
+<area shape="rect" id="node23" href="$RulesofGame_8cpp.html" title="File containing source code of the RulesofGame class." alt="" coords="3255,87,3392,114"/>
+</map>

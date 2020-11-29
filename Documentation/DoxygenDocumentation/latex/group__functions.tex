@@ -1,0 +1,256 @@
+\hypertarget{group__functions}{}\doxysection{pystring}
+\label{group__functions}\index{pystring@{pystring}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacepystring_1_1os}{pystring\+::os}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__functions_gafaaa3fa41c260f26b7121397837f9073}\label{group__functions_gafaaa3fa41c260f26b7121397837f9073}} 
+\#define {\bfseries M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT}~2147483647
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__functions_ga421839935c851d76429324b5c11d7854}\label{group__functions_ga421839935c851d76429324b5c11d7854}} 
+std\+::string \mbox{\hyperlink{group__functions_ga421839935c851d76429324b5c11d7854}{pystring\+::capitalize}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return a copy of the string with only its first character capitalized. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gafbdc4421773d4c924952ad6e66cd6868}\label{group__functions_gafbdc4421773d4c924952ad6e66cd6868}} 
+std\+::string \mbox{\hyperlink{group__functions_gafbdc4421773d4c924952ad6e66cd6868}{pystring\+::center}} (const std\+::string \&str, int width)
+\begin{DoxyCompactList}\small\item\em Return centered in a string of length width. Padding is done using spaces. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga1cbc27163e59a6ee85e7769de27fab82}\label{group__functions_ga1cbc27163e59a6ee85e7769de27fab82}} 
+int \mbox{\hyperlink{group__functions_ga1cbc27163e59a6ee85e7769de27fab82}{pystring\+::count}} (const std\+::string \&str, const std\+::string \&substr, int start=0, int end=M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em Return the number of occurrences of substring sub in string S\mbox{[}start\+:end\mbox{]}. Optional arguments start and end are interpreted as in slice notation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga639d2027c72c89ba412cc367132b0f2b}\label{group__functions_ga639d2027c72c89ba412cc367132b0f2b}} 
+bool \mbox{\hyperlink{group__functions_ga639d2027c72c89ba412cc367132b0f2b}{pystring\+::endswith}} (const std\+::string \&str, const std\+::string \&suffix, int start=0, int end=M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em Return True if the string ends with the specified suffix, otherwise return False. With optional start, test beginning at that position. With optional end, stop comparing at that position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gac878a5845823a7d9795e8b4d88e4b72f}\label{group__functions_gac878a5845823a7d9795e8b4d88e4b72f}} 
+std\+::string \mbox{\hyperlink{group__functions_gac878a5845823a7d9795e8b4d88e4b72f}{pystring\+::expandtabs}} (const std\+::string \&str, int tabsize=8)
+\begin{DoxyCompactList}\small\item\em Return a copy of the string where all tab characters are expanded using spaces. If tabsize is not given, a tab size of 8 characters is assumed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga67888cb5c63d86f3867fe93e87da3586}\label{group__functions_ga67888cb5c63d86f3867fe93e87da3586}} 
+int \mbox{\hyperlink{group__functions_ga67888cb5c63d86f3867fe93e87da3586}{pystring\+::find}} (const std\+::string \&str, const std\+::string \&sub, int start=0, int end=M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em Return the lowest index in the string where substring sub is found, such that sub is contained in the range \mbox{[}start, end). Optional arguments start and end are interpreted as in slice notation. Return -\/1 if sub is not found. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gab4ca19d0d897a49df3ca8faab1864970}\label{group__functions_gab4ca19d0d897a49df3ca8faab1864970}} 
+int \mbox{\hyperlink{group__functions_gab4ca19d0d897a49df3ca8faab1864970}{pystring\+::index}} (const std\+::string \&str, const std\+::string \&sub, int start=0, int end=M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em Synonym of find right now. Python version throws exceptions. This one currently doesn\textquotesingle{}t. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga0ba29ed0c6634d5c8a3509aaf067d4f2}\label{group__functions_ga0ba29ed0c6634d5c8a3509aaf067d4f2}} 
+bool \mbox{\hyperlink{group__functions_ga0ba29ed0c6634d5c8a3509aaf067d4f2}{pystring\+::isalnum}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return true if all characters in the string are alphanumeric and there is at least one character, false otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga46e4b9f7f4360b31c09fd6ac1af03173}\label{group__functions_ga46e4b9f7f4360b31c09fd6ac1af03173}} 
+bool \mbox{\hyperlink{group__functions_ga46e4b9f7f4360b31c09fd6ac1af03173}{pystring\+::isalpha}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return true if all characters in the string are alphabetic and there is at least one character, false otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga853aa78fbafe28c698bc05f1c0370e49}\label{group__functions_ga853aa78fbafe28c698bc05f1c0370e49}} 
+bool \mbox{\hyperlink{group__functions_ga853aa78fbafe28c698bc05f1c0370e49}{pystring\+::isdigit}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return true if all characters in the string are digits and there is at least one character, false otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga1418f7184ef8e80729d654d7114b63f9}\label{group__functions_ga1418f7184ef8e80729d654d7114b63f9}} 
+bool \mbox{\hyperlink{group__functions_ga1418f7184ef8e80729d654d7114b63f9}{pystring\+::islower}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return true if all cased characters in the string are lowercase and there is at least one cased character, false otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga4010d798c9f258d2544474b5d1f23151}\label{group__functions_ga4010d798c9f258d2544474b5d1f23151}} 
+bool \mbox{\hyperlink{group__functions_ga4010d798c9f258d2544474b5d1f23151}{pystring\+::isspace}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return true if there are only whitespace characters in the string and there is at least one character, false otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga97d5dc700c7fd779392aa128e6fb84ea}\label{group__functions_ga97d5dc700c7fd779392aa128e6fb84ea}} 
+bool \mbox{\hyperlink{group__functions_ga97d5dc700c7fd779392aa128e6fb84ea}{pystring\+::istitle}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return true if the string is a titlecased string and there is at least one character, i.\+e. uppercase characters may only follow uncased characters and lowercase characters only cased ones. Return false otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga242a07ad2d480d51ffcd4a08808d78e1}\label{group__functions_ga242a07ad2d480d51ffcd4a08808d78e1}} 
+bool \mbox{\hyperlink{group__functions_ga242a07ad2d480d51ffcd4a08808d78e1}{pystring\+::isupper}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return true if all cased characters in the string are uppercase and there is at least one cased character, false otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gae7d13c56dfefc6ac12eec84e37f9509a}\label{group__functions_gae7d13c56dfefc6ac12eec84e37f9509a}} 
+std\+::string \mbox{\hyperlink{group__functions_gae7d13c56dfefc6ac12eec84e37f9509a}{pystring\+::join}} (const std\+::string \&str, const std\+::vector$<$ std\+::string $>$ \&seq)
+\begin{DoxyCompactList}\small\item\em Return a string which is the concatenation of the strings in the sequence seq. The separator between elements is the str argument. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga96579f53a5ba0c936dffdf8dda664123}\label{group__functions_ga96579f53a5ba0c936dffdf8dda664123}} 
+std\+::string \mbox{\hyperlink{group__functions_ga96579f53a5ba0c936dffdf8dda664123}{pystring\+::ljust}} (const std\+::string \&str, int width)
+\begin{DoxyCompactList}\small\item\em Return the string left justified in a string of length width. Padding is done using spaces. The original string is returned if width is less than str.\+size(). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga6aff1991bab2a60c454bebab8a1c0fea}\label{group__functions_ga6aff1991bab2a60c454bebab8a1c0fea}} 
+std\+::string \mbox{\hyperlink{group__functions_ga6aff1991bab2a60c454bebab8a1c0fea}{pystring\+::lower}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return a copy of the string converted to lowercase. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gaac9206c3aed9aaac085533a9fdf9de9b}\label{group__functions_gaac9206c3aed9aaac085533a9fdf9de9b}} 
+std\+::string \mbox{\hyperlink{group__functions_gaac9206c3aed9aaac085533a9fdf9de9b}{pystring\+::lstrip}} (const std\+::string \&str, const std\+::string \&chars=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Return a copy of the string with leading characters removed. If chars is omitted or None, whitespace characters are removed. If given and not \char`\"{}\char`\"{}, chars must be a string; the characters in the string will be stripped from the beginning of the string this method is called on (argument \char`\"{}str\char`\"{} ). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{group__functions_ga427bf41956257a973b70241ae2541fc8}{pystring\+::mul}} (const std\+::string \&str, int n)
+\begin{DoxyCompactList}\small\item\em Return a copy of the string, concatenated N times, together. Corresponds to the {\bfseries{mul}} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gaa23aac367ec1bf4d213dc92bdf36a9a7}\label{group__functions_gaa23aac367ec1bf4d213dc92bdf36a9a7}} 
+void \mbox{\hyperlink{group__functions_gaa23aac367ec1bf4d213dc92bdf36a9a7}{pystring\+::partition}} (const std\+::string \&str, const std\+::string \&sep, std\+::vector$<$ std\+::string $>$ \&result)
+\begin{DoxyCompactList}\small\item\em Split the string around first occurance of sep. Three strings will always placed into result. If sep is found, the strings will be the text before sep, sep itself, and the remaining text. If sep is not found, the original string will be returned with two empty strings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gabf7f01e937ec0af978577c1522205fe0}\label{group__functions_gabf7f01e937ec0af978577c1522205fe0}} 
+std\+::string \mbox{\hyperlink{group__functions_gabf7f01e937ec0af978577c1522205fe0}{pystring\+::replace}} (const std\+::string \&str, const std\+::string \&oldstr, const std\+::string \&newstr, int count=-\/1)
+\begin{DoxyCompactList}\small\item\em Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga3a3d5f650233ba6956190087894eb231}\label{group__functions_ga3a3d5f650233ba6956190087894eb231}} 
+int \mbox{\hyperlink{group__functions_ga3a3d5f650233ba6956190087894eb231}{pystring\+::rfind}} (const std\+::string \&str, const std\+::string \&sub, int start=0, int end=M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em Return the highest index in the string where substring sub is found, such that sub is contained within s\mbox{[}start,end\mbox{]}. Optional arguments start and end are interpreted as in slice notation. Return -\/1 on failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga0f2acb5704ed0b0aaa7d0df894649383}\label{group__functions_ga0f2acb5704ed0b0aaa7d0df894649383}} 
+int \mbox{\hyperlink{group__functions_ga0f2acb5704ed0b0aaa7d0df894649383}{pystring\+::rindex}} (const std\+::string \&str, const std\+::string \&sub, int start=0, int end=M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em Currently a synonym of rfind. The python version raises exceptions. This one currently does not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga2fe16b100dd9f67cf767311cde888c3f}\label{group__functions_ga2fe16b100dd9f67cf767311cde888c3f}} 
+std\+::string \mbox{\hyperlink{group__functions_ga2fe16b100dd9f67cf767311cde888c3f}{pystring\+::rjust}} (const std\+::string \&str, int width)
+\begin{DoxyCompactList}\small\item\em Return the string right justified in a string of length width. Padding is done using spaces. The original string is returned if width is less than str.\+size(). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gabf248895e32b8a30a6547eddbb6a2806}\label{group__functions_gabf248895e32b8a30a6547eddbb6a2806}} 
+void \mbox{\hyperlink{group__functions_gabf248895e32b8a30a6547eddbb6a2806}{pystring\+::rpartition}} (const std\+::string \&str, const std\+::string \&sep, std\+::vector$<$ std\+::string $>$ \&result)
+\begin{DoxyCompactList}\small\item\em Split the string around last occurance of sep. Three strings will always placed into result. If sep is found, the strings will be the text before sep, sep itself, and the remaining text. If sep is not found, the original string will be returned with two empty strings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga38fe026efcccd3b6a01fd9d6331ba90a}\label{group__functions_ga38fe026efcccd3b6a01fd9d6331ba90a}} 
+std\+::string \mbox{\hyperlink{group__functions_ga38fe026efcccd3b6a01fd9d6331ba90a}{pystring\+::rstrip}} (const std\+::string \&str, const std\+::string \&chars=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Return a copy of the string with trailing characters removed. If chars is \char`\"{}\char`\"{}, whitespace characters are removed. If not \char`\"{}\char`\"{}, the characters in the string will be stripped from the end of the string this method is called on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga50602a2df9ccf687d28e36816b7be661}\label{group__functions_ga50602a2df9ccf687d28e36816b7be661}} 
+void \mbox{\hyperlink{group__functions_ga50602a2df9ccf687d28e36816b7be661}{pystring\+::split}} (const std\+::string \&str, std\+::vector$<$ std\+::string $>$ \&result, const std\+::string \&sep=\char`\"{}\char`\"{}, int maxsplit=-\/1)
+\begin{DoxyCompactList}\small\item\em Fills the \char`\"{}result\char`\"{} list with the words in the string, using sep as the delimiter string. If maxsplit is $>$ -\/1, at most maxsplit splits are done. If sep is \char`\"{}\char`\"{}, any whitespace string is a separator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gabf0dc152e5040be5e6c508fb74bcd291}\label{group__functions_gabf0dc152e5040be5e6c508fb74bcd291}} 
+void \mbox{\hyperlink{group__functions_gabf0dc152e5040be5e6c508fb74bcd291}{pystring\+::rsplit}} (const std\+::string \&str, std\+::vector$<$ std\+::string $>$ \&result, const std\+::string \&sep=\char`\"{}\char`\"{}, int maxsplit=-\/1)
+\begin{DoxyCompactList}\small\item\em Fills the \char`\"{}result\char`\"{} list with the words in the string, using sep as the delimiter string. Does a number of splits starting at the end of the string, the result still has the split strings in their original order. If maxsplit is $>$ -\/1, at most maxsplit splits are done. If sep is \char`\"{}\char`\"{}, any whitespace string is a separator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga26e3fe91036ce4c56616aaa216313087}\label{group__functions_ga26e3fe91036ce4c56616aaa216313087}} 
+void \mbox{\hyperlink{group__functions_ga26e3fe91036ce4c56616aaa216313087}{pystring\+::splitlines}} (const std\+::string \&str, std\+::vector$<$ std\+::string $>$ \&result, bool keepends=false)
+\begin{DoxyCompactList}\small\item\em Return a list of the lines in the string, breaking at line boundaries. Line breaks are not included in the resulting list unless keepends is given and true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gad204e3461e963f5ce8d3f02089c0f746}\label{group__functions_gad204e3461e963f5ce8d3f02089c0f746}} 
+bool \mbox{\hyperlink{group__functions_gad204e3461e963f5ce8d3f02089c0f746}{pystring\+::startswith}} (const std\+::string \&str, const std\+::string \&prefix, int start=0, int end=M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em Return True if string starts with the prefix, otherwise return False. With optional start, test string beginning at that position. With optional end, stop comparing string at that position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga94cb1953ac6cd9432241fabf952543a3}\label{group__functions_ga94cb1953ac6cd9432241fabf952543a3}} 
+std\+::string \mbox{\hyperlink{group__functions_ga94cb1953ac6cd9432241fabf952543a3}{pystring\+::strip}} (const std\+::string \&str, const std\+::string \&chars=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Return a copy of the string with leading and trailing characters removed. If chars is \char`\"{}\char`\"{}, whitespace characters are removed. If given not \char`\"{}\char`\"{}, the characters in the string will be stripped from the both ends of the string this method is called on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga1ef51266a9cd3564a86061670071065e}\label{group__functions_ga1ef51266a9cd3564a86061670071065e}} 
+std\+::string \mbox{\hyperlink{group__functions_ga1ef51266a9cd3564a86061670071065e}{pystring\+::swapcase}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return a copy of the string with uppercase characters converted to lowercase and vice versa. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga6dc7b8d5cd19df51947979e4e3d1d0e9}\label{group__functions_ga6dc7b8d5cd19df51947979e4e3d1d0e9}} 
+std\+::string \mbox{\hyperlink{group__functions_ga6dc7b8d5cd19df51947979e4e3d1d0e9}{pystring\+::title}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return a titlecased version of the string\+: words start with uppercase characters, all remaining cased characters are lowercase. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga9a9bd2f2c2f930551f77307e5ac0fc97}\label{group__functions_ga9a9bd2f2c2f930551f77307e5ac0fc97}} 
+std\+::string \mbox{\hyperlink{group__functions_ga9a9bd2f2c2f930551f77307e5ac0fc97}{pystring\+::translate}} (const std\+::string \&str, const std\+::string \&table, const std\+::string \&deletechars=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Return a copy of the string where all characters occurring in the optional argument deletechars are removed, and the remaining characters have been mapped through the given translation table, which must be a string of length 256. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gaaed86d9a024fc8f6f6c1a2dbb56c721f}\label{group__functions_gaaed86d9a024fc8f6f6c1a2dbb56c721f}} 
+std\+::string \mbox{\hyperlink{group__functions_gaaed86d9a024fc8f6f6c1a2dbb56c721f}{pystring\+::upper}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Return a copy of the string converted to uppercase. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga1602020fa3c6c734b2b662bdbc32f877}\label{group__functions_ga1602020fa3c6c734b2b662bdbc32f877}} 
+std\+::string \mbox{\hyperlink{group__functions_ga1602020fa3c6c734b2b662bdbc32f877}{pystring\+::zfill}} (const std\+::string \&str, int width)
+\begin{DoxyCompactList}\small\item\em Return the numeric string left filled with zeros in a string of length width. The original string is returned if width is less than str.\+size(). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga45e97a9184eeaefa35756e649cb8b666}\label{group__functions_ga45e97a9184eeaefa35756e649cb8b666}} 
+std\+::string \mbox{\hyperlink{group__functions_ga45e97a9184eeaefa35756e649cb8b666}{pystring\+::slice}} (const std\+::string \&str, int start=0, int end=M\+A\+X\+\_\+32\+B\+I\+T\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em function matching python\textquotesingle{}s slice functionality. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gafd6a1505184ee99c7efac3a62f3a4351}\label{group__functions_gafd6a1505184ee99c7efac3a62f3a4351}} 
+std\+::string \mbox{\hyperlink{group__functions_gafd6a1505184ee99c7efac3a62f3a4351}{pystring\+::os\+::path\+::basename}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Return the base name of pathname path. This is the second half of the pair returned by split(path). Note that the result of this function is different from the Unix basename program; where basename for \textquotesingle{}/foo/bar/\textquotesingle{} returns \textquotesingle{}bar\textquotesingle{}, the \mbox{\hyperlink{group__functions_gafd6a1505184ee99c7efac3a62f3a4351}{basename()}} function returns an empty string (\textquotesingle{}\textquotesingle{}). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga3a6f0ae920370c604330658b61148490}\label{group__functions_ga3a6f0ae920370c604330658b61148490}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::basename\+\_\+nt} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{group__functions_ga7522ffc9758e1166bd554500ba254395}\label{group__functions_ga7522ffc9758e1166bd554500ba254395}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::basename\+\_\+posix} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{group__functions_ga09675271bb0ea069fbed09db821763e4}\label{group__functions_ga09675271bb0ea069fbed09db821763e4}} 
+std\+::string \mbox{\hyperlink{group__functions_ga09675271bb0ea069fbed09db821763e4}{pystring\+::os\+::path\+::dirname}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Return the directory name of pathname path. This is the first half of the pair returned by split(path). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gaa6fe1064def30d24097339e2f1af4edc}\label{group__functions_gaa6fe1064def30d24097339e2f1af4edc}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::dirname\+\_\+nt} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{group__functions_ga52939b862cd2f0995ae15d7d907dceaa}\label{group__functions_ga52939b862cd2f0995ae15d7d907dceaa}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::dirname\+\_\+posix} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{group__functions_gacaccbc717a7278efd7034cac76b0c7e0}\label{group__functions_gacaccbc717a7278efd7034cac76b0c7e0}} 
+bool \mbox{\hyperlink{group__functions_gacaccbc717a7278efd7034cac76b0c7e0}{pystring\+::os\+::path\+::isabs}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Return True if path is an absolute pathname. On Unix, that means it begins with a slash, on Windows that it begins with a (back)slash after chopping off a potential drive letter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gabcf1c73431cdbc026403b50165ac0260}\label{group__functions_gabcf1c73431cdbc026403b50165ac0260}} 
+bool {\bfseries pystring\+::os\+::path\+::isabs\+\_\+nt} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{group__functions_gae1096ab2bec1c2656e1501ba603b67ad}\label{group__functions_gae1096ab2bec1c2656e1501ba603b67ad}} 
+bool {\bfseries pystring\+::os\+::path\+::isabs\+\_\+posix} (const std\+::string \&s)
+\item 
+std\+::string \mbox{\hyperlink{group__functions_ga18abed60339fb62457763ea0b82d0930}{pystring\+::os\+::path\+::abspath}} (const std\+::string \&path, const std\+::string \&cwd)
+\begin{DoxyCompactList}\small\item\em Return a normalized absolutized version of the pathname path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gaf7844cefbf9d0c4096395413b7300093}\label{group__functions_gaf7844cefbf9d0c4096395413b7300093}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::abspath\+\_\+nt} (const std\+::string \&path, const std\+::string \&cwd)
+\item 
+\mbox{\Hypertarget{group__functions_ga5a6fd93ba5407464546b6fc04675e4b1}\label{group__functions_ga5a6fd93ba5407464546b6fc04675e4b1}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::abspath\+\_\+posix} (const std\+::string \&path, const std\+::string \&cwd)
+\item 
+std\+::string \mbox{\hyperlink{group__functions_ga73f1c440fc5193f2bf785ca489f7f2e9}{pystring\+::os\+::path\+::join}} (const std\+::string \&path1, const std\+::string \&path2)
+\begin{DoxyCompactList}\small\item\em Join one or more path components intelligently. If any component is an absolute path, all previous components (on Windows, including the previous drive letter, if there was one) are thrown away, and joining continues. The return value is the concatenation of path1, and optionally path2, etc., with exactly one directory separator (os.\+sep) inserted between components, unless path2 is empty. Note that on Windows, since there is a current directory for each drive, os.\+path.\+join(\char`\"{}c\+:\char`\"{}, \char`\"{}foo\char`\"{}) represents a path relative to the current directory on drive C\+: (c\+:foo), not c\+:\textbackslash{}foo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga41364bcd04240f05e12924a8e941b025}\label{group__functions_ga41364bcd04240f05e12924a8e941b025}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::join\+\_\+nt} (const std\+::string \&a, const std\+::string \&b)
+\item 
+\mbox{\Hypertarget{group__functions_ga52244eceacdca762f252223689cab65d}\label{group__functions_ga52244eceacdca762f252223689cab65d}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::join\+\_\+posix} (const std\+::string \&a, const std\+::string \&b)
+\item 
+\mbox{\Hypertarget{group__functions_ga901660e76e88c0ddb4f007914e526d13}\label{group__functions_ga901660e76e88c0ddb4f007914e526d13}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::join} (const std\+::vector$<$ std\+::string $>$ \&paths)
+\item 
+\mbox{\Hypertarget{group__functions_gac034c129b9b618f2980f0359f2e018a9}\label{group__functions_gac034c129b9b618f2980f0359f2e018a9}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::join\+\_\+nt} (const std\+::vector$<$ std\+::string $>$ \&paths)
+\item 
+\mbox{\Hypertarget{group__functions_gafc79d0b791269ab6d0614dbc838429d9}\label{group__functions_gafc79d0b791269ab6d0614dbc838429d9}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::join\+\_\+posix} (const std\+::vector$<$ std\+::string $>$ \&paths)
+\item 
+\mbox{\Hypertarget{group__functions_gad99efba1f452cd95cb14b963c168ede5}\label{group__functions_gad99efba1f452cd95cb14b963c168ede5}} 
+std\+::string \mbox{\hyperlink{group__functions_gad99efba1f452cd95cb14b963c168ede5}{pystring\+::os\+::path\+::normpath}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Normalize a pathname. This collapses redundant separators and up-\/level references so that A//B, A/\+B/, A/./B and A/foo/../B all become A/B. It does not normalize the case (use normcase() for that). On Windows, it converts forward slashes to backward slashes. It should be understood that this may change the meaning of the path if it contains symbolic links! \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gac59650ac1a986a73f1c67c00193dcbc7}\label{group__functions_gac59650ac1a986a73f1c67c00193dcbc7}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::normpath\+\_\+nt} (const std\+::string \&p)
+\item 
+\mbox{\Hypertarget{group__functions_ga689e3c992d9e2b10677e03fd1855d949}\label{group__functions_ga689e3c992d9e2b10677e03fd1855d949}} 
+std\+::string {\bfseries pystring\+::os\+::path\+::normpath\+\_\+posix} (const std\+::string \&p)
+\item 
+\mbox{\Hypertarget{group__functions_ga078b83e2e292a8a6c223ee00d8953200}\label{group__functions_ga078b83e2e292a8a6c223ee00d8953200}} 
+void \mbox{\hyperlink{group__functions_ga078b83e2e292a8a6c223ee00d8953200}{pystring\+::os\+::path\+::split}} (std\+::string \&head, std\+::string \&tail, const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Split the pathname path into a pair, (head, tail) where tail is the last pathname component and head is everything leading up to that. The tail part will never contain a slash; if path ends in a slash, tail will be empty. If there is no slash in path, head will be empty. If path is empty, both head and tail are empty. Trailing slashes are stripped from head unless it is the root (one or more slashes only). In all cases, join(head, tail) returns a path to the same location as path (but the strings may differ). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_ga44ae98e211d596167d0c4c142d85274e}\label{group__functions_ga44ae98e211d596167d0c4c142d85274e}} 
+void {\bfseries pystring\+::os\+::path\+::split\+\_\+nt} (std\+::string \&head, std\+::string \&tail, const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{group__functions_ga48c3d5c5cedd87856c0534f7a783ef6e}\label{group__functions_ga48c3d5c5cedd87856c0534f7a783ef6e}} 
+void {\bfseries pystring\+::os\+::path\+::split\+\_\+posix} (std\+::string \&head, std\+::string \&tail, const std\+::string \&p)
+\item 
+\mbox{\Hypertarget{group__functions_ga7a3b3aba797f8e7df2cffca6d131ed67}\label{group__functions_ga7a3b3aba797f8e7df2cffca6d131ed67}} 
+void \mbox{\hyperlink{group__functions_ga7a3b3aba797f8e7df2cffca6d131ed67}{pystring\+::os\+::path\+::splitdrive}} (std\+::string \&drivespec, std\+::string \&pathspec, const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Split the pathname path into a pair (drive, tail) where drive is either a drive specification or the empty string. On systems which do not use drive specifications, drive will always be the empty string. In all cases, drive + tail will be the same as path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__functions_ga3aac2aaea50f268229106d6328fd566a}{pystring\+::os\+::path\+::splitdrive\+\_\+nt}} (std\+::string \&drivespec, std\+::string \&pathspec, const std\+::string \&p)
+\item 
+\mbox{\Hypertarget{group__functions_ga5915939f8803e142d5e4e66f22fb2043}\label{group__functions_ga5915939f8803e142d5e4e66f22fb2043}} 
+void {\bfseries pystring\+::os\+::path\+::splitdrive\+\_\+posix} (std\+::string \&drivespec, std\+::string \&pathspec, const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{group__functions_ga5fd47897e6baddc60afdae984bb98687}\label{group__functions_ga5fd47897e6baddc60afdae984bb98687}} 
+void \mbox{\hyperlink{group__functions_ga5fd47897e6baddc60afdae984bb98687}{pystring\+::os\+::path\+::splitext}} (std\+::string \&root, std\+::string \&ext, const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Split the pathname path into a pair (root, ext) such that root + ext == path, and ext is empty or begins with a period and contains at most one period. Leading periods on the basename are ignored; splitext(\textquotesingle{}.cshrc\textquotesingle{}) returns (\textquotesingle{}.cshrc\textquotesingle{}, \textquotesingle{}\textquotesingle{}). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__functions_gaf2f10a903b5919d1389842ca66912114}\label{group__functions_gaf2f10a903b5919d1389842ca66912114}} 
+void {\bfseries pystring\+::os\+::path\+::splitext\+\_\+nt} (std\+::string \&root, std\+::string \&ext, const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{group__functions_ga1bb25a8f5640f3b4b334e1b10028a95e}\label{group__functions_ga1bb25a8f5640f3b4b334e1b10028a95e}} 
+void {\bfseries pystring\+::os\+::path\+::splitext\+\_\+posix} (std\+::string \&root, std\+::string \&ext, const std\+::string \&path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__functions_ga18abed60339fb62457763ea0b82d0930}\label{group__functions_ga18abed60339fb62457763ea0b82d0930}} 
+\index{pystring@{pystring}!abspath@{abspath}}
+\index{abspath@{abspath}!pystring@{pystring}}
+\doxysubsubsection{\texorpdfstring{abspath()}{abspath()}}
+{\footnotesize\ttfamily std\+::string pystring\+::os\+::path\+::abspath (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{cwd }\end{DoxyParamCaption})}
+
+
+
+Return a normalized absolutized version of the pathname path. 
+
+N\+O\+TE\+: This differs from the interface of the python equivalent in that it requires you to pass in the current working directory as an argument. \mbox{\Hypertarget{group__functions_ga73f1c440fc5193f2bf785ca489f7f2e9}\label{group__functions_ga73f1c440fc5193f2bf785ca489f7f2e9}} 
+\index{pystring@{pystring}!join@{join}}
+\index{join@{join}!pystring@{pystring}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily std\+::string pystring\+::os\+::path\+::join (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path1,  }\item[{const std\+::string \&}]{path2 }\end{DoxyParamCaption})}
+
+
+
+Join one or more path components intelligently. If any component is an absolute path, all previous components (on Windows, including the previous drive letter, if there was one) are thrown away, and joining continues. The return value is the concatenation of path1, and optionally path2, etc., with exactly one directory separator (os.\+sep) inserted between components, unless path2 is empty. Note that on Windows, since there is a current directory for each drive, os.\+path.\+join(\char`\"{}c\+:\char`\"{}, \char`\"{}foo\char`\"{}) represents a path relative to the current directory on drive C\+: (c\+:foo), not c\+:\textbackslash{}foo. 
+
+This dispatches based on the compilation OS \mbox{\Hypertarget{group__functions_ga427bf41956257a973b70241ae2541fc8}\label{group__functions_ga427bf41956257a973b70241ae2541fc8}} 
+\index{pystring@{pystring}!mul@{mul}}
+\index{mul@{mul}!pystring@{pystring}}
+\doxysubsubsection{\texorpdfstring{mul()}{mul()}}
+{\footnotesize\ttfamily std\+::string pystring\+::mul (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Return a copy of the string, concatenated N times, together. Corresponds to the {\bfseries{mul}} operator. 
+
+\mbox{\Hypertarget{group__functions_ga3aac2aaea50f268229106d6328fd566a}\label{group__functions_ga3aac2aaea50f268229106d6328fd566a}} 
+\index{pystring@{pystring}!splitdrive\_nt@{splitdrive\_nt}}
+\index{splitdrive\_nt@{splitdrive\_nt}!pystring@{pystring}}
+\doxysubsubsection{\texorpdfstring{splitdrive\_nt()}{splitdrive\_nt()}}
+{\footnotesize\ttfamily void pystring\+::os\+::path\+::splitdrive\+\_\+nt (\begin{DoxyParamCaption}\item[{std\+::string \&}]{drivespec,  }\item[{std\+::string \&}]{pathspec,  }\item[{const std\+::string \&}]{p }\end{DoxyParamCaption})}
+
+These functions are C++ ports of the python2.\+6 versions of os.\+path, and come from genericpath.\+py, ntpath.\+py, posixpath.\+py Split a pathname into drive and path specifiers. Returns drivespec, pathspec. Either part may be empty. 

@@ -1,0 +1,110 @@
+\hypertarget{classvampireGameproject_1_1Meritsflaws}{}\doxysection{vampire\+Gameproject\+::Meritsflaws Class Reference}
+\label{classvampireGameproject_1_1Meritsflaws}\index{vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}}
+
+
+{\ttfamily \#include $<$classes.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws_a3cb25b17edca17cff8aa4661ca152479}{Meritsflaws}} (\mbox{\hyperlink{classvampireGameproject_1_1Parsetext}{Parsetext}} \&text\+Parser)
+\item 
+\mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws_a94f66da646945e007b259808e00f4a75}{$\sim$\+Meritsflaws}} ()
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws_ad60eba787f1e879ff820984175b474e4}{get\+Merits\+Flaws}} (std\+::string type)
+\item 
+void \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws_aef28c4de395309ae2fcf416eca37a1f8}{set\+Merits\+Flaws}} (std\+::string table, std\+::string merits\+Flaw\+Name, int number)
+\item 
+std\+::string \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws_adabc336ba691817a58e61203769d940b}{get\+Description}} (std\+::string table, std\+::string attribute\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the Class \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws}{Meritsflaws}}
+
+\mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws}{Meritsflaws}} class is designed such as all the Merits and Flaws of a character are contained in this class 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classvampireGameproject_1_1Meritsflaws_a3cb25b17edca17cff8aa4661ca152479}\label{classvampireGameproject_1_1Meritsflaws_a3cb25b17edca17cff8aa4661ca152479}} 
+\index{vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}!Meritsflaws@{Meritsflaws}}
+\index{Meritsflaws@{Meritsflaws}!vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}}
+\doxysubsubsection{\texorpdfstring{Meritsflaws()}{Meritsflaws()}}
+{\footnotesize\ttfamily vampire\+Gameproject\+::\+Meritsflaws\+::\+Meritsflaws (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvampireGameproject_1_1Parsetext}{Parsetext}} \&}]{text\+Parse }\end{DoxyParamCaption})}
+
+Constructor of the class \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws}{Meritsflaws}}.
+
+Modification of the constructor of \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws}{Meritsflaws}} Initialisation of a \mbox{\hyperlink{classvampireGameproject_1_1Parsetext}{Parsetext}} reference before the \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws}{Meritsflaws}} constructor be initialised Initialisation of map containing Merits and Flaws
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+Parse} & reference of \mbox{\hyperlink{classvampireGameproject_1_1Parsetext}{Parsetext}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvampireGameproject_1_1Meritsflaws_a94f66da646945e007b259808e00f4a75}\label{classvampireGameproject_1_1Meritsflaws_a94f66da646945e007b259808e00f4a75}} 
+\index{vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}!````~Meritsflaws@{$\sim$Meritsflaws}}
+\index{````~Meritsflaws@{$\sim$Meritsflaws}!vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}}
+\doxysubsubsection{\texorpdfstring{$\sim$Meritsflaws()}{~Meritsflaws()}}
+{\footnotesize\ttfamily vampire\+Gameproject\+::\+Meritsflaws\+::$\sim$\+Meritsflaws (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor of the class \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws}{Meritsflaws}}.
+
+Modification of the Destructor of \mbox{\hyperlink{classvampireGameproject_1_1Meritsflaws}{Meritsflaws}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classvampireGameproject_1_1Meritsflaws_adabc336ba691817a58e61203769d940b}\label{classvampireGameproject_1_1Meritsflaws_adabc336ba691817a58e61203769d940b}} 
+\index{vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily std\+::string vampire\+Gameproject\+::\+Meritsflaws\+::get\+Description (\begin{DoxyParamCaption}\item[{std\+::string}]{table,  }\item[{std\+::string}]{attribute\+Name }\end{DoxyParamCaption})}
+
+Implementation of the get\+Description method.
+
+Implementation of the get\+Description method get\+Description method allows to return the description of a merit or a flow
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & name of the table to look for a merit or flaw \\
+\hline
+{\em attribute\+Name} & name of the merit to return the description \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvampireGameproject_1_1Meritsflaws_ad60eba787f1e879ff820984175b474e4}\label{classvampireGameproject_1_1Meritsflaws_ad60eba787f1e879ff820984175b474e4}} 
+\index{vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}!getMeritsFlaws@{getMeritsFlaws}}
+\index{getMeritsFlaws@{getMeritsFlaws}!vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}}
+\doxysubsubsection{\texorpdfstring{getMeritsFlaws()}{getMeritsFlaws()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ vampire\+Gameproject\+::\+Meritsflaws\+::get\+Merits\+Flaws (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+Implementation of the get\+Merits\+Flaws method.
+
+Implementation of the get\+Merits\+Flaws method Method returning the Merits and Flaws
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & name of the table to return \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvampireGameproject_1_1Meritsflaws_aef28c4de395309ae2fcf416eca37a1f8}\label{classvampireGameproject_1_1Meritsflaws_aef28c4de395309ae2fcf416eca37a1f8}} 
+\index{vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}!setMeritsFlaws@{setMeritsFlaws}}
+\index{setMeritsFlaws@{setMeritsFlaws}!vampireGameproject::Meritsflaws@{vampireGameproject::Meritsflaws}}
+\doxysubsubsection{\texorpdfstring{setMeritsFlaws()}{setMeritsFlaws()}}
+{\footnotesize\ttfamily void vampire\+Gameproject\+::\+Meritsflaws\+::set\+Merits\+Flaws (\begin{DoxyParamCaption}\item[{std\+::string}]{table,  }\item[{std\+::string}]{merits\+Flaw\+Name,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+Implementation of the set\+Merits\+Flaws method.
+
+Implementation of the set\+Merits\+Flaws method Method setting Merits and Flaws values
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & name of the table to add a merit or flaw \\
+\hline
+{\em merits\+Name} & name of the merit or flaw to add \\
+\hline
+{\em number} & value of the merit or flaw to add \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classes_8h}{classes.\+h}}\item 
+\mbox{\hyperlink{Meritsflaws_8cpp}{Meritsflaws.\+cpp}}\end{DoxyCompactItemize}
