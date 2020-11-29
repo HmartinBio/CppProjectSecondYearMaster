@@ -435,7 +435,7 @@ void vampireGameproject::Gui::setSpinButtonBloodPool(){
 
 void vampireGameproject::Gui::setValidationButton(){
     validationButton.set_label("Save");
-    mainGrid.attach(validationButton, 0, 54, 1, 1);
+    mainGrid.attach(validationButton, 0, 63, 1, 1);
 
 }
 
