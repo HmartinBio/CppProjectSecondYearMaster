@@ -184,7 +184,7 @@ The **Character** class contains all the elements of a character (**Attributes**
 
 When a new **Character** is created, the reference of the **Parsetext** object contained in the **Controllor** is given at all the objects contained in the **Character** class. 
 
-The constructor of the **Character** class is not executed yet. It allows to the objects contained in the class to parse text and return definition of some features of the character.
+It allows to the objects contained in the class to parse text and return definition of some features of the character.
 
 **Character** also allows to set the elements contained in the class objects (**Attributes**, **Abilities**, **Advantages**, etc...) and to retrieve these informations.
 
