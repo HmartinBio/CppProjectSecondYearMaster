@@ -1,3 +1,18 @@
+/**
+ * @file Chronicle.cpp
+ *
+ * @brief File containing source code of the Chronicle class
+ *
+ *
+ * @author Hugo MARTIN
+ * Contact: hugo.martin.1@etu.univ-amu.fr
+ *
+ */
+
+
+
+
+
 #include "classes.h"
 
 
