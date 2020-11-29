@@ -419,7 +419,7 @@ class MultiInput{
 
 ```
 
-**ButtonmultiInput** Widget allows to create dynamically **MultiInput** Widgets, methods of the **ButtonmultiInput** class allows to append or delete **MultiInput** objects in a vector contained in the **ButtonmultiInput** class. **ButtonmultiInput** Widget is composed of at least one **MultiInput** Widget, one Plus **Button** Widget and one minus Button **Widget** allowing to append or delete **MultiInput** Widgets.
+**ButtonmultiInput** Widget allows to create dynamically **MultiInput** Widgets, methods of the **ButtonmultiInput** class allows to append or delete **MultiInput** objects in a vector contained in the **ButtonmultiInput** class. The **ButtonmultiInput** Widget is also responsible to synchronize the data entered by the user with the **Controllor** class to make the Widget responsive. **ButtonmultiInput** Widget is composed of at least one **MultiInput** Widget, one Plus **Button** Widget and one minus Button **Widget** allowing to append or delete **MultiInput** Widgets.
 
 
 ```cpp
