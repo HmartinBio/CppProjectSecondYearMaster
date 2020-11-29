@@ -3,8 +3,6 @@
  *
  * @brief Header file containing the class prototypes of the VampireGameproject
  *
- * @ingroup vampireGameProject
- * (Note: this needs exactly one @defgroup somewhere)
  *
  * @author Hugo MARTIN
  * Contact: hugo.martin.1@etu.univ-amu.fr
@@ -33,8 +31,22 @@
 #include <gtkmm.h>
 #include <glibmm/ustring.h>
 
+
+
+
+
+
 namespace vampireGameproject{
 
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    /// @mainpage vampireGameproject
+    ///
+    /// vampireGameproject contains all the class and functions to make the 
+    /// application operational.
+    ///
+    ///
+    /// 
+    ///
 
 
 /**
@@ -84,7 +96,7 @@ namespace vampireGameproject{
  */
 
 
-     class Attributes{
+    class Attributes{
         public:
             Attributes(Parsetext& textParser);
             ~Attributes();
@@ -477,37 +489,37 @@ namespace vampireGameproject{
 
 
     class ButtonmultiInput{
-            public:
-                ButtonmultiInput();
-                virtual ~ButtonmultiInput();
-                Gtk::Button& returnButton(std::string sign);
-                void setLabelMultiComboBox();
-                std::vector<MultiInput*>& returnVectorMultiInput();
-                void setVectorSelectedInput();
-                void setDicoScoreFirstComboBox();
-                void setMultiInput();
-                void deleteMultiInput();
-                void setCoordinates(int coordinateX, int coordinateY);
-                std::map<std::string, int> returnDicoScoreFirstComboBox();
-                std::vector<std::string> returnVectorSelectedInput(std::string index);
-                void setLimitMultiInput();
-                void setVectorComboBox(int index, std::string position, std::vector<std::string> vectorReference);
-                void initialize();
-                std::string returnTextComboBox(int number, std::string index);
-                int returnXCoordinate();
-                int returnYCoordinate();
+        public:
+            ButtonmultiInput();
+            virtual ~ButtonmultiInput();
+            Gtk::Button& returnButton(std::string sign);
+            void setLabelMultiComboBox();
+            std::vector<MultiInput*>& returnVectorMultiInput();
+            void setVectorSelectedInput();
+            void setDicoScoreFirstComboBox();
+            void setMultiInput();
+            void deleteMultiInput();
+            void setCoordinates(int coordinateX, int coordinateY);
+            std::map<std::string, int> returnDicoScoreFirstComboBox();
+            std::vector<std::string> returnVectorSelectedInput(std::string index);
+            void setLimitMultiInput();
+            void setVectorComboBox(int index, std::string position, std::vector<std::string> vectorReference);
+            void initialize();
+            std::string returnTextComboBox(int number, std::string index);
+            int returnXCoordinate();
+            int returnYCoordinate();
 
-            private:
-                Gtk::Button plusButton;
-                Gtk::Button minusButton;
-                Gtk::ComboBoxText firstComboBox;
-                Gtk::ComboBoxText secondComboBox;
-                std::vector<MultiInput*> vectorMultiInputs;
-                std::vector<std::string> vectorFirstComboBoxSelectedInputs;
-                std::vector<std::string> vectorSecondComboBoxSelectedInputs;
-                int xcoordinates;
-                int ycoordinates;
-                std::map<std::string, int> DicoScoreFirstComboBox;
+        private:
+            Gtk::Button plusButton;
+            Gtk::Button minusButton;
+            Gtk::ComboBoxText firstComboBox;
+            Gtk::ComboBoxText secondComboBox;
+            std::vector<MultiInput*> vectorMultiInputs;
+            std::vector<std::string> vectorFirstComboBoxSelectedInputs;
+            std::vector<std::string> vectorSecondComboBoxSelectedInputs;
+            int xcoordinates;
+            int ycoordinates;
+            std::map<std::string, int> DicoScoreFirstComboBox;
     };
 
 
@@ -527,24 +539,22 @@ namespace vampireGameproject{
 
 
 
-
-
     class MultiInputOneComboBox{
-            public:
-                MultiInputOneComboBox();
-                virtual ~MultiInputOneComboBox();
-                Gtk::ComboBoxText& returnComboBox();
-                Gtk::SpinButton& returnSpinButton();
-                void setLimitSpinButton(int limit);
-                int returnSpinScore();
-                std::string returnTextComboBox();
-                void setVectorComboBox(std::vector<std::string>& vectorText);
-                void unsetActiveText();
-                void resetSpinScore();
+        public:
+            MultiInputOneComboBox();
+            virtual ~MultiInputOneComboBox();
+            Gtk::ComboBoxText& returnComboBox();
+            Gtk::SpinButton& returnSpinButton();
+            void setLimitSpinButton(int limit);
+            int returnSpinScore();
+            std::string returnTextComboBox();
+            void setVectorComboBox(std::vector<std::string>& vectorText);
+            void unsetActiveText();
+            void resetSpinScore();
 
-            private:
-                Gtk::ComboBoxText ComboBox;
-                Gtk::SpinButton spinButton;
+        private:
+            Gtk::ComboBoxText ComboBox;
+            Gtk::SpinButton spinButton;
     };
 
 
@@ -903,6 +913,7 @@ namespace vampireGameproject{
             Character CharacterToCreate;
             Picturemodifying createResultsFile;
     };
+
 }
 
 #endif
