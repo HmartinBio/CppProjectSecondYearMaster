@@ -58,7 +58,7 @@ After submitting your choices, you are invited to enter a filename to save your 
 
 Some bugs can be encountered by using the application.
 
-**Don't press minus button after choosing a categoriy in a First ComboBoxText Widget if there is only one line set in a specific field.**
+**Don't press minus button after choosing a category in a First ComboBoxText Widget if there is only one line set in a specific field.**
 
 **Don't choose the same category for a FirstComboBoxText Widget belonging to a specific field more than two times**
 
