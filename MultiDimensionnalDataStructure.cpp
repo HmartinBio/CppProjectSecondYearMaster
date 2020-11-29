@@ -1,3 +1,16 @@
+/**
+ * @file MultiDimensionnalDataStructure.cpp
+ *
+ * @brief File containing source code of the MultiDimensionnalDataStrucutre union
+ *
+ *
+ * @author Hugo MARTIN
+ * Contact: hugo.martin.1@etu.univ-amu.fr
+ *
+ */
+
+
+
 #include "classes.h"
 
 
