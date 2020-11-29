@@ -73,9 +73,9 @@ Once you are in the folder, execute this command:
 ```{bash}
 make mrproper
 ```
-This command-line deletes all the files created by the compiler, including the executable file.
+This **command-line** deletes all the files created by the compiler, including the **executable** file.
 
-To only delete the intermediary files created by the compiler but not the executable file, you can run the **command-line:**
+To only delete the **intermediary** files created by the compiler but not the executable file, you can run the **command-line:**
 
 ```{bash}
 make clean
