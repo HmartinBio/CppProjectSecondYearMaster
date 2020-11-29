@@ -1,3 +1,15 @@
+/**
+ * @file Meritsflaws.cpp
+ *
+ * @brief File containing source code of the Meritsflaws class
+ *
+ *
+ * @author Hugo MARTIN
+ * Contact: hugo.martin.1@etu.univ-amu.fr
+ *
+ */
+
+
 #include "classes.h"
 
 
