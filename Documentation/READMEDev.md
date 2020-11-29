@@ -90,7 +90,7 @@ make clean
 ## Code Presentation
 
 
-We designed the code execution around the **Controllor** class following the **Model-View-Controllor** code organization. The **Controllor** class contains the **Graphical User Interface** and the others class objects responsible of others functionnalities of the program (**textParser**, **RulesofGame**, **Character**, **Picturemodifying**). At the beginning of the programm, it's the **Controllor** class object constructor which is launched.
+We designed the code execution around the **Controllor** class following the **Model-View-Controllor** code organization. The **Controllor** class contains the **Graphical User Interface** and the others class objects responsible of others functionnalities of the program (**textParser**, **RulesofGame**, **Character**, **Picturemodifying**). At the beginning of the program, it's the **Controllor** class object constructor which is launched.
 
 
 The **Controllor** class object initialise the **Graphical User Interface** and set the limits points to all the game fields.This one initialise a **Character** class object to save all the choices of the user. The choices of the user are retrieved from this class object to save it in a file by using **createResultsFile** object methods.
