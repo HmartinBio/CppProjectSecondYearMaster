@@ -40,13 +40,13 @@ On your **Linux** computer, you need to have **g++** compiler installed.\
 
 To install **g++**, you can run the command: 
 
-```{bash}
+```bash
 sudo apt install build-essential
 ```
 
 And to install **gtkmm-3.0**, you can run the command: 
 
-```{bash}
+```bash
 sudo apt-get install libgtkmm-3.0-dev 
 ```
 
@@ -60,7 +60,7 @@ sudo apt-get install libgtkmm-3.0-dev
 To install the application, you need to move on the folder containing the app with the **command-line**.\
 Once you are in the folder, you need to execute the **make** command such as:
 
-```{bash}
+```bash
 make
 ```
 
@@ -70,14 +70,14 @@ make
 To uninstall the application, you need to move on the folder containing the app with the **command-line**.\
 Once you are in the folder, execute this command:
 
-```{bash}
+```bash
 make mrproper
 ```
 This **command-line** deletes all the files created by the compiler, including the **executable** file.
 
 To only delete the **intermediary** files created by the compiler but not the executable file, you can run the **command-line:**
 
-```{bash}
+```bash
 make clean
 ```
 
@@ -393,7 +393,7 @@ Once the graphical user interface set all the informations about a character in 
 
 
 
-```{cpp}
+```cpp
 class ButtonmultiInput{
     public:
         ButtonmultiInput();
@@ -430,7 +430,7 @@ class ButtonmultiInput{
 
 ```
 
-```{cpp}
+```cpp
 class MultiInput{
     public:
         MultiInput();
@@ -453,7 +453,7 @@ class MultiInput{
 
 ```
 
-```{cpp}
+```cpp
     class ButtonmultiInputOneComboBox{
         public:
             ButtonmultiInputOneComboBox();
@@ -490,7 +490,7 @@ class MultiInput{
 
 ```
 
-```{cpp}
+```cpp
 class MultiInputOneComboBox{
     public:
         MultiInputOneComboBox();
@@ -514,7 +514,7 @@ class MultiInputOneComboBox{
 
 ### Meta Data Structure built during the project
 
-```{cpp}
+```cpp
 union MultiDimensionnalDataStructure{
         MultiDimensionnalDataStructure(std::string categorieToEnter);
         MultiDimensionnalDataStructure(int categorieValue);
