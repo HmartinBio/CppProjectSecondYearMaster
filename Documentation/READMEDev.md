@@ -89,7 +89,7 @@ make clean
 ## Code Presentation
 
 
-We designed the code execution around the **Controllor** class following the **Model-View-Controllor** code organization. The **Controllor** class contains the Graphical User Interface and the others class objects responsible of others functionnalities of the program (**textParser**, **RulesofGame**, **Character**, **Picturemodifying**). At the beginning of the programm, it's the **Controllor** class object which is launched.
+We designed the code execution around the **Controllor** class following the **Model-View-Controllor** code organization. The **Controllor** class contains the Graphical User Interface and the others class objects responsible of others functionnalities of the program (**textParser**, **RulesofGame**, **Character**, **Picturemodifying**). At the beginning of the programm, it's the **Controllor** class object constructor which is launched.
 
 
 The **Controllor** class object initialise the **Graphical User Interface** and set the limits points to all the game fields.This one initialise a **Character** class object to save all the choices of the user. The choices of the user are retrieved from this class object to save it in a file by using **createResultsFile** object methods.
@@ -252,7 +252,7 @@ The constructor of the **Character** class is not executed yet. It allows to the
 
 It allows to the interface to restrain some user choices for these one be in adequacy with the rules of the game.
 
-**Controllor** class is charged with establish the link between the **RulesofGame** class object with the **Gui** class object to restrain user choices on the interface.
+**Controllor** class is charged with establishing the link between the **RulesofGame** class object with the **Gui** class object to restrain user choices on the interface.
 
 For example, each **Clan** has its own disciplines, so, when the user chooses the clan, this one can only chooses a discipline among the disciplines attributed to the **Clan**. 
 
@@ -368,11 +368,10 @@ class Gui : public Gtk::Window{
 ```
 
 
-**Picturemodifying** class is designed to modify the picture to include 
-all the information about a character. 
+**Picturemodifying** class is designed to create a text file including 
+all the informations about a character. 
 
-Once the graphical user interface received all the informations about a character,\
-**Picturemodifying** modifies the picture to generate a picture with all the informations about a character
+Once the graphical user interface set all the informations about a character in the **Character** class object. **Picturemodifying** retrieve all the informations by a **Character** class object reference given by the **Controllor** class and creates the text file with all the informations about a character.
 
 
 ```cpp
