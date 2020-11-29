@@ -21,10 +21,9 @@ date: 26/09/2020
 ## Overview
 
 
-The aim of this project is to build an interface where the user could
+The aim of this project was to build an interface where the user could
 enter informations\
-concerning a character. Once the character is created, the information concerning the character\
-are written on a character sheet.
+concerning a character from a specific game. Once the character is created, the information concerning the character are written on a character sheet.
 
 
 
