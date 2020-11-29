@@ -1,3 +1,17 @@
+/**
+ * @file Clan.cpp
+ *
+ * @brief File containing source code of the Clan class
+ *
+ *
+ * @author Hugo MARTIN
+ * Contact: hugo.martin.1@etu.univ-amu.fr
+ *
+ */
+
+
+
+
 #include "classes.h"
 
 
