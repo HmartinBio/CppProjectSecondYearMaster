@@ -65,4 +65,4 @@ Some bugs can be encountered by using the application.
 
 ## Developper guide
 
-A Developper guide is available [here](Documentation/READMEDev.md).
+A Developper guide is available [here](Documentation/READMEDev.html).
