@@ -50,10 +50,10 @@ vampireGameproject::Controllor::Controllor():rulesGame(textParser), CharacterToC
         graphicalUserinterface.setTableLabelOnGrid(8, 0, 31, 1, 1);
         graphicalUserinterface.setTableLabelOnGrid(9, 0, 40, 1, 1);        
         graphicalUserinterface.setTableLabelOnGrid(10, 0, 49, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(11, 0, 50, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(12, 0, 51, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(13, 0, 52, 1, 1);
-        graphicalUserinterface.setTableLabelOnGrid(14, 0, 53, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(11, 0, 59, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(12, 0, 60, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(13, 0, 61, 1, 1);
+        graphicalUserinterface.setTableLabelOnGrid(14, 0, 62, 1, 1);
         
 
         /*Initialising the Entry Widget
@@ -1554,7 +1554,7 @@ void vampireGameproject::Controllor::setMultiInput(std::string categorieMultiInp
 
         /*Initialising ButtonMultiInputReference and VectorMultiInput */
 
-        ButtonmultiInputOneComboBox& ButtonmultiInputReferenceOneComboBox = graphicalUserinterface.returnBackgroundsInput();
+        ButtonmultiInputOneComboBox& ButtonmultiInputReferenceOneComboBox = graphicalUserinterface.returnVirtuesInput();
         
         /*Setting a new MultiInput*/ 
         
