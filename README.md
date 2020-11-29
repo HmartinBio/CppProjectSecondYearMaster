@@ -28,7 +28,7 @@ Once you are in the folder, you can launch the application with the command:\
 
 ## Using the application
 
-![](Documentation/../Documentation/applicationScreenShot1.png)
+![](Documentation/applicationScreenShot1.png)
 
 
 Firstly, you need to enter a player name. After that, you can select a **Clan Name**. While you have not selected a **Clan name**, **Disciplines** remain locked. Once you have selected a **Clan name**, the **NickName** of your vampire appears at the top of the interface.
