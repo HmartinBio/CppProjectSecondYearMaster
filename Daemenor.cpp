@@ -1,3 +1,17 @@
+/**
+ * @file Daemenor.cpp
+ *
+ * @brief File containing source code of the Daemenor class
+ *
+ *
+ * @author Hugo MARTIN
+ * Contact: hugo.martin.1@etu.univ-amu.fr
+ *
+ */
+
+
+
+
 #include "classes.h"
 
 
