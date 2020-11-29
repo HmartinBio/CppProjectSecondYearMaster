@@ -102,7 +102,7 @@ class Controllor{
             ~Controllor();
             Gui graphicalUserinterface;
             void testAttributesInputsFirstComboBox(int number);
-            void testInputsSecondComboBox(ButtonmultiInput&             ButtonMultiInputReference, int number, std::string categorieMultiInput);
+            void testInputsSecondComboBox(ButtonmultiInput& ButtonMultiInputReference, int number, std::string categorieMultiInput);
             void testInputsFirstComboBoxSpinButton(ButtonmultiInput& ButtonMultiInputReference, int number);
             void testInputsFirstComboBoxChangingItems(ButtonmultiInput& ButtonMultiInputReference, int number);
             void initializeButtonMultiInputReference(ButtonmultiInput& ButtonMultiInputReference, 
