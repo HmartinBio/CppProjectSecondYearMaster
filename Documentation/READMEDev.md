@@ -368,7 +368,7 @@ class Gui : public Gtk::Window{
 **Picturemodifying** class is designed to create a text file including 
 all the informations about a character. 
 
-Once the graphical user interface set all the informations about a character in the **Character** class object. **Picturemodifying** retrieve all the informations by a **Character** class object reference given by the **Controllor** class and creates the text file with all the informations about a character.
+Once the **Graphical User Interface** set all the informations about a character in the **Character** class object. **Picturemodifying** retrieve all the informations by a **Character** class object reference given by the **Controllor** class and creates the text file with all the informations about a character.
 
 
 ```cpp
