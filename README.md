@@ -21,7 +21,7 @@ To launch the application, you need to move on the folder containing the app wit
 
 Once you are in the folder, you can launch the application with the command:\
 
-```{bash}
+```bash
 ./vampireGameproject
 ```
 
